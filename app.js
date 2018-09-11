@@ -8,8 +8,8 @@ const publicPath = path.join(__dirname, 'www');
 app.use(express.static('www'));
 
 // Serves index.html on all urls
-app.use('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
-});
+// app.use('*', (req, res) => {
+//   res.sendFile(path.join(publicPath, 'index.html'));
+// });
 
 app.listen(3000, () => console.log('Listening on port 3000'));
