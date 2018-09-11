@@ -2,8 +2,23 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: $bg-color;
 }
 
 main {
   flex-grow: 1;
+}
+
+select option:hover {
+  background-color: $primary;
+}
+
+.form-control:focus {
+  border-color: $primary;
+  box-shadow: 0 0 0 .2rem rgba(240,95,64,.5);
+}
+
+input:focus, textarea:focus {
+  outline-color: rgba(240,95,64,.9);
+  box-shadow: 0 0 0 .2rem rgba(240,95,64,.5);
 }
