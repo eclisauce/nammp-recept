@@ -1,6 +1,17 @@
 $category-color: #f05f40;
 $category-hover-color: $category-color + 50;
 
+@media screen and (max-width: 720px) {
+  .filter-heading, .checkboxContainer p {
+    font-size: 1.3rem;
+  }
+
+  .checkmark {
+    margin-top: 4px;
+  }
+
+}
+
 .filter-heading {
   transition: all .3s ease;
   cursor: pointer;
