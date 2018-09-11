@@ -1,1 +1,1 @@
-body{min-height:100vh;display:flex;flex-direction:column}main{flex-grow:1}
+body{min-height:100vh;display:flex;flex-direction:column}main{flex-grow:1}.ingredient-list li:nth-child(2n){background-color:#91968e}
