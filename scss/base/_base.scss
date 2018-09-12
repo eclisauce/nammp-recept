@@ -9,10 +9,6 @@ main {
   flex-grow: 1;
 }
 
-select option:hover {
-  background-color: $primary;
-}
-
 .form-control:focus {
   border-color: $primary;
   box-shadow: 0 0 0 .2rem rgba(240,95,64,.5);
