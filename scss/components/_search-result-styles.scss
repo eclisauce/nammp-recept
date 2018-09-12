@@ -78,3 +78,8 @@
     }
   }
 }
+
+.no-decoration-a-tag, .no-decoration-a-tag:hover {
+  text-decoration: none;
+  color: inherit;
+}
