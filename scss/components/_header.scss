@@ -1,0 +1,43 @@
+header {
+
+  nav {
+    font-weight: bold;
+    .navbar-brand {
+      font-family: 'Lobster', serif;
+      display: block;
+      position: relative;
+      width: 10rem;
+      height: 5rem;
+      span {
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      span:nth-child(2) {
+        top: 2.2rem;
+        left: 1rem;
+        font-size: 1.2rem;
+      }
+      span:nth-child(3) {
+        top: 2rem;
+        left: 2rem;
+      }
+    }
+    .active {
+      border-bottom: 3px solid #f05f40;
+    }
+  }
+
+  .form-control {
+    border-radius: 0;
+    border-right: 0;
+    border-left: 0;
+    &:focus {
+      border-color: darken(#ced4da, 20%);
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+}
