@@ -15,13 +15,13 @@
   </head>
   <body class="add-recipe container">
     <main>
-    <h1 class="text-primary mt-5 mb-3">Lägg till nytt recept</h1>
+    <h2 class="text-primary mt-5 mb-3">Lägg till nytt recept</h2>
 
       <div class="row">
         <div class="col-md-6">
 
           <div class="mt-4">
-            <h4 class="text-info">Namn på recept</h4>
+            <h5 class="text-dark">Namn på recept</h5>
             <form class="w-50">
               <div class="form-group m-0">
                 <input type="text" class="form-control" id="recipeNameForm" placeholder="Fyll i vad ditt recept heter.">
@@ -30,91 +30,96 @@
           </div>
           
           <div class="mt-5">
-            <h4 class="text-info">Beskrivning</h4>
+            <h5 class="text-dark">Beskrivning</h5>
             <textarea class="rounded w-75" rows="3" placeholder="  En kort beskrivning av ditt recept."></textarea>
           </div>
 
           <div class="mt-5">
-            <h4 class="mb-0 text-info">Kategorier</h4>
+            <h5 class="text-dark m-0">Kategorier</h5>
             <small class="text-muted">Kryssa i de rutor som matchar din rätt.</small>
-            <div class="row">
+            <div class="row mt-3 ml-1">
 
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder text</label>
-                </div>
+              <div class="d-flex flex-column pr-5">
+                <label class="checkboxContainer border-checkbox">
+                  <p>Huvudrätt</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+                <label class="checkboxContainer border-checkbox">
+                  <p>Festmåltider</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+                <label class="checkboxContainer border-checkbox">
+                  <p>Fika</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
               </div>
               
+
+              <div class="d-flex flex-column pr-5">
+                <label class="checkboxContainer border-checkbox">
+                  <p>Buffé</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+                <label class="checkboxContainer border-checkbox">
+                  <p>Grytor</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+                <label class="checkboxContainer border-checkbox">
+                  <p>Asiatiskt</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+              </div> 
+
+              <div class="d-flex flex-column pr-5">
+                <label class="checkboxContainer border-checkbox">
+                  <p>Husmanskost</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+                <label class="checkboxContainer border-checkbox">
+                  <p>Italienskt</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+              </div>
             </div>
           </div>
 
           <div class="my-5">
-            <h4 class="text-info">Övrigt</h4>
+            <h5 class="text-dark m-0">Övrigt</h5>
             <small class="text-muted">Kryssa i de rutor som matchar din rätt.</small>
-            <div class="row">
-              
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
+            <div class="row mt-3 ml-1">
+
+              <div class="d-flex flex-column pr-5">
+                <label class="checkboxContainer border-checkbox">
+                  <p>Vegetariskt</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+                <label class="checkboxContainer border-checkbox">
+                  <p>Veganskt</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
               </div>
 
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
-              </div>
-              
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
-              </div>
-
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
-              </div>
-              
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
-              </div>
-
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
-              </div>
-
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
-              </div>
-
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
-              </div>
-
-              <div class="col-auto pr-3 py-2 pr-lg-4">
-                <div class="form-check form-check-inline m-0">
-                  <input class="form-check-input" type="checkbox" value="" id="">
-                  <label class="form-check-label text-secondary font-weight-bold mb-0" for="defaultCheck1">Placeholder</label>
-                </div>
+              <div class="d-flex flex-column pr-5">
+                <label class="checkboxContainer border-checkbox">
+                  <p>Laktosfritt</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
+                <label class="checkboxContainer border-checkbox">
+                  <p>Endast kött</p>
+                  <input type="checkbox">
+                  <span class="checkmark border"></span>
+                </label>
               </div>
 
             </div>
@@ -122,7 +127,7 @@
         </div> <!-- Closses left col-6 -->
 
         <div class="col-md-6 mt-0 mt-md-4">
-          <h4 class="text-info">Ingredienser</h4>
+          <h5 class="text-dark">Ingredienser</h5>
           <form class="mb-md-4 mb-1 mb-lg-1">
             <div class="form-row">
               <div class="col-3">
@@ -206,7 +211,7 @@
             <div class="col-6">
               <div class="row">
                 <div class="col-auto mb-lg-0 mb-2">
-                  <h6 class="d-inline text-info">Antal portioner</h6>
+                  <h6 class="d-inline text-dark vertical-align-middle">Antal portioner</h6>
                 </div>
                 <div class="form-group col-7 m-0">
                   <select class="form-control m-0" id="">
@@ -227,7 +232,7 @@
             <div class="col-6">
               <div class="row">
                 <div class="col-auto col-lg-12 mb-lg-0 mb-2 pr-0">
-                  <h6 class="d-inline text-info">Tidsåtgång</h6>
+                  <h6 class="d-inline text-dark vertical-align-middle">Tidsåtgång</h6>
                 </div>
                 <div class="col-lg-7">
                   <form class="">
@@ -242,7 +247,7 @@
           </div>
           <div class="row">
             <div class=" col-12 mt-4">
-              <h4 class="text-info">Instruktioner</h4>
+              <h5 class="text-dark">Instruktioner</h5>
               <textarea class="rounded" rows="2" placeholder="  1."></textarea>
               <textarea class="rounded" rows="2" placeholder="  2."></textarea>
               <textarea class="rounded" rows="2" placeholder="  3."></textarea>
@@ -252,12 +257,14 @@
       
       </div> <!-- Closses top div-row -->
 
-      <div class="row my-5">
+      <div class="row mt-3 mb-5">
         <div class="col">
-          <form class="float-left d-block">
+
+          <form class="w-75">
             <div class="form-group m-0">
-              <label class="text-info font-weight-bold upload" for="pictureUpload">Ladda upp en bild för ditt recept.</label>
-              <input type="file" class="form-control-file" id="pictureUpload">
+              <h5 for="hrefLink">Länk till bild</h5>
+              <input type="text" class="form-control" id="imageLink" aria-describedby="textHelp" placeholder="https://www.exempel.com/bild.jpg">
+              <small id="emailHelp" class="form-text text-muted">Kom ihåg att ha med hela länken utan några förändringar på länken.</small>
             </div>
           </form>
         </div>

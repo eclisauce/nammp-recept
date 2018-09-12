@@ -1,7 +1,4 @@
 .add-recipe {
-  h6 {
-    vertical-align: -webkit-baseline-middle;
-  }
   small {
     font-size: 75%;
   }
@@ -18,5 +15,8 @@
   textarea {
     resize: none;
     width: 100%;
+  }
+  h2, h5, h6 {
+    font-family: $font-family;
   }
 }
