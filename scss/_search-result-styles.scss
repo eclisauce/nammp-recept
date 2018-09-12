@@ -1,4 +1,53 @@
 // Media object styles
-.media .media-img {
-  min-width: 6rem;
+.media {
+  background-color: #fafafa;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+
+    .media-img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .media-body {
+      .media-heading {
+        box-shadow: inset 0 0 0 rgba(255, 255, 255, 0), 
+                          0 3px 0 rgba(240, 95, 64, 1);
+      }
+    }
+  }
+
+  .media-img {
+    min-width: 6rem;
+    opacity: 0.8;
+    transition: all .3s ease;
+  }
+
+  .media-body {
+    .media-heading {
+      color: #333;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0);
+      transition: all .3s ease;
+    }
+
+    .recipe-info-wrapper {
+      p {
+        font-size: 0.9rem;
+        margin-top: 1.5rem; 
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .media {
+    .media-body {
+      .media-heading {
+        font-size: 1.8rem;
+      }
+    }
+  }
 }
