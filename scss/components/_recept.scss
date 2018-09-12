@@ -1,0 +1,41 @@
+.ingredient-list{
+  li{
+    padding: 3px;
+    background:rgba(163, 163, 163, 0.27);
+  }
+}
+
+.ingredient-side{
+  background: rgba(163, 163, 163, 0.27);
+}
+
+.recipe-top-part{
+  background: rgba(0, 0, 0, 0.42);
+  color: #fff;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 3px;
+  img{
+    border-radius: 2px;
+  }
+}
+ .recipe-top-part-2{
+   background-image: url(/img/recept-cover.jpeg);
+   background-repeat: no-repeat;
+   padding: 20px;
+   background-position: 70% 70%;
+   background-size: cover;
+   border-radius: 3px;
+ }
+
+.recipe-instruction{
+
+}
+
+.recept-page{
+  margin: 0;
+  padding: 2px;
+  .recepie-section{
+    padding: 0;
+  }
+}
