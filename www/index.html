@@ -20,6 +20,40 @@
 </head>
 
 <body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light p-3 p-md-5">
+      <a class="navbar-brand" href="/"><span>Recept</span><span>&</span><span>Näring</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapsing Navigation -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item px-4 active">
+            <a class="nav-link" href="/">Hem</a>
+          </li>
+          <li class="nav-item px-4">
+            <a class="nav-link" href="/recipe.html">Recept</a>
+          </li>
+          <li class="nav-item px-4">
+            <a class="nav-link" href="/add-recipe.html">Lägg till recept</a>
+          </li>
+        </ul>
+      </div>
+      <!-- // Collapsing Navigation End -->
+    </nav>
+    <!-- Search field -->
+    <div class="header__search">
+      <i class="fas fa-search"></i>
+      <input class="form-control form-control-lg pl-5" type="text" placeholder="Sök på recept..."></input>
+    </div>
+  </header>
+  <!-- // HEADER END -->
+
+
+
   <main class="container mt-0 mt-md-3">
     <div class="row">
 
@@ -35,45 +69,53 @@
           <!-- This is the body of cathegories -->
           <div class="collapse show mt-2 ml-3" id="collapseCategory">
 
-            <label class="checkboxContainer"><p>Huvudrätt</p>
+            <label class="checkboxContainer">
+              <p>Huvudrätt</p>
               <input type="checkbox">
               <span class="checkmark"></span>
             </label>
 
-            <label class="checkboxContainer"><p>Festmåltider</p>
+            <label class="checkboxContainer">
+              <p>Festmåltider</p>
               <input type="checkbox">
               <span class="checkmark"></span>
             </label>
 
-            <label class="checkboxContainer"><p>Fika</p>
+            <label class="checkboxContainer">
+              <p>Fika</p>
               <input type="checkbox">
               <span class="checkmark"></span>
             </label>
 
-            <label class="checkboxContainer"><p>Buffé</p>
+            <label class="checkboxContainer">
+              <p>Buffé</p>
               <input type="checkbox">
               <span class="checkmark"></span>
             </label>
 
-            <label class="checkboxContainer"><p>Grytor</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-  
-              <label class="checkboxContainer"><p>Asiatiskt</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-  
-              <label class="checkboxContainer"><p>Husmanskost</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-  
-              <label class="checkboxContainer"><p>Italienskt</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
+            <label class="checkboxContainer">
+              <p>Grytor</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkboxContainer">
+              <p>Asiatiskt</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkboxContainer">
+              <p>Husmanskost</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkboxContainer">
+              <p>Italienskt</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
 
           </div>
 
@@ -88,25 +130,29 @@
 
           <!-- This is the body of cathegories -->
           <div class="collapse show mt-2 ml-3" id="collapseFilter">
-            <label class="checkboxContainer"><p>Vegetariskt</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-  
-              <label class="checkboxContainer"><p>Veganskt</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-  
-              <label class="checkboxContainer"><p>Laktosfritt</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
-  
-              <label class="checkboxContainer"><p>Endast kött</p>
-                <input type="checkbox">
-                <span class="checkmark"></span>
-              </label>
+            <label class="checkboxContainer">
+              <p>Vegetariskt</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkboxContainer">
+              <p>Veganskt</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkboxContainer">
+              <p>Laktosfritt</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkboxContainer">
+              <p>Endast kött</p>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
           </div>
 
 
@@ -122,78 +168,107 @@
 
 
       <div class="col-12 col-md-8 col-lg-9 p-0 px-md-2 pt-3 pt-md-0">
-          <!-- Media object component -->
-          <div class="media p-1 p-sm-3 mt-0 border">
-            <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
-              <i class="fas fa-angle-right fa-lg"></i>
-              <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
-              <div class="recipe-info-wrapper d-flex justify-content-between">
-                <p class="mb-0 text-muted">450 kalorier</p>
-                <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
-              </div>
+        <!-- Media object component -->
+        <div class="media p-1 p-sm-3 mt-0 border">
+          <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg"
+            alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
+            <i class="fas fa-angle-right fa-lg"></i>
+            <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
+            <div class="recipe-info-wrapper d-flex justify-content-between">
+              <p class="mb-0 text-muted">450 kalorier</p>
+              <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
             </div>
           </div>
-
-          <div class="media p-1 p-sm-3 mt-3 border">
-            <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
-              <i class="fas fa-angle-right fa-lg"></i>
-              <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
-              <div class="recipe-info-wrapper d-flex justify-content-between">
-                <p class="mb-0 text-muted">450 kalorier</p>
-                <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="media p-1 p-sm-3 mt-3 border">
-            <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
-              <i class="fas fa-angle-right fa-lg"></i>
-              <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
-              <div class="recipe-info-wrapper d-flex justify-content-between">
-                <p class="mb-0 text-muted">450 kalorier</p>
-                <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="media p-1 p-sm-3 mt-3 border">
-            <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
-              <i class="fas fa-angle-right fa-lg"></i>
-              <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
-              <div class="recipe-info-wrapper d-flex justify-content-between">
-                <p class="mb-0 text-muted">450 kalorier</p>
-                <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="media p-1 p-sm-3 mt-3 border">
-            <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg" alt="Generic placeholder image">
-            <div class="media-body">
-              <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
-              <i class="fas fa-angle-right fa-lg"></i>
-              <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
-              <div class="recipe-info-wrapper d-flex justify-content-between">
-                <p class="mb-0 text-muted">450 kalorier</p>
-                <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <div class="media p-1 p-sm-3 mt-3 border">
+          <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg"
+            alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
+            <i class="fas fa-angle-right fa-lg"></i>
+            <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
+            <div class="recipe-info-wrapper d-flex justify-content-between">
+              <p class="mb-0 text-muted">450 kalorier</p>
+              <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="media p-1 p-sm-3 mt-3 border">
+          <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg"
+            alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
+            <i class="fas fa-angle-right fa-lg"></i>
+            <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
+            <div class="recipe-info-wrapper d-flex justify-content-between">
+              <p class="mb-0 text-muted">450 kalorier</p>
+              <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="media p-1 p-sm-3 mt-3 border">
+          <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg"
+            alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
+            <i class="fas fa-angle-right fa-lg"></i>
+            <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
+            <div class="recipe-info-wrapper d-flex justify-content-between">
+              <p class="mb-0 text-muted">450 kalorier</p>
+              <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="media p-1 p-sm-3 mt-3 border">
+          <img class="mr-3 mr-sm-4 w-25 media-img" src="https://www.cookingclassy.com/wp-content/uploads/2018/01/instant-pot-spaghetti-12-500x500.jpg"
+            alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0 media-heading d-inline">Spaghetti och köttfärssås</h5>
+            <i class="fas fa-angle-right fa-lg"></i>
+            <p>Denna goda rätt är både enkel och billig att tillaga. En klassiker i det svenska köket.</p>
+            <div class="recipe-info-wrapper d-flex justify-content-between">
+              <p class="mb-0 text-muted">450 kalorier</p>
+              <p class="mb-0 mr-1 mr-sm-0 text-muted">30 minuter</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
     </div>
 
 
   </main>
+
+  <!-- FOOTER -->
+  <footer class="p-2 p-md-4 pb-md-1">
+    <div class="container p-2 p-lg-3">
+      <div class="row">
+        <div class="col-12 col-lg-3">
+          <ul class="list-unstyled">
+            <li>
+              <a href="/" title="">Hem</a>
+            </li>
+            <li>
+              <a href="/recipe.html" title="">Recept</a>
+            </li>
+            <li>
+              <a href="/add-recipe.html" title="">Lägg till recept</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-4 text-center text-secondary">
+        &copy; NAAMP Recipes 2018.
+      </div>
+    </div>
+  </footer>
 
 
   <!-- Optional JavaScript -->
