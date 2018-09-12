@@ -29,15 +29,23 @@ header {
     }
   }
 
-  .form-control {
-    border-radius: 0;
-    border-right: 0;
-    border-left: 0;
-    &:focus {
-      border-color: darken(#ced4da, 20%);
-      outline: 0;
-      box-shadow: none;
+  .header__search {
+    position: relative;
+    i {
+      position: absolute;
+      top: calc(50% - 10px);
+      font-size: 20px;
+      left: 1rem;
+    }
+    .form-control {
+      border-radius: 0;
+      border-right: 0;
+      border-left: 0;
+      &:focus {
+        border-color: darken(#ced4da, 20%);
+        outline: 0;
+        box-shadow: none;
+      }
     }
   }
-
 }
