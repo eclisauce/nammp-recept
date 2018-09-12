@@ -30,6 +30,20 @@
    background-size: cover;
    border-radius: 3px;
  }
+.ingredient-h4{
+  text-decoration: underline;
+  text-decoration-color: #f05f40;
+}
+
+.instructions-h2{
+  text-decoration: underline;
+  text-decoration-color: #f05f40;
+}
+
+.recipe-header{
+  text-decoration: underline;
+  text-decoration-color: #f05f40;
+}
 
 #sel1{
   border: 1px solid #f05f40;
@@ -41,6 +55,9 @@
     box-shadow: 0 0 1px #f05f40;
 }
 
+#sel1.decoration {
+    box-shadow: 0 0 10px 100px #f05f40 inset;
+}
 
 
 .recipe-instruction{
