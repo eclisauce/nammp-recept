@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Nunito:400,700');
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: $bg-color;
+  font-family: $font-family;
 }
 
 main {

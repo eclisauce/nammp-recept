@@ -1,15 +1,19 @@
 header {
-
   nav {
     font-weight: bold;
+    background: $bg-color;
     .navbar-brand {
       font-family: 'Lobster', serif;
+      color: $primary !important;
       display: block;
       position: relative;
       width: 12rem;
       height: 5rem;
       transform: scale(0.6);
       transform-origin: 0 30%;
+      &:hover {
+        color: darken($primary, 10%) !important;
+      }
       @media (min-width: 768px) {
         transform: scale(1);
         transform-origin: 0 0;
