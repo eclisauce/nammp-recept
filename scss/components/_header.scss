@@ -30,6 +30,7 @@ header {
         position: absolute;
         top: 0;
         left: 0;
+        text-shadow: 3px 5px 10px darken($bg-color, 20%);
       }
 
       span:nth-child(2) {
