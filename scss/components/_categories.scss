@@ -105,3 +105,10 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.categories {
+  .btn {
+    font-family: $font-family;
+    font-weight: 700;
+  }
+}
