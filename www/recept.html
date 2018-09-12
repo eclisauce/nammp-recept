@@ -18,6 +18,7 @@
 <body>
   <main>
     <div class="container mb-5 recept-page mx-auto">
+      <!-- Recept "header" start -->
       <div class="col-12 d-flex flex-md-row flex-column recipe-top-part-2">
       <div class="col-12 d-flex flex-md-row flex-column recipe-top-part">
         <div class="col-12 col-lg-4">
@@ -39,10 +40,13 @@
           </div>
         </div>
       </div>
-      <div class="d-flex flex-md-row flex-column mt-4">
-        <div class="col-lg-4 col-12 d-flex flex-column border ingredient-side">
+      <!-- recept header end -->
+      <!-- Start Main content on the page ingredient and instructions -->
+      <div class="d-flex flex-md-row flex-column">
+        <!-- Side ingredient start -->
+        <aside class="col-lg-5 col-12 d-flex flex-column border ingredient-side">
           <div class="">
-            <form>
+            <form class="recipe-selector">
               <div class="form-group">
                 <label for="sel1">Antal personer:</label>
                 <select class="form-control" id="sel1">
@@ -74,25 +78,22 @@
             <li class="list-group-item border-0">1 burk kokosmjölk</li>
             <li class="list-group-item border-0">Några dl  Kyckling Buljong efter behov</li>
           </ul>
-        </div>
-        <div class="col-lg-8 col-12 d-flex flex-column recipe-instruction">
+          <button type="button" class="btn btn-primary mb-1">Lägg till i varukorg</button>
+        </aside>
+        <!-- Side ingredient end -->
+        <!-- Start instructions -->
+        <div class="col-lg-7 col-12 d-flex flex-column recipe-instruction mt-2">
           <h2 class="text-center">Utförande</h2>
-          <section class="recepie-section">
-            <article class="">
-              <p>Blanda ihopa kryddorna med oljan och skär kycklingen i stora bitar, täck sedan kycklingen med kryddröran</p>
-            </article>
-            <article class="">
-              <p> Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min</p>
-            </article>
-            <article class="">
-              <p> i med vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, sedan ska vätskan i så de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihopa,</p>
-            </article>
-            <article class="">
-              <p>släng sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer Garm masala efter smak.</p>
-            </article>
-          </section>
+          <ol class="recepie-section">
+              <li>Blanda ihopa kryddorna med oljan och skär kycklingen i stora bitar, täck sedan kycklingen med kryddröran</li>
+              <li> Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min</li>
+              <li> i med vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, sedan ska vätskan i så de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihopa,</li>
+              <li>släng sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer Garm masala efter smak.</li>
+          </ol>
         </div>
+        <!-- end instructions -->
       </div>
+      <!-- End Main content on the page ingredient and instructions -->
     </div>
 
   </main>

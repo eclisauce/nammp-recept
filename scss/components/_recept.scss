@@ -1,12 +1,15 @@
 .ingredient-list{
   li{
     padding: 3px;
-    background:rgba(163, 163, 163, 0.27);
+    background:#fafafa;
+  }
+  li:nth-child(2n){
+    background: #f1f1f1;
   }
 }
 
 .ingredient-side{
-  background: rgba(163, 163, 163, 0.27);
+  background: #fafafa;
 }
 
 .recipe-top-part{
@@ -28,8 +31,40 @@
    border-radius: 3px;
  }
 
-.recipe-instruction{
+#sel1{
+  border: 1px solid #f05f40;
 
+}
+#sel1:focus{
+  outline: none !important;
+    border-color: #f05f40;
+    box-shadow: 0 0 1px #f05f40;
+}
+
+
+
+.recipe-instruction{
+padding: 0 20px 20px 20px;
+margin-left: 10px;
+ol{
+  list-style: none;
+  counter-reset: item;
+}
+
+ li{
+    counter-increment: item;
+    margin-bottom: 10px;
+ }
+ li:before {
+  margin-right: 5px;
+  content: counter(item);
+  background: #f05f40;
+  border-radius: 90%;
+  color: white;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+}
 }
 
 .recept-page{
