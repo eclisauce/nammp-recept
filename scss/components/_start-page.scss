@@ -31,8 +31,19 @@
     font-weight: 500;
     color: #333;
     text-align: center;
-    width: 120%;
+    width: 100%;
   }
 
+}
+
+
+@media screen and (max-width: 768px) {
+  .heading-holder {
+    margin-bottom: 20px;
+    .week-special {
+      bottom: -60px;
+      font-size: 2.4rem;
+    }
+  }
 }
 
