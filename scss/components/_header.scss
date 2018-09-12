@@ -1,0 +1,57 @@
+header {
+
+  nav {
+    font-weight: bold;
+    .navbar-brand {
+      font-family: 'Lobster', serif;
+      display: block;
+      position: relative;
+      width: 12rem;
+      height: 5rem;
+      transform: scale(0.6);
+      transform-origin: 0 30%;
+      @media (min-width: 768px) {
+        transform: scale(1);
+        transform-origin: 0 0;
+      }
+      span {
+        font-size: 2.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      span:nth-child(2) {
+        top: 2.6rem;
+        left: 1.6rem;
+        font-size: 1.2rem;
+      }
+      span:nth-child(3) {
+        top: 2.5rem;
+        left: 2.5rem;
+      }
+    }
+    .active {
+      border-bottom: 3px solid #f05f40;
+    }
+  }
+
+  .header__search {
+    position: relative;
+    i {
+      position: absolute;
+      top: calc(50% - 10px);
+      font-size: 20px;
+      left: 1rem;
+    }
+    .form-control {
+      border-radius: 0;
+      border-right: 0;
+      border-left: 0;
+      &:focus {
+        border-color: darken(#ced4da, 20%);
+        outline: 0;
+        box-shadow: none;
+      }
+    }
+  }
+}

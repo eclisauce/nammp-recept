@@ -1,0 +1,18 @@
+.add-recipe {
+  h6 {
+    vertical-align: -webkit-baseline-middle;
+  }
+  small {
+    font-size: 75%;
+  }
+  .btn-primary {
+    &:focus {
+      box-shadow: 0 0 0 .2rem rgba(240,95,64,.5);
+    }
+    &:hover {
+      background-color: $primary;
+      color: white;
+      border-color: #ee3910;
+    }
+  }
+}
