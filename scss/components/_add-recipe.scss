@@ -1,8 +1,5 @@
 .add-recipe {
-  .recipeNameWidth {
-    width: 60%;
-  }
-  .descriptionForm {
+  .w-85 {
     width: 85%;
   }
   small {
@@ -20,7 +17,6 @@
   }
   textarea {
     resize: none;
-    width: 100%;
   }
   h2, h3, h4, h5, h6 {
     font-family: $font-family;
