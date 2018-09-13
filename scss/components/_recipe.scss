@@ -62,7 +62,6 @@
 
 .recipe-instruction{
 padding: 0 20px 20px 20px;
-margin-left: 10px;
 ol{
   list-style: none;
   counter-reset: item;
@@ -78,9 +77,11 @@ ol{
   background: #f05f40;
   border-radius: 50%;
   color: white;
-  width: 1.5em;
+  width: 1.5rem;
   text-align: center;
   display: block;
+  align-self: flex-start;
+  flex-shrink: 0;
 }
 }
 
