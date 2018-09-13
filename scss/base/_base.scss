@@ -30,3 +30,7 @@ input:focus, textarea:focus {
     border-color: $primary!important;
   }
 }
+
+.form-control, textarea {
+  background:#efe9e6;
+}

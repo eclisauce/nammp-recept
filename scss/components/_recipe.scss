@@ -33,16 +33,22 @@
 .ingredient-h4{
   text-decoration: underline;
   text-decoration-color: #f05f40;
+  font-family: $font-family;
+  font-weight: 700;
 }
 
 .instructions-h2{
   text-decoration: underline;
   text-decoration-color: #f05f40;
+  font-family: $font-family;
+  font-weight: 700;
 }
 
 .recipe-header{
   text-decoration: underline;
   text-decoration-color: #f05f40;
+  font-family: $font-family;
+  font-weight: 700;
 }
 
 #sel1{
@@ -87,8 +93,6 @@ ol{
 }
 
 .recept-page{
-  margin: 0;
-  padding: 2px;
   .recepie-section{
     padding: 0;
   }
