@@ -1,6 +1,6 @@
 .ingredient-list{
   li{
-    padding: 3px;
+    padding: 0.5rem 1rem;
     background:#fafafa;
   }
   li:nth-child(2n){
@@ -46,6 +46,7 @@
 }
 
 #sel1{
+  width:auto;
   border: 1px solid #f05f40;
 
 }
@@ -72,7 +73,7 @@ ol{
     margin:10px 0 10px 0;
  }
  li:before {
-  margin-right: 5px;
+  margin-top: 5px;
   content: counter(item);
   background: #f05f40;
   border-radius: 50%;
