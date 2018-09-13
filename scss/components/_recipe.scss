@@ -1,6 +1,6 @@
 .ingredient-list{
   li{
-    padding: 3px;
+    padding: 0.5rem 1rem;
     background:#fafafa;
   }
   li:nth-child(2n){
@@ -46,6 +46,7 @@
 }
 
 #sel1{
+  width:auto;
   border: 1px solid #f05f40;
 
 }
@@ -62,7 +63,6 @@
 
 .recipe-instruction{
 padding: 0 20px 20px 20px;
-margin-left: 10px;
 ol{
   list-style: none;
   counter-reset: item;
@@ -73,14 +73,16 @@ ol{
     margin:10px 0 10px 0;
  }
  li:before {
-  margin-right: 5px;
+  margin-top: 5px;
   content: counter(item);
   background: #f05f40;
   border-radius: 50%;
   color: white;
-  width: 1.5em;
+  width: 1.5rem;
   text-align: center;
   display: block;
+  align-self: flex-start;
+  flex-shrink: 0;
 }
 }
 
