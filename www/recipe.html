@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="sv">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -13,14 +14,16 @@
   <link rel="stylesheet" href="/css/creative.min.css">
   <!-- own CSS -->
   <link rel="stylesheet" href="/css/main.css" />
-  <title>Hello, world!</title>
+  <title>Recept och Näring - Instruktioner och utförande</title>
 </head>
 
 <body>
-  <header class="b-4">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 p-md-5">
+  <!-- HEADER -->
+  <header class="">
+    <nav class="navbar navbar-expand-lg navbar-light p-3 px-md-0 py-md-5 container">
       <a class="navbar-brand" href="/"><span>Recept</span><span>&</span><span>Näring</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Collapsing Navigation -->
@@ -30,7 +33,7 @@
             <a class="nav-link" href="/">Hem</a>
           </li>
           <li class="nav-item px-4">
-            <a class="nav-link" href="/recipe.html">Recept</a>
+            <a class="nav-link" href="/recipes.html">Recept</a>
           </li>
           <li class="nav-item px-4">
             <a class="nav-link" href="/add-recipe.html">Lägg till recept</a>
@@ -40,11 +43,16 @@
       <!-- // Collapsing Navigation End -->
     </nav>
     <!-- Search field -->
-    <div class="header__search">
-      <i class="fas fa-search"></i>
-      <input class="form-control form-control-lg pl-5" type="text" placeholder="Sök på recept..."></input>
+
+    <div class="border search-holder ">
+      <div class="container header__search ">
+        <i class="fas fa-search"></i>
+        <input class="form-control form-control-lg pl-5 border-0" type="text" placeholder="Sök på recept..."></input>
+      </div>
     </div>
   </header>
+  <!-- // HEADER END -->
+
   <main>
     <div class="container mb-5 recept-page mx-auto mt-3">
       <!-- Recept "header" start -->
@@ -109,13 +117,13 @@
             <li class="list-group-item border-0">En bit ingefära</li>
             <li class="list-group-item border-0">1 burk Krossade tomater/passerade tomtater (500ml)</li>
             <li class="list-group-item border-0">1 burk kokosmjölk</li>
-            <li class="list-group-item border-0">Några dl  Kyckling Buljong efter behov</li>
+            <li class="list-group-item border-0">Några dl Kyckling Buljong efter behov</li>
           </ul>
           <!-- <button type="button" class="btn btn-primary mb-1">Lägg till i varukorg <i class="fas fa-cart-arrow-down"></i></button> -->
         </aside>
         <!-- Side ingredient end -->
         <!-- Start instructions -->
-        <article class="col-lg-7 col-12 col-md-12 d-flex flex-column recipe-instruction mt-4 pl-md-4">
+        <article class="col-lg-7 col-12 col-md-12 d-flex flex-column recipe-instruction pt-3 pl-md-4">
           <h2 class="text-center instructions-h2">Utförande</h2>
           <section class="my-4">
             <ol class="d-flex flex-column list-unstyled">
@@ -148,6 +156,7 @@
       </div>
       <!-- End Main content on the page ingredient and instructions -->
     </div>
+    <!-- FOOTER -->
     <footer class="p-2 p-md-4 pb-md-1">
       <div class="container p-2 p-lg-3">
         <div class="row">
@@ -157,7 +166,7 @@
                 <a href="/" title="">Hem</a>
               </li>
               <li>
-                <a href="/recipe.html" title="">Recept</a>
+                <a href="/recipes.html" title="">Recept</a>
               </li>
               <li>
                 <a href="/add-recipe.html" title="">Lägg till recept</a>
@@ -165,7 +174,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-4 text-center text-secondary">
+        <div class="text-center text-secondary">
           &copy; NAAMP Recipes 2018.
         </div>
       </div>
@@ -178,8 +187,10 @@
   <script src="/js/main.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

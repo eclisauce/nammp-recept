@@ -59,6 +59,11 @@
     opacity: 0;
     cursor: pointer;
   }
+
+  /* Give first checkboxContainer in list top margin for consistency */
+  &:first-of-type {
+    margin-top: 12px;
+  }
 }
 
 /* Create a custom checkbox */
