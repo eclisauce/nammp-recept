@@ -8,5 +8,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "all-that-sass": "^1.0.6"
   }
 }

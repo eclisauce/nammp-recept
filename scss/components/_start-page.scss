@@ -1,0 +1,76 @@
+.main-picture {
+  background-image: url(/img/start-picture.jpg);
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  position: relative;
+
+  h1 {
+    font-family: 'Lobster', serif;
+    font-size: 3.4rem;
+    letter-spacing: 0.25rem;
+    text-shadow: 10px 10px 20px #000;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+  }
+
+}
+
+.heading-holder {
+  text-align: center;
+  position: relative;
+
+
+  .week-special {
+    background-color: #fff;
+    position: absolute;
+    bottom: -40px;
+    font-family: 'Lobster', serif;
+    font-size: 3.4rem;
+    letter-spacing: 0.25rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    width: 100%;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .main-picture { 
+    height: 400px;
+    h1 {
+      font-size: 3.8rem;
+    }
+  }
+
+  .heading-holder {
+    margin-bottom: 50px;
+    .week-special {
+      bottom: -80px;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 321px) {
+
+  .main-picture { 
+    height: 300px;
+    h1 {
+      font-size: 3rem;
+    }
+  
+  }
+
+  .heading-holder {
+    margin: 30px 0px;
+    .week-special {
+      bottom: -60px;
+      font-size: 2rem;
+    }
+  }
+}
+
