@@ -9,14 +9,11 @@ export default `
 
       <main class="container mt-0 mt-md-3 p-0">
 
-
         <article class="row">
 
           <section class="heading-holder col-12 p-0">
             <h2 class="py-0 py-md-4 week-special">Veckans utvalda recept</h2>
           </section>
-
-
 
           <section class="row col-12 m-0 p-0 mt-5">
             <a href="recipe.html" class="no-decoration-a-tag col-lg-6 p-0 pr-md-2 d-flex">
