@@ -41,8 +41,8 @@ export default class Router {
     // Get the current url
     let url = location.pathname;
     // Change which menu link that is active
-    $('header a').removeClass('active');
-    $(`header a[href="${url}"]`).addClass('active');
+    $('header ul li a').removeClass('active');
+    $(`header ul li a[href="${url}"]`).addClass('active');
 
     // A small "dictionary" of what method to call on which url
     let urls = {
@@ -63,7 +63,6 @@ export default class Router {
   //Methods for rendering in our templates in the SPA
 
   startpage() {
-    $('main').empty();
     this.startPage = new Startpage();
     this.startPage.render('main');
   }

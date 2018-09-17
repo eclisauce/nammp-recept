@@ -9,7 +9,7 @@ export default `
       <!-- Collapsing Navigation -->
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item px-4 active">
+          <li class="nav-item px-4">
             <a class="nav-link" href="/">Hem</a>
           </li>
           <li class="nav-item px-4">
