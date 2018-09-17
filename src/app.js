@@ -25,8 +25,6 @@ start() {
   // Footer renderin
   this.footer = new Footer();
   this.footer.render('footer');
-
-  this.eventHandler();
 }
 
 /**
@@ -42,19 +40,6 @@ loadJSONandStart() {
     this.recipes = recipes;
     
   })).then(this.start());
-}
-
-
-/**
- * For testing if data has been loaded.
- *
- */
-eventHandler(){
-  $(document).on('click', () => {
-    console.log(this.foodData);
-    console.log(this.recipes);
-  })
-
 }
 
 
