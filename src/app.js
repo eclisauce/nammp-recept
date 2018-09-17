@@ -9,23 +9,49 @@ import '../scss/main.scss';
 class App extends Base {
   constructor() {
     super();
-    this.start();
+    this.loadJSONandStart();
     new Router();
-  }
+}
 
-  /**
-   * Runs in the constructor and runs everthing
-   *
-   */
-  start() {
-    // Navbar in header
-    this.navbar = new Navbar();
-    this.navbar.render('header');
+/**
+ * Runs in the constructor and runs everthing
+ *
+ */
+start() {
+  // Navbar in header
+  this.navbar = new Navbar();
+  this.navbar.render('header');
 
-    // Footer renderin
-    this.footer = new Footer();
-    this.footer.render('footer');
-  }
+  // Footer renderin
+  this.footer = new Footer();
+  this.footer.render('footer');
+
+  this.eventHandler();
+}
+
+/**
+ * Runs in the constructor
+ * Loading food-JSON and then executing start
+ *
+ */
+loadJSONandStart() {
+  $.getJSON("/json/food.json", (food) => {
+    this.foodData = food.LivsmedelDataset.LivsmedelsLista[0].Livsmedel;
+    
+  }).then(this.start());
+}
+
+
+/**
+ * For testing if data has been loaded.
+ *
+ */
+eventHandler(){
+  $(document).on('click', () => {
+    console.log(this.foodData);
+  })
+
+}
 
 
 }
