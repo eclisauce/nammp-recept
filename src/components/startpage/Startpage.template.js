@@ -7,7 +7,7 @@ export default `
         </a>
       </article>
 
-      <main class="container mt-0 mt-md-3 p-0">
+      <article class="container mt-0 mt-md-3 p-0">
 
         <article class="row">
 
@@ -94,4 +94,4 @@ export default `
         </article>
 
 
-      </main>`;
+      </article>`;

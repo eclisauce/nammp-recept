@@ -31,7 +31,7 @@ start() {
 
 /**
  * Runs in the constructor
- * Loading food-JSON and then executing start
+ * Loading All JSON and then executing start
  *
  */
 loadJSONandStart() {

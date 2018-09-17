@@ -16,7 +16,7 @@ export default `
             <a class="nav-link" href="/recipes.html">Recept</a>
           </li>
           <li class="nav-item px-4">
-            <a class="nav-link" href="/add-recipe.html">Lägg till recept</a>
+            <a class="nav-link" href="/add-recipe">Lägg till recept</a>
           </li>
         </ul>
       </div>

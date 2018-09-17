@@ -1,4 +1,5 @@
 import Startpage from '../components/startpage/Startpage.class';
+import AddRecipe from '../components/addrecipe/AddRecipe.class';
 
 /**
  * Good ol' PushPopStateHandler from Thomas with a new proper name
@@ -46,7 +47,8 @@ export default class Router {
     // A small "dictionary" of what method to call on which url
     let urls = {
       '/': 'startpage',
-      '/footer': 'footer'
+      '/footer': 'footer',
+      '/add-recipe': 'addRecipe'
     };
 
     // Call the right method
@@ -64,6 +66,12 @@ export default class Router {
     $('main').empty();
     this.startPage = new Startpage();
     this.startPage.render('main');
+  }
+
+  addRecipe(){
+    this.addRecipe = new AddRecipe();
+    this.addRecipe.render('main');
+
   }
 
 }
