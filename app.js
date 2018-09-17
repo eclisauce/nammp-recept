@@ -1,9 +1,12 @@
 const express = require('express');
+const flexjson = require('jsonflex')();
 // Create a new web server
 const app = express();
 const path = require('path');
 const publicPath = path.join(__dirname, 'www');
 
+
+app.use(flexjson);
 // Tell the web server to serve files
 // from the www folder
 app.use(express.static('www'));

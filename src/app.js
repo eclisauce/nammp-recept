@@ -1,5 +1,6 @@
 import './base/array-methods';
 import Base from './base/Base.class';
+import JsonFlex from './base/jsonflex';
 import Startpage from './components/startpage/Startpage.class';
 import Navbar from './components/navbar/Navbar.class';
 import Footer from './components/footer/Footer.class';
@@ -24,6 +25,7 @@ class App extends Base {
     this.startpage = new Startpage('Skicka in något till Startpageklassen du vill logga');
     this.startpage.render('main');
   }
+
 
 }
 
