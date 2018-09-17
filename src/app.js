@@ -38,7 +38,10 @@ loadJSONandStart() {
   $.getJSON("/json/food.json", (food) => {
     this.foodData = food.LivsmedelDataset.LivsmedelsLista[0].Livsmedel;
     
-  }).then(this.start());
+  }).then($.getJSON("/json/recipes.json", (recipes) => {
+    this.recipes = recipes;
+    
+  })).then(this.start());
 }
 
 
@@ -49,6 +52,7 @@ loadJSONandStart() {
 eventHandler(){
   $(document).on('click', () => {
     console.log(this.foodData);
+    console.log(this.recipes);
   })
 
 }
