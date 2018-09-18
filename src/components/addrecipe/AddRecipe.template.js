@@ -1,5 +1,5 @@
 function template() {
-  return `<article class="add-recipe container">
+return `<article class="add-recipe container">
   <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
 
   <div class="row">
@@ -117,7 +117,7 @@ function template() {
             <div class="col-12 mb-lg-0 mb-2">
               <h6 class="d-inline text-dark vertical-align-middle">Antal portioner</h6>
             </div>
-            <div class="form-group col-6 m-0 pr-0"  data-toggle="tooltip" data-placement="bottom" title="Ange hur många portioner receptet avser">
+            <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange hur många portioner receptet avser">
               <select class="form-control m-0" id="number-of-portions">
                 <option>1</option>
                 <option>2</option>
@@ -151,44 +151,44 @@ function template() {
       </div>
 
       <div class="mt-3 mt-md-4 add-ingredients-holder">
-      <h5 class="mb-0 display-portions">Ingredienser för 4 portioner</h5><button id="add-form">Add</button>
-      <form class="mb-md-4 mb-1 mb-lg-1" id="form-0">
-      <div class="form-row">
-        <div class="col-12 col-sm-5 col-md-12 col-lg-4 mb-0 mb-md-0 pt-2">
-          <input type="text" class="form-control" placeholder="Ingrediens" data-toggle="tooltip" data-placement="bottom"
-            title="Ange vilken ingrediens">
-        </div>
+        <h5 class="mb-0 display-portions">Ingredienser för 4 portioner</h5><button id="add-form">Add</button>
+        <form class="mb-md-4 mb-1 mb-lg-1" id="form-0">
+          <div class="form-row">
+            <div class="col-12 col-sm-5 col-md-12 col-lg-4 mb-0 mb-md-0 pt-2">
+              <input type="text" class="form-control" placeholder="Ingrediens" data-toggle="tooltip" data-placement="bottom"
+                title="Ange vilken ingrediens">
+            </div>
 
-        <div class="col-3 col-sm-2 col-md-3 col-lg-2 pt-2">
-          <input type="text" class="form-control" placeholder="antal" data-toggle="tooltip" data-placement="bottom"
-            title="Ange antal">
-        </div>
-        <div class="form-group col-auto m-0 pt-2" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
-          <select class="form-control" id="">
-            <option>st</option>
-            <option>krm</option>
-            <option>tsk</option>
-            <option>msk</option>
-            <option>ml</option>
-            <option>cl</option>
-            <option>dl</option>
-            <option>liter</option>
-            <option>mg</option>
-            <option>g</option>
-            <option>hg</option>
-            <option>kg</option>
-          </select>
-        </div>
-        <div class="col d-flex pt-2">
-          <input type="text" class="form-control" placeholder="gram" data-toggle="tooltip" data-placement="bottom"
-            title="Ange totalvikt i gram för uträkning av näringsvärde">
-        </div>
+            <div class="col-3 col-sm-2 col-md-3 col-lg-2 pt-2">
+              <input type="text" class="form-control" placeholder="antal" data-toggle="tooltip" data-placement="bottom"
+                title="Ange antal">
+            </div>
+            <div class="form-group col-auto m-0 pt-2" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
+              <select class="form-control" id="">
+                <option>st</option>
+                <option>krm</option>
+                <option>tsk</option>
+                <option>msk</option>
+                <option>ml</option>
+                <option>cl</option>
+                <option>dl</option>
+                <option>liter</option>
+                <option>mg</option>
+                <option>g</option>
+                <option>hg</option>
+                <option>kg</option>
+              </select>
+            </div>
+            <div class="col d-flex pt-2">
+              <input type="text" class="form-control" placeholder="gram" data-toggle="tooltip" data-placement="bottom"
+                title="Ange totalvikt i gram för uträkning av näringsvärde">
+            </div>
 
-        <button data-delete-button-id="0" class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger" data-toggle="tooltip"
-          data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
+            <button data-delete-button-id="0" class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger"
+              data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
 
-        </div>
-      </form>
+          </div>
+        </form>
 
       </div>
 
@@ -224,21 +224,20 @@ function template() {
     </div>
 
   </div>
-  </article>
-  `;
+</article>
+`;
 }
 
 function template2() {
-  return `<form class="mb-md-4 mb-1 mb-lg-1" id="form-${this.formCounter}">
+return `<form class="mb-md-4 mb-1 mb-lg-1" id="form-${this.formCounter}">
   <div class="form-row">
-    <div class="col-12 col-sm-5 col-md-12 col-lg-4 mb-0 mb-md-0 pt-2">
-      <input type="text" class="form-control" placeholder="Ingrediens" data-toggle="tooltip" data-placement="bottom"
-        title="Ange vilken ingrediens">
+    <div class="col mb-0 mb-md-0 pt-2">
+      <input type="text" class="form-control" placeholder="Namn på ingrediens" data-toggle="tooltip" data-placement="bottom"
+        title="Ange namn på ingrediens som visas i receptet">
     </div>
 
-    <div class="col-3 col-sm-2 col-md-3 col-lg-2 pt-2">
-      <input type="text" class="form-control" placeholder="antal" data-toggle="tooltip" data-placement="bottom"
-        title="Ange antal">
+    <div class="col-3 2 pt-2">
+      <input type="text" class="form-control" placeholder="antal" data-toggle="tooltip" data-placement="bottom" title="Ange antal">
     </div>
     <div class="form-group col-auto m-0 pt-2" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
       <select class="form-control" id="">
@@ -256,19 +255,25 @@ function template2() {
         <option>kg</option>
       </select>
     </div>
-    <div class="col d-flex pt-2">
-      <input type="text" class="form-control" placeholder="gram" data-toggle="tooltip" data-placement="bottom"
-        title="Ange totalvikt i gram för uträkning av näringsvärde">
+  </div>
+  <div class="form-row">
+    <div class="col mb-0 mb-md-0 pt-2">
+      <input type="text" class="form-control" placeholder="Namn på ingrediens" data-toggle="tooltip" data-placement="bottom"
+        title="Ange namn på ingrediens som visas i receptet">
     </div>
 
-    <button data-delete-button-id="${this.formCounter}" class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger" data-toggle="tooltip"
-      data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
-
+    <div class="col-4 d-flex pt-2">
+      <input type="text" class="form-control" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
     </div>
-  </form>`;
+
+    <button data-delete-button-id="${this.formCounter}" class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger"
+      data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
+
+  </div>
+</form>`;
 }
 
 export {
-  template,
-  template2
+template,
+template2
 }
