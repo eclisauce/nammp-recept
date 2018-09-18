@@ -116,7 +116,7 @@ export default function() {
             <h6 class="naringsvarde-h6">(per portion)</h6>
             <p class="d-inline"><span class="font-weight-bold">Energi:</span> 600 kcal</p>
             <a class="ml-4 collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
-              Visa mer
+              Visa mer<i class="fas fa-chevron-down ml-2"></i>
             </a>
             <div class="collapse" id="visaMer">
               <div class="row">
@@ -126,6 +126,9 @@ export default function() {
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-kolhydrater" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -135,6 +138,9 @@ export default function() {
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-protein" role="progressbar" style="width: 32%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -144,6 +150,9 @@ export default function() {
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-fett" role="progressbar" style="width: 41%" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -153,6 +162,9 @@ export default function() {
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-salt" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
                 </div>
               </div>
             </div>
