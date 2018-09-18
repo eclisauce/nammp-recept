@@ -1,7 +1,7 @@
 export default function() {
   return `
   
-    <main class="container mb-5 recept-page mx-auto mt-3">
+    <div class="container mb-5 recept-page mx-auto mt-3">
       <!-- Recept "header" start -->
       <article class="row">
         <section class="col-12 d-flex flex-md-row flex-column recipe-top-part-2">
@@ -114,7 +114,7 @@ export default function() {
       </article>
       <!-- End Main content on the page ingredient and instructions -->
   
-    </main>
+    </div>
   
   `;
 }

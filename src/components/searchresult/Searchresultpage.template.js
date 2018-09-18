@@ -1,7 +1,7 @@
 export default function() {
   return `
   
-  <main class="container mt-0 mt-md-3">
+  <div class="container mt-0 mt-md-3">
     <article class="row">
 
       <aside class="col-12 col-md-4 col-lg-3 bg-white border align-self-start">
@@ -205,7 +205,7 @@ export default function() {
 
     </article>
 
-  </main>
+  </div>
   
   `;
 }
