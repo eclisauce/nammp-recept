@@ -13,8 +13,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/creative.min.css">
-  <!-- own CSS -->
-  <link rel="stylesheet" href="/css/main.css" />
 
   <title>Recept och Näring - Lägg till recept</title>
 </head>
@@ -165,87 +163,6 @@
 
       <div class="col-md-6 pl-md-5">
 
-        <div class="mt-3 mt-md-4">
-          <h5 class="text-dark">Ingredienser</h5>
-          <form class="mb-md-4 mb-1 mb-lg-1">
-            <div class="form-row">
-              <div class="col-3">
-                <input type="text" class="form-control" placeholder="antal">
-              </div>
-              <div class="form-group col-auto m-0 pb-1">
-                <select class="form-control" id="">
-                  <option>st</option>
-                  <option>krm</option>
-                  <option>tsk</option>
-                  <option>msk</option>
-                  <option>ml</option>
-                  <option>cl</option>
-                  <option>dl</option>
-                  <option>liter</option>
-                  <option>mg</option>
-                  <option>g</option>
-                  <option>hg</option>
-                  <option>kg</option>
-                </select>
-              </div>
-              <div class="col-12 col-sm col-md-12 col-lg mb-3 mb-md-0">
-                <input type="text" class="form-control" placeholder="Ingrediens">
-              </div>
-            </div>
-          </form>
-          <form class="mb-md-4 mb-1 mb-lg-1">
-            <div class="form-row">
-              <div class="col-3">
-                <input type="text" class="form-control" placeholder="antal">
-              </div>
-              <div class="form-group col-auto m-0 pb-1">
-                <select class="form-control" id="">
-                  <option>st</option>
-                  <option>krm</option>
-                  <option>tsk</option>
-                  <option>msk</option>
-                  <option>ml</option>
-                  <option>cl</option>
-                  <option>dl</option>
-                  <option>liter</option>
-                  <option>mg</option>
-                  <option>g</option>
-                  <option>hg</option>
-                  <option>kg</option>
-                </select>
-              </div>
-              <div class="col-12 col-sm col-md-12 col-lg mb-3 mb-md-0">
-                <input type="text" class="form-control" placeholder="Ingrediens">
-              </div>
-            </div>
-          </form>
-          <form class="mb-md-4 mb-1 mb-lg-1">
-            <div class="form-row">
-              <div class="col-3">
-                <input type="text" class="form-control" placeholder="antal">
-              </div>
-              <div class="form-group col-auto m-0 pb-1">
-                <select class="form-control" id="">
-                  <option>st</option>
-                  <option>krm</option>
-                  <option>tsk</option>
-                  <option>msk</option>
-                  <option>ml</option>
-                  <option>cl</option>
-                  <option>dl</option>
-                  <option>liter</option>
-                  <option>mg</option>
-                  <option>g</option>
-                  <option>hg</option>
-                  <option>kg</option>
-                </select>
-              </div>
-              <div class="col-12 col-sm col-md-12 col-lg mb-3 mb-md-0">
-                <input type="text" class="form-control" placeholder="Ingrediens">
-              </div>
-            </div>
-          </form>
-        </div>
 
         <div class="row mt-3 mt-md-4">
           <div class="col-6">
@@ -253,7 +170,7 @@
               <div class="col-12 mb-lg-0 mb-2">
                 <h6 class="d-inline text-dark vertical-align-middle">Antal portioner</h6>
               </div>
-              <div class="form-group col-6 m-0 pr-0">
+              <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange hur många portioner receptet avser">
                 <select class="form-control m-0" id="">
                   <option>1</option>
                   <option>2</option>
@@ -277,14 +194,55 @@
               <div class="col-6 pr-0">
                 <form>
                   <div class="form-group m-0">
-                    <input type="text" class="form-control" id="time" aria-describedby="time"
-                      placeholder="">
+                    <input type="text" class="form-control" id="time" aria-describedby="time" placeholder="">
                     <small id="" class="form-text text-muted text-nowrap">Ange tid i minuter.</small>
                   </div>
                 </form>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="mt-3 mt-md-4 add-ingredients-holder">
+          <h5 class="mb-0">Ingredienser för INSERT CHOSEN PORTION HERE portioner</h5>
+
+          <form class="mb-md-4 mb-1 mb-lg-1">
+            <div class="form-row">
+              <div class="col-12 col-sm-5 col-md-12 col-lg-4 mb-0 mb-md-0 pt-2">
+                <input type="text" class="form-control" placeholder="Ingrediens" data-toggle="tooltip" data-placement="bottom"
+                  title="Ange vilken ingrediens">
+              </div>
+
+              <div class="col-3 col-sm-2 col-md-3 col-lg-2 pt-2">
+                <input type="text" class="form-control" placeholder="antal" data-toggle="tooltip" data-placement="bottom"
+                  title="Ange antal">
+              </div>
+              <div class="form-group col-auto m-0 pt-2" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
+                <select class="form-control" id="">
+                  <option>st</option>
+                  <option>krm</option>
+                  <option>tsk</option>
+                  <option>msk</option>
+                  <option>ml</option>
+                  <option>cl</option>
+                  <option>dl</option>
+                  <option>liter</option>
+                  <option>mg</option>
+                  <option>g</option>
+                  <option>hg</option>
+                  <option>kg</option>
+                </select>
+              </div>
+              <div class="col d-flex pt-2">
+                <input type="text" class="form-control" placeholder="gram" data-toggle="tooltip" data-placement="bottom"
+                  title="Ange totalvikt i gram för uträkning av näringsvärde">
+              </div>
+
+              <button class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger" data-toggle="tooltip"
+                data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
+
+            </div>
+          </form>
         </div>
 
         <div class="row">
@@ -331,14 +289,15 @@
     </div>
   </footer>
 
-  <!-- Optional JavaScript -->
-  <script src="/js/main.js"></script>
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+  <!-- Optional JavaScript -->
+  <script src="/bundle.js"></script>
 </body>
 
 </html>
