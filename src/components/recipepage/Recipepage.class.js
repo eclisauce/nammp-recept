@@ -1,5 +1,5 @@
 import Base from '../../base/Base.class';
-import template from './Recipepage.templete';
+import template from './Recipepage.template';
 
 /**
  * Recipepage in main for route '/'

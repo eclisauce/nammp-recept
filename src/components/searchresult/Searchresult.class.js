@@ -1,5 +1,5 @@
 import Base from '../../base/Base.class';
-import template from './Searchresultpage.templete';
+import template from './Searchresultpage.template';
 
 /**
  * Searchresultpage in main for route '/'
