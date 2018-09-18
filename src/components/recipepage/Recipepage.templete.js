@@ -109,6 +109,15 @@ export default function() {
               </li>
             </ol>
           </section>
+
+          <!-- Start Näringsvärde -->
+          <section class="naringsvarde mt-4 p-4">
+            <h4 class="naringsvarde-h4">Näringsvärde</h4>
+            <h6 class="naringsvarde-h6">(per portion)</h6>
+            <p class="d-inline"><span class="font-weight-bold">Energi:</span> 600 kcal</p>
+          </section>
+          <!-- end näringsvärde -->
+
         </article>
         <!-- end instructions -->
       </article>
