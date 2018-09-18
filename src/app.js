@@ -11,38 +11,41 @@ class App extends Base {
     super();
     this.loadJSONandStart();
     new Router();
+  }
+
+  /**
+   * Runs in the constructor and runs everthing
+   *
+   */
+  start() {
+    // Navbar in header
+    this.navbar = new Navbar();
+    this.navbar.render('header');
+
+    // Footer renderin
+    this.footer = new Footer();
+    this.footer.render('footer');
+
+  }
+
+  /**
+   * Runs in the constructor
+   * Loading All JSON and then executing start
+   *
+   */
+  loadJSONandStart() {
+    $.getJSON("/json/food.json", (food) => {
+      this.foodData = food.LivsmedelDataset.LivsmedelsLista[0].Livsmedel;
+
+    }).then($.getJSON("/json/recipes.json", (recipes) => {
+      this.recipes = recipes;
+
+    })).then(this.start());
+  }
+
+
 }
 
-/**
- * Runs in the constructor and runs everthing
- *
- */
-start() {
-  // Navbar in header
-  this.navbar = new Navbar();
-  this.navbar.render('header');
 
-  // Footer renderin
-  this.footer = new Footer();
-  this.footer.render('footer');
-}
-
-/**
- * Runs in the constructor
- * Loading All JSON and then executing start
- *
- */
-loadJSONandStart() {
-  $.getJSON("/json/food.json", (food) => {
-    this.foodData = food.LivsmedelDataset.LivsmedelsLista[0].Livsmedel;
-    
-  }).then($.getJSON("/json/recipes.json", (recipes) => {
-    this.recipes = recipes;
-    
-  })).then(this.start());
-}
-
-
-}
 
 new App();

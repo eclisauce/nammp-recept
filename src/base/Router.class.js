@@ -67,10 +67,11 @@ export default class Router {
     this.startPage.render('main');
   }
 
-  addRecipe(){
+  addRecipe() {
     this.addRecipe = new AddRecipe();
     this.addRecipe.render('main');
 
   }
+
 
 }

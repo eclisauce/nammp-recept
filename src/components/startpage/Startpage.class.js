@@ -1,5 +1,7 @@
 import Base from '../../base/Base.class';
-import template from './Startpage.template';
+import {
+  template
+} from './Startpage.template';
 
 /**
  * Startpage in main for route '/'
@@ -7,8 +9,6 @@ import template from './Startpage.template';
  */
 export default class Startpage extends Base {
 
-  template() {
-    return template;
-  }
-
 }
+
+Startpage.prototype.template = template;

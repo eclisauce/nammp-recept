@@ -27,7 +27,7 @@ export default class Base {
 
     Base.renderingInProgress = true;
     let oldBaseEl = this.baseEl;
-    this.baseEl = $(this['template' + templateNo]());
+    this.baseEl = $(this[templateNo || 'template']());
     this.addEvents(templateNo);
 
     // If subrendering to a temporary holder
