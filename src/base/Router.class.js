@@ -71,6 +71,9 @@ export default class Router {
     this.addRecipe = new AddRecipe();
     $('main').empty();
     this.addRecipe.render('main');
+    this.addRecipe.renderNewForm();
+    this.addRecipe.renderNewForm();
+    this.addRecipe.renderNewForm();
 
   }
 
