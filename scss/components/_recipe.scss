@@ -51,6 +51,26 @@
 
 #visaMer {
   margin-top: 1.5rem;
+
+  .progress {
+    box-shadow: 0 0 2px #777;
+  }
+}
+
+.progress-kolhydrater {
+  background-color: #f7e491;
+}
+
+.progress-protein {
+  background-color: #f79491;
+}
+
+.progress-fett {
+  background-color: #efe1c4;
+}
+
+.progress-salt {
+  background-color: #c1c0bd;
 }
 
 #sel1 {
