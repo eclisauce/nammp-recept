@@ -115,6 +115,47 @@ export default function() {
             <h4 class="naringsvarde-h4">Näringsvärde</h4>
             <h6 class="naringsvarde-h6">(per portion)</h6>
             <p class="d-inline"><span class="font-weight-bold">Energi:</span> 600 kcal</p>
+            <a class="ml-4 collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
+              Visa mer
+            </a>
+            <div class="collapse" id="visaMer">
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mb-1">
+                    <span class="font-weight-bold">Kolhydrater</span> 85g
+                  </p>
+                </div>
+                <div class="col-12 col-sm-8">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mb-1">
+                    <span class="font-weight-bold">Protein</span> 32g
+                  </p>
+                </div>
+                <div class="col-12 col-sm-8">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mb-1">
+                    <span class="font-weight-bold">Fett</span> 41g
+                  </p>
+                </div>
+                <div class="col-12 col-sm-8">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mb-0">
+                    <span class="font-weight-bold">Salt</span> 3g
+                  </p>
+                </div>
+                <div class="col-12 col-sm-8">
+                </div>
+              </div>
+            </div>
           </section>
           <!-- end näringsvärde -->
 
