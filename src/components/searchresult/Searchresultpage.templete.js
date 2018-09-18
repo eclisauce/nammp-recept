@@ -1,60 +1,6 @@
-<!doctype html>
-<html lang="sv">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Font awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/creative.min.css">
-
-  <title>Recept och Näring - Sök på recept</title>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header class="">
-    <nav class="navbar navbar-expand-lg navbar-light p-3 px-md-0 py-md-5 container">
-      <a class="navbar-brand" href="/"><span>Recept</span><span>&</span><span>Näring</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Collapsing Navigation -->
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item px-4">
-            <a class="nav-link" href="/">Hem</a>
-          </li>
-          <li class="nav-item px-4 active">
-            <a class="nav-link" href="/recipes.html">Recept</a>
-          </li>
-          <li class="nav-item px-4">
-            <a class="nav-link" href="/add-recipe.html">Lägg till recept</a>
-          </li>
-        </ul>
-      </div>
-      <!-- // Collapsing Navigation End -->
-    </nav>
-    <!-- Search field -->
-
-    <div class="border search-holder ">
-      <div class="container header__search ">
-        <i class="fas fa-search"></i>
-        <input class="form-control form-control-lg pl-5 border-0" type="text" placeholder="Sök på recept..."></input>
-      </div>
-    </div>
-  </header>
-  <!-- // HEADER END -->
-
-
-
+export default function() {
+  return `
+  
   <main class="container mt-0 mt-md-3">
     <article class="row">
 
@@ -171,7 +117,7 @@
       <section class="col-12 col-md-8 col-lg-9 p-0 pl-md-3 pt-3 pt-md-0">
         <!-- Media object component -->
 
-        <a href="recipe.html" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag">
           <div class="media p-1 p-sm-3 mt-0 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/vegetarisk-spaghetti-bolognese-pa-rotselleri-och-morotter.jpg"
               alt="Generic placeholder image">
@@ -188,7 +134,7 @@
           </div>
         </a>
 
-        <a href="recipe.html" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/matvetesallad-med-varmrokt-lax.jpg"
               alt="Generic placeholder image">
@@ -205,7 +151,7 @@
           </div>
         </a>
 
-        <a href="recipe.html" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/raggmunk-med-svamp-och-lingon.jpg"
               alt="Generic placeholder image">
@@ -222,7 +168,7 @@
           </div>
         </a>
 
-        <a href="recipe.html" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/halloumitacos-med-avokadokram-och-inlagd-lok.jpg"
               alt="Generic placeholder image">
@@ -239,7 +185,7 @@
           </div>
         </a>
 
-        <a href="recipe.html" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/graddig-fisksoppa-med-rakor-och-saffran.jpg"
               alt="Generic placeholder image">
@@ -259,28 +205,7 @@
 
     </article>
 
-
   </main>
-
-  <!-- FOOTER -->
-  <footer class="p-2 p-md-4 pb-md-1">
-    <div class="container p-2 p-lg-3">
-      <div class="text-center text-secondary">
-        &copy; NAAMP Recipes 2018.
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Optional JavaScript -->
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script src="/bundle.js"></script>
-</body>
-
-</html>
+  
+  `;
+}
