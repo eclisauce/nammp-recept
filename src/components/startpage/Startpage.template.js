@@ -1,4 +1,4 @@
-export function() {
+export default function() {
   return `
     <article>
           <a href="recipes.html" class="no-decoration-a-tag">
