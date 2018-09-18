@@ -15,7 +15,6 @@ export default class AddRecipe extends Base {
     super();
     this.eventHandler();
     this.formCounter = 1;
-
   }
 
 

@@ -1,7 +1,7 @@
 export default `
   <header class="">
     <nav class="navbar navbar-expand-lg navbar-light p-3 px-md-0 py-md-5 container">
-      <a class="navbar-brand" href="/"><span>Recept</span><span>&</span><span>Näring</span></a>
+      <a class="navbar-brand pop" href="/"><span>Recept</span><span>&</span><span>Näring</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,13 +10,13 @@ export default `
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item px-4">
-            <a class="nav-link" href="/">Hem</a>
+            <a class="nav-link pop" href="/">Hem</a>
           </li>
           <li class="nav-item px-4">
             <a class="nav-link" href="/recipes.html">Recept</a>
           </li>
           <li class="nav-item px-4">
-            <a class="nav-link" href="/add-recipe">Lägg till recept</a>
+            <a class="nav-link pop" href="/add-recipe">Lägg till recept</a>
           </li>
         </ul>
       </div>
