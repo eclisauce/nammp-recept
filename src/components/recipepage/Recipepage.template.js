@@ -19,7 +19,7 @@ export default function() {
                     <p><i class="fas fa-utensils"></i> Kalorier: ${this.recipe.nutrientsPerPortion.calories}</p>
                   </div>
                   <div class="d-flex">
-                    <p><i class="far fa-clock"></i> Tid: ${this.calcTime()}</p>
+                    <p><i class="far fa-clock"></i> Tid: ${this.calcTime(this.recipe)}</p>
                   </div>
                 </div>
               </div>

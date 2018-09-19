@@ -1,6 +1,5 @@
 import Base from '../../base/Base.class';
 import template from './Recipepage.template';
-import data from '../../base/JsonLoad.class';
 
 
 
@@ -22,7 +21,7 @@ export default class Recipepage extends Base {
   */
 
   checkIfDataExist(){
-    if(data.recipes && data.foodData) {
+    if(this.recipes && this.foodData) {
       this.start();
     } else {
       setTimeout(() => { this.checkIfDataExist(); }, 300);
@@ -59,11 +58,11 @@ export default class Recipepage extends Base {
 
   /**
    * Finding a recipe by its title
-   *
+   * Should be provided from the contructor later on.
    */
   getRecipe(str) {
-    console.log(data.recipes);
-    this.recipe = data.recipes.filter(recipe => recipe.title === str)[0];
+    console.log(this.recipes);
+    this.recipe = this.recipes.filter(recipe => recipe.title === str)[0];
   }
 
   /**
@@ -72,9 +71,8 @@ export default class Recipepage extends Base {
    */
   getIngredients(){
     let portions = $('#portion-selector').val() * 1;
-    console.log(portions);
     return this.recipe.ingredientsPerPortion.map(ingredient => {
-      return `<li class="list-group-item border-0">${ingredient.quantity * portions}${ingredient.unitOfMeasurement} ${ingredient.title}</li>`
+      return `<li class="list-group-item border-0">${ingredient.quantity * portions}${ingredient.unitOfMeasurement} ${ingredient.name}</li>`
     })
   }
 
@@ -93,24 +91,8 @@ export default class Recipepage extends Base {
   }
 
 
-  /**
-   * Calculate showed time from recipe.json into hours and minutes
-   *
-   */
-  calcTime(){
-    let time = this.recipe.time
-    let minutes = time % 60;
-    let hours = (time - minutes) / 60;
-    if(hours === 0){
-      return `${minutes} minuter`
-    } else if (minutes === 0) {
-      return `${hours} timmar`
-    } else {
-      return `${hours} timmar ${minutes} minuter`;
-    }
-  }
-
   renderIngredients(){
+    console.log(this.getIngredients());
     $('.ingredient-list').empty('').append(this.getIngredients());
   }
   

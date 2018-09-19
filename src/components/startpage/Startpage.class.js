@@ -1,6 +1,5 @@
 import Base from '../../base/Base.class';
 import template from './Startpage.template';
-import data from '../../base/JsonLoad.class';
 
 /**
  * Startpage in main for route '/'
@@ -20,18 +19,16 @@ export default class Startpage extends Base {
   * Code is repeated in more classes.
   *
   */
-
   checkIfDataExist(){
-    if(data.recipes && data.foodData) {
+    if(this.recipes && this.foodData) {
       this.start();
     } else {
-      setTimeout(() => { this.checkIfDataExist(); }, 100);
+      setTimeout(() => { this.checkIfDataExist(); }, 80);
     }
   }
 
   start(){
     this.fourRecipes = this.recipeBox();
-    console.log(this.fourRecipes);
     $('main').empty();
     this.render('main');
   }
@@ -42,7 +39,7 @@ export default class Startpage extends Base {
   *
   */
   recipeBox(){
-    let firstFour = data.recipes.slice(0,4);
+    let firstFour = this.recipes.slice(0,4);
 
     return firstFour.map(recipe => {
       return `
@@ -63,23 +60,6 @@ export default class Startpage extends Base {
       </a>
       `
     })
-  }
-
-  /**
-   * Calculate showed time from recipe.json into hours and minutes
-   * This needs to be optimized. Code is repeated in more classes.
-   */
-  calcTime(recipe){
-    let time = recipe.time
-    let minutes = time % 60;
-    let hours = (time - minutes) / 60;
-    if(hours === 0){
-      return `${minutes} minuter`
-    } else if (minutes === 0) {
-      return `${hours} timmar`
-    } else {
-      return `${hours} timmar ${minutes} minuter`;
-    }
   }
 
   

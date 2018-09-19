@@ -1,5 +1,3 @@
-import JsonLoad from './JsonLoad.class';
-
 /**
  * Rendering framework from Nodebite
  *
@@ -7,7 +5,7 @@ import JsonLoad from './JsonLoad.class';
 export default class Base {
 
   constructor() {
-    new JsonLoad();
+    this.loadAllJSON();
     if (!Base.subRenderCounter) {
       Base.subRenderCounter = 1;
       Base.renderingInProgress = false;
@@ -76,6 +74,34 @@ export default class Base {
       if (this[methodName]) {
         this.baseEl[type]((e) => this[methodName](e));
       }
+    }
+  }
+
+  // Global methods that are being used in more than one class
+
+  loadAllJSON(){
+    $.getJSON("/json/naring.json", (food) => {
+      this.foodData = food;
+    }).then(this.loadRecipeJSON());
+  }
+
+  loadRecipeJSON() {
+    $.getJSON("/json/recipes.json", (recipes) => {
+      this.recipes = recipes;
+    });
+  }
+
+
+  calcTime(recipe){
+    let time = recipe.time
+    let minutes = time % 60;
+    let hours = (time - minutes) / 60;
+    if(hours === 0){
+      return `${minutes} minuter`
+    } else if (minutes === 0) {
+      return `${hours} timmar`
+    } else {
+      return `${hours} timmar ${minutes} minuter`;
     }
   }
 }
