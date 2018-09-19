@@ -116,17 +116,17 @@ export default function() {
                   <p class="mb-1 d-inline">
                     <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total}g
                   </p>
-                  <a class="ml-1 collapsed" data-toggle="collapse" href="#varav" role="button" aria-expanded="false" aria-controls="varav">
-                    varav<i class="fas fa-chevron-down ml-2"></i>
+                  <a class="ml-1 collapsed" data-toggle="collapse" href="#varav" role="button" aria-expanded="false" aria-controls="varav"> <i class="fas fa-chevron-down ml-2"></i>
                   </a>
                   <div class="collapse" id="varav">
-                    <p class="mb-1">
-                      enkelomättat ${this.recipe.nutrientsPerPortion.fat.monounsaturated}g
+                    <p class="mb-1 ml-2">varav</p>
+                    <p class="mb-1 ml-3">
+                       enkelomättat ${this.recipe.nutrientsPerPortion.fat.monounsaturated}g
                     </p>
-                    <p class="mb-1">
+                    <p class="mb-1 ml-3">
                       mättat ${this.recipe.nutrientsPerPortion.fat.saturated}g
                     </p>
-                    <p class="mb-1">
+                    <p class="mb-1 ml-3">
                       fleromättat ${this.recipe.nutrientsPerPortion.fat.polyunsaturated}g
                     </p>
                   </div>
