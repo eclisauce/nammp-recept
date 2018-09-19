@@ -36,7 +36,7 @@ class App extends Base {
   loadJSONandStart() {
     $.getJSON("/json/food.json", (food) => {
       this.foodData = food.LivsmedelDataset.LivsmedelsLista[0].Livsmedel;
-
+      console.log(this.foodData)
     }).then($.getJSON("/json/recipes.json", (recipes) => {
       this.recipes = recipes;
 
