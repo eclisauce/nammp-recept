@@ -188,7 +188,7 @@ return `<article class="add-recipe container">
 
   </div>
   <div class="row my-4">
-    <div class="col-12 picture-upload mx-auto">
+    <div class="col-12 col-md-auto picture-upload mx-auto">
 
     </div>
   </div>

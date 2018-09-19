@@ -19,21 +19,31 @@ export default class AddRecipe extends Base {
     this.checkIfFormsAreFilled()
   }
 
+  change() {
+    /**
+    * Eventhandler to check if picture url is valid and displays preview
+    * @author Martin
+    */
+    if ($(event.target).attr('id') == 'imageLink') {
+      $('.picture-upload').empty();
+
+      const url = $(event.target).val();
+      const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/g;
+
+      if (url.match(regex)) {
+        this.render('.picture-upload', 'pictureUploadTemplate');
+        $(document).find('.picture-upload__img').attr('src', url);
+      }
+    }
+
+  }
 
   /**
    * Eventhandler for adding/removing ingredient-forms
    *
    */
   eventHandler() {
-    $(document).on('change', '#imageLink', () => {
-      const url = $(event.target).val();
-      $('.picture-upload').empty();
-      const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/g;
-      if (url.match(regex)) {
-        this.render('.picture-upload', 'pictureUploadTemplate');
-        $(document).find('.picture-upload__img').attr('src', url);
-      }
-    });
+
 
     $(document).on('click', '.delete-button', function(e) {
       e.preventDefault();
@@ -77,8 +87,6 @@ export default class AddRecipe extends Base {
         }
       }
     }
-
-    console.log(trueOrFalse);
 
     if (trueOrFalse) {
       this.renderNewForm();
