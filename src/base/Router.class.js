@@ -84,8 +84,6 @@ export default class Router {
 
   tikkaMasala() {
     this.recipe = new Recipepage();
-    $('main').empty();
-    this.recipe.render('main');
   }
 
   searchResult() {
