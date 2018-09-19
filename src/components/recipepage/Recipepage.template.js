@@ -102,24 +102,38 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mb-1">
-                    <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total}g
-                  </p>
-                </div>
-                <div class="col-12 col-sm-8">
-                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-fett" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.fat.total}%" aria-valuenow="${this.recipe.nutrientsPerPortion.fat.total}" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12 col-sm-4">
-                  <p class="mb-0">
                     <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
                     <div class="progress-bar progress-salt" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.salt}%" aria-valuenow="${this.recipe.nutrientsPerPortion.salt}" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mb-1 d-inline">
+                    <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total}g
+                  </p>
+                  <a class="ml-1 collapsed" data-toggle="collapse" href="#varav" role="button" aria-expanded="false" aria-controls="varav">
+                    varav<i class="fas fa-chevron-down ml-2"></i>
+                  </a>
+                  <div class="collapse" id="varav">
+                    <p class="mb-1">
+                      enkelomättat ${this.recipe.nutrientsPerPortion.fat.monounsaturated}g
+                    </p>
+                    <p class="mb-1">
+                      mättat ${this.recipe.nutrientsPerPortion.fat.saturated}g
+                    </p>
+                    <p class="mb-1">
+                      fleromättat ${this.recipe.nutrientsPerPortion.fat.polyunsaturated}g
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-fett" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.fat.total}%" aria-valuenow="${this.recipe.nutrientsPerPortion.fat.total}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
