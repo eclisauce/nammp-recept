@@ -117,7 +117,7 @@ export default function() {
       <section class="col-12 col-md-8 col-lg-9 p-0 pl-md-3 pt-3 pt-md-0">
         <!-- Media object component -->
 
-        <a href="/recipe" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag pop">
           <div class="media p-1 p-sm-3 mt-0 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/vegetarisk-spaghetti-bolognese-pa-rotselleri-och-morotter.jpg"
               alt="Generic placeholder image">
@@ -134,7 +134,7 @@ export default function() {
           </div>
         </a>
 
-        <a href="/recipe" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag pop">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/matvetesallad-med-varmrokt-lax.jpg"
               alt="Generic placeholder image">
@@ -151,7 +151,7 @@ export default function() {
           </div>
         </a>
 
-        <a href="/recipe" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag pop">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/raggmunk-med-svamp-och-lingon.jpg"
               alt="Generic placeholder image">
@@ -168,7 +168,7 @@ export default function() {
           </div>
         </a>
 
-        <a href="/recipe" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag pop">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/halloumitacos-med-avokadokram-och-inlagd-lok.jpg"
               alt="Generic placeholder image">
@@ -185,7 +185,7 @@ export default function() {
           </div>
         </a>
 
-        <a href="/recipe" class="no-decoration-a-tag">
+        <a href="/recipe" class="no-decoration-a-tag pop">
           <div class="media p-1 p-sm-3 mt-3 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="https://img.koket.se/recipelist/graddig-fisksoppa-med-rakor-och-saffran.jpg"
               alt="Generic placeholder image">

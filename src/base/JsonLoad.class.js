@@ -9,9 +9,9 @@
     constructor() {
       super();
       $.getJSON("/json/naring.json", (food) => {
-        this.foodData = food;
+        JsonLoad.foodData = food;
       }).then($.getJSON("/json/recipes.json", (recipes) => {
-        this.recipes = recipes;
+        JsonLoad.recipes = recipes;
       }));
     }
 
