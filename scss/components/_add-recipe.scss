@@ -20,7 +20,12 @@
     min-height: 58px;
   }
 
+  .picture-upload {
+      .picture-upload__img {
+        max-width: 100%;
 
+      }
+  }
 
   .add-ingredients-holder {
 
@@ -33,7 +38,7 @@
       border: 1px solid red;
       border-radius: 5px;
     }
-  
+
   }
 
 }

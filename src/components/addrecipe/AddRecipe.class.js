@@ -2,7 +2,8 @@ import Base from '../../base/Base.class';
 // import template from './AddRecipe.template';
 import {
   template,
-  template2
+  template2,
+  pictureUploadTemplate
 } from './AddRecipe.template';
 
 /**
@@ -14,24 +15,48 @@ export default class AddRecipe extends Base {
   constructor() {
     super();
     this.eventHandler();
-    this.formCounter = 0;
+    this.ingredientCounter = 0;
     this.checkIfFormsAreFilled()
   }
 
+  change() {
+    /**
+    * Eventhandler to check if picture url is valid and displays preview
+    * @author Martin
+    */
+    if ($(event.target).attr('id') == 'imageLink') {
+      $('.picture-upload').empty();
+
+      const url = $(event.target).val();
+      const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/g;
+
+      if (url.match(regex)) {
+        this.render('.picture-upload', 'pictureUploadTemplate');
+        $(document).find('.picture-upload__img').attr('src', url);
+      }
+    }
+
+  }
 
   /**
    * Eventhandler for adding/removing ingredient-forms
    *
    */
   eventHandler() {
-    $(document).on('click', '.delete-button', function (e) {
+
+
+    $(document).on('click', '.delete-button', function(e) {
       e.preventDefault();
-      let formNumber = `form-${$(this).data('deleteButtonId')}`;
-      $(`#${formNumber}`).remove();
+      let ingredientInput = `ingredientInput-${$(this).data('deleteButtonId')}`;
+      $(`#${ingredientInput}`).remove();
     })
 
     $(document).on('change', '#number-of-portions', () => {
       this.getSelectedPortions();
+    });
+    let that = this;
+    $(document).on('submit', 'form', function(e) {
+      that.submitForm(e, this)
     });
   }
 
@@ -67,8 +92,6 @@ export default class AddRecipe extends Base {
       }
     }
 
-    console.log(trueOrFalse);
-
     if (trueOrFalse) {
       this.renderNewForm();
     }
@@ -76,10 +99,49 @@ export default class AddRecipe extends Base {
 
   renderNewForm() {
     this.render('.add-ingredients-holder', 'template2')
-    this.formCounter++;
+    this.ingredientCounter++;
+  }
+
+  submitForm(e, formHtml) {
+    e.preventDefault();
+    let allFormData = $(formHtml).serializeArray();
+    let ingredientsPerPortion = [];
+
+    for (let i = 0; i < allFormData.length; i++) {
+      if (allFormData[i].name == 'Ingrediens') {
+        let ingredient = {};
+        ingredient.name = allFormData[i].value;
+        ingredient.quantity = allFormData[i+1].value;
+        ingredient.unitOfMeasurement = allFormData[i+2].value;
+        ingredient.lmTitle = allFormData[i+3].value;
+        ingredient.grams = allFormData[i+4].value;
+
+        ingredientsPerPortion.push(ingredient);
+      }
+      
+    }
+    
+    let modifiedRecipe = allFormData.reduce((obj, current)=>{
+      obj[current.name] = current.value;
+      return obj;
+    }, {});
+
+    delete modifiedRecipe.Ingrediens;
+    delete modifiedRecipe.Antal;
+    delete modifiedRecipe.Enhetsmått;
+    delete modifiedRecipe.IngrediensPerGram;
+    delete modifiedRecipe.IngrediensnamnLivsmedelsverket;
+
+    modifiedRecipe.ingredientsPerPortion = ingredientsPerPortion;
+
+    console.log(modifiedRecipe, "modified recipe obj")
+
+
+    // fs.writeFile('./www/json/aa.json', req.body); // backend-code
   }
 
 }
 
 AddRecipe.prototype.template2 = template2;
 AddRecipe.prototype.template = template;
+AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;
