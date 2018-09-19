@@ -19,13 +19,26 @@
   textarea {
     min-height: 58px;
   }
-  .delete-button {
-    color: white;
-    height: calc(2.25rem + 2px);
-    width: calc(2.25rem + 2px);
-    font-size: 1.5rem;
-    border: 1px solid red;
-    border-radius: 5px;
+
+  .picture-upload {
+      .picture-upload__img {
+        max-width: 100%;
+
+      }
+  }
+
+  .add-ingredients-holder {
+
+
+    .delete-button {
+      color: white;
+      height: calc(2.25rem + 2px);
+      width: calc(2.25rem + 2px);
+      font-size: 1.5rem;
+      border: 1px solid red;
+      border-radius: 5px;
+    }
+
   }
 
 }
