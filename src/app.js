@@ -9,8 +9,8 @@ import '../scss/main.scss';
 class App extends Base {
   constructor() {
     super();
-    this.loadJSONandStart();
     new Router();
+    this.start();
   }
 
   /**
@@ -25,24 +25,7 @@ class App extends Base {
     // Footer renderin
     this.footer = new Footer();
     this.footer.render('footer');
-
   }
-
-  /**
-   * Runs in the constructor
-   * Loading All JSON and then executing start
-   *
-   */
-  loadJSONandStart() {
-    $.getJSON("/json/food.json", (food) => {
-      this.foodData = food.LivsmedelDataset.LivsmedelsLista[0].Livsmedel;
-      console.log(this.foodData)
-    }).then($.getJSON("/json/recipes.json", (recipes) => {
-      this.recipes = recipes;
-
-    })).then(this.start());
-  }
-
 
 }
 

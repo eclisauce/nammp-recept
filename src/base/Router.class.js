@@ -68,8 +68,6 @@ export default class Router {
 
   startpage() {
     this.startPage = new Startpage();
-    $('main').empty();
-    this.startPage.render('main');
   }
 
   addrecipe() {
@@ -84,14 +82,10 @@ export default class Router {
 
   tikkaMasala() {
     this.recipe = new Recipepage();
-    $('main').empty();
-    this.recipe.render('main');
   }
 
   searchResult() {
     this.searchresult = new Searchresult();
-    $('main').empty();
-    this.searchresult.render('main'); 
   }
 
 
