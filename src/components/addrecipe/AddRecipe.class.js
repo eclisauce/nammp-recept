@@ -14,7 +14,8 @@ export default class AddRecipe extends Base {
   constructor() {
     super();
     this.eventHandler();
-    this.formCounter = 1;
+    this.formCounter = 0;
+    this.checkIfFormsAreFilled()
   }
 
 
@@ -23,7 +24,7 @@ export default class AddRecipe extends Base {
    *
    */
   eventHandler() {
-    $(document).on('click', '.delete-button', function(e) {
+    $(document).on('click', '.delete-button', function (e) {
       e.preventDefault();
       let formNumber = `form-${$(this).data('deleteButtonId')}`;
       $(`#${formNumber}`).remove();
@@ -36,8 +37,10 @@ export default class AddRecipe extends Base {
 
   click() {
     if ($(event.target).attr('id') == 'add-form') {
-      this.render('.add-ingredients-holder', 'template2')
-      this.formCounter++;
+      this.renderNewForm();
+    }
+    if ($(event.target).attr('id') == 'test') {
+      this.checkIfFormsAreFilled();
     }
   }
 
@@ -48,6 +51,32 @@ export default class AddRecipe extends Base {
    */
   getSelectedPortions() {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
+  }
+
+  checkIfFormsAreFilled() {
+    let kalle = $('.ingredient-form');
+    let koala = kalle.length;
+    let trueOrFalse = true;
+    let array = ['name', 'quantity', 'measurement', 'dataname', 'grams']
+
+    for (let i = 0; i < koala; i++) {
+      for (let j = 0; j < array.length; j++) {
+        if ($(`.${array[j]}-ingredient-${i}`).val() == '') {
+          trueOrFalse = false;
+        }
+      }
+    }
+
+    console.log(trueOrFalse);
+
+    if (trueOrFalse) {
+      this.renderNewForm();
+    }
+  }
+
+  renderNewForm() {
+    this.render('.add-ingredients-holder', 'template2')
+    this.formCounter++;
   }
 
 }

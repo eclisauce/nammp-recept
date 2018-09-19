@@ -13,7 +13,7 @@ export default `
             <a class="nav-link pop" href="/">Hem</a>
           </li>
           <li class="nav-item px-4">
-            <a class="nav-link" href="/recipes.html">Recept</a>
+            <a class="nav-link" href="/searchresult">Recept</a>
           </li>
           <li class="nav-item px-4">
             <a class="nav-link pop" href="/add-recipe">Lägg till recept</a>
