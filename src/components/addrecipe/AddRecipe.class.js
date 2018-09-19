@@ -2,7 +2,8 @@ import Base from '../../base/Base.class';
 // import template from './AddRecipe.template';
 import {
   template,
-  template2
+  template2,
+  pictureUploadTemplate
 } from './AddRecipe.template';
 
 /**
@@ -24,7 +25,17 @@ export default class AddRecipe extends Base {
    *
    */
   eventHandler() {
-    $(document).on('click', '.delete-button', function (e) {
+    $(document).on('change', '#imageLink', () => {
+      const url = $(event.target).val();
+      $('.picture-upload').empty();
+      const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/g;
+      if (url.match(regex)) {
+        this.render('.picture-upload', 'pictureUploadTemplate');
+        $(document).find('.picture-upload__img').attr('src', url);
+      }
+    });
+
+    $(document).on('click', '.delete-button', function(e) {
       e.preventDefault();
       let formNumber = `form-${$(this).data('deleteButtonId')}`;
       $(`#${formNumber}`).remove();
@@ -83,3 +94,4 @@ export default class AddRecipe extends Base {
 
 AddRecipe.prototype.template2 = template2;
 AddRecipe.prototype.template = template;
+AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;

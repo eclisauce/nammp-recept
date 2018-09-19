@@ -187,7 +187,13 @@ return `<article class="add-recipe container">
     </div>
 
   </div>
+  <div class="row my-4">
+    <div class="col-12 picture-upload mx-auto">
+
+    </div>
+  </div>
 </article>
+
 `;
 }
 
@@ -224,19 +230,26 @@ return `<form class="mb-md-4 mb-1 mb-lg-1 ingredient-form" id="form-${this.formC
         <input type="text" class="form-control dataname-ingredient-${this.formCounter}" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
       </div>
-  
+
       <div class="col d-flex pt-2">
         <input type="text" class="form-control grams-ingredient-${this.formCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
-  
+
       <button data-delete-button-id="${this.formCounter}" class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
-  
+
     </div>
 </form>`;
 }
 
+function pictureUploadTemplate() {
+    return `
+      <img src="" class="picture-upload__img"  alt="Uppladdat recept foto"/>
+    `;
+  }
+
 export {
 template,
-template2
+template2,
+pictureUploadTemplate
 }
