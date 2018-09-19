@@ -17,7 +17,7 @@ export default class Recipepage extends Base {
 
   /**
   * Method for checking if data has been loaded properly. 
-  *
+  * Need to optimize this. Data needs to always be loaded.
   *
   */
 

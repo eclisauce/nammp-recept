@@ -14,6 +14,13 @@ export default class Startpage extends Base {
 
   }
 
+  /**
+  * Method for checking if data has been loaded properly. 
+  * Need to optimize this. Data needs to always be loaded.
+  * Code is repeated in more classes.
+  *
+  */
+
   checkIfDataExist(){
     if(data.recipes && data.foodData) {
       this.start();
@@ -29,22 +36,15 @@ export default class Startpage extends Base {
     this.render('main');
   }
 
+  /**
+  * Gets the firt 4 recipes in JSON. 
+  * Returns a template with data from JSON
+  *
+  */
   recipeBox(){
     let firstFour = data.recipes.slice(0,4);
 
     return firstFour.map(recipe => {
-      function calcTime(){
-        let time = recipe.time
-        let minutes = time % 60;
-        let hours = (time - minutes) / 60;
-        if(hours === 0){
-          return `${minutes} minuter`
-        } else if (minutes === 0) {
-          return `${hours} timmar`
-        } else {
-          return `${hours} timmar ${minutes} minuter`;
-        }
-      }
       return `
       <a href="/recipe" class="no-decoration-a-tag col-lg-6 p-0 d-flex px-2">
         <div class="media pl-3 p-1 p-sm-3 border">
@@ -56,13 +56,30 @@ export default class Startpage extends Base {
             <p class="my-1 my-sm-2">${recipe.description}</p>
             <div class="row recipe-info-wrapper">
               <p class="col-6 my-0 mt-sm-2 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories} kalorier</p>
-              <p class="col-6 my-0 mt-sm-2 text-muted text-right"><i class="far fa-clock mr-2"></i>${calcTime()}</p>
+              <p class="col-6 my-0 mt-sm-2 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
             </div>
           </div>
         </div>
       </a>
       `
     })
+  }
+
+  /**
+   * Calculate showed time from recipe.json into hours and minutes
+   * This needs to be optimized. Code is repeated in more classes.
+   */
+  calcTime(recipe){
+    let time = recipe.time
+    let minutes = time % 60;
+    let hours = (time - minutes) / 60;
+    if(hours === 0){
+      return `${minutes} minuter`
+    } else if (minutes === 0) {
+      return `${hours} timmar`
+    } else {
+      return `${hours} timmar ${minutes} minuter`;
+    }
   }
 
   
