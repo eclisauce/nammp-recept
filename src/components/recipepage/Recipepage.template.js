@@ -70,7 +70,7 @@ export default function() {
           <section class="naringsvarde mt-4 p-4">
             <h4 class="naringsvarde-h4">Näringsvärde</h4>
             <h6 class="naringsvarde-h6">(per portion)</h6>
-            <p class="d-inline"><span class="font-weight-bold">Energi:</span> 600 kcal</p>
+            <p class="d-inline"><span class="font-weight-bold">Energi:</span> ${this.recipe.nutrientsPerPortion.calories} kcal</p>
             <a class="ml-4 collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
               Visa mer<i class="fas fa-chevron-down ml-2"></i>
             </a>
@@ -78,48 +78,48 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mb-1">
-                    <span class="font-weight-bold">Kolhydrater</span> 85g
+                    <span class="font-weight-bold">Kolhydrater</span> ${this.recipe.nutrientsPerPortion.carbohydrates}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-kolhydrater" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar progress-kolhydrater" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.carbohydrates}%" aria-valuenow="${this.recipe.nutrientsPerPortion.carbohydrates}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mb-1">
-                    <span class="font-weight-bold">Protein</span> 32g
+                    <span class="font-weight-bold">Protein</span> ${this.recipe.nutrientsPerPortion.protein}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-protein" role="progressbar" style="width: 32%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar progress-protein" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.protein}%" aria-valuenow="${this.recipe.nutrientsPerPortion.protein}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mb-1">
-                    <span class="font-weight-bold">Fett</span> 41g
+                    <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-fett" role="progressbar" style="width: 41%" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar progress-fett" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.fat.total}%" aria-valuenow="${this.recipe.nutrientsPerPortion.fat.total}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mb-0">
-                    <span class="font-weight-bold">Salt</span> 3g
+                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-salt" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar progress-salt" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.salt}%" aria-valuenow="${this.recipe.nutrientsPerPortion.salt}" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
               </div>
