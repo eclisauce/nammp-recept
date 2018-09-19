@@ -11,6 +11,12 @@ export default class Recipepage extends Base {
     this.pictureRandomizer();
   }
 
+  /**
+   * Method to randomly select a background image 
+   * for the "header" of the recipe page
+   * Selects image from an array and uses it as the value
+   * of the background-image property
+   */
   pictureRandomizer() {
     $(document).ready(function() {
       // An array of background-image pictures to select from
