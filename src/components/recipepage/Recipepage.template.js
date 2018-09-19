@@ -81,34 +81,8 @@ export default function() {
         <article class="col-lg-7 col-12 col-md-12 d-flex flex-column recipe-instruction pt-3 pl-md-4">
           <h2 class="text-center instructions-h2">Utförande</h2>
           <section class="my-4">
-            <ol class="d-flex flex-column list-unstyled">
-              <!-- Instruction Li -->
-              <li class="d-flex">
-                <div class="flex-grow-1 ml-4">
-                  Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med
-                  kryddröran.
-                </div>
-              </li>
-              <!-- End instruction li -->
-              <li class="d-flex">
-                <div class="flex-grow-1 ml-4">
-                  Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den
-                  svettas i 1-2 min.
-                </div>
-              </li>
-              <li class="d-flex">
-                <div class="flex-grow-1 ml-4">
-                  Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min,
-                  häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20
-                  min för att komma ihop.
-                </div>
-              </li>
-              <li class="d-flex">
-                <div class="flex-grow-1 ml-4">
-                  Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden
-                  tilsätt mer garm masala efter smak.
-                </div>
-              </li>
+            <ol class="d-flex flex-column list-unstyled instruction-list">
+             
             </ol>
           </section>
         </article>

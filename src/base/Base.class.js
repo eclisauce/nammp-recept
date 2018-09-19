@@ -1,3 +1,5 @@
+import JsonLoad from './JsonLoad.class';
+
 /**
  * Rendering framework from Nodebite
  *
@@ -5,6 +7,7 @@
 export default class Base {
 
   constructor() {
+    new JsonLoad();
     if (!Base.subRenderCounter) {
       Base.subRenderCounter = 1;
       Base.renderingInProgress = false;
