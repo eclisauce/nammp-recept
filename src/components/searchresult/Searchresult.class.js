@@ -36,8 +36,10 @@ export default class Searchresult extends Base {
 
   /**
   * Eventhandler
-  * A button and an input-field for testing with words like "Fika" or "Festmåltid"
-  *
+  * Checks if there is a change to checkboxes.
+  * Then either add the name of it to an array or remove it
+  * Call filterAndRender
+  * 
   */
   change(){
     if ($(event.target).is('input[type=checkbox]')) {
@@ -54,6 +56,12 @@ export default class Searchresult extends Base {
     }
   }
 
+
+  /**
+  * Rewrites the filtered recipes then calls the render method.
+  * 
+  *
+  */
   filterAndRender(){
     this.filteredRecipes = this.filterRecipe(this.filterArray);
     this.renderRecipeBoxes();
