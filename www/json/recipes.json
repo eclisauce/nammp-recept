@@ -119,7 +119,7 @@
         "total": 36
       }
     },
-    "filters" : ["Festmåltid", "Endast Kött", "Vegetariskt"]
+    "filters" : ["Festmåltider", "Endast Kött", "Vegetariskt"]
   },
   {
     "title": "Matvetesallad med varmrökt lax",
@@ -241,7 +241,7 @@
         "total": 36
       }
     },
-    "filters" : ["Festmåltid", "Endast Kött"]
+    "filters" : ["Festmåltider", "Endast Kött"]
   },
   {
     "title": "Raggmunk med svamp och lingon",
@@ -363,7 +363,7 @@
         "total": 36
       }
     },
-    "filters" : ["Festmåltid", "Endast Kött", "Fika"]
+    "filters" : ["Festmåltider", "Endast Kött", "Fika"]
   },
   {
     "title": "Halloumitacos med avokadokräm",
@@ -485,6 +485,6 @@
         "total": 36
       }
     },
-    "filters" : ["Festmåltid", "Endast Kött"]
+    "filters" : ["Festmåltider", "Endast Kött"]
   }
 ]

@@ -2,8 +2,6 @@ export default function() {
   return `
   
   <div class="container mt-0 mt-md-3">
-  <button class="btn bajs">test</button>
-  <input type="text" class="testing-filters"></input>
     <article class="row">
 
       <aside class="col-12 col-md-4 col-lg-3 bg-white border align-self-start">
@@ -20,49 +18,49 @@ export default function() {
 
             <label class="checkboxContainer border-checkbox">
               <p>Huvudrätt</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Huvudrätter">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Festmåltider</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Festmåltider">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Fika</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Fika">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Buffé</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Buffé">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Grytor</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Grytor">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Asiatiskt</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Asiatiskt">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Husmanskost</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Husmanskost">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Italienskt</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Italienskt">
               <span class="checkmark border"></span>
             </label>
 
@@ -81,25 +79,25 @@ export default function() {
           <div class="collapse show mt-2 ml-3" id="collapseFilter">
             <label class="checkboxContainer border-checkbox">
               <p>Vegetariskt</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Vegetariskt">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Veganskt</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Veganskt">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Laktosfritt</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Laktosfritt">
               <span class="checkmark border"></span>
             </label>
 
             <label class="checkboxContainer border-checkbox">
               <p>Endast kött</p>
-              <input type="checkbox">
+              <input type="checkbox" name="Endast Kött">
               <span class="checkmark border"></span>
             </label>
           </div>

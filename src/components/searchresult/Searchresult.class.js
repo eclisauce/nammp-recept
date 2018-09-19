@@ -29,8 +29,8 @@ export default class Searchresult extends Base {
   start(){
     $('main').empty();
     this.render('main');
-    this.filteredRecipes = this.filterRecipe([]);
-    this.renderRecipeBoxes();
+    this.filterArray = [];
+    this.filterAndRender();
   }
 
 
@@ -39,12 +39,24 @@ export default class Searchresult extends Base {
   * A button and an input-field for testing with words like "Fika" or "Festmåltid"
   *
   */
-  click() {
-    if ($(event.target).hasClass('bajs')) {
-      console.log($('.testing-filters').val())
-      this.filteredRecipes = this.filterRecipe([$('.testing-filters').val()]);
-      this.renderRecipeBoxes();
+  change(){
+    if ($(event.target).is('input[type=checkbox]')) {
+      let name = $(event.target).attr('name');
+      if($(event.target).is(':checked')) {
+        this.filterArray.push(name);
+      } else {
+        let index = this.filterArray.indexOf(name);
+        if(index > -1) {
+          this.filterArray.splice(index, 1)
+        }
+      }
+      this.filterAndRender();
     }
+  }
+
+  filterAndRender(){
+    this.filteredRecipes = this.filterRecipe(this.filterArray);
+    this.renderRecipeBoxes();
   }
 
   /**
