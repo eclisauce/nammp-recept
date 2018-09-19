@@ -68,8 +68,6 @@ export default class Router {
 
   startpage() {
     this.startPage = new Startpage();
-    $('main').empty();
-    this.startPage.render('main');
   }
 
   addrecipe() {
