@@ -86,8 +86,6 @@ export default class Router {
 
   searchResult() {
     this.searchresult = new Searchresult();
-    $('main').empty();
-    this.searchresult.render('main'); 
   }
 
 

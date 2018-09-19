@@ -119,7 +119,7 @@
         "total": 36
       }
     },
-    "filters" : ["Festmåltid", "Endast Kött"]
+    "filters" : ["Festmåltid", "Endast Kött", "Vegetariskt"]
   },
   {
     "title": "Matvetesallad med varmrökt lax",
@@ -363,7 +363,7 @@
         "total": 36
       }
     },
-    "filters" : ["Festmåltid", "Endast Kött"]
+    "filters" : ["Festmåltid", "Endast Kött", "Fika"]
   },
   {
     "title": "Halloumitacos med avokadokräm",

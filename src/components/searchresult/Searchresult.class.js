@@ -6,7 +6,89 @@ import template from './Searchresultpage.template';
  *
  */
 export default class Searchresult extends Base {
+  constructor(){
+    super();
+    this.checkIfDataExist();
 
+  }
+
+  /**
+  * Method for checking if data has been loaded properly. 
+  * Need to optimize this. Data needs to always be loaded.
+  * Code is repeated in more classes.
+  *
+  */
+  checkIfDataExist(){
+    if(this.recipes && this.foodData) {
+      this.start();
+    } else {
+      setTimeout(() => { this.checkIfDataExist(); }, 80);
+    }
+  }
+
+  start(){
+    $('main').empty();
+    this.render('main');
+    this.filteredRecipes = this.filterRecipe([]);
+    this.renderRecipeBoxes();
+  }
+
+
+  /**
+  * Eventhandler
+  * A button and an input-field for testing with words like "Fika" or "Festmåltid"
+  *
+  */
+  click() {
+    if ($(event.target).hasClass('bajs')) {
+      console.log($('.testing-filters').val())
+      this.filteredRecipes = this.filterRecipe([$('.testing-filters').val()]);
+      this.renderRecipeBoxes();
+    }
+  }
+
+  /**
+  * Filtering recipes after an array with filter-words
+  * 
+  *
+  */
+  filterRecipe(filterArray){
+    let arr = this.recipes.filter(recipe => {
+        if (filterArray.every(filter => {
+          return recipe.filters.includes(filter)
+        })) {
+          return recipe;
+        }
+    })
+    return arr;
+  }
+
+  /**
+  * Render all filtered boxes.
+  * 
+  *
+  */
+  renderRecipeBoxes(){
+    let newarr = this.filteredRecipes.map(recipe => {
+      return `<a href="/recipe" class="no-decoration-a-tag pop">
+      <div class="media p-1 p-sm-3 mt-0 border">
+        <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
+          alt="${recipe.imgAlt}">
+        <div class="media-body">
+          <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
+          <i class="fas fa-angle-right fa-lg"></i>
+          <p class="mt-2">${recipe.description}</p>
+          <div class="row recipe-info-wrapper">
+            <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories} kalorier</p>
+            <p class="col-6 mb-0 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
+          </div>
+        </div>
+      </div>
+    </a>`
+    })
+
+    $('.search-recipe-result').empty().append(newarr.join(''));
+  }
 }
 
 Searchresult.prototype.template = template;

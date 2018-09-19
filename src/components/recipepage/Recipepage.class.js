@@ -24,7 +24,7 @@ export default class Recipepage extends Base {
     if(this.recipes && this.foodData) {
       this.start();
     } else {
-      setTimeout(() => { this.checkIfDataExist(); }, 300);
+      setTimeout(() => { this.checkIfDataExist(); }, 80);
     }
   }
 
