@@ -2,7 +2,8 @@ import Base from '../../base/Base.class';
 // import template from './AddRecipe.template';
 import {
   template,
-  template2
+  template2,
+  pictureUploadTemplate
 } from './AddRecipe.template';
 
 /**
@@ -18,13 +19,33 @@ export default class AddRecipe extends Base {
     this.checkIfFormsAreFilled()
   }
 
+  change() {
+    /**
+    * Eventhandler to check if picture url is valid and displays preview
+    * @author Martin
+    */
+    if ($(event.target).attr('id') == 'imageLink') {
+      $('.picture-upload').empty();
+
+      const url = $(event.target).val();
+      const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/g;
+
+      if (url.match(regex)) {
+        this.render('.picture-upload', 'pictureUploadTemplate');
+        $(document).find('.picture-upload__img').attr('src', url);
+      }
+    }
+
+  }
 
   /**
    * Eventhandler for adding/removing ingredient-forms
    *
    */
   eventHandler() {
-    $(document).on('click', '.delete-button', function (e) {
+
+
+    $(document).on('click', '.delete-button', function(e) {
       e.preventDefault();
       let ingredientInput = `ingredientInput-${$(this).data('deleteButtonId')}`;
       $(`#${ingredientInput}`).remove();
@@ -70,8 +91,6 @@ export default class AddRecipe extends Base {
         }
       }
     }
-
-    console.log(trueOrFalse);
 
     if (trueOrFalse) {
       this.renderNewForm();
@@ -125,3 +144,4 @@ export default class AddRecipe extends Base {
 
 AddRecipe.prototype.template2 = template2;
 AddRecipe.prototype.template = template;
+AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;
