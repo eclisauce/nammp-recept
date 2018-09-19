@@ -19,11 +19,11 @@ export default class Recipepage extends Base {
    */
   pictureRandomizer() {
     $(document).ready(function() {
-      // An array of background-image pictures to select from
-      let backgroundPictureArray = ["url(/img/start-picture.jpg)", "url(/img/recept-cover.jpeg)"];
-      // Get a random number 0 - 1 (inclusive) to pick an image in the array
-      let randomNumber = Math.floor(Math.random() * 2);
-      // Select background-image from array
+      // An array of strings of background-image pictures to select from
+      let backgroundPictureArray = ["url(/img/start-picture.jpg)", "url(/img/recept-cover.jpeg)", "url(/img/recept-cover-2.jpg)", "url(/img/recept-cover-3.jpg)"];
+      // Get a random number 0 - 3 (inclusive)
+      let randomNumber = Math.floor(Math.random() * 4);
+      // Select background-image from array using randomNumber as index
       let recipeBackgroundPicture = backgroundPictureArray[randomNumber];
       // Insert chosen background-image as value to the background-image property
       $('.recipe-top-part-2').css('background-image', recipeBackgroundPicture);
