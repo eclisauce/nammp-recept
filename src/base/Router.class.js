@@ -68,27 +68,24 @@ export default class Router {
 
   startpage() {
     this.startPage = new Startpage();
-    $('main').empty();
-    this.startPage.render('main');
   }
 
   addrecipe() {
     this.addRecipe = new AddRecipe();
     $('main').empty();
     this.addRecipe.render('main');
+    this.addRecipe.renderNewForm();
+    this.addRecipe.renderNewForm();
+    this.addRecipe.renderNewForm();
 
   }
 
   tikkaMasala() {
     this.recipe = new Recipepage();
-    $('main').empty();
-    this.recipe.render('main');
   }
 
   searchResult() {
     this.searchresult = new Searchresult();
-    $('main').empty();
-    this.searchresult.render('main'); 
   }
 
 
