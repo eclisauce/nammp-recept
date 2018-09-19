@@ -6,6 +6,23 @@ import template from './Recipepage.template';
  *
  */
 export default class Recipepage extends Base {
+  constructor() {
+    super();
+    this.pictureRandomizer();
+  }
+
+  pictureRandomizer() {
+    $(document).ready(function() {
+      // An array of background-image pictures to select from
+      let backgroundPictureArray = ["url(/img/start-picture.jpg)", "url(/img/recept-cover.jpeg)"];
+      // Get a random number 0 - 1 (inclusive) to pick an image in the array
+      let randomNumber = Math.floor(Math.random() * 2);
+      // Select background-image from array
+      let recipeBackgroundPicture = backgroundPictureArray[randomNumber];
+      // Insert chosen background-image as value to the background-image property
+      $('.recipe-top-part-2').css('background-image', recipeBackgroundPicture);
+    })
+  }
 
 }
 
