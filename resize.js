@@ -43,7 +43,7 @@ getjson()
     return await resizedArray;
   })
   .then((resizedArray) => {
-    fs.writeFile("./newTest.json", JSON.stringify(resizedArray, null, 2), (err) => {
+    fs.writeFile("./naring.json", JSON.stringify(resizedArray, null, 2), (err) => {
       if (err) {
         console.error(err);
         return;
