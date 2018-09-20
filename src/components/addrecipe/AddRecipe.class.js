@@ -1,7 +1,7 @@
 import Base from '../../base/Base.class';
 import {
   template,
-  template2,
+  ingredientTemplate,
   pictureUploadTemplate,
   instructionTemplate
 } from './AddRecipe.template';
@@ -54,16 +54,8 @@ export default class AddRecipe extends Base {
 
   /**
    * Eventhandler for adding/removing ingredient-forms
-   *
    */
   eventHandler() {
-
-    $(document).on('click', '.delete-button', function(e) {
-      e.preventDefault();
-      let ingredientInput = `ingredientInput-${$(this).data('deleteButtonId')}`;
-      $(`#${ingredientInput}`).remove();
-    })
-
     $(document).on('change', '#number-of-portions', () => {
       this.getSelectedPortions();
     });
@@ -82,19 +74,32 @@ export default class AddRecipe extends Base {
      this.render('.instruction-container', 'instructionTemplate');
     }
 
-    if ($(event.target).attr('id') == 'add-form') {
-      this.renderNewForm();
-    }
     if ($(event.target).attr('id') == 'test') {
       this.checkIfFormsAreFilled();
     }
+
+    /**
+    * Delete button - Deletes ingredient row when clicked
+    * @author Martin
+    */
+    if($(event.target).hasClass('delete-button')) {
+      $(event.target).parent().parent().fadeOut('slow', function() {
+        $(this).remove();
+      });
+    }
+
+    /**
+    * Button for adding a new line of ingredient
+    * @author Martin
+    */
+    $(event.target).attr('id') === 'add-form' ? this.renderNewForm() : null ;
   }
-  
+
 
   /**
-   * Returns number of portions selected to be displayed on h5.
-   *
-   */
+  * Returns number of portions selected to be displayed on h5.
+  *
+  */
   getSelectedPortions() {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
   }
@@ -119,7 +124,7 @@ export default class AddRecipe extends Base {
   }
 
   renderNewForm() {
-    this.render('.add-ingredients-holder', 'template2')
+    this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
   }
 
@@ -163,7 +168,7 @@ export default class AddRecipe extends Base {
 
 }
 
-AddRecipe.prototype.template2 = template2;
+AddRecipe.prototype.ingredientTemplate = ingredientTemplate;
 AddRecipe.prototype.template = template;
 AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;
 AddRecipe.prototype.instructionTemplate = instructionTemplate;

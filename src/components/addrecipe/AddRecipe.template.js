@@ -148,8 +148,12 @@ return `
           </div>
 
           <div class="mt-3 mt-md-4 add-ingredients-holder">
-            <h5 class="mb-0 display-portions">Ingredienser för 4 portioner</h5><button id="add-form">Add</button>
-            <button id="test">test</button>
+            <h5 class="mb-0 display-portions">Ingredienser för 4 portioner</h5>
+            <div class="add-ingredients-holder__list my-2">
+
+            </div>
+            <button type="button" id="add-form" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
+            <button type="button" id="test">test</button>
           </div>
 
           <div class="row">
@@ -175,7 +179,7 @@ return `
 
         <div class="col-md-6">
           <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg d-block float-md-right float-left mt-5 mt-md-0 font-weight-bold">
-            Lägg till och spara
+            Spara recept
           </button>
         </div>
 
@@ -191,9 +195,9 @@ return `
 `;
 }
 
-function template2() {
+function ingredientTemplate() {
 return `
-  <div class="mb-md-4 mb-1 mb-lg-1 ingredient-form" id="ingredientInput-${this.ingredientCounter}">
+  <div class="mb-md-4 mb-1 mb-lg-1 my-2 ingredient-form" id="ingredientInput-${this.ingredientCounter}">
     <div class="form-row">
       <div class="col-6 mb-0 mb-md-0 pt-2">
         <input type="text" name="Ingrediens" class="form-control name-ingredient-${this.ingredientCounter}" placeholder="Namn på ingrediens" data-toggle="tooltip" data-placement="bottom" title="Ange namn på ingrediens som visas i receptet">
@@ -229,7 +233,7 @@ return `
         <input type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
 
-      <button data-delete-button-id="${this.ingredientCounter}" class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger"
+      <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
 
     </div>
@@ -250,7 +254,7 @@ function instructionTemplate() {
 
 export {
   template,
-  template2,
+  ingredientTemplate,
   pictureUploadTemplate,
   instructionTemplate
 }
