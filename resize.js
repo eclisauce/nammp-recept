@@ -20,7 +20,14 @@ getjson()
   .then(async (jsondata) => {
     let resizedArray = [];
     for (let data of jsondata) {
-      resizedArray.push(_.pick(data, ['Namn', 'Naringsvarden', 'ViktGram']));
+      let obj = _.pick(data, ['Namn', 'Naringsvarden', 'ViktGram']);
+
+    	for (let prop in obj) {
+    		if (prop !== 'Naringsvarden') {
+          obj[prop] = obj[prop][0]
+        }
+      }
+      resizedArray.push(obj);
     }
 
     return await resizedArray
@@ -33,7 +40,12 @@ getjson()
       data.Naringsvarden[0].Naringsvarde.forEach((naring) => {
         if (naring.Namn[0].match(/Energi|Kolhydrater|Salt|\b(Fett)\b|Salt|Vitamin|Mineral|Summa\smättade\sfettsyror/)) {
           // ["Energi (kJ)", "Energi (kcal)", "Kolhydrater", /Salt/, "Fett", "Salt", /Vitamin/, "Mineral", "Summa mättade fettsyror"]
-          naringsvarde.push(_.pick(naring, ['Namn', 'Forkortning', 'Enhet', 'Varde']));
+          let obj = _.pick(naring, ['Namn', 'Forkortning', 'Enhet', 'Varde']);
+
+          for (let prop in obj) {
+            obj[prop] = obj[prop][0]
+          }
+          naringsvarde.push(obj)
         }
       });
 
@@ -43,7 +55,7 @@ getjson()
     return await resizedArray;
   })
   .then((resizedArray) => {
-    fs.writeFile("./naring.json", JSON.stringify(resizedArray, null, 2), (err) => {
+    fs.writeFile("./new-food.json", JSON.stringify(resizedArray, null, 2), (err) => {
       if (err) {
         console.error(err);
         return;
