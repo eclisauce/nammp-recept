@@ -161,6 +161,7 @@ return `
               <h5 class="text-dark">Instruktioner</h5>
               ${this.render('.instruction-container', 'instructionTemplate')}
             </div>
+            <button type="button" id="add-instr" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
           </div>
         </div> <!-- Closses right col-6 -->
 

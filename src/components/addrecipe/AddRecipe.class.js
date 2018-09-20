@@ -81,13 +81,17 @@ export default class AddRecipe extends Base {
 
   click() {
       /**
-      * Click outside formfield instruction for adding more instruction fields
+      * Click on #add-instr to add more instructionfields
       * @author Martin
       */
-    if ($(document).find('.instruction').last().val() !== '') {
+    if($(event.target).attr('id') === 'add-instr') {
       this.renderNewInstruction();
     }
 
+    /**
+    * Test purpop
+    * @author Andy / Niklas
+    */
     if ($(event.target).attr('id') == 'test') {
       this.checkIfFormsAreFilled();
     }
@@ -128,12 +132,20 @@ export default class AddRecipe extends Base {
   renderNewForm() {
     this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
-    $('.ingredient-form').last().find('input[type="text"]').eq(0).focus()
+    if (this.ingredientCounter > 3) {
+      $('.ingredient-form').last().find('input[type="text"]').eq(0).focus();
+    }
   }
 
   renderNewInstruction() {
-    this.instructionCounter++
-    this.render('.instruction-container', 'instructionTemplate');
+    $('.instr-warning').remove();
+    if($(document).find('.instruction').last().val() !== '') {
+      this.instructionCounter++
+      this.render('.instruction-container', 'instructionTemplate');
+    } else {
+      let that = this;
+      $(document).find('.instruction-container').append(`<div class="instr-warning">Du måste fylla i fältet för Instruktion ${that.instructionCounter} först.`)
+    }
   }
 
   submitForm(e, formHtml) {
