@@ -45,10 +45,10 @@ export default class AddRecipe extends Base {
     $(document).on('change', '#number-of-portions', () => {
       this.getSelectedPortions();
     });
-    // let that = this;
-    // $(document).on('submit', 'form', function(e) {
-    //   that.submitForm(e, this)
-    // });
+    let that = this;
+    $(document).on('submit', 'form', function(e) {
+      that.submitForm(e, this)
+    });
   }
 
   click() {
@@ -56,7 +56,11 @@ export default class AddRecipe extends Base {
     * Delete button - Deletes ingredient row when clicked
     * @author Martin
     */
-    $(event.target).hasClass('delete-button') ? $(event.target).parent().parent().remove() : null;
+    if($(event.target).hasClass('delete-button')) {
+      $(event.target).parent().parent().fadeOut('slow', function() {
+        $(this).remove();
+      });
+    }
 
     /**
     * Button for adding a new line of ingredient
