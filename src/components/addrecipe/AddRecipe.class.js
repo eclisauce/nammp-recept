@@ -1,9 +1,9 @@
 import Base from '../../base/Base.class';
-// import template from './AddRecipe.template';
 import {
   template,
   template2,
-  pictureUploadTemplate
+  pictureUploadTemplate,
+  instructionTemplate
 } from './AddRecipe.template';
 
 /**
@@ -38,12 +38,25 @@ export default class AddRecipe extends Base {
 
   }
 
+  keydown() {
+      /**
+      * Keyup on tab for adding more instruction fields
+      * @author Martin
+      */
+    if ($(event.target).hasClass('instruction')
+        && $(event.target).val() !== ''
+        && (event.keyCode == 9 || event.which == 9)
+      ) {
+     this.render('.instruction-container', 'instructionTemplate');
+    }
+
+  }
+
   /**
    * Eventhandler for adding/removing ingredient-forms
    *
    */
   eventHandler() {
-
 
     $(document).on('click', '.delete-button', function(e) {
       e.preventDefault();
@@ -61,6 +74,14 @@ export default class AddRecipe extends Base {
   }
 
   click() {
+      /**
+      * Click outside formfield instruction for adding more instruction fields
+      * @author Martin
+      */
+    if ($(document).find('.instruction').last().val() !== '') {
+     this.render('.instruction-container', 'instructionTemplate');
+    }
+
     if ($(event.target).attr('id') == 'add-form') {
       this.renderNewForm();
     }
@@ -68,7 +89,7 @@ export default class AddRecipe extends Base {
       this.checkIfFormsAreFilled();
     }
   }
-
+  
 
   /**
    * Returns number of portions selected to be displayed on h5.
@@ -118,9 +139,9 @@ export default class AddRecipe extends Base {
 
         ingredientsPerPortion.push(ingredient);
       }
-      
+
     }
-    
+
     let modifiedRecipe = allFormData.reduce((obj, current)=>{
       obj[current.name] = current.value;
       return obj;
@@ -145,3 +166,4 @@ export default class AddRecipe extends Base {
 AddRecipe.prototype.template2 = template2;
 AddRecipe.prototype.template = template;
 AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;
+AddRecipe.prototype.instructionTemplate = instructionTemplate;
