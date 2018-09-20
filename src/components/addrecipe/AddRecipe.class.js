@@ -2,7 +2,7 @@ import Base from '../../base/Base.class';
 // import template from './AddRecipe.template';
 import {
   template,
-  template2,
+  ingredientTemplate,
   pictureUploadTemplate
 } from './AddRecipe.template';
 
@@ -40,17 +40,8 @@ export default class AddRecipe extends Base {
 
   /**
    * Eventhandler for adding/removing ingredient-forms
-   *
    */
   eventHandler() {
-
-
-    $(document).on('click', '.delete-button', function(e) {
-      e.preventDefault();
-      let ingredientInput = `ingredientInput-${$(this).data('deleteButtonId')}`;
-      $(`#${ingredientInput}`).remove();
-    })
-
     $(document).on('change', '#number-of-portions', () => {
       this.getSelectedPortions();
     });
@@ -61,19 +52,28 @@ export default class AddRecipe extends Base {
   }
 
   click() {
-    if ($(event.target).attr('id') == 'add-form') {
-      this.renderNewForm();
+    /**
+    * Delete button - Deletes ingredient row when clicked
+    * @author Martin
+    */
+    if($(event.target).hasClass('delete-button')) {
+      $(event.target).parent().parent().fadeOut('slow', function() {
+        $(this).remove();
+      });
     }
-    if ($(event.target).attr('id') == 'test') {
-      this.checkIfFormsAreFilled();
-    }
+
+    /**
+    * Button for adding a new line of ingredient
+    * @author Martin
+    */
+    $(event.target).attr('id') === 'add-form' ? this.renderNewForm() : null ;
   }
 
 
   /**
-   * Returns number of portions selected to be displayed on h5.
-   *
-   */
+  * Returns number of portions selected to be displayed on h5.
+  *
+  */
   getSelectedPortions() {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
   }
@@ -98,7 +98,7 @@ export default class AddRecipe extends Base {
   }
 
   renderNewForm() {
-    this.render('.add-ingredients-holder', 'template2')
+    this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
   }
 
@@ -118,9 +118,9 @@ export default class AddRecipe extends Base {
 
         ingredientsPerPortion.push(ingredient);
       }
-      
+
     }
-    
+
     let modifiedRecipe = allFormData.reduce((obj, current)=>{
       obj[current.name] = current.value;
       return obj;
@@ -142,6 +142,6 @@ export default class AddRecipe extends Base {
 
 }
 
-AddRecipe.prototype.template2 = template2;
+AddRecipe.prototype.ingredientTemplate = ingredientTemplate;
 AddRecipe.prototype.template = template;
 AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;
