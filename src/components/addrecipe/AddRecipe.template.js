@@ -167,7 +167,7 @@ return `
         <div class="col-md-6">
           <div class="form-group m-0 w-100 pr-md-5">
             <h5 for="hrefLink">Länk till bild</h5>
-            <input type="text" class="form-control" name="imageLink" id="imageLink" aria-describedby="textHelp" placeholder="https://www.exempel.com/bild.jpg">
+            <input type="text" class="form-control" name="imgLink" id="imgLinkk" aria-describedby="textHelp" placeholder="https://www.exempel.com/bild.jpg">
             <small id="" class="form-text text-muted">Kom ihåg att ha med hela länken utan några förändringar
               på länken.</small>
           </div>

@@ -106,15 +106,25 @@ export default class AddRecipe extends Base {
     e.preventDefault();
     let allFormData = $(formHtml).serializeArray();
     let ingredientsPerPortion = [];
+    console.log(allFormData);
+
+    // Get number of portions
+    let numberOfPortions = allFormData.filter(data => data.name === 'portions')[0].value;
+
+    // Get checked ingrediens into an array.
+    let filters = allFormData.filter(data => data.value === 'on').map(filter => filter.name);
+    console.log(filters);
+
+
 
     for (let i = 0; i < allFormData.length; i++) {
       if (allFormData[i].name == 'Ingrediens') {
         let ingredient = {};
         ingredient.name = allFormData[i].value;
-        ingredient.quantity = allFormData[i+1].value;
+        ingredient.quantity = (allFormData[i+1].value * 1) / numberOfPortions;
         ingredient.unitOfMeasurement = allFormData[i+2].value;
         ingredient.lmTitle = allFormData[i+3].value;
-        ingredient.grams = allFormData[i+4].value;
+        ingredient.grams = (allFormData[i+4].value * 1) / numberOfPortions;
 
         ingredientsPerPortion.push(ingredient);
       }
@@ -126,6 +136,8 @@ export default class AddRecipe extends Base {
       return obj;
     }, {});
 
+
+
     delete modifiedRecipe.Ingrediens;
     delete modifiedRecipe.Antal;
     delete modifiedRecipe.Enhetsmått;
@@ -134,6 +146,23 @@ export default class AddRecipe extends Base {
 
     modifiedRecipe.ingredientsPerPortion = ingredientsPerPortion;
 
+    // Set portions to 1
+    modifiedRecipe.portions = 1;
+
+    // Delete filter objects
+    filters.forEach(filter => {
+      delete modifiedRecipe[filter];
+    })
+
+    // Set filters
+    modifiedRecipe.filters = filters;
+
+    // Make time to number
+    modifiedRecipe.time = modifiedRecipe.time * 1;
+
+    // JSON._save('bajs.json', modifiedRecipe).then(function(){
+    //   console.log('Saved!');
+    // });
     console.log(modifiedRecipe, "modified recipe obj")
 
 
