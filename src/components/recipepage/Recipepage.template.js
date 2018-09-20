@@ -65,6 +65,87 @@ export default function() {
               ${this.getInstructions()}
             </ol>
           </section>
+
+          <!-- Start Näringsvärde -->
+          <section class="naringsvarde mt-4 p-4">
+            <h4 class="naringsvarde-h4">Näringsvärde</h4>
+            <h6 class="naringsvarde-h6">(per portion)</h6>
+            <p class="d-inline"><span class="font-weight-bold">Energi:</span> ${this.recipe.nutrientsPerPortion.calories} kcal</p>
+            <a class="ml-4 collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
+              Visa detaljerad näringsinformation<i class="fas fa-chevron-down ml-2"></i>
+            </a>
+            <div class="collapse" id="visaMer">
+              <div class="row">
+                <div class="col-3 ml-auto text-right">
+                  <p class="mb-0 text-muted rdi-text" data-toggle="tooltip" data-placement="top" title="Livsmedelsverkets rekommenderade dagliga intag">% av RDI*</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mt-1 mt-sm-0 mb-1">
+                    <span class="font-weight-bold">Kolhydrater</span> ${this.recipe.nutrientsPerPortion.carbohydrates}g
+                  </p>
+                </div>
+                <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-kolhydrater" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100).toFixed()}%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mt-1 mt-sm-0 mb-1">
+                    <span class="font-weight-bold">Protein</span> ${this.recipe.nutrientsPerPortion.protein}g
+                  </p>
+                </div>
+                <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-protein" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.protein / 70 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.protein / 70 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.protein / 70 * 100).toFixed()}%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mt-1 mt-sm-0 mb-1">
+                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt}g
+                  </p>
+                </div>
+                <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-salt" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.salt / 6 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.salt / 6 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.salt / 6 * 100).toFixed()}%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <p class="mt-1 mt-sm-0 mb-1 d-inline-block">
+                    <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total}g
+                  </p>
+                  <a class="ml-1 collapsed" data-toggle="collapse" href="#varav" role="button" aria-expanded="false" aria-controls="varav"> <i class="fas fa-chevron-down ml-0"></i>
+                  </a>
+                  <div class="collapse" id="varav">
+                    <p class="mb-1 ml-2">varav</p>
+                    <p class="mb-1 ml-3">
+                       enkelomättat ${this.recipe.nutrientsPerPortion.fat.monounsaturated}g
+                    </p>
+                    <p class="mb-1 ml-3">
+                      mättat ${this.recipe.nutrientsPerPortion.fat.saturated}g
+                    </p>
+                    <p class="mb-1 ml-3">
+                      fleromättat ${this.recipe.nutrientsPerPortion.fat.polyunsaturated}g
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-8">
+                  <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
+                    <div class="progress-bar progress-fett" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.fat.total / 90 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.fat.total / 90 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.fat.total / 90 * 100).toFixed()}%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- end näringsvärde -->
+
         </article>
         <!-- end instructions -->
       </article>

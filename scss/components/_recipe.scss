@@ -1,18 +1,18 @@
-.ingredient-list{
-  li{
+.ingredient-list {
+  li {
     padding: 0.5rem 1rem;
     background:#fafafa;
   }
-  li:nth-child(2n){
+  li:nth-child(2n) {
     background: #f1f1f1;
   }
 }
 
-.ingredient-side{
+.ingredient-side {
   background: #fafafa;
 }
 
-.recipe-top-part{
+.recipe-top-part {
   background: rgba(0, 0, 0, 0.42);
   color: #fff;
   background-size: cover;
@@ -29,33 +29,61 @@
    background-size: cover;
    border-radius: 3px;
  }
-.ingredient-h4{
+
+.ingredient-h4,
+.instructions-h2,
+.naringsvarde-h4,
+.recipe-header {
   text-decoration: underline;
   text-decoration-color: #f05f40;
   font-family: $font-family;
   font-weight: 700;
 }
 
-.instructions-h2{
-  text-decoration: underline;
-  text-decoration-color: #f05f40;
+.naringsvarde-h6 {
   font-family: $font-family;
-  font-weight: 700;
 }
 
-.recipe-header{
-  text-decoration: underline;
-  text-decoration-color: #f05f40;
-  font-family: $font-family;
-  font-weight: 700;
+.naringsvarde {
+  background: #f1f1f1;
 }
 
-#sel1{
+#visaMer {
+  .progress {
+    box-shadow: 0 0 2px #777;
+  }
+
+  .progress-bar {
+    text-shadow: 0 0 5px #000;
+  }
+}
+
+.rdi-text {
+  font-size: 0.8rem;
+}
+
+.progress-kolhydrater {
+  background-color: #f7e491;
+}
+
+.progress-protein {
+  background-color: #f79491;
+}
+
+.progress-fett {
+  background-color: #efe1c4;
+}
+
+.progress-salt {
+  background-color: #c1c0bd;
+}
+
+#sel1 {
   width:auto;
   border: 1px solid #f05f40;
-
 }
-#sel1:focus{
+
+#sel1:focus {
   outline: none !important;
     border-color: #f05f40;
     box-shadow: 0 0 1px #f05f40;
@@ -65,30 +93,31 @@
     box-shadow: 0 0 10px 100px #f05f40 inset;
 }
 
-
 .recipe-instruction{
-padding: 0 20px 20px 20px;
-ol{
-  list-style: none;
-  counter-reset: item;
-}
+  padding: 0 20px 20px 20px;
 
- li{
+  ol {
+    list-style: none;
+    counter-reset: item;
+  }
+
+ li {
     counter-increment: item;
     margin:10px 0 10px 0;
  }
+
  li:before {
-  margin-top: 5px;
-  content: counter(item);
-  background: #f05f40;
-  border-radius: 50%;
-  color: white;
-  width: 1.5rem;
-  text-align: center;
-  display: block;
-  align-self: flex-start;
-  flex-shrink: 0;
-}
+    margin-top: 5px;
+    content: counter(item);
+    background: #f05f40;
+    border-radius: 50%;
+    color: white;
+    width: 1.5rem;
+    text-align: center;
+    display: block;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
 }
 
 .recept-page{
