@@ -17,7 +17,6 @@ export default class AddRecipe extends Base {
     this.eventHandler();
     this.ingredientCounter = 0;
     this.instructionCounter = 1;
-    this.checkIfFormsAreFilled()
   }
 
   change() {
@@ -124,25 +123,6 @@ export default class AddRecipe extends Base {
   */
   getSelectedPortions() {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
-  }
-
-  checkIfFormsAreFilled() {
-    let kalle = $('.ingredient-form');
-    let koala = kalle.length;
-    let trueOrFalse = true;
-    let array = ['name', 'quantity', 'measurement', 'dataname', 'grams']
-
-    for (let i = 0; i < koala; i++) {
-      for (let j = 0; j < array.length; j++) {
-        if ($(`.${array[j]}-ingredient-${i}`).val() == '') {
-          trueOrFalse = false;
-        }
-      }
-    }
-
-    if (trueOrFalse) {
-      this.renderNewForm();
-    }
   }
 
   renderNewForm() {
