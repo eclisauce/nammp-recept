@@ -64,7 +64,21 @@ export default class AddRecipe extends Base {
     $(document).on('submit', 'form', function(e) {
       that.submitForm(e, this)
     });
+
+    /**
+    * Handle checkboxes focus on tab will 'hover' the styled checkbox
+    @author Martin
+    */
+    $(document).on('focus', 'input[type="checkbox"]', function(e) {
+          $(event.target).siblings('span').addClass('border-checkbox-hover');
+      }
+    );
+    $(document).on('blur', 'input[type="checkbox"]', function(e) {
+          $(event.target).siblings('span').removeClass('border-checkbox-hover');
+      }
+    );
   }
+
 
   click() {
       /**
@@ -85,9 +99,15 @@ export default class AddRecipe extends Base {
     * @author Martin
     */
     if($(event.target).hasClass('delete-button') || $(event.target).parent().hasClass('delete-button')) {
-      $(event.target).parent().parent().fadeOut('slow', function() {
-        $(this).remove();
-      });
+      if(event.toElement.nodeName === 'I') {
+        $(event.target).parent().parent().parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      } else {
+        $(event.target).parent().parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      }
     }
 
     /**
@@ -128,6 +148,7 @@ export default class AddRecipe extends Base {
   renderNewForm() {
     this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
+    $('.ingredient-form').last().find('input[type="text"]').eq(0).focus()
   }
 
   renderNewInstruction() {

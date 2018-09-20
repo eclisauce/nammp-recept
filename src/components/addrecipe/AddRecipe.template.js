@@ -26,7 +26,7 @@ return `
               <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
                 <p>Huvudrätt</p>
                 <input type="checkbox" name="Huvudrätter">
-                <span class="checkmark border"></span>
+                <span class="checkmark"></span>
               </label>
 
               <label class="col-md-6 mt-0 checkboxContainer border-checkbox">

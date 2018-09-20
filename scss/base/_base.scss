@@ -24,7 +24,10 @@ input:focus, textarea:focus {
 .vertical-align-middle {
   vertical-align: -webkit-baseline-middle;
 }
-
+.border-checkbox-hover{
+  border: 1px solid $primary!important;
+  background-color: #f7ae9f!important;
+}
 .border-checkbox:hover {
   span{
     border-color: $primary!important;
