@@ -160,13 +160,59 @@ export default class AddRecipe extends Base {
     // Make time to number
     modifiedRecipe.time = modifiedRecipe.time * 1;
 
+    // Set an imgAlt to the title.
+    modifiedRecipe.imgAlt = modifiedRecipe.title;
+
     // JSON._save('bajs.json', modifiedRecipe).then(function(){
     //   console.log('Saved!');
     // });
     console.log(modifiedRecipe, "modified recipe obj")
-
-
+    // This line of code gets all the ingredients.
+    console.log(this.getAllNutritions('Potatis rå'))
     // fs.writeFile('./www/json/aa.json', req.body); // backend-code
+  }
+
+
+  /**
+  * Gets all the nutritions needed for the recipe and adds it to an object that is returned
+  *
+  */
+  getAllNutritions(ingredientStr){
+    let ingredient = this.foodData.filter(item => {
+      return item.Namn == ingredientStr;
+    })[0];
+
+    let nutrientsPerPortion = {};
+    // Kcal
+    nutrientsPerPortion.calories = this.getOneNutrition(ingredient, 'Energi (kcal)');
+    // Carbs
+    nutrientsPerPortion.carbohydrates = this.getOneNutrition(ingredient, 'Kolhydrater');
+    // Protein
+    // nutrientsPerPortion.protein = this.getNutrition('Potatis rå', 'Protein');
+    // Salt
+    nutrientsPerPortion.salt = this.getOneNutrition(ingredient, 'Salt');
+
+    nutrientsPerPortion.fat = {};
+    // Fetter: totalt fett. 
+    nutrientsPerPortion.fat.total = this.getOneNutrition(ingredient, 'Fett');
+    // Enkelomättat fett
+    // nutrientsPerPortion.fat.monounsaturated = this.getNutrition(ingredient, 'Energi (kcal)')
+    // Mättat fett
+    nutrientsPerPortion.fat.saturated = this.getOneNutrition(ingredient, 'Summa mättade fettsyror')
+    // Fleromättat
+    // nutrientsPerPortion.fat.polyunsaturated = this.getNutrition(ingredient, 'Energi (kcal)')
+    return nutrientsPerPortion;
+  }
+
+
+  /**
+  * Finds the one nutrition we pass to the function and returns it
+  *
+  */
+  getOneNutrition(ingredient, unit){
+    return ingredient.Naringsvarden.filter(nutrition => {
+      return nutrition.Namn == unit;
+    })[0].Varde[0].replace(/,/gi, '.') * 1;
   }
 
 }
