@@ -2,7 +2,7 @@ import Base from '../../base/Base.class';
 // import template from './AddRecipe.template';
 import {
   template,
-  template2,
+  ingredientTemplate,
   pictureUploadTemplate
 } from './AddRecipe.template';
 
@@ -98,7 +98,7 @@ export default class AddRecipe extends Base {
   }
 
   renderNewForm() {
-    this.render('.add-ingredients-holder', 'template2')
+    this.render('.add-ingredients-holder', 'ingredientTemplate')
     this.ingredientCounter++;
   }
 
@@ -118,9 +118,9 @@ export default class AddRecipe extends Base {
 
         ingredientsPerPortion.push(ingredient);
       }
-      
+
     }
-    
+
     let modifiedRecipe = allFormData.reduce((obj, current)=>{
       obj[current.name] = current.value;
       return obj;
@@ -142,6 +142,6 @@ export default class AddRecipe extends Base {
 
 }
 
-AddRecipe.prototype.template2 = template2;
+AddRecipe.prototype.ingredientTemplate = ingredientTemplate;
 AddRecipe.prototype.template = template;
 AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;

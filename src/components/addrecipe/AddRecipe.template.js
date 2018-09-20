@@ -4,7 +4,7 @@ return `
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
     <form id="add-recipe-form">
       <div class="row">
-        <div class="col-md-6">  
+        <div class="col-md-6">
 
           <div class="mt-3 mt-md-4 pr-md-5">
             <h5 class="text-dark">Namn på recept</h5>
@@ -185,13 +185,13 @@ return `
 
         </div>
       </div>
-      
+
     </form>
   </article>
 `;
 }
 
-function template2() {
+function ingredientTemplate() {
 return `
   <div class="mb-md-4 mb-1 mb-lg-1 ingredient-form" id="ingredientInput-${this.ingredientCounter}">
     <div class="form-row">
@@ -228,8 +228,8 @@ return `
       <div class="col d-flex pt-2">
         <input type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
-  
-      <button data-delete-button-id="${this.ingredientCounter}" class="delete-button align-self-center mt-2 mr-1 ml-1 btn-danger"
+
+      <button class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
 
     </div>
@@ -244,6 +244,6 @@ function pictureUploadTemplate() {
 
 export {
 template,
-template2,
+ingredientTemplate,
 pictureUploadTemplate
 }
