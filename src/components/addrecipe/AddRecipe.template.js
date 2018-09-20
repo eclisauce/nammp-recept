@@ -248,7 +248,7 @@ function pictureUploadTemplate() {
 
 function instructionTemplate() {
   return `
-    <textarea name="instruction-${this.ingredientCounter}" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="1."></textarea>
+      <textarea name="instruction" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="${this.instructionCounter}."></textarea>
   `;
 }
 

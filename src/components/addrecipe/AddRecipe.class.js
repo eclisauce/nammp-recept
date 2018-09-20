@@ -16,6 +16,7 @@ export default class AddRecipe extends Base {
     super();
     this.eventHandler();
     this.ingredientCounter = 0;
+    this.instructionCounter = 1;
     this.checkIfFormsAreFilled()
   }
 
@@ -47,7 +48,7 @@ export default class AddRecipe extends Base {
         && $(event.target).val() !== ''
         && (event.keyCode == 9 || event.which == 9)
       ) {
-     this.render('.instruction-container', 'instructionTemplate');
+     this.renderNewInstruction();
     }
 
   }
@@ -71,18 +72,19 @@ export default class AddRecipe extends Base {
       * @author Martin
       */
     if ($(document).find('.instruction').last().val() !== '') {
-     this.render('.instruction-container', 'instructionTemplate');
+      this.renderNewInstruction();
     }
 
     if ($(event.target).attr('id') == 'test') {
       this.checkIfFormsAreFilled();
     }
 
+
     /**
     * Delete button - Deletes ingredient row when clicked
     * @author Martin
     */
-    if($(event.target).hasClass('delete-button')) {
+    if($(event.target).hasClass('delete-button') || $(event.target).parent().hasClass('delete-button')) {
       $(event.target).parent().parent().fadeOut('slow', function() {
         $(this).remove();
       });
@@ -126,6 +128,11 @@ export default class AddRecipe extends Base {
   renderNewForm() {
     this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
+  }
+
+  renderNewInstruction() {
+    this.instructionCounter++
+    this.render('.instruction-container', 'instructionTemplate');
   }
 
   submitForm(e, formHtml) {
