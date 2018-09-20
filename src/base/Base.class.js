@@ -1,3 +1,4 @@
+import Jsonflex from './jsonflex.js';
 /**
  * Rendering framework from Nodebite
  *
@@ -6,6 +7,7 @@ export default class Base {
 
   constructor() {
     this.loadAllJSON();
+    new Jsonflex();
     if (!Base.subRenderCounter) {
       Base.subRenderCounter = 1;
       Base.renderingInProgress = false;

@@ -1,6 +1,5 @@
 import Base from '../../base/Base.class';
 import template from './Searchresultpage.template';
-
 /**
  * Searchresultpage in main for route '/'
  *
@@ -9,7 +8,6 @@ export default class Searchresult extends Base {
   constructor(){
     super();
     this.checkIfDataExist();
-
   }
 
   /**
@@ -109,6 +107,7 @@ export default class Searchresult extends Base {
 
     $('.search-recipe-result').empty().append(newarr.join(''));
   }
+
 }
 
 Searchresult.prototype.template = template;
