@@ -49,10 +49,12 @@
 }
 
 #visaMer {
-  // margin-top: 1.5rem;
-
   .progress {
     box-shadow: 0 0 2px #777;
+  }
+
+  .progress-bar {
+    text-shadow: 0 0 5px #000;
   }
 }
 

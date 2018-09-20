@@ -72,7 +72,7 @@ export default function() {
             <h6 class="naringsvarde-h6">(per portion)</h6>
             <p class="d-inline"><span class="font-weight-bold">Energi:</span> ${this.recipe.nutrientsPerPortion.calories} kcal</p>
             <a class="ml-4 collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
-              Visa mer<i class="fas fa-chevron-down ml-2"></i>
+              Visa detaljerad näringsinformation<i class="fas fa-chevron-down ml-2"></i>
             </a>
             <div class="collapse" id="visaMer">
               <div class="row">
