@@ -42,6 +42,7 @@ export default class Recipepage extends Base {
     this.render('main');
     this.renderIngredients();
     this.pictureRandomizer();
+    this.initializeBootstrapTooltips();
   }
 
 
@@ -113,6 +114,17 @@ export default class Recipepage extends Base {
       // Insert chosen background-image as value to the background-image property
       $('.recipe-top-part-2').css('background-image', recipeBackgroundPicture);
     })
+  }
+
+  /**
+   * Bootstrap built-in method needed to 
+   * initialize tooltips on page
+   *
+   */
+  initializeBootstrapTooltips() {
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
   }
 
 }

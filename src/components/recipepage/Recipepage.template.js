@@ -76,8 +76,13 @@ export default function() {
             </a>
             <div class="collapse" id="visaMer">
               <div class="row">
+                <div class="col-3 ml-auto text-right">
+                  <p class="mb-0 text-muted rdi-text" data-toggle="tooltip" data-placement="top" title="Livsmedelsverkets rekommenderade dagliga intag">% av RDI*</p>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-12 col-sm-4">
-                  <p class="mb-1">
+                  <p class="mt-1 mt-sm-0 mb-1">
                     <span class="font-weight-bold">Kolhydrater</span> ${this.recipe.nutrientsPerPortion.carbohydrates}g
                   </p>
                 </div>
@@ -89,7 +94,7 @@ export default function() {
               </div>
               <div class="row">
                 <div class="col-12 col-sm-4">
-                  <p class="mb-1">
+                  <p class="mt-1 mt-sm-0 mb-1">
                     <span class="font-weight-bold">Protein</span> ${this.recipe.nutrientsPerPortion.protein}g
                   </p>
                 </div>
@@ -101,7 +106,7 @@ export default function() {
               </div>
               <div class="row">
                 <div class="col-12 col-sm-4">
-                  <p class="mb-1">
+                  <p class="mt-1 mt-sm-0 mb-1">
                     <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt}g
                   </p>
                 </div>
@@ -113,10 +118,10 @@ export default function() {
               </div>
               <div class="row">
                 <div class="col-12 col-sm-4">
-                  <p class="mb-1 d-inline">
+                  <p class="mt-1 mt-sm-0 mb-1 d-inline-block">
                     <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total}g
                   </p>
-                  <a class="ml-1 collapsed" data-toggle="collapse" href="#varav" role="button" aria-expanded="false" aria-controls="varav"> <i class="fas fa-chevron-down ml-2"></i>
+                  <a class="ml-1 collapsed" data-toggle="collapse" href="#varav" role="button" aria-expanded="false" aria-controls="varav"> <i class="fas fa-chevron-down ml-0"></i>
                   </a>
                   <div class="collapse" id="varav">
                     <p class="mb-1 ml-2">varav</p>
