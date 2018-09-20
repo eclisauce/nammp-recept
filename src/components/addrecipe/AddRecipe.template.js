@@ -249,7 +249,11 @@ function pictureUploadTemplate() {
 
 function instructionTemplate() {
   return `
-      <textarea name="instruction" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="${this.instructionCounter}."></textarea>
+    <div class="position-relative my-3">
+      <label for="instruction-${this.instructionCounter}" class="label-instr" title="Textfält för instruktion ${this.instructionCounter}"><span>${this.instructionCounter}</span></label>
+      <textarea name="instruction-${this.instructionCounter}" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="${this.instructionCounter}."></textarea>
+      <button type="button" class="remove-instr btn btn-danger" title="Tabort denna instruktion"><i class="fas fa-times"></i></button>
+    </div>
   `;
 }
 

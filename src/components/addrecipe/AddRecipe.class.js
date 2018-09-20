@@ -80,12 +80,28 @@ export default class AddRecipe extends Base {
 
 
   click() {
-      /**
-      * Click on #add-instr to add more instructionfields
-      * @author Martin
-      */
+    /**
+    * Click on #add-instr to add more instructionfields
+    * @author Martin
+    */
     if($(event.target).attr('id') === 'add-instr') {
       this.renderNewInstruction();
+    }
+
+    /**
+    * Click on #remove-instr to delete current instructionfield
+    * @author Martin
+    */
+    if($(event.target).hasClass('remove-instr') || $(event.target).parent().hasClass('remove-instr')) {
+      if(event.toElement.nodeName === 'I') {
+        $(event.target).parent().parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      } else {
+        $(event.target).parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      }
     }
 
     /**
@@ -122,13 +138,17 @@ export default class AddRecipe extends Base {
 
 
   /**
-  * Returns number of portions selected to be displayed on h5.
-  *
+  * Rendering number of portions selected to be displayed on h5.
+  * @author Andy
   */
   getSelectedPortions() {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
   }
 
+  /**
+  * Rendering new form for Ingredient. Also autofocus the new Ingredientfield rendered
+  * @author Andy / Martin
+  */
   renderNewForm() {
     this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
@@ -137,6 +157,10 @@ export default class AddRecipe extends Base {
     }
   }
 
+  /**
+  * Rendering new formfield for Instruction. Warns if last field is empty
+  *
+  */
   renderNewInstruction() {
     $('.instr-warning').remove();
     if($(document).find('.instruction').last().val() !== '') {
