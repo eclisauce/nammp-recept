@@ -80,14 +80,34 @@ export default class AddRecipe extends Base {
 
 
   click() {
-      /**
-      * Click outside formfield instruction for adding more instruction fields
-      * @author Martin
-      */
-    if ($(document).find('.instruction').last().val() !== '') {
+    /**
+    * Click on #add-instr to add more instructionfields
+    * @author Martin
+    */
+    if($(event.target).attr('id') === 'add-instr') {
       this.renderNewInstruction();
     }
 
+    /**
+    * Click on #remove-instr to delete current instructionfield
+    * @author Martin
+    */
+    if($(event.target).hasClass('remove-instr') || $(event.target).parent().hasClass('remove-instr')) {
+      if(event.toElement.nodeName === 'I') {
+        $(event.target).parent().parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      } else {
+        $(event.target).parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      }
+    }
+
+    /**
+    * Test purpop
+    * @author Andy / Niklas
+    */
     if ($(event.target).attr('id') == 'test') {
       this.checkIfFormsAreFilled();
     }
@@ -118,22 +138,38 @@ export default class AddRecipe extends Base {
 
 
   /**
-  * Returns number of portions selected to be displayed on h5.
-  *
+  * Rendering number of portions selected to be displayed on h5.
+  * @author Andy
   */
   getSelectedPortions() {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
   }
 
+  /**
+  * Rendering new form for Ingredient. Also autofocus the new Ingredientfield rendered
+  * @author Andy / Martin
+  */
   renderNewForm() {
     this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
-    $('.ingredient-form').last().find('input[type="text"]').eq(0).focus()
+    if (this.ingredientCounter > 3) {
+      $('.ingredient-form').last().find('input[type="text"]').eq(0).focus();
+    }
   }
 
+  /**
+  * Rendering new formfield for Instruction. Warns if last field is empty
+  *
+  */
   renderNewInstruction() {
-    this.instructionCounter++
-    this.render('.instruction-container', 'instructionTemplate');
+    $('.instr-warning').remove();
+    if($(document).find('.instruction').last().val() !== '') {
+      this.instructionCounter++
+      this.render('.instruction-container', 'instructionTemplate');
+    } else {
+      let that = this;
+      $(document).find('.instruction-container').append(`<div class="instr-warning">Du måste fylla i fältet för Instruktion ${that.instructionCounter} först.`)
+    }
   }
 
   submitForm(e, formHtml) {
