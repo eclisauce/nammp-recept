@@ -70,7 +70,7 @@ export default class Base {
   addEvents(templateNo) {
     // Add events to baseElements - so that an event calls a corresponding
     // method in the class (named event type + templateNo)
-    let types = ['click', 'keyup', 'mouseenter', 'mouseleave', 'change'];
+    let types = ['click', 'keyup', 'mouseenter', 'mouseleave', 'change', 'keydown'];
     for (let type of types) {
       let methodName = type + templateNo;
       if (this[methodName]) {

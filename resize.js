@@ -38,7 +38,7 @@ getjson()
       let naringsvarde = [];
 
       data.Naringsvarden[0].Naringsvarde.forEach((naring) => {
-        if (naring.Namn[0].match(/Energi|Kolhydrater|Salt|\b(Fett)\b|Salt|Vitamin|Mineral|Summa\smättade\sfettsyror/)) {
+        if (naring.Namn[0].match(/Energi|Kolhydrater|Salt|\b(Fett)\b|Salt|Protein|Vitamin|Mineral|Summa\smättade\sfettsyror/)) {
           // ["Energi (kJ)", "Energi (kcal)", "Kolhydrater", /Salt/, "Fett", "Salt", /Vitamin/, "Mineral", "Summa mättade fettsyror"]
           let obj = _.pick(naring, ['Namn', 'Forkortning', 'Enhet', 'Varde']);
 

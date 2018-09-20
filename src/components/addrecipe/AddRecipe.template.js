@@ -26,7 +26,7 @@ return `
               <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
                 <p>Huvudrätt</p>
                 <input type="checkbox" name="Huvudrätter">
-                <span class="checkmark border"></span>
+                <span class="checkmark"></span>
               </label>
 
               <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
@@ -157,9 +157,9 @@ return `
           </div>
 
           <div class="row">
-            <div class="col-12 mt-3">
+            <div class="col-12 mt-3 instruction-container">
               <h5 class="text-dark">Instruktioner</h5>
-              <textarea name="instruction-${this.counter}" class="form-control my-2 rounded w-100" rows="2" placeholder="1."></textarea>
+              ${this.render('.instruction-container', 'instructionTemplate')}
             </div>
           </div>
         </div> <!-- Closses right col-6 -->
@@ -246,8 +246,15 @@ function pictureUploadTemplate() {
     `;
   }
 
+function instructionTemplate() {
+  return `
+      <textarea name="instruction" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="${this.instructionCounter}."></textarea>
+  `;
+}
+
 export {
-template,
-ingredientTemplate,
-pictureUploadTemplate
+  template,
+  ingredientTemplate,
+  pictureUploadTemplate,
+  instructionTemplate
 }
