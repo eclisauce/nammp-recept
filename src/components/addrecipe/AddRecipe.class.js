@@ -176,6 +176,8 @@ export default class AddRecipe extends Base {
     delete modifiedRecipe.Enhetsmått;
     delete modifiedRecipe.IngrediensPerGram;
     delete modifiedRecipe.IngrediensnamnLivsmedelsverket;
+    delete modifiedRecipe.instruction;
+    delete modifiedRecipe.portions;
 
     modifiedRecipe.ingredientsPerPortion = ingredientsPerPortion;
 
@@ -202,7 +204,7 @@ export default class AddRecipe extends Base {
 
 
     // Get full nutrition mother fuckkcccaass
-    let allCalo = modifiedRecipe.ingredientsPerPortion.map(val => {
+    let allNutrtionsArray = modifiedRecipe.ingredientsPerPortion.map(val => {
       if(val.lmTitle) {return this.getAllNutritions(val.lmTitle, val.grams)};
     }).filter(nut => nut !== undefined);
 
@@ -210,25 +212,20 @@ export default class AddRecipe extends Base {
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     
     modifiedRecipe.nutrientsPerPortion = {};
-    modifiedRecipe.nutrientsPerPortion.calories = allCalo.map(val => val.calories).reduce(reducer)
-    modifiedRecipe.nutrientsPerPortion.carbohydrates = allCalo.map(val => val.carbohydrates).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.protein = allCalo.map(val => val.protein).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.salt = allCalo.map(val => val.salt).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.calories = allNutrtionsArray.map(val => val.calories).reduce(reducer)
+    modifiedRecipe.nutrientsPerPortion.carbohydrates = allNutrtionsArray.map(val => val.carbohydrates).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.protein = allNutrtionsArray.map(val => val.protein).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.salt = allNutrtionsArray.map(val => val.salt).reduce(reducer);
     modifiedRecipe.nutrientsPerPortion.fat = {};
-    modifiedRecipe.nutrientsPerPortion.fat.monounsaturated = allCalo.map(val => val.fat.monounsaturated).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.fat.saturated = allCalo.map(val => val.fat.saturated).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.fat.polyunsaturated = allCalo.map(val => val.fat.polyunsaturated).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.fat.total = allCalo.map(val => val.fat.total).reduce(reducer);
-
-    
-    console.log(allCalo);
+    modifiedRecipe.nutrientsPerPortion.fat.monounsaturated = allNutrtionsArray.map(val => val.fat.monounsaturated).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.fat.saturated = allNutrtionsArray.map(val => val.fat.saturated).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.fat.polyunsaturated = allNutrtionsArray.map(val => val.fat.polyunsaturated).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.fat.total = allNutrtionsArray.map(val => val.fat.total).reduce(reducer);
 
 
-
-
-    // JSON._save('bajs.json', modifiedRecipe).then(function(){
-    //   console.log('Saved!');
-    // });
+    JSON._save('test-recipes.json', modifiedRecipe).then(function(){
+      console.log('Saved!');
+    });
     console.log(modifiedRecipe, "modified recipe obj")
     // This line of code gets all the ingredients.
     // fs.writeFile('./www/json/aa.json', req.body); // backend-code
