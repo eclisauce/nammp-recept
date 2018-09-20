@@ -10,16 +10,16 @@ export default function() {
                 <img src="${this.recipe.imgLink}" alt="${this.recipe.imgAlt}" class="img-fluid">
               </div>
               <div class="col-md-12 col-12 col-lg-8">
-                <h2 class="text-center mt-1 recipe-header">${this.recipe.title}</h2>
+                <h2 class="text-center mt-3 mt-lg-1 recipe-header">${this.recipe.title}</h2>
                 <article>
                   <p>${this.recipe.description}</p>
                 </article>
                 <div class="d-flex flex-row justify-content-between">
                   <div class="d-flex">
-                    <p><i class="fas fa-utensils"></i> Kalorier: ${this.recipe.nutrientsPerPortion.calories}</p>
+                    <p><i class="fas fa-utensils mr-1"></i> Kalorier: ${this.recipe.nutrientsPerPortion.calories}</p>
                   </div>
                   <div class="d-flex">
-                    <p><i class="far fa-clock"></i> Tid: ${this.calcTime(this.recipe)}</p>
+                    <p><i class="far fa-clock mr-1"></i> Tid: ${this.calcTime(this.recipe)}</p>
                   </div>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function() {
   
           </div>
   
-          <ul class="list-group ingredient-list mb-3">
+          <ul class="list-group ingredient-list mb-3 mb-lg-0">
 
           </ul>
           <!-- <button type="button" class="btn btn-primary mb-1">Lägg till i varukorg <i class="fas fa-cart-arrow-down"></i></button> -->
