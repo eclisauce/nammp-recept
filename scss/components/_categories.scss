@@ -78,7 +78,7 @@
 
 /* On mouse-over, add a grey background color */
 .checkboxContainer:hover input ~ .checkmark {
-  background-color: $primary-lighten;
+  background-color: $primary-lighten!important;
 }
 
 /* When the checkbox is checked, add a blue background */

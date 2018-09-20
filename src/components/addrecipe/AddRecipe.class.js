@@ -1,9 +1,9 @@
 import Base from '../../base/Base.class';
-// import template from './AddRecipe.template';
 import {
   template,
   ingredientTemplate,
-  pictureUploadTemplate
+  pictureUploadTemplate,
+  instructionTemplate
 } from './AddRecipe.template';
 
 /**
@@ -16,7 +16,7 @@ export default class AddRecipe extends Base {
     super();
     this.eventHandler();
     this.ingredientCounter = 0;
-    this.checkIfFormsAreFilled()
+    this.instructionCounter = 1;
   }
 
   change() {
@@ -38,6 +38,20 @@ export default class AddRecipe extends Base {
 
   }
 
+  keydown() {
+      /**
+      * Keyup on tab for adding more instruction fields
+      * @author Martin
+      */
+    if ($(event.target).hasClass('instruction')
+        && $(event.target).val() !== ''
+        && (event.keyCode == 9 || event.which == 9)
+      ) {
+     this.renderNewInstruction();
+    }
+
+  }
+
   /**
    * Eventhandler for adding/removing ingredient-forms
    */
@@ -49,17 +63,50 @@ export default class AddRecipe extends Base {
     $(document).on('submit', 'form', function(e) {
       that.submitForm(e, this)
     });
+
+    /**
+    * Handle checkboxes focus on tab will 'hover' the styled checkbox
+    @author Martin
+    */
+    $(document).on('focus', 'input[type="checkbox"]', function(e) {
+          $(event.target).siblings('span').addClass('border-checkbox-hover');
+      }
+    );
+    $(document).on('blur', 'input[type="checkbox"]', function(e) {
+          $(event.target).siblings('span').removeClass('border-checkbox-hover');
+      }
+    );
   }
 
+
   click() {
+      /**
+      * Click outside formfield instruction for adding more instruction fields
+      * @author Martin
+      */
+    if ($(document).find('.instruction').last().val() !== '') {
+      this.renderNewInstruction();
+    }
+
+    if ($(event.target).attr('id') == 'test') {
+      this.checkIfFormsAreFilled();
+    }
+
+
     /**
     * Delete button - Deletes ingredient row when clicked
     * @author Martin
     */
-    if($(event.target).hasClass('delete-button')) {
-      $(event.target).parent().parent().fadeOut('slow', function() {
-        $(this).remove();
-      });
+    if($(event.target).hasClass('delete-button') || $(event.target).parent().hasClass('delete-button')) {
+      if(event.toElement.nodeName === 'I') {
+        $(event.target).parent().parent().parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      } else {
+        $(event.target).parent().parent().fadeOut('slow', function() {
+          $(this).remove();
+        });
+      }
     }
 
     /**
@@ -78,28 +125,15 @@ export default class AddRecipe extends Base {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
   }
 
-  checkIfFormsAreFilled() {
-    let kalle = $('.ingredient-form');
-    let koala = kalle.length;
-    let trueOrFalse = true;
-    let array = ['name', 'quantity', 'measurement', 'dataname', 'grams']
-
-    for (let i = 0; i < koala; i++) {
-      for (let j = 0; j < array.length; j++) {
-        if ($(`.${array[j]}-ingredient-${i}`).val() == '') {
-          trueOrFalse = false;
-        }
-      }
-    }
-
-    if (trueOrFalse) {
-      this.renderNewForm();
-    }
-  }
-
   renderNewForm() {
     this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
+    $('.ingredient-form').last().find('input[type="text"]').eq(0).focus()
+  }
+
+  renderNewInstruction() {
+    this.instructionCounter++
+    this.render('.instruction-container', 'instructionTemplate');
   }
 
   submitForm(e, formHtml) {
@@ -145,3 +179,4 @@ export default class AddRecipe extends Base {
 AddRecipe.prototype.ingredientTemplate = ingredientTemplate;
 AddRecipe.prototype.template = template;
 AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;
+AddRecipe.prototype.instructionTemplate = instructionTemplate;
