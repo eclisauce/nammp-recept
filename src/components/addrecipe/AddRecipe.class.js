@@ -40,40 +40,36 @@ export default class AddRecipe extends Base {
 
   /**
    * Eventhandler for adding/removing ingredient-forms
-   *
    */
   eventHandler() {
-
-
-    $(document).on('click', '.delete-button', function(e) {
-      e.preventDefault();
-      let ingredientInput = `ingredientInput-${$(this).data('deleteButtonId')}`;
-      $(`#${ingredientInput}`).remove();
-    })
-
     $(document).on('change', '#number-of-portions', () => {
       this.getSelectedPortions();
     });
-    let that = this;
-    $(document).on('submit', 'form', function(e) {
-      that.submitForm(e, this)
-    });
+    // let that = this;
+    // $(document).on('submit', 'form', function(e) {
+    //   that.submitForm(e, this)
+    // });
   }
 
   click() {
-    if ($(event.target).attr('id') == 'add-form') {
-      this.renderNewForm();
-    }
-    if ($(event.target).attr('id') == 'test') {
-      this.checkIfFormsAreFilled();
-    }
+    /**
+    * Delete button - Deletes ingredient row when clicked
+    * @author Martin
+    */
+    $(event.target).hasClass('delete-button') ? $(event.target).parent().parent().remove() : null;
+
+    /**
+    * Button for adding a new line of ingredient
+    * @author Martin
+    */
+    $(event.target).attr('id') === 'add-form' ? this.renderNewForm() : null ;
   }
 
 
   /**
-   * Returns number of portions selected to be displayed on h5.
-   *
-   */
+  * Returns number of portions selected to be displayed on h5.
+  *
+  */
   getSelectedPortions() {
     $('.display-portions').empty('').append(`Ingredienser för ${$('#number-of-portions').val()} portioner`);
   }
@@ -98,7 +94,7 @@ export default class AddRecipe extends Base {
   }
 
   renderNewForm() {
-    this.render('.add-ingredients-holder', 'ingredientTemplate')
+    this.render('.add-ingredients-holder__list', 'ingredientTemplate')
     this.ingredientCounter++;
   }
 
