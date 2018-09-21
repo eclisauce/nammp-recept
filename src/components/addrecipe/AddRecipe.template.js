@@ -161,6 +161,7 @@ return `
               <h5 class="text-dark">Instruktioner</h5>
               ${this.render('.instruction-container', 'instructionTemplate')}
             </div>
+            <button type="button" id="add-instr" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
           </div>
         </div> <!-- Closses right col-6 -->
 
@@ -248,7 +249,11 @@ function pictureUploadTemplate() {
 
 function instructionTemplate() {
   return `
-      <textarea name="instruction" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="${this.instructionCounter}."></textarea>
+    <div class="position-relative my-3">
+      <label for="instruction-${this.instructionCounter}" class="label-instr" title="Textfält för instruktion ${this.instructionCounter}"><span>${this.instructionCounter}</span></label>
+      <textarea name="instruction-${this.instructionCounter}" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="${this.instructionCounter}."></textarea>
+      <button type="button" class="remove-instr btn btn-danger" title="Tabort denna instruktion"><i class="fas fa-times"></i></button>
+    </div>
   `;
 }
 
