@@ -107,8 +107,7 @@ export default class AddRecipe extends Base {
       let str = $(this).val();
       let ul = $(this).parent().find('.result-dropdown');
       ul.empty();
-      let foodItems = that.autoComplete(str);
-
+      let foodItems = that.autoComplete(str).splice(0, 15);
       for (let foodItem of foodItems) {
         ul.append(`<li class="list-group-item list-item">${foodItem}</li>`);
       }

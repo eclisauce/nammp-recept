@@ -8,6 +8,7 @@ return `
           <i class="fas fa-info-circle"></i>
         </button>
         <div class="dropdown-menu info-box" aria-labelledby="dropdownMenuButton">
+          <i class="fas fa-info-circle p-2"></i>
           <p class="p-2">För att underlätta fyll i alla fält.</p>
           <p class="p-2">För att ta del av de automatiska uträkningarna på näringsinnehåll fyll i en ingrediens från vår databas</p>
         </div>
