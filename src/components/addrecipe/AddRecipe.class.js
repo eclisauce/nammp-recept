@@ -183,7 +183,7 @@ export default class AddRecipe extends Base {
     e.preventDefault();
     let allFormData = $(formHtml).serializeArray();
     console.log(allFormData);
-    this.checkIfExistsInDatabase(allFormData)
+    this.checkIfNumbers(allFormData);
 
     let ingredientsPerPortion = [];
 
@@ -276,7 +276,13 @@ export default class AddRecipe extends Base {
     // fs.writeFile('./www/json/aa.json', req.body); // backend-code
   }
 
-  // Will check if everything has value and if not, throw error through more methods
+  
+  /**
+  * Receives all form data and checks if everything is filled out.
+  * If everything is filled out it calls the next method.
+  * Else it writes a error msg and makes a red border where the error is.
+  * @author Andy
+  */
   checkIfEverythingHasValue(allFormData){
     let emptyValueArray = allFormData.filter(form => form.value === "");
     console.log(emptyValueArray);
@@ -306,7 +312,22 @@ export default class AddRecipe extends Base {
              .replace(/\s/g, '');
     return `${str.slice(0,15)}-${Date.now()}`;
   }
-  
+
+  /**
+  * Receive a string and checks if that string exist in names of database.
+  * Returns true if it's found and false if it isn't found.
+  * @author Andy
+  */
+  existInDatabase(str){
+    return this.foodData.some(x => x.Namn == str);
+  }
+
+  /**
+  * Receives all form data and checks if everything is in the database.
+  * If everything is in the database it calls next function
+  * Else it writes a error msg and makes a red border where the error is.
+  * @author Andy
+  */
   checkIfExistsInDatabase(allFormData){
     // Get all ingredients thats suppose to exist in database
     let ingredientsLm = allFormData.filter(data => {
@@ -319,10 +340,9 @@ export default class AddRecipe extends Base {
     // Trying to loop out and compare ingredients lm to fooddata
     let tempArr = []
     ingredientsLm.forEach(x => {
-      if(this.existInDatabase(x.value)){
-      } else {
+      if(!this.existInDatabase(x.value)){
         tempArr.push(x);
-      }
+      } 
     })
 
     ingredientsLm = tempArr;
@@ -345,8 +365,6 @@ export default class AddRecipe extends Base {
         }
       })
     }
-
-    console.log(ingredientsLm)
   }
 
 
@@ -357,12 +375,35 @@ export default class AddRecipe extends Base {
       if(form.name == "time" || form.name == "Antal" || form.name == "IngrediensPerGram"){
         return form;
       };
-    }).map(numVal => numVal.value * 1);
+    });
 
-    console.log(numbersOnlyArray.filter(x => !isNaN(x) && x !== 0))
+    let isNumbers = numbersOnlyArray.map(numVal => numVal.value * 1);
+    let isNotNumberArr = [];
+    console.log(isNumbers);
+    isNumbers.forEach((x, index) => {
+      if(!(!isNaN(x) && x !== 0)){
+        isNotNumberArr.push(numbersOnlyArray[index]);
+      }
+    })
 
-    console.log(numbersOnlyArray);
+    if(isNotNumberArr.length === 0){
+      // Call next function
+      $('.something-went-wrong').empty();
+    } else {
+      
+      let numberInput = $('input[name="time"], input[name="Antal"], input[name="IngrediensPerGram"]');
 
+      isNotNumberArr.forEach(x => {
+        for (let i = 0; i < numberInput.length; i++){
+          if(numberInput.eq(i).val() == x.value) {
+            $(numberInput.eq(i)).addClass('red-border');
+
+            $('.something-went-wrong').empty().append('Var vänlig kontrollera att du matat in nummer på rätt ställe!');
+          }
+        }
+      })
+    }
+    console.log(isNotNumberArr);
   }
 
 
@@ -410,10 +451,6 @@ export default class AddRecipe extends Base {
     return ingredient.Naringsvarden.filter(nutrition => {
       return nutrition.Namn == unit;
     })[0].Varde.replace(/,/gi, '.');
-  }
-
-  existInDatabase(str){
-    return this.foodData.some(x => x.Namn == str);
   }
 
 }
