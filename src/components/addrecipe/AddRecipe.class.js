@@ -115,10 +115,21 @@ export default class AddRecipe extends Base {
 
     });
 
+    /**
+     * Allows us to defocus the input field if clicked outside of interval
+     *
+     *@author Markus
+     */
+
     $(document).on('click', 'main', () => {
       $(".result-dropdown").html('');
     })
-    
+    /**
+     * function to pick  an item from the list and put it in the input field
+     *
+     *@author Markus
+     */
+
     $(document).on('click', '.list-item', function() {
       let inputField = $(this);
       $(this).parent().siblings('.ingredient-input').val($(event.target).text());
