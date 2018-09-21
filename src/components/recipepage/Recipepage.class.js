@@ -42,6 +42,7 @@ export default class Recipepage extends Base {
     this.render('main');
     this.renderIngredients();
     this.renderRecipeFilters();
+    this.goToFilter();
     this.pictureRandomizer();
     this.initializeBootstrapTooltips();
   }
@@ -133,10 +134,38 @@ export default class Recipepage extends Base {
   renderRecipeFilters() {
     let recipeFilters = this.recipe.filters;
     let recipeFilterButtons = recipeFilters.map(filter => {
-      return `<a class="btn filter-btn mt-2">${filter}</a>`
+      return `<a class="btn filter-btn mt-2" href="/searchresult" name="${filter}">${filter}</a>`
     })
     $('.recipe-categories').empty().append(recipeFilterButtons.join(''));
   }
+
+  /**
+   * *WIP*
+   * Event handler for sending user to correct category on
+   * searchresult page when clicking on link
+   * Needs to reach Searchresult.class and call its methods
+   * to re-render page but can't figure out how
+   * Extending Searchresult.class seems dumb
+   *
+   */
+  goToFilter() {
+    $(document).on('click', 'a.filter-btn', event => {
+      if ($(event.target).is('a.filter-btn')) {
+        // Put button name in variable targetName
+        // We want to use targetName as the only index
+        // of Searchresults.filterArray when it is called
+        // as an argument of Searchresults.filterRecipe()
+        // on line 66 in Searchresults.class.js
+        // This will render the page with the recipes 
+        // corresponding to the filter only
+        let targetName = $(event.target).attr('name');
+        console.log(targetName);
+      }
+    })
+
+  }
+
+  
 
 }
 
