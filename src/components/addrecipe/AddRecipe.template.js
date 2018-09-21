@@ -178,11 +178,13 @@ return `
           </div>
         </div>
 
-        <div class="col-md-6">
-          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg d-block float-md-right float-left mt-5 mt-md-0 font-weight-bold">
+        <div class="col-md-6 pl-md-5 d-flex justify-content-between align-items-center">
+          <h5 class="something-went-wrong text-danger m-0"></h5>
+          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-5 mt-md-0 font-weight-bold">
             Spara recept
           </button>
         </div>
+
 
       </div>
       <div class="row my-4">
@@ -236,7 +238,6 @@ return `
 
       <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
-
     </div>
   </div>`;
 }

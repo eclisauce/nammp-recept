@@ -77,6 +77,12 @@ export default class AddRecipe extends Base {
   }
 
 
+  keyup(){
+    if ($(event.target).is('input, textarea')){
+      $(event.target).removeClass('red-border');
+    }
+  }
+
   click() {
     /**
     * Click on #add-instr to add more instructionfields
@@ -176,7 +182,7 @@ export default class AddRecipe extends Base {
     e.preventDefault();
     let allFormData = $(formHtml).serializeArray();
     console.log(allFormData);
-    this.checkIfNumbers(allFormData);
+    this.checkIfEverythingHasValue(allFormData)
 
     let ingredientsPerPortion = [];
 
@@ -272,13 +278,22 @@ export default class AddRecipe extends Base {
   // Will check if everything has value and if not, throw error through more methods
   checkIfEverythingHasValue(allFormData){
     let emptyValueArray = allFormData.filter(form => form.value === "");
-
+    console.log(emptyValueArray);
     if (emptyValueArray.length === 0){
-      return true;
+      $('.something-went-wrong').empty();
+      // Call checkifnumber
     } else {
-      return false;
+      $('form input, textarea').each(function(){
+        if($(this).val() == ""){
+          $(this).addClass('red-border');
+
+          $('.something-went-wrong').empty().append('Alla fält måste vara ifyllda!');
+        }
+      })
     }
   }
+
+  
 
   checkIfNumbers(allFormData){
     let numbersOnlyArray = allFormData.filter(form => {
@@ -287,13 +302,7 @@ export default class AddRecipe extends Base {
       };
     }).map(numVal => numVal.value * 1);
 
-    console.log(numbersOnlyArray.some(val => {
-      if (!(isNaN(val) && val === 0)) {
-        return true;
-      } else {
-        return false;
-      }
-      }));
+    console.log(numbersOnlyArray.filter(x => !isNaN(x) && x !== 0))
 
     console.log(numbersOnlyArray);
 
