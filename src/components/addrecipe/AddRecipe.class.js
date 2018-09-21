@@ -139,8 +139,10 @@ export default class AddRecipe extends Base {
   submitForm(e, formHtml) {
     e.preventDefault();
     let allFormData = $(formHtml).serializeArray();
+    console.log(this.checkIfEverythingHasValue(allFormData));
+
+
     let ingredientsPerPortion = [];
-    console.log(allFormData);
 
     // Get number of portions
     let numberOfPortions = allFormData.filter(data => data.name === 'portions')[0].value;
@@ -231,6 +233,17 @@ export default class AddRecipe extends Base {
     // fs.writeFile('./www/json/aa.json', req.body); // backend-code
   }
 
+  // Will check if everything has value and if not, throw error through more methods
+  checkIfEverythingHasValue(allData){
+    let emptyValueArray = allData.filter(form => form.value === "");
+
+    if (emptyValueArray.length === 0){
+      return true;
+    } else {
+      return false;
+    }
+
+  }
 
   /**
    * Gets all the nutritions needed for the recipe and adds it to an object that is returned
