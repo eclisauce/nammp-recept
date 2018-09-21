@@ -1,46 +1,48 @@
 {
-  "title": "",
-  "description": "",
-  "time": 0,
-  "instruction-1": "",
-  "imgLink": "",
+  "title": "dsa",
+  "description": "dsa",
+  "time": 22,
+  "instruction-1": "dsa",
+  "imgLink": "https://images.pexels.com/photos/5317/food-salad-restaurant-person.jpg",
   "ingredientsPerPortion": [
     {
-      "name": "",
-      "quantity": 0,
+      "name": "dsa",
+      "quantity": 22,
       "unitOfMeasurement": "st",
       "lmTitle": "Potatis rå",
-      "grams": 0
+      "grams": 22
     },
     {
-      "name": "",
-      "quantity": 0,
+      "name": "dsak",
+      "quantity": 22,
       "unitOfMeasurement": "st",
-      "lmTitle": "",
-      "grams": 0
+      "lmTitle": "Potatis rå",
+      "grams": 22
     },
     {
-      "name": "",
-      "quantity": 0,
+      "name": "dsa",
+      "quantity": 44,
       "unitOfMeasurement": "st",
-      "lmTitle": "",
-      "grams": 0
+      "lmTitle": "Talg nöt",
+      "grams": 22
     }
   ],
   "portions": 1,
   "instructions": [],
-  "filters": [],
-  "imgAlt": "",
+  "filters": [
+    "Italienskt"
+  ],
+  "imgAlt": "dsa",
   "nutrientsPerPortion": {
-    "calories": 0,
-    "carbohydrates": 0,
-    "protein": 0,
-    "salt": 0,
+    "calories": 179.07999999999998,
+    "carbohydrates": 7.215999999999999,
+    "protein": 2.3056,
+    "salt": 0.011,
     "fat": {
-      "monounsaturated": 0,
-      "saturated": 0,
-      "polyunsaturated": 0,
-      "total": 0
+      "monounsaturated": 6.336,
+      "saturated": 7.8759999999999994,
+      "polyunsaturated": 0.6072,
+      "total": 15.664
     }
   }
 }
