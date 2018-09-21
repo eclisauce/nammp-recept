@@ -2,31 +2,40 @@
   small {
     font-size: 75%;
   }
+
   .btn {
     font-family: $font-family;
   }
+
   .btn-primary {
     &:focus {
-      box-shadow: 0 0 0 .2rem rgba(240,95,64,.5);
+      box-shadow: 0 0 0 0.2rem rgba(240,95,64,.5);
     }
+
     &:hover {
       background-color: $primary;
       color: white;
       border-color: #ee3910;
     }
   }
-  h2, h3, h4, h5, h6 {
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $font-family;
     font-weight: bold;
   }
+
   textarea {
     min-height: 58px;
   }
 
   .picture-upload {
-      .picture-upload__img {
-        max-width: 100%;
-      }
+    .picture-upload__img {
+      max-width: 100%;
+    }
   }
 
   .remove-instr {
@@ -39,6 +48,7 @@
     width: 1.6rem;
     font-size: 0.8rem;
   }
+
   .label-instr {
     position: absolute;
     top: calc(50% - 0.5rem);
@@ -53,10 +63,22 @@
     text-align: center;
     display: flex;
     justify-content: center;
+
     span {
       width: 0.8rem;
       height: 0.8rem;
-          align-self: center;
+      align-self: center;
     }
+  }
+
+  .result-dropdown {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+    overflow-y: auto;
+    max-height: 300px;
+    box-sizing: border-box;
+    z-index: 1001;
   }
 }
