@@ -22,11 +22,7 @@ export default function() {
                     <p><i class="far fa-clock mr-1"></i> Tid: ${this.calcTime(this.recipe)}</p>
                   </div>
                 </div>
-                <div class="d-flex flex-row flex-wrap mt-auto">
-                  <a class="btn filter-btn mt-2">Vegetarisk</a>
-                  <a class="btn filter-btn mt-2">Laktosfritt</a>
-                  <a class="btn filter-btn mt-2">Asiatiskt</a>
-                  <a class="btn filter-btn mt-2">Festmåltider</a>
+                <div class="d-flex flex-row flex-wrap mt-auto recipe-categories">
                 </div>
               </div>
             </div>

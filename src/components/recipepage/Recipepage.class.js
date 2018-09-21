@@ -41,6 +41,7 @@ export default class Recipepage extends Base {
     $('main').empty();
     this.render('main');
     this.renderIngredients();
+    this.renderRecipeFilters();
     this.pictureRandomizer();
     this.initializeBootstrapTooltips();
   }
@@ -123,6 +124,18 @@ export default class Recipepage extends Base {
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
     });
+  }
+
+  /**
+   * Method to get filters/categories for specific recipe
+   * and render those out to the page as button links
+   */
+  renderRecipeFilters() {
+    let recipeFilters = this.recipe.filters;
+    let recipeFilterButtons = recipeFilters.map(filter => {
+      return `<a class="btn filter-btn mt-2">${filter}</a>`
+    })
+    $('.recipe-categories').empty().append(recipeFilterButtons.join(''));
   }
 
 }
