@@ -306,6 +306,7 @@ export default class AddRecipe extends Base {
              .replace(/\s/g, '');
     return `${str.slice(0,15)}-${Date.now()}`;
   }
+  
   checkIfExistsInDatabase(allFormData){
     // Get all ingredients thats suppose to exist in database
     let ingredientsLm = allFormData.filter(data => {
@@ -316,16 +317,15 @@ export default class AddRecipe extends Base {
 
 
     // Trying to loop out and compare ingredients lm to fooddata
-    for (let i = 0; i < ingredientsLm.length; i++){
-      for (let j = 0; j < this.foodData.length; j++) {
-        if (ingredientsLm[i].value === this.foodData[j].Namn){
-          // spliced here before. Try it again!
-          ingredientsLm[i].value === 'bajsbajs';
-          i--
-        }
+    let tempArr = []
+    ingredientsLm.forEach(x => {
+      if(this.existInDatabase(x.value)){
+      } else {
+        tempArr.push(x);
       }
-    }
+    })
 
+    ingredientsLm = tempArr;
 
     // If all is found then ingredientsLm will be 0. 
     if(ingredientsLm.length === 0){
@@ -410,6 +410,10 @@ export default class AddRecipe extends Base {
     return ingredient.Naringsvarden.filter(nutrition => {
       return nutrition.Namn == unit;
     })[0].Varde.replace(/,/gi, '.');
+  }
+
+  existInDatabase(str){
+    return this.foodData.some(x => x.Namn == str);
   }
 
 }
