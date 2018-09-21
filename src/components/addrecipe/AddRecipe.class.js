@@ -254,7 +254,7 @@ export default class AddRecipe extends Base {
 
     // This is a reducer function that adds everything in an array.
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    
+
     modifiedRecipe.nutrientsPerPortion = {};
     modifiedRecipe.nutrientsPerPortion.calories = allNutrtionsArray.map(val => val.calories).reduce(reducer)
     modifiedRecipe.nutrientsPerPortion.carbohydrates = allNutrtionsArray.map(val => val.carbohydrates).reduce(reducer);
@@ -293,7 +293,19 @@ export default class AddRecipe extends Base {
     }
   }
 
-  
+  /**
+  * Creates recipe Url from String
+  * @author Martin
+  */
+  createRecipeUrl(str) {
+    str = str.toLowerCase()
+             .replace(/[^a-zA-Z ]/g, '')
+             .replace(/å|ä/g, 'a')
+             .replace(/ö/g, 'o')
+             .replace(/\s/g, '');
+    return `${str.slice(0,15)}-${Date.now()}`;
+  }
+
 
   checkIfNumbers(allFormData){
     let numbersOnlyArray = allFormData.filter(form => {
@@ -312,7 +324,7 @@ export default class AddRecipe extends Base {
 
   /**
    * Gets all the nutritions needed for the recipe and adds it to an object that is returned
-   *
+   * @author Andy
    */
   getAllNutritions(ingredientStr, grams) {
     let ingredient = this.foodData.filter(item => {
@@ -332,7 +344,7 @@ export default class AddRecipe extends Base {
     nutrientsPerPortion.salt = this.getOneNutrition(ingredient, 'Salt') * grams / 100;
 
     nutrientsPerPortion.fat = {};
-    // Fetter: totalt fett. 
+    // Fetter: totalt fett.
     nutrientsPerPortion.fat.total = this.getOneNutrition(ingredient, 'Fett') * grams / 100;
     // Enkelomättat fett
     nutrientsPerPortion.fat.monounsaturated = this.getOneNutrition(ingredient, 'Summa enkelomättade fettsyror') * grams / 100;
