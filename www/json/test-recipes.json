@@ -1,22 +1,23 @@
 {
-  "title": "dsa",
-  "description": "dsa",
-  "time": 60,
-  "imgLink": "https://images.pexels.com/photos/5317/food-salad-restaurant-person.jpg",
+  "title": "",
+  "description": "",
+  "time": 0,
+  "instruction-1": "",
+  "imgLink": "",
   "ingredientsPerPortion": [
     {
-      "name": "dsa",
-      "quantity": 0.5,
+      "name": "",
+      "quantity": 0,
       "unitOfMeasurement": "st",
       "lmTitle": "Potatis rå",
-      "grams": 75
+      "grams": 0
     },
     {
       "name": "",
       "quantity": 0,
       "unitOfMeasurement": "st",
-      "lmTitle": "Talg nöt",
-      "grams": 58
+      "lmTitle": "",
+      "grams": 0
     },
     {
       "name": "",
@@ -27,25 +28,19 @@
     }
   ],
   "portions": 1,
-  "instructions": [
-    "dsa",
-    "dsa"
-  ],
-  "filters": [
-    "Huvudrätter",
-    "Veganskt"
-  ],
-  "imgAlt": "dsa",
+  "instructions": [],
+  "filters": [],
+  "imgAlt": "",
   "nutrientsPerPortion": {
-    "calories": 439.73,
-    "carbohydrates": 12.3,
-    "protein": 5.364999999999999,
-    "salt": 0.0249,
+    "calories": 0,
+    "carbohydrates": 0,
+    "protein": 0,
+    "salt": 0,
     "fat": {
-      "monounsaturated": 16.704,
-      "saturated": 20.763999999999996,
-      "polyunsaturated": 1.6007999999999998,
-      "total": 41.255
+      "monounsaturated": 0,
+      "saturated": 0,
+      "polyunsaturated": 0,
+      "total": 0
     }
   }
 }

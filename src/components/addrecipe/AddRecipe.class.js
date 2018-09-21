@@ -5,6 +5,7 @@ import {
   pictureUploadTemplate,
   instructionTemplate
 } from './AddRecipe.template';
+import { doesNotThrow } from 'assert';
 
 /**
  * Startpage in main for route '/'
@@ -182,7 +183,7 @@ export default class AddRecipe extends Base {
     e.preventDefault();
     let allFormData = $(formHtml).serializeArray();
     console.log(allFormData);
-    this.checkIfEverythingHasValue(allFormData)
+    this.checkIfExistsInDatabase(allFormData)
 
     let ingredientsPerPortion = [];
 
@@ -248,7 +249,7 @@ export default class AddRecipe extends Base {
 
 
     // Get full nutrition mother fuckkcccaass
-    let allNutrtionsArray = modifiedRecipe.ingredientsPerPortion.map(val => {
+    let allNutritionsArray = modifiedRecipe.ingredientsPerPortion.map(val => {
       if(val.lmTitle) {return this.getAllNutritions(val.lmTitle, val.grams)};
     }).filter(nut => nut !== undefined);
 
@@ -256,15 +257,15 @@ export default class AddRecipe extends Base {
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     
     modifiedRecipe.nutrientsPerPortion = {};
-    modifiedRecipe.nutrientsPerPortion.calories = allNutrtionsArray.map(val => val.calories).reduce(reducer)
-    modifiedRecipe.nutrientsPerPortion.carbohydrates = allNutrtionsArray.map(val => val.carbohydrates).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.protein = allNutrtionsArray.map(val => val.protein).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.salt = allNutrtionsArray.map(val => val.salt).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.calories = allNutritionsArray.map(val => val.calories).reduce(reducer)
+    modifiedRecipe.nutrientsPerPortion.carbohydrates = allNutritionsArray.map(val => val.carbohydrates).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.protein = allNutritionsArray.map(val => val.protein).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.salt = allNutritionsArray.map(val => val.salt).reduce(reducer);
     modifiedRecipe.nutrientsPerPortion.fat = {};
-    modifiedRecipe.nutrientsPerPortion.fat.monounsaturated = allNutrtionsArray.map(val => val.fat.monounsaturated).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.fat.saturated = allNutrtionsArray.map(val => val.fat.saturated).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.fat.polyunsaturated = allNutrtionsArray.map(val => val.fat.polyunsaturated).reduce(reducer);
-    modifiedRecipe.nutrientsPerPortion.fat.total = allNutrtionsArray.map(val => val.fat.total).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.fat.monounsaturated = allNutritionsArray.map(val => val.fat.monounsaturated).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.fat.saturated = allNutritionsArray.map(val => val.fat.saturated).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.fat.polyunsaturated = allNutritionsArray.map(val => val.fat.polyunsaturated).reduce(reducer);
+    modifiedRecipe.nutrientsPerPortion.fat.total = allNutritionsArray.map(val => val.fat.total).reduce(reducer);
 
 
     JSON._save('test-recipes.json', modifiedRecipe).then(function(){
@@ -281,7 +282,7 @@ export default class AddRecipe extends Base {
     console.log(emptyValueArray);
     if (emptyValueArray.length === 0){
       $('.something-went-wrong').empty();
-      // Call checkifnumber
+      // Call exists in database
     } else {
       $('form input, textarea').each(function(){
         if($(this).val() == ""){
@@ -293,7 +294,51 @@ export default class AddRecipe extends Base {
     }
   }
 
-  
+  checkIfExistsInDatabase(allFormData){
+    // Get all ingredients thats suppose to exist in database
+    let ingredientsLm = allFormData.filter(data => {
+      if(data.name === "IngrediensnamnLivsmedelsverket") {
+        return true;
+      }
+    });
+
+
+    // Trying to loop out and compare ingredients lm to fooddata
+    for (let i = 0; i < ingredientsLm.length; i++){
+      for (let j = 0; j < this.foodData.length; j++) {
+        if (ingredientsLm[i].value === this.foodData[j].Namn){
+          // spliced here before. Try it again!
+          ingredientsLm[i].value === 'bajsbajs';
+          i--
+        }
+      }
+    }
+
+
+    // If all is found then ingredientsLm will be 0. 
+    if(ingredientsLm.length === 0){
+      // call numbercheck
+    } else {
+
+
+      let lmInputs = $('input[name="IngrediensnamnLivsmedelsverket"]');
+
+      ingredientsLm.forEach(x => {
+        for (let i = 0; i < lmInputs.length; i++){
+          if(lmInputs.eq(i).val() == x.value) {
+            $(lmInputs.eq(i)).addClass('red-border');
+
+            $('.something-went-wrong').empty().append('Alla ingredienser finns inte i databasen!');
+          }
+        }
+      })
+    }
+
+    console.log(ingredientsLm)
+  }
+
+
+
 
   checkIfNumbers(allFormData){
     let numbersOnlyArray = allFormData.filter(form => {
