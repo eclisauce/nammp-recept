@@ -10,7 +10,6 @@ export default class AddRecipe extends Base {
   constructor() {
     super();
     this.eventHandler();
-    this.loadJSONFood();
     this.str;
     this.ingredientCounter = 0;
     this.instructionCounter = 1;
@@ -19,6 +18,7 @@ export default class AddRecipe extends Base {
   /**
    * autocomplete method and sorting
    * needs more added to it?
+   *@author Markus
    */
   autoComplete(str) {
     //   if(str.length < 3){
@@ -55,15 +55,6 @@ export default class AddRecipe extends Base {
         ? -1
         : 1;
     });
-  }
-
-  /**
-   * async function to load in the ingredients json
-   *
-   * @author Markus
-   */
-  async loadJSONFood() {
-    this.foodData = await $.getJSON("/json/livsmedel.json");
   }
 
   change() {
@@ -109,13 +100,12 @@ export default class AddRecipe extends Base {
     });
 
     /**
- * jQuery code for handeling the input from user displaying the list from json and autocompletes
- *
- */
+     * jQuery code for handeling the input from user displaying the list from json and autocompletes
+     * @author Markus
+     */
     $(document).on('keyup', '.ingredient-input', function() {
       let str = $(this).val();
       let ul = $(this).parent().find('.result-dropdown');
-      let inputField = $(this);
       ul.empty();
       let foodItems = that.autoComplete(str);
 
@@ -123,12 +113,13 @@ export default class AddRecipe extends Base {
         ul.append(`<li class="list-group-item list-item">${foodItem}</li>`);
       }
 
-      $('.result-dropdown').on('click', '.list-item', function() {
-        let click_text = $(this).text().split('|');
-        $(inputField).val($.trim(click_text[0]));
-        $(".result-dropdown").html('');
-      });
+    });
 
+    $(document).on('click', '.list-item', function() {
+      let inputField = this;
+      let click_text = $(this).text().split('|');
+      $(inputField).val($.trim(click_text[0]));
+      $(".result-dropdown").html('');
     });
 
     /**
