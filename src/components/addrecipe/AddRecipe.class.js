@@ -115,11 +115,14 @@ export default class AddRecipe extends Base {
 
     });
 
-    $(document).on('click', '.list-item', function() {
-      let inputField = this;
-      let click_text = $(this).text().split('|');
-      $(inputField).val($.trim(click_text[0]));
+    $(document).on('click', 'main', () => {
       $(".result-dropdown").html('');
+    })
+    
+    $(document).on('click', '.list-item', function() {
+      let inputField = $(this);
+      $(this).parent().siblings('.ingredient-input').val($(event.target).text());
+
     });
 
     /**
