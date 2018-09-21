@@ -71,6 +71,15 @@
     }
   }
 
+  .info-box{
+    border: 1px solid #f05f40;
+    background-color: #fafafa;
+    p{
+      text-decoration: underline;
+      text-decoration-color: #f05f40;
+    }
+  }
+
   .result-dropdown {
     position: absolute;
     width: 100%;
@@ -80,5 +89,10 @@
     max-height: 300px;
     box-sizing: border-box;
     z-index: 1001;
+
+    .list-item:hover{
+      background-color: rgb(20, 95, 212);
+      color: #fff;
+    }
   }
 }

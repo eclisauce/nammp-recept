@@ -7,8 +7,9 @@ return `
         <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Information om hur receptet skall fyllas i">
           <i class="fas fa-info-circle"></i>
         </button>
-        <div class="dropdown-menu border-danger" aria-labelledby="dropdownMenuButton">
-          <p class="p-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="dropdown-menu info-box" aria-labelledby="dropdownMenuButton">
+          <p class="p-2">För att underlätta fyll i alla fält.</p>
+          <p class="p-2">För att ta del av de automatiska uträkningarna på näringsinnehåll fyll i en ingrediens från vår databas</p>
         </div>
       </div>
     </article>
@@ -235,7 +236,7 @@ return `
       </div>
     </div>
     <div class="form-row">
-      <div class="col-6 mb-0 mb-md-0 pt-2">
+      <div class="col-6 mb-0 mb-md-0 pt-2 bla">
         <input type="text" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
           <ul class="list-group result-dropdown"></ul>
