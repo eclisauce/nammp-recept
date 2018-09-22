@@ -9,11 +9,10 @@ export default class Searchresult extends Base {
   constructor(){
     super();
     this.checkIfDataExist();
-
   }
 
   /**
-  * Method for checking if data has been loaded properly. 
+  * Method for checking if data has been loaded properly.
   * Need to optimize this. Data needs to always be loaded.
   * Code is repeated in more classes.
   *
@@ -39,7 +38,7 @@ export default class Searchresult extends Base {
   * Checks if there is a change to checkboxes.
   * Then either add the name of it to an array or remove it
   * Call filterAndRender
-  * 
+  *
   */
   change(){
     if ($(event.target).is('input[type=checkbox]')) {
@@ -59,7 +58,7 @@ export default class Searchresult extends Base {
 
   /**
   * Rewrites the filtered recipes then calls the render method.
-  * 
+  *
   *
   */
   filterAndRender(){
@@ -69,7 +68,7 @@ export default class Searchresult extends Base {
 
   /**
   * Filtering recipes after an array with filter-words
-  * 
+  *
   *
   */
   filterRecipe(filterArray){
@@ -85,12 +84,12 @@ export default class Searchresult extends Base {
 
   /**
   * Render all filtered boxes.
-  * 
+  *
   *
   */
   renderRecipeBoxes(){
     let newarr = this.filteredRecipes.map(recipe => {
-      return `<a href="/recipe" class="no-decoration-a-tag pop">
+      return `<a href="/recept/${recipe.url}" class="no-decoration-a-tag pop">
       <div class="media p-1 p-sm-3 mt-0 border">
         <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
           alt="${recipe.imgAlt}">
