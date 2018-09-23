@@ -2,7 +2,6 @@ import Base from '../../base/Base.class';
 import template from './Recipepage.template';
 
 
-
 /**
  * Recipepage in main for route '/'
  *
@@ -10,23 +9,8 @@ import template from './Recipepage.template';
 export default class Recipepage extends Base {
   constructor() {
     super();
-    this.checkIfDataExist();
+    this.start();
   }
-
-  /**
-  * Method for checking if data has been loaded properly. 
-  * Need to optimize this. Data needs to always be loaded.
-  *
-  */
-
-  checkIfDataExist(){
-    if(this.recipes && this.foodData) {
-      this.start();
-    } else {
-      setTimeout(() => { this.checkIfDataExist(); }, 80);
-    }
-  }
-
 
   /**
   * Getting the right recipe by a string passed to the constructor later on
@@ -37,12 +21,14 @@ export default class Recipepage extends Base {
   *
   */
   start(){
-    this.getRecipe("Tikka Masala");
-    $('main').empty();
-    this.render('main');
-    this.renderIngredients();
-    this.pictureRandomizer();
-    this.initializeBootstrapTooltips();
+    setTimeout(() => {
+      this.getRecipe(location.pathname.slice(8, location.pathname.length));
+      $('main').empty();
+      this.render('main');
+      this.renderIngredients();
+      this.pictureRandomizer();
+      this.initializeBootstrapTooltips();
+    }, 100);
   }
 
 
@@ -62,8 +48,7 @@ export default class Recipepage extends Base {
    * Should be provided from the contructor later on.
    */
   getRecipe(str) {
-    console.log(this.recipes);
-    this.recipe = this.recipes.filter(recipe => recipe.title === str)[0];
+    this.recipe = this.recipes.filter(recipe => recipe.url === str)[0];
   }
 
   /**
@@ -93,12 +78,11 @@ export default class Recipepage extends Base {
 
 
   renderIngredients(){
-    console.log(this.getIngredients());
     $('.ingredient-list').empty('').append(this.getIngredients());
   }
-  
+
   /**
-   * Method to randomly select a background image 
+   * Method to randomly select a background image
    * for the "header" of the recipe page
    * Selects image from an array and uses it as the value
    * of the background-image property
@@ -117,7 +101,7 @@ export default class Recipepage extends Base {
   }
 
   /**
-   * Bootstrap built-in method needed to 
+   * Bootstrap built-in method needed to
    * initialize tooltips on page
    *
    */
