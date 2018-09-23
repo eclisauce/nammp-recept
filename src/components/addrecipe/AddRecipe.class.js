@@ -71,14 +71,20 @@ export default class AddRecipe extends Base {
      * @author Martin
      */
     if ($(event.target).attr('id') == 'imgLink') {
-      $('.picture-upload').empty();
+      let emptyAndUpload = (renderUrl) => {
+        $('.picture-upload').empty();
+        this.render('.picture-upload', 'pictureUploadTemplate');
+        $(document).find('.picture-upload__img').attr('src', renderUrl);
+      }
+      emptyAndUpload('/img/placeholder-image.jpg');
+
 
       const url = $(event.target).val();
       const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/g;
 
       if (url.match(regex)) {
-        this.render('.picture-upload', 'pictureUploadTemplate');
-        $(document).find('.picture-upload__img').attr('src', url);
+        emptyAndUpload(url)
+
       }
     }
 

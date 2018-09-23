@@ -84,7 +84,6 @@ export default class Router {
     this.addRecipe.renderNewForm();
     this.addRecipe.renderNewForm();
     this.addRecipe.renderNewForm();
-
   }
 
   recipePage() {
