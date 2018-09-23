@@ -336,6 +336,10 @@ export default class AddRecipe extends Base {
       // Make time to number
       modifiedRecipe.time = modifiedRecipe.time * 1;
 
+      // Set url
+      modifiedRecipe.url = this.createRecipeUrl(modifiedRecipe.title);
+
+
 
 
       // Get full nutrition mother fuckkcccaass
@@ -393,7 +397,6 @@ export default class AddRecipe extends Base {
    */
   checkIfEverythingHasValue(allFormData) {
     let emptyValueArray = allFormData.filter(form => form.value === "");
-    console.log(emptyValueArray);
     if (emptyValueArray.length === 0) {
       $('.something-went-wrong').empty();
       return true;
@@ -507,7 +510,6 @@ export default class AddRecipe extends Base {
 
   checkIfFilterSelected(allFormData) {
     let filters = allFormData.filter(data => data.value === 'on').map(filter => filter.name);
-    console.log(filters);
     if (filters.length > 0) {
       $('.something-went-wrong').empty();
       return true;
@@ -527,8 +529,6 @@ export default class AddRecipe extends Base {
     let ingredient = this.foodData.filter(item => {
       return item.Namn == ingredientStr;
     })[0];
-
-    console.log(grams);
 
     let nutrientsPerPortion = {};
     // Kcal

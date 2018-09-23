@@ -82,7 +82,7 @@ export default class Base {
   // Global methods that are being used in more than one class
 
   loadAllJSON(){
-    $.getJSON("/json/new-food.json", (food) => {
+    $.getJSON("/json/naring.json", (food) => {
       this.foodData = food;
     }).then(this.loadRecipeJSON());
   }
