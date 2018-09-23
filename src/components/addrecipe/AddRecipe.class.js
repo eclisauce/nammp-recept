@@ -27,7 +27,7 @@ export default class AddRecipe extends Base {
      * Eventhandler to check if picture url is valid and displays preview
      * @author Martin
      */
-    if ($(event.target).attr('id') == 'imageLink') {
+    if ($(event.target).attr('id') == 'imgLink') {
       $('.picture-upload').empty();
 
       const url = $(event.target).val();
@@ -179,6 +179,19 @@ export default class AddRecipe extends Base {
     }
   }
 
+  /**
+   * Creates recipe Url from String
+   * @author Martin
+   */
+  createRecipeUrl(str) {
+    str = str.toLowerCase()
+      .replace(/[^a-zA-Z ]/g, '')
+      .replace(/å|ä/g, 'a')
+      .replace(/ö/g, 'o')
+      .replace(/\s/g, '');
+    return `${str.slice(0,15)}-${Date.now()}`;
+  }
+
 
   // Submit form and build object to send to JSON.
   submitForm(e, formHtml) {
@@ -270,31 +283,16 @@ export default class AddRecipe extends Base {
       modifiedRecipe.nutrientsPerPortion.fat.polyunsaturated = allNutritionsArray.map(val => val.fat.polyunsaturated).reduce(reducer);
       modifiedRecipe.nutrientsPerPortion.fat.total = allNutritionsArray.map(val => val.fat.total).reduce(reducer);
 
+      this.saveAllRecipes(modifiedRecipe);
 
-      JSON._save('test-recipes.json', modifiedRecipe).then(function () {
-        console.log('Saved!');
-      });
       console.log(modifiedRecipe, "modified recipe obj")
-      // This line of code gets all the ingredients.
-      // fs.writeFile('./www/json/aa.json', req.body); // backend-code
     }
   }
 
 
 
 
-  /**
-   * Creates recipe Url from String
-   * @author Martin
-   */
-  createRecipeUrl(str) {
-    str = str.toLowerCase()
-      .replace(/[^a-zA-Z ]/g, '')
-      .replace(/å|ä/g, 'a')
-      .replace(/ö/g, 'o')
-      .replace(/\s/g, '');
-    return `${str.slice(0,15)}-${Date.now()}`;
-  }
+
 
   doAllChecks(allFormData){
     if(
