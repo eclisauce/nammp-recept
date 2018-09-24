@@ -57,15 +57,26 @@ export default class Router {
       '/searchresult': 'searchResult'
     };
 
-    setTimeout(() => {
-      for(let recipe of this.app.recipes) {
-        urls[`/recept/${recipe.url}`] = 'recipePage';
-      }
-      let methodName = urls[url];
-
+    // Handles search-strings from navbar
+    if(url.includes('searchresult/')){
+      let newUrl = url.substring(0, 13);
+      let searchStr = url.substring(14);
+      let methodName = urls[newUrl];
       // Call the right method
-      this[methodName]();
-    }, 0);
+      this[methodName](searchStr);
+    } else {
+
+      setTimeout(() => {
+        for(let recipe of this.app.recipes) {
+          urls[`/recept/${recipe.url}`] = 'recipePage';
+        }
+        let methodName = urls[url];
+  
+        // Call the right method
+        this[methodName]();
+      }, 0);  
+    }
+
 
     window.scrollTo(0, 0);
 
@@ -90,8 +101,8 @@ export default class Router {
     this.recipepage = new Recipepage();
   }
 
-  searchResult() {
-    this.searchresult = new Searchresult();
+  searchResult(searchStr) {
+    this.searchresult = new Searchresult(searchStr);
   }
 
 
