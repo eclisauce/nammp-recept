@@ -25,7 +25,7 @@ export default class Router {
   addEventHandler() {
     let that = this;
 
-    $(document).on('click', 'a.pop', function(e) {
+    $(document).on('click', 'a.pop', function (e) {
       // Create a push state event
       let href = $(this).attr('href');
       history.pushState(null, null, href);
@@ -57,15 +57,42 @@ export default class Router {
       '/searchresult': 'searchResult'
     };
 
-    setTimeout(() => {
-      for(let recipe of this.app.recipes) {
-        urls[`/recept/${recipe.url}`] = 'recipePage';
-      }
-      let methodName = urls[url];
+    function translateCharacters(str) {
+      return str.replace(/%C3%A5/g, "å").replace(/%C3%A4/g, "ä").replace(/%C3%B6/g, "ö").replace(/%C3%A9/g, "é");
+    }
 
+    /**
+     * Checks if url is searchresult.
+     * If it is it checks for search-word/s and filters
+     * Then sends it to searchresult with in-parameters to the class.     * 
+     * @author Andreas
+     */
+    if (url.includes('searchresult')) {
+      url = translateCharacters(url);
+      let newUrl = url.substring(0, 13);
+      let indexOfFilters = url.indexOf('/filters');
+      let searchStr = url.substring(14);
+      let filters = [];
+      if (indexOfFilters > -1) {
+        searchStr = url.substring(14, indexOfFilters);
+        filters = url.substring(indexOfFilters + 8).replace(/-/g, ' ').split(' ');
+      }
+      let methodName = urls[newUrl];
       // Call the right method
-      this[methodName]();
-    }, 0);
+      this[methodName](searchStr, filters);
+    } else {
+
+      setTimeout(() => {
+        for (let recipe of this.app.recipes) {
+          urls[`/recept/${recipe.url}`] = 'recipePage';
+        }
+        let methodName = urls[url];
+
+        // Call the right method
+        this[methodName]();
+      }, 0);
+    }
+
 
     window.scrollTo(0, 0);
 
@@ -84,14 +111,16 @@ export default class Router {
     this.addRecipe.renderNewForm();
     this.addRecipe.renderNewForm();
     this.addRecipe.renderNewForm();
+    this.addRecipe.checkSizeWindowAndAppend();
+
   }
 
   recipePage() {
     this.recipepage = new Recipepage();
   }
 
-  searchResult() {
-    this.searchresult = new Searchresult();
+  searchResult(searchStr, filters) {
+    this.searchresult = new Searchresult(searchStr, filters);
   }
 
 

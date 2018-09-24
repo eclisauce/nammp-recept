@@ -3,7 +3,9 @@ import {
   template,
   ingredientTemplate,
   pictureUploadTemplate,
-  instructionTemplate
+  instructionTemplate,
+  categoriesTemplate,
+  pictureHolderTemplate
 } from './AddRecipe.template';
 import {
   doesNotThrow
@@ -20,6 +22,9 @@ export default class AddRecipe extends Base {
     this.eventHandler();
     this.str;
     this.ingredientCounter = 0;
+    window.onresize = () => {
+      this.checkSizeWindowAndAppend();
+    };
   }
 
   /**
@@ -586,9 +591,28 @@ export default class AddRecipe extends Base {
     })[0].Varde.replace(/,/gi, '.');
   }
 
+  /**
+  * Listen to change on window-size and appending where it should be. 
+  *
+  */
+  checkSizeWindowAndAppend(){
+    $('.width-768').empty();
+    $('.width-768-plus').empty();
+    if($(document).width() < 768) {
+      $('.width-768-plus').empty();
+      this.render('.width-768', 'pictureHolderTemplate');
+      this.render('.width-768', 'categoriesTemplate');
+    } else {
+      this.render('.width-768-plus', 'categoriesTemplate');
+      this.render('.width-768-plus', 'pictureHolderTemplate');
+    }
+  }
+
 }
 
 AddRecipe.prototype.ingredientTemplate = ingredientTemplate;
 AddRecipe.prototype.template = template;
 AddRecipe.prototype.pictureUploadTemplate = pictureUploadTemplate;
 AddRecipe.prototype.instructionTemplate = instructionTemplate;
+AddRecipe.prototype.categoriesTemplate = categoriesTemplate;
+AddRecipe.prototype.pictureHolderTemplate = pictureHolderTemplate;
