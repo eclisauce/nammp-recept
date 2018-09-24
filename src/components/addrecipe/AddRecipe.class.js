@@ -20,7 +20,6 @@ export default class AddRecipe extends Base {
     this.eventHandler();
     this.str;
     this.ingredientCounter = 0;
-    this.instructionCounter = 1;
   }
 
   /**
@@ -133,16 +132,15 @@ export default class AddRecipe extends Base {
      *
      *@author Markus
      */
-
     $(document).on('click', 'main', () => {
       $(".result-dropdown").html('');
     })
+
     /**
      * function to pick  an item from the list and put it in the input field
      *
      *@author Markus
      */
-
     $(document).on('click', '.list-item', function() {
       let inputField = $(this);
       $(this).parent().siblings('.ingredient-input').val($(event.target).text());
@@ -168,6 +166,18 @@ export default class AddRecipe extends Base {
     }
   }
 
+  /**
+  * Recalculate the Instructions index
+  * @author Martin
+  */
+  recalculateInstructionIndex() {
+    const $labels = $('.label-instr');
+    $labels.each(function(i)  {
+      i = i === 0 ? 1 : i + 1;
+      $(this).text(i).parent().attr('for', `ìnstruction-${i}`).attr('title', `Textfält för instruktion ${i}.`).find('.instruction').attr('placeholder', `${i}.`).attr('name', `instruction-${i}`);
+    });
+  }
+
   click() {
     /**
     * Click on #add-instr to add more instructionfields
@@ -178,17 +188,20 @@ export default class AddRecipe extends Base {
     }
 
     /**
-    * Click on #remove-instr to delete current instructionfield
+    * Click on remove-instr to delete current instructionfield
     * @author Martin
     */
-    if ($(event.target).hasClass('remove-instr') || $(event.target).parent().hasClass('remove-instr')) {
+    if ($(event.target).hasClass('remove-instr') && $('.instruction').length > 1 || $(event.target).parent().hasClass('remove-instr') && $('.instruction').length > 1 ) {
+      let instance = this;
       if (event.toElement.nodeName === 'I') {
         $(event.target).parent().parent().fadeOut('slow', function() {
           $(this).remove();
+          instance.recalculateInstructionIndex();
         });
       } else {
         $(event.target).parent().fadeOut('slow', function () {
           $(this).remove();
+          instance.recalculateInstructionIndex();
         });
       }
     }
@@ -253,12 +266,12 @@ export default class AddRecipe extends Base {
   renderNewInstruction() {
     $('.instr-warning').remove();
     if ($(document).find('.instruction').last().val() !== '') {
-      this.instructionCounter++
       this.render('.instruction-container', 'instructionTemplate');
     } else {
       let that = this;
-      $(document).find('.instruction-container').append(`<div class="instr-warning">Du måste fylla i fältet för Instruktion ${that.instructionCounter} först.`)
+      $(document).find('.instruction-container').append(`<div class="instr-warning">Du måste fylla i fältet för Instruktion ${$('.instruction').length} först.`)
     }
+    this.recalculateInstructionIndex();
   }
 
   /**

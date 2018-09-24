@@ -28,7 +28,7 @@ export default class Recipepage extends Base {
       this.renderIngredients();
       this.pictureRandomizer();
       this.initializeBootstrapTooltips();
-    }, 100);
+    }, 50);
   }
 
 

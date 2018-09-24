@@ -7,28 +7,16 @@ import template from './Searchresultpage.template';
 export default class Searchresult extends Base {
   constructor(){
     super();
-    this.checkIfDataExist();
-  }
-
-  /**
-  * Method for checking if data has been loaded properly.
-  * Need to optimize this. Data needs to always be loaded.
-  * Code is repeated in more classes.
-  *
-  */
-  checkIfDataExist(){
-    if(this.recipes && this.foodData) {
-      this.start();
-    } else {
-      setTimeout(() => { this.checkIfDataExist(); }, 80);
-    }
+    this.start();
   }
 
   start(){
-    $('main').empty();
-    this.render('main');
-    this.filterArray = [];
-    this.filterAndRender();
+    setTimeout(() => {
+      $('main').empty();
+      this.render('main');
+      this.filterArray = [];
+      this.filterAndRender();
+    }, 50);
   }
 
 

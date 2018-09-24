@@ -111,9 +111,9 @@
       }
     ],
     "nutrientsPerPortion": {
-      "calories": 600,
+      "calories": 344,
       "carbohydrates": 60,
-      "protein": 40,
+      "protein": 23,
       "salt": 0.4,
       "fat": {
         "monounsaturated": 12,
