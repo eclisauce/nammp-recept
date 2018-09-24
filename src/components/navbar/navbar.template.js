@@ -26,7 +26,8 @@ export default `
   <div class="border search-holder ">
     <div class="container header__search ">
       <i class="fas fa-search"></i>
-      <input class="form-control form-control-lg pl-5 border-0" type="text" placeholder="Sök på recept..."></input>
+      <input class="form-control form-control-lg pl-5 border-0 search-input" type="text" placeholder="Sök på recept..."></input>
+      <ul class="list-group result-dropdown"></ul>
     </div>
   </div>
 `;

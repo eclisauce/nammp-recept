@@ -49,10 +49,27 @@ header {
     .active {
       border-bottom: 3px solid #f05f40;
     }
+
+
   }
 
   .search-holder {
     background: #fff !important;
+    font-size: 20px;
+    .result-dropdown {
+      position: absolute;
+      width: 100%;
+      cursor: pointer;
+      overflow-y: auto;
+      max-height: 300px;
+      box-sizing: border-box;
+      z-index: 1001;
+
+      .list-item:hover{
+        background-color: rgb(16, 79, 242);
+        color: #fff;
+      }
+    }
   }
 
   .header__search {
