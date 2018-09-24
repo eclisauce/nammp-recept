@@ -129,388 +129,352 @@
     ]
   },
   {
-    "title": "Matvetesallad med varmrökt lax",
-    "url": "matvetesallad-lax",
-    "description": "Chicken tikka masala är en gryta inspirerad av det indiska köket, där chicken tikka kombinerats med masalasås, ett uttryck av fusion cuisine, anpassat för västerländska smakpreferenser. Rätten är även populär på indiska restauranger i Sverige och andra länder.",
-    "instructions": [
-      "Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med kryddröran.",
-      "Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min.",
-      "Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihop.",
-      "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."
-    ],
-    "time": 120,
-    "imgLink": "https://img.koket.se/recipelist/matvetesallad-med-varmrokt-lax.jpg",
-    "imgAlt": "Detta är en fin bild på Tikka Masala",
+    "title": "Spagetti Bolognese",
+    "description": "Så här lagar du en klassisk förrätt från Bologna. I en riktig Bolognesesås ingår alltid buljong, morot och rotselleri. Det är dessa ingredienser som ger den alldeles speciella smaken till såsen. Servera med spaghetti och riven parmesanost.",
+    "imgLink": "https://img.koket.se/media/pasta-bolognese-med-riven-parmesanost.jpg",
+    "time": 80,
     "ingredientsPerPortion": [
       {
-        "name": "Kycklingbröst",
-        "quantity": 1,
-        "unitOfMeasurement": "st",
-        "grams": 250
+        "name": "Spaghetti",
+        "quantity": 75,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Pasta kokt m salt ",
+        "grams": 75
       },
       {
-        "name": "Olja",
-        "quantity": 5,
-        "unitOfMeasurement": "ml",
-        "grams": 5
+        "name": "Nötfärs",
+        "quantity": 75,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Nötfärs fett 10% stekt",
+        "grams": 75
       },
       {
-        "name": "Salt",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Gurkmeja",
-        "quantity": 1.5,
-        "unitOfMeasurement": "ml",
-        "grams": 1.5
-      },
-      {
-        "name": "Garam masala",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Kumin",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Koriander",
-        "quantity": 1.5,
-        "unitOfMeasurement": "ml",
-        "grams": 1.5
-      },
-      {
-        "name": "Kardemumma",
-        "quantity": 0.15,
-        "unitOfMeasurement": "ml",
-        "grams": 0.15
-      },
-      {
-        "name": "Svartpeppar",
-        "quantity": 1,
-        "unitOfMeasurement": "ml",
-        "grams": 1
-      },
-      {
-        "name": "Lök",
+        "name": "Burk krossade tomater",
         "quantity": 0.25,
         "unitOfMeasurement": "st",
-        "grams": 150
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
       },
       {
-        "name": "Tomatpure",
-        "quantity": 0.2,
-        "unitOfMeasurement": "dl",
+        "name": "Gul lök, hackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Morot, fint tärnad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Morot",
         "grams": 20
       },
       {
-        "name": "Vitlöksklyfta",
-        "quantity": 1,
+        "name": "Rotselleri, fint tärnad",
+        "quantity": 0.25,
         "unitOfMeasurement": "st",
-        "grams": 10
+        "lmTitle": "Rotselleri",
+        "grams": 25
       },
       {
-        "name": "Ingefära",
-        "quantity": 12.5,
+        "name": "Vitklöksklyftor",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 2.5
+      },
+      {
+        "name": "Smör",
+        "quantity": 0.5,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Smör fett 80 %",
+        "grams": 7.5
+      },
+      {
+        "name": "Vetemjöl",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Vetemjöl",
+        "grams": 0.75
+      },
+      {
+        "name": "Köttbuljong tärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Köttbuljong tärning ätf",
+        "grams": 5
+      },
+      {
+        "name": "Oregano",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Timjan",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Vitpeppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Parmensanost, riven",
+        "quantity": 25,
         "unitOfMeasurement": "g",
-        "grams": 12.5
-      },
-      {
-        "name": "Passerade tomater",
-        "quantity": 125,
-        "unitOfMeasurement": "ml",
-        "grams": 125
-      },
-      {
-        "name": "Kokosmjölk",
-        "quantity": 125,
-        "unitOfMeasurement": "ml",
-        "grams": 125
-      },
-      {
-        "name": "Kycklingbuljong",
-        "quantity": 1.25,
-        "unitOfMeasurement": "dl",
-        "grams": 125
+        "lmTitle": "Parmesanost hårdost fett 30% ",
+        "grams": 25
       }
     ],
-    "nutrientsPerPortion": {
-      "calories": 600,
-      "carbohydrates": 60,
-      "protein": 40,
-      "salt": 0.4,
-      "fat": {
-        "monounsaturated": 12,
-        "saturated": 12,
-        "polyunsaturated": 12,
-        "total": 36
-      }
-    },
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka löken. Skala och tärna moroten ytterst fint. Skala rotsellerin och riv den grovt. Fräs grönsakerna mjuka i smöret. Lägg i färsen och fräs den gyllenbrun.",
+      "Pudra över mjölet och rör om. Spä med buljongen och de krossade tomaterna. Krydda såsen med örtkryddorna. Pressa i vitlöken. Sjud på svag värme under lock i 15 minuter. Krydda med salt och peppar.",
+      "Koka pastan i rikligt med saltat vatten enligt anvisning på paketet. Häll av vattnet. Servera med såsen och parmesanost."
+    ],
     "filters": [
-      "Festmåltider",
-      "Endast Kött"
-    ]
+      "Huvudrätter",
+      "Husmanskost",
+      "Italienskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Spagetti Bolognese",
+    "url": "spagettibologne-1537798928950",
+    "nutrientsPerPortion": {
+      "calories": 493.715,
+      "carbohydrates": 30.901,
+      "protein": 34.356525000000005,
+      "salt": 3.5505,
+      "fat": {
+        "monounsaturated": 8.17595,
+        "saturated": 13.790949999999999,
+        "polyunsaturated": 1.297075,
+        "total": 25.014599999999998
+      }
+    }
   },
   {
-    "title": "Raggmunk med svamp och lingon",
-    "url": "raggmunkar-e-najs",
-    "description": "Chicken tikka masala är en gryta inspirerad av det indiska köket, där chicken tikka kombinerats med masalasås, ett uttryck av fusion cuisine, anpassat för västerländska smakpreferenser. Rätten är även populär på indiska restauranger i Sverige och andra länder.",
-    "instructions": [
-      "Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med kryddröran.",
-      "Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min.",
-      "Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihop.",
-      "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."
-    ],
-    "time": 120,
-    "imgLink": "https://img.koket.se/recipelist/raggmunk-med-svamp-och-lingon.jpg",
-    "imgAlt": "Detta är en fin bild på Tikka Masala",
+    "title": "Falafel",
+    "description": "Falafel är ljuvligt goda bollar av kikärtor kryddade med spiskummin och vitlök. Falafel brukar friteras, men det går lika bra att steka dem. Servera dem med sallad i pitabröd.",
+    "imgLink": "https://static01.nyt.com/images/2013/10/23/dining/23JPFLEX2/23JPFLEX2-articleLarge.jpg",
+    "time": 20,
+    "instruction-1": "Skölj kikärterna och låt dem rinna av. Skala och hacka löken.",
+    "instruction-2": "Mixa kikärter, lök, vitlök, spiskummin, salt, persilja, sambal olek, majsstärkelse och 15g smör.",
+    "instruction-3": "Forma smeten till små ovala, platta bullar. Stek dem på medelvärme i smör-&rapsolja i en stekpanna ca 2 min på varje sida.",
+    "instruction-4": "Servera gärna med citronklyftor och machésallad.",
     "ingredientsPerPortion": [
       {
-        "name": "Kycklingbröst",
-        "quantity": 1,
-        "unitOfMeasurement": "st",
-        "grams": 250
+        "name": "Kikärtor, kokta",
+        "quantity": 57.5,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Kikärter torkade kokta m salt",
+        "grams": 57.5
       },
       {
-        "name": "Olja",
-        "quantity": 5,
-        "unitOfMeasurement": "ml",
-        "grams": 5
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta, pressad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Spiskumin, malen",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
       },
       {
         "name": "Salt",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
+        "quantity": 0.125,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 0.75
       },
       {
-        "name": "Gurkmeja",
-        "quantity": 1.5,
-        "unitOfMeasurement": "ml",
-        "grams": 1.5
-      },
-      {
-        "name": "Garam masala",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Kumin",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Koriander",
-        "quantity": 1.5,
-        "unitOfMeasurement": "ml",
-        "grams": 1.5
-      },
-      {
-        "name": "Kardemumma",
-        "quantity": 0.15,
-        "unitOfMeasurement": "ml",
-        "grams": 0.15
-      },
-      {
-        "name": "Svartpeppar",
-        "quantity": 1,
-        "unitOfMeasurement": "ml",
-        "grams": 1
-      },
-      {
-        "name": "Lök",
-        "quantity": 0.25,
-        "unitOfMeasurement": "st",
-        "grams": 150
-      },
-      {
-        "name": "Tomatpure",
-        "quantity": 0.2,
+        "name": "Bladpersilja, hackad",
+        "quantity": 0.125,
         "unitOfMeasurement": "dl",
-        "grams": 20
+        "lmTitle": "Persilja blad",
+        "grams": 0.5
       },
       {
-        "name": "Vitlöksklyfta",
-        "quantity": 1,
-        "unitOfMeasurement": "st",
-        "grams": 10
+        "name": "Sambal olek",
+        "quantity": 0.5,
+        "unitOfMeasurement": "krm",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
       },
       {
-        "name": "Ingefära",
-        "quantity": 12.5,
-        "unitOfMeasurement": "g",
-        "grams": 12.5
+        "name": "Majsstärkelse",
+        "quantity": 0.5,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Majsstärkelse",
+        "grams": 3.35
       },
       {
-        "name": "Passerade tomater",
-        "quantity": 125,
-        "unitOfMeasurement": "ml",
-        "grams": 125
-      },
-      {
-        "name": "Kokosmjölk",
-        "quantity": 125,
-        "unitOfMeasurement": "ml",
-        "grams": 125
-      },
-      {
-        "name": "Kycklingbuljong",
-        "quantity": 1.25,
-        "unitOfMeasurement": "dl",
-        "grams": 125
+        "name": "Smör",
+        "quantity": 0.75,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Smör fett 80 %",
+        "grams": 11.25
       }
     ],
-    "nutrientsPerPortion": {
-      "calories": 600,
-      "carbohydrates": 60,
-      "protein": 40,
-      "salt": 0.4,
-      "fat": {
-        "monounsaturated": 12,
-        "saturated": 12,
-        "polyunsaturated": 12,
-        "total": 36
-      }
-    },
+    "portions": 1,
+    "instructions": [],
     "filters": [
-      "Festmåltider",
-      "Endast Kött",
-      "Fika"
-    ]
+      "Huvudrätter",
+      "Fika",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Falafel",
+    "url": "falafel-1537803772322",
+    "nutrientsPerPortion": {
+      "calories": 182.53949999999998,
+      "carbohydrates": 12.468250000000001,
+      "protein": 5.108250000000001,
+      "salt": 1.23237,
+      "fat": {
+        "monounsaturated": 2.617175,
+        "saturated": 6.402200000000001,
+        "polyunsaturated": 1.00725,
+        "total": 10.95004
+      }
+    }
   },
   {
-    "title": "Halloumitacos med avokadokräm",
-    "url": "halloooooooummitacos",
-    "description": "Chicken tikka masala är en gryta inspirerad av det indiska köket, där chicken tikka kombinerats med masalasås, ett uttryck av fusion cuisine, anpassat för västerländska smakpreferenser. Rätten är även populär på indiska restauranger i Sverige och andra länder.",
-    "instructions": [
-      "Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med kryddröran.",
-      "Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min.",
-      "Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihop.",
-      "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."
-    ],
-    "time": 120,
-    "imgLink": "https://img.koket.se/recipelist/halloumitacos-med-avokadokram-och-inlagd-lok.jpg",
-    "imgAlt": "Detta är en fin bild på Tikka Masala",
+    "title": "Köttbullar med rårörda lingon och potatismos",
+    "description": "Köttbullar med rårörda lingon är en klassisk svensk rätt som här serveras med hemgjort potatismos.",
+    "imgLink": "https://img.koket.se/media/kottbullar-med-rarorda-lingon-och-potatismos.jpg",
+    "time": 75,
+    "instruction-1": "Blanda lingon och socker och låt stå i rumstemperatur tills sockret löst sig. Rör om då och då.",
+    "instruction-2": "Blanda ströbröd och mjölk och låt svälla 5 minuter. Blanda sedan med färs, ägg, lök, hälften av salt och peppar. Gör ett stekprov och smaka ev. av med mer salt och peppar.",
+    "instruction-3": "Rulla sedan till köttbullar och stek i smör/rapsolja.",
+    "instruction-4": "Häll i lite vatten i stekpannan efter stekning och koka ur till en sky.",
+    "instruction-5": "Koka potatis i saltat vatten. Häll av och låt ånga av lite.",
+    "instruction-6": "Pressa potatisen och blanda med smör och gräddfil. Späd ev. med lite mjölk. Smaka av med salt och peppar. ",
+    "instruction-7": "Servera köttbullarna med potatismoset, steksky och lingon.",
     "ingredientsPerPortion": [
       {
-        "name": "Kycklingbröst",
-        "quantity": 1,
-        "unitOfMeasurement": "st",
-        "grams": 250
-      },
-      {
-        "name": "Olja",
-        "quantity": 5,
-        "unitOfMeasurement": "ml",
-        "grams": 5
-      },
-      {
-        "name": "Salt",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Gurkmeja",
-        "quantity": 1.5,
-        "unitOfMeasurement": "ml",
-        "grams": 1.5
-      },
-      {
-        "name": "Garam masala",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Kumin",
-        "quantity": 2.5,
-        "unitOfMeasurement": "ml",
-        "grams": 2.5
-      },
-      {
-        "name": "Koriander",
-        "quantity": 1.5,
-        "unitOfMeasurement": "ml",
-        "grams": 1.5
-      },
-      {
-        "name": "Kardemumma",
-        "quantity": 0.15,
-        "unitOfMeasurement": "ml",
-        "grams": 0.15
-      },
-      {
-        "name": "Svartpeppar",
-        "quantity": 1,
-        "unitOfMeasurement": "ml",
-        "grams": 1
-      },
-      {
-        "name": "Lök",
-        "quantity": 0.25,
-        "unitOfMeasurement": "st",
-        "grams": 150
-      },
-      {
-        "name": "Tomatpure",
-        "quantity": 0.2,
-        "unitOfMeasurement": "dl",
-        "grams": 20
-      },
-      {
-        "name": "Vitlöksklyfta",
-        "quantity": 1,
-        "unitOfMeasurement": "st",
-        "grams": 10
-      },
-      {
-        "name": "Ingefära",
-        "quantity": 12.5,
+        "name": "Blandfärs",
+        "quantity": 125,
         "unitOfMeasurement": "g",
+        "lmTitle": "Köttfärs blandfärs nöt 70% gris 30% rå",
+        "grams": 125
+      },
+      {
+        "name": "Ströbröd",
+        "quantity": 1,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.25
+      },
+      {
+        "name": "Mjölk",
+        "quantity": 0.375,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Mjölk fett 3%",
+        "grams": 25
+      },
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.125,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
         "grams": 12.5
       },
       {
-        "name": "Passerade tomater",
-        "quantity": 125,
-        "unitOfMeasurement": "ml",
-        "grams": 125
+        "name": "Salt",
+        "quantity": 1,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 3
       },
       {
-        "name": "Kokosmjölk",
-        "quantity": 125,
-        "unitOfMeasurement": "ml",
-        "grams": 125
+        "name": "Lingon",
+        "quantity": 62.5,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Lingon",
+        "grams": 62.5
       },
       {
-        "name": "Kycklingbuljong",
-        "quantity": 1.25,
+        "name": "Strösocker",
+        "quantity": 0.125,
         "unitOfMeasurement": "dl",
-        "grams": 125
+        "lmTitle": "Socker",
+        "grams": 12.5
+      },
+      {
+        "name": "Potatis",
+        "quantity": 150,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Potatis kokt m salt",
+        "grams": 150
+      },
+      {
+        "name": "Smör",
+        "quantity": 0.5,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Smör fett 80 %",
+        "grams": 7.5
+      },
+      {
+        "name": "Gräddfil",
+        "quantity": 0.125,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Gräddfil fett 12% ",
+        "grams": 12.5
+      },
+      {
+        "name": "Vitpeppar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
       }
     ],
-    "nutrientsPerPortion": {
-      "calories": 600,
-      "carbohydrates": 60,
-      "protein": 40,
-      "salt": 0.4,
-      "fat": {
-        "monounsaturated": 12,
-        "saturated": 12,
-        "polyunsaturated": 12,
-        "total": 36
-      }
-    },
+    "portions": 1,
+    "instructions": [],
     "filters": [
-      "Festmåltider",
-      "Endast Kött"
-    ]
+      "Huvudrätter",
+      "Husmanskost"
+    ],
+    "imgAlt": "Köttbullar med rårörda lingon och potatismos",
+    "url": "kttbullarmedrrr-1537805531074",
+    "nutrientsPerPortion": {
+      "calories": 537.425,
+      "carbohydrates": 48.253750000000004,
+      "protein": 28.583750000000002,
+      "salt": 3.6475,
+      "fat": {
+        "monounsaturated": 8.796249999999999,
+        "saturated": 12.441750000000003,
+        "polyunsaturated": 1.5512499999999998,
+        "total": 24.424999999999997
+      }
+    }
   }
 ]
