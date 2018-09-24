@@ -1,93 +1,95 @@
 import Base from '../../base/Base.class';
 import template from './Searchresultpage.template';
-
 /**
  * Searchresultpage in main for route '/'
  *
  */
 export default class Searchresult extends Base {
-  constructor(){
+  constructor(searchStr, filters) {
     super();
-    this.checkIfDataExist();
+    this.start();
+    this.searchStr = searchStr;
+    this.filterArray = filters;
   }
 
-  /**
-  * Method for checking if data has been loaded properly.
-  * Need to optimize this. Data needs to always be loaded.
-  * Code is repeated in more classes.
-  *
-  */
-  checkIfDataExist(){
-    if(this.recipes && this.foodData) {
-      this.start();
-    } else {
-      setTimeout(() => { this.checkIfDataExist(); }, 80);
-    }
-  }
-
-  start(){
-    $('main').empty();
-    this.render('main');
-    this.filterArray = [];
-    this.filterAndRender();
+  start() {
+    setTimeout(() => {
+      $('main').empty();
+      this.render('main');
+      this.searchRecipes = this.searchResults();
+      this.filterAndRender();
+      this.markFilters();
+    }, 50);
   }
 
 
   /**
-  * Eventhandler
-  * Checks if there is a change to checkboxes.
-  * Then either add the name of it to an array or remove it
-  * Call filterAndRender
-  *
-  */
-  change(){
+   * Eventhandler
+   * Checks if there is a change to checkboxes.
+   * Then either add the name of it to an array or remove it
+   * Call filterAndRender
+   *
+   */
+  change() {
     if ($(event.target).is('input[type=checkbox]')) {
       let name = $(event.target).attr('name');
-      if($(event.target).is(':checked')) {
+      if ($(event.target).is(':checked')) {
         this.filterArray.push(name);
       } else {
         let index = this.filterArray.indexOf(name);
-        if(index > -1) {
+        if (index > -1) {
           this.filterArray.splice(index, 1)
         }
       }
       this.filterAndRender();
     }
+
+
   }
 
-
   /**
-  * Rewrites the filtered recipes then calls the render method.
-  *
-  *
-  */
-  filterAndRender(){
+   * Rewrites the filtered recipes then calls the render method.
+   *
+   *
+   */
+  filterAndRender() {
     this.filteredRecipes = this.filterRecipe(this.filterArray);
     this.renderRecipeBoxes();
   }
 
   /**
-  * Filtering recipes after an array with filter-words
-  *
-  *
-  */
-  filterRecipe(filterArray){
-    let arr = this.recipes.filter(recipe => {
-        if (filterArray.every(filter => {
+   * Filtering recipes after an array with filter-words
+   *
+   *
+   */
+  filterRecipe(filterArray) {
+    let arr = this.searchRecipes.filter(recipe => {
+      if (filterArray.every(filter => {
           return recipe.filters.includes(filter)
         })) {
-          return recipe;
-        }
+        return recipe;
+      }
     })
     return arr;
   }
 
+  markFilters(){
+    let getAll = $('input[type=checkbox]');
+    this.filterArray.forEach(x => {
+      getAll.each(function () {
+        if ($(this).attr('name') == x) {
+          $(this).prop('checked', true)
+        }
+      });  
+    })
+  }
+
   /**
-  * Render all filtered boxes.
-  *
-  *
-  */
-  renderRecipeBoxes(){
+   * Render all filtered boxes.
+   *
+   *
+   */
+  renderRecipeBoxes() {
     let newarr = this.filteredRecipes.map(recipe => {
       return `<a href="/recept/${recipe.url}" class="no-decoration-a-tag pop">
       <div class="media p-1 p-sm-3 mt-0 border">
@@ -108,6 +110,23 @@ export default class Searchresult extends Base {
 
     $('.search-recipe-result').empty().append(newarr.join(''));
   }
+
+  searchResults() {
+    let arr;
+    if (this.searchStr) {
+      arr = this.recipes.filter(x => {
+        if (x.title.toLowerCase().includes(this.searchStr.toLowerCase())) {
+          return x;
+        } else if (x.ingredientsPerPortion.some(xx => xx.name.toLowerCase().includes(this.searchStr.toLowerCase()))) {
+          return x;
+        }
+      })
+    } else {
+      arr = this.recipes;
+    }
+    return arr;
+  }
+
 }
 
 Searchresult.prototype.template = template;

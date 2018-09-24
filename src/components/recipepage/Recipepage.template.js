@@ -6,7 +6,7 @@ export default function() {
         <section class="col-12 d-flex flex-md-row flex-column recipe-top-part-2">
           <div class="col-12 d-flex flex-md-row flex-column recipe-top-part">
             <div class="row">
-              <div class="col-md-12 col-12 col-lg-4">
+              <div class="col-md-12 col-12 col-lg-4 text-center text-lg-left">
                 <img src="${this.recipe.imgLink}" alt="${this.recipe.imgAlt}" class="img-fluid">
               </div>
               <div class="col-md-12 col-12 col-lg-8 d-flex flex-column">
@@ -73,12 +73,12 @@ export default function() {
             <h4 class="naringsvarde-h4">Näringsvärde</h4>
             <h6 class="naringsvarde-h6">(per portion)</h6>
             <p class="d-inline"><span class="font-weight-bold">Energi:</span> ${this.recipe.nutrientsPerPortion.calories} kcal</p>
-            <a class="ml-4 collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
+            <a class="ml-md-4 d-block d-md-inline collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
               Detaljerad näringsinformation<i class="fas fa-chevron-down ml-2"></i>
             </a>
             <div class="collapse" id="visaMer">
               <div class="row">
-                <div class="col-3 ml-auto text-right">
+                <div class="col-4 ml-auto text-right">
                   <p class="mb-0 text-muted rdi-text" data-toggle="tooltip" data-placement="top" title="Livsmedelsverkets rekommenderade dagliga intag">% av RDI <i class="fas fa-info-circle"></i></p>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mt-1 mt-sm-0 mb-1">
-                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt}g
+                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt.toFixed(1)}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">

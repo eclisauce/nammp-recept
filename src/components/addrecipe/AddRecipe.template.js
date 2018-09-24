@@ -17,7 +17,6 @@ return `
     <form id="add-recipe-form">
       <div class="row">
         <div class="col-md-6">
-
           <div class="mt-3 mt-md-4 pr-md-5">
             <h5 class="text-dark">Namn på recept</h5>
             <div class="form-group m-0 w-100">
@@ -29,94 +28,12 @@ return `
             <h5 class="text-dark">Beskrivning</h5>
             <textarea class="form-control rounded w-100" name="description" rows="3" placeholder="En kort beskrivning av ditt recept."></textarea>
           </div>
-
-          <div class="mt-3 mt-md-4">
-            <h5 class="text-dark m-0">Kategorier</h5>
-            <small class="text-muted">Kryssa i de rutor som matchar din rätt.</small>
-            <div class="row col-12 mt-3 align-items-center justify-content-between">
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Huvudrätt</p>
-                <input type="checkbox" name="Huvudrätter">
-                <span class="checkmark"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Festmåltider</p>
-                <input type="checkbox" name="Festmåltider">
-                <span class="checkmark border"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Fika</p>
-                <input type="checkbox" name="Fika">
-                <span class="checkmark border"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Buffé</p>
-                <input type="checkbox" name="Buffé">
-                <span class="checkmark border"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Grytor</p>
-                <input type="checkbox" name="Grytor">
-                <span class="checkmark border"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Asiatiskt</p>
-                <input type="checkbox" name="Asiatiskt">
-                <span class="checkmark border"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Husmanskost</p>
-                <input type="checkbox" name="Husmanskost">
-                <span class="checkmark border"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Italienskt</p>
-                <input type="checkbox" name="Italienskt">
-                <span class="checkmark border"></span>
-              </label>
-
-            </div>
+          <div class="width-768-plus">
           </div>
 
-          <div class="my-3 mt-md-4">
-            <h5 class="text-dark m-0">Övrigt</h5>
-            <small class="text-muted">Kryssa i de rutor som matchar din rätt.</small>
-            <div class="row col-12 mt-3 align-items-center justify-content-between">
 
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Vegetariskt</p>
-                <input type="checkbox" name="Vegetariskt">
-                <span class="checkmark border"></span>
-              </label>
 
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Veganskt</p>
-                <input type="checkbox" name="Veganskt">
-                <span class="checkmark border"></span>
-              </label>
 
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Laktosfritt</p>
-                <input type="checkbox" name="Laktosfritt">
-                <span class="checkmark border"></span>
-              </label>
-
-              <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
-                <p>Endast kött</p>
-                <input type="checkbox" name="Endast Kött">
-                <span class="checkmark border"></span>
-              </label>
-
-            </div>
-          </div>
         </div><!-- Closses left col-6 -->
 
         <div class="col-md-6 pl-md-5">
@@ -165,7 +82,6 @@ return `
 
             </div>
             <button type="button" id="add-form" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
-            <button type="button" id="test">test</button>
           </div>
 
           <div class="row">
@@ -175,33 +91,29 @@ return `
             </div>
             <button type="button" id="add-instr" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
           </div>
+          <div class="width-768">
+          </div>
+
         </div> <!-- Closses right col-6 -->
 
       </div> <!-- Closses top div-row -->
 
-      <div class="row mt-3 mt-md-4 mb-5 p-0">
+      <div class="row mt-3 mt-md-4 mb-5 p-0"> 
 
         <div class="col-md-6">
-          <div class="form-group m-0 w-100 pr-md-5">
-            <h5 for="hrefLink">Länk till bild</h5>
-            <input type="text" class="form-control" name="imageLink" id="imageLink" aria-describedby="textHelp" placeholder="https://www.exempel.com/bild.jpg">
-            <small id="" class="form-text text-muted">Kom ihåg att ha med hela länken utan några förändringar
-              på länken.</small>
-          </div>
+          <button class="bajsbajs">testa mig</button>
         </div>
 
-        <div class="col-md-6">
-          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg d-block float-md-right float-left mt-5 mt-md-0 font-weight-bold">
+        <div class="col-md-6 pl-md-5 d-flex justify-content-between align-items-center">
+          <h5 class="something-went-wrong text-danger m-0"></h5>
+          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-5 mt-md-0 font-weight-bold">
             Spara recept
           </button>
         </div>
 
-      </div>
-      <div class="row my-4">
-        <div class="col-12 col-md-auto picture-upload mx-auto">
 
-        </div>
       </div>
+
 
     </form>
   </article>
@@ -249,7 +161,6 @@ return `
 
       <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
-
     </div>
   </div>`;
 }
@@ -263,10 +174,118 @@ function pictureUploadTemplate() {
 function instructionTemplate() {
   return `
     <div class="position-relative my-3">
-      <label for="instruction-${this.instructionCounter}" class="label-instr" title="Textfält för instruktion ${this.instructionCounter}"><span>${this.instructionCounter}</span></label>
-      <textarea name="instruction-${this.instructionCounter}" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="${this.instructionCounter}."></textarea>
+      <label for="instruction-1" class="label-instr" title="Textfält för instruktion 1."><span>1</span></label>
+      <textarea name="instruction-1" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="1."></textarea>
       <button type="button" class="remove-instr btn btn-danger" title="Tabort denna instruktion"><i class="fas fa-times"></i></button>
     </div>
+  `;
+}
+
+function categoriesTemplate() {
+  return `
+  <div class="mt-3 mt-md-4">
+      <h5 class="text-dark m-0">Kategorier</h5>
+      <small class="text-muted">Kryssa i de rutor som matchar din rätt.</small>
+      <div class="row col-12 mt-3 align-items-center justify-content-between">
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Huvudrätt</p>
+          <input type="checkbox" name="Huvudrätter">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Festmåltider</p>
+          <input type="checkbox" name="Festmåltider">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Fika</p>
+          <input type="checkbox" name="Fika">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Buffé</p>
+          <input type="checkbox" name="Buffé">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Grytor</p>
+          <input type="checkbox" name="Grytor">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Asiatiskt</p>
+          <input type="checkbox" name="Asiatiskt">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Husmanskost</p>
+          <input type="checkbox" name="Husmanskost">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Italienskt</p>
+          <input type="checkbox" name="Italienskt">
+          <span class="checkmark border"></span>
+        </label>
+
+      </div>
+    </div>
+
+    <div class="my-3 mt-md-4">
+      <h5 class="text-dark m-0">Övrigt</h5>
+      <small class="text-muted">Kryssa i de rutor som matchar din rätt.</small>
+      <div class="row col-12 mt-3 align-items-center justify-content-between">
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Vegetariskt</p>
+          <input type="checkbox" name="Vegetariskt">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Veganskt</p>
+          <input type="checkbox" name="Veganskt">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Laktosfritt</p>
+          <input type="checkbox" name="Laktosfritt">
+          <span class="checkmark border"></span>
+        </label>
+
+        <label class="col-md-6 mt-0 checkboxContainer border-checkbox">
+          <p>Endast kött</p>
+          <input type="checkbox" name="Endast Kött">
+          <span class="checkmark border"></span>
+        </label>
+
+      </div>
+    </div>
+  `;
+}
+function pictureHolderTemplate() {
+  return `
+  <div class="form-group m-0 w-100 pr-md-5">
+    <h5 for="hrefLink">Länk till bild</h5>
+    <input type="text" class="form-control" name="imgLink" id="imgLink" aria-describedby="textHelp" placeholder="https://www.exempel.com/bild.jpg">
+    <small id="" class="form-text text-muted">Kom ihåg att ha med hela länken utan några förändringar
+      på länken.</small>
+  </div>
+  
+  <div class="row pr-md-5 mt-2">
+      <div class="col-12 picture-upload">
+        <img src="/img/placeholder-image.jpg" class="picture-upload__img"  alt="Uppladdat recept foto"/>
+      </div>
+  </div>
   `;
 }
 
@@ -274,5 +293,7 @@ export {
   template,
   ingredientTemplate,
   pictureUploadTemplate,
-  instructionTemplate
+  instructionTemplate,
+  categoriesTemplate,
+  pictureHolderTemplate
 }

@@ -30,7 +30,7 @@ export default class Recipepage extends Base {
       this.goToFilter();
       this.pictureRandomizer();
       this.initializeBootstrapTooltips();
-    }, 100);
+    }, 50);
   }
 
 

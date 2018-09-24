@@ -1,3 +1,4 @@
+import Jsonflex from './jsonflex.js';
 /**
  * Rendering framework from Nodebite
  *
@@ -6,6 +7,7 @@ export default class Base {
 
   constructor() {
     this.loadAllJSON();
+    new Jsonflex();
     if (!Base.subRenderCounter) {
       Base.subRenderCounter = 1;
       Base.renderingInProgress = false;
@@ -80,7 +82,7 @@ export default class Base {
   // Global methods that are being used in more than one class
 
   loadAllJSON(){
-    $.getJSON("/json/new-food.json", (food) => {
+    $.getJSON("/json/naring.json", (food) => {
       this.foodData = food;
     }).then(this.loadRecipeJSON());
   }
@@ -89,6 +91,19 @@ export default class Base {
     $.getJSON("/json/recipes.json", (recipes) => {
       this.recipes = recipes;
     });
+  }
+
+
+  saveAllRecipes(newRecipe){
+    $.getJSON("/json/recipes.json", (recipes) => {
+      this.recipes = recipes;
+      this.recipes.push(newRecipe)
+    }).then( () => {
+      JSON._save('recipes.json', this.recipes).then(function () {
+      })
+    });
+
+
   }
 
 
