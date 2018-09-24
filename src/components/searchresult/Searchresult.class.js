@@ -5,20 +5,20 @@ import template from './Searchresultpage.template';
  *
  */
 export default class Searchresult extends Base {
-  constructor(searchStr) {
+  constructor(searchStr, filters) {
     super();
     this.start();
     this.searchStr = searchStr;
-    console.log('rendered..')
+    this.filterArray = filters;
   }
 
   start() {
     setTimeout(() => {
       $('main').empty();
       this.render('main');
-      this.filterArray = [];
       this.searchRecipes = this.searchResults();
       this.filterAndRender();
+      this.markFilters();
     }, 50);
   }
 
@@ -43,8 +43,9 @@ export default class Searchresult extends Base {
       }
       this.filterAndRender();
     }
-  }
 
+
+  }
 
   /**
    * Rewrites the filtered recipes then calls the render method.
@@ -70,6 +71,17 @@ export default class Searchresult extends Base {
       }
     })
     return arr;
+  }
+
+  markFilters(){
+    let getAll = $('input[type=checkbox]');
+    this.filterArray.forEach(x => {
+      getAll.each(function () {
+        if ($(this).attr('name') == x) {
+          $(this).prop('checked', true)
+        }
+      });  
+    })
   }
 
   /**

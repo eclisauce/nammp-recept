@@ -57,13 +57,24 @@ export default class Router {
       '/searchresult': 'searchResult'
     };
 
+    function translateCharacters(str){
+      return str.replace(/%C3%A5/g, "å").replace(/%C3%A4/g, "ä").replace(/%C3%B6/g, "ö").replace(/%C3%A9/g, "é");
+    }
+
     // Handles search-strings from navbar
-    if(url.includes('searchresult/')){
+    if(url.includes('searchresult')){
+      url = translateCharacters(url);
       let newUrl = url.substring(0, 13);
+      let indexOfFilters = url.indexOf('/filters');
       let searchStr = url.substring(14);
+      let filters = [];
+      if(indexOfFilters > -1){
+        searchStr = url.substring(14, indexOfFilters);
+        filters = url.substring(indexOfFilters+8).replace(/-/g, ' ').split(' ');
+      }
       let methodName = urls[newUrl];
       // Call the right method
-      this[methodName](searchStr);
+      this[methodName](searchStr, filters);
     } else {
 
       setTimeout(() => {
@@ -101,8 +112,8 @@ export default class Router {
     this.recipepage = new Recipepage();
   }
 
-  searchResult(searchStr) {
-    this.searchresult = new Searchresult(searchStr);
+  searchResult(searchStr, filters) {
+    this.searchresult = new Searchresult(searchStr, filters);
   }
 
 
