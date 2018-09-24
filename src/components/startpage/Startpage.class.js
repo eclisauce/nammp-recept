@@ -14,7 +14,7 @@ export default class Startpage extends Base {
   }
 
   /**
-  * Method for checking if data has been loaded properly. 
+  * Method for checking if data has been loaded properly.
   * Need to optimize this. Data needs to always be loaded.
   * Code is repeated in more classes.
   *
@@ -34,7 +34,7 @@ export default class Startpage extends Base {
   }
 
   /**
-  * Gets the firt 4 recipes in JSON. 
+  * Gets the firt 4 recipes in JSON.
   * Returns a template with data from JSON
   *
   */
@@ -43,7 +43,7 @@ export default class Startpage extends Base {
 
     return firstFour.map(recipe => {
       return `
-      <a href="/recipe" class="no-decoration-a-tag col-lg-6 p-0 d-flex px-2">
+      <a href="/recept/${recipe.url}" class="no-decoration-a-tag col-lg-6 p-0 d-flex px-2">
         <div class="media pl-3 p-1 p-sm-3 border">
           <img class="mr-2 ml-3 mt-1 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
             alt="${recipe.imgAlt}">
@@ -62,7 +62,7 @@ export default class Startpage extends Base {
     })
   }
 
-  
+
 }
 
 Startpage.prototype.template = template;

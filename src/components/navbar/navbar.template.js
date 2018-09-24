@@ -12,7 +12,7 @@ export default `
           <a class="nav-link pop" href="/">Hem</a>
         </li>
         <li class="nav-item px-4">
-          <a class="nav-link" href="/searchresult">Recept</a>
+          <a class="nav-link pop" href="/searchresult">Recept</a>
         </li>
         <li class="nav-item px-4">
           <a class="nav-link pop" href="/add-recipe">Lägg till recept</a>
@@ -26,6 +26,8 @@ export default `
   <div class="border search-holder ">
     <div class="container header__search ">
       <i class="fas fa-search"></i>
+      <input class="form-control form-control-lg pl-5 border-0" id="search-field" type="text" placeholder="Sök på recept..."></input>
+      <a class="searchtest d-none pop" href="searchresult">search!</a>
       <input class="form-control form-control-lg pl-5 border-0 search-input" type="text" placeholder="Sök på recept..."></input>
       <ul class="list-group result-dropdown"></ul>
     </div>
