@@ -107,7 +107,7 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mt-1 mt-sm-0 mb-1">
-                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt.toFixed()}g
+                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt.toFixed(1)}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
