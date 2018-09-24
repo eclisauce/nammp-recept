@@ -14,7 +14,7 @@ export default class Navbar extends Base {
   }
 
   /**
-   * keyup on searchfield to change the hidden href
+   * Keyup on searchfield to change the hidden href which is clicked when enter is pressed in keydown-method
    * @author Andreas
    */
   keyup() {
@@ -28,7 +28,7 @@ export default class Navbar extends Base {
   }
 
   /**
-   * Keydown on enter to search. Only does it if it's not already on serachresult
+   * Keydown on enter to search. Sends filters if there are any.
    * @author Andreas
    */
   keydown() {
@@ -38,6 +38,10 @@ export default class Navbar extends Base {
     }
   }
 
+  /**
+   * Checks and sets filters if there is any.
+   * @author Andreas
+   */
   setFilters(){
     let checkedFilters = $('input[type=checkbox]:checked');
     let filters = 'filters';

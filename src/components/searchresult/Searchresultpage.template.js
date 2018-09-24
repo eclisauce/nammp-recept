@@ -2,7 +2,6 @@ export default function() {
   return `
 
   <div class="container mt-0 mt-md-3">
-  <button class="testytest">testme</button>
     <article class="row">
 
       <aside class="col-12 col-md-4 col-lg-3 bg-white border align-self-start">
