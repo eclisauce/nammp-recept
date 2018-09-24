@@ -70,7 +70,7 @@ export default function() {
           <section class="naringsvarde mt-4 p-4">
             <h4 class="naringsvarde-h4">Näringsvärde</h4>
             <h6 class="naringsvarde-h6">(per portion)</h6>
-            <p class="d-inline"><span class="font-weight-bold">Energi:</span> ${this.recipe.nutrientsPerPortion.calories.toFixed()} kcal</p>
+            <p class="d-inline"><span class="font-weight-bold">Energi:</span> ${this.recipe.nutrientsPerPortion.calories} kcal</p>
             <a class="ml-md-4 d-block d-md-inline collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
               Detaljerad näringsinformation<i class="fas fa-chevron-down ml-2"></i>
             </a>
@@ -83,7 +83,7 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mt-1 mt-sm-0 mb-1">
-                    <span class="font-weight-bold">Kolhydrater</span> ${this.recipe.nutrientsPerPortion.carbohydrates.toFixed()}g
+                    <span class="font-weight-bold">Kolhydrater</span> ${this.recipe.nutrientsPerPortion.carbohydrates}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
@@ -95,7 +95,7 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mt-1 mt-sm-0 mb-1">
-                    <span class="font-weight-bold">Protein</span> ${this.recipe.nutrientsPerPortion.protein.toFixed()}g
+                    <span class="font-weight-bold">Protein</span> ${this.recipe.nutrientsPerPortion.protein}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
@@ -107,7 +107,7 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mt-1 mt-sm-0 mb-1">
-                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt.toFixed()}g
+                    <span class="font-weight-bold">Salt</span> ${this.recipe.nutrientsPerPortion.salt}g
                   </p>
                 </div>
                 <div class="col-12 col-sm-8">
@@ -119,20 +119,20 @@ export default function() {
               <div class="row">
                 <div class="col-12 col-sm-4">
                   <p class="mt-1 mt-sm-0 mb-1 d-inline-block">
-                    <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total.toFixed()}g
+                    <span class="font-weight-bold">Fett</span> ${this.recipe.nutrientsPerPortion.fat.total}g
                   </p>
                   <a class="ml-1 collapsed" data-toggle="collapse" href="#varav" role="button" aria-expanded="false" aria-controls="varav"> <i class="fas fa-chevron-down ml-0"></i>
                   </a>
                   <div class="collapse" id="varav">
                     <p class="mb-1 ml-2">varav</p>
                     <p class="mb-1 ml-3">
-                       enkelomättat ${this.recipe.nutrientsPerPortion.fat.monounsaturated.toFixed()}g
+                       enkelomättat ${this.recipe.nutrientsPerPortion.fat.monounsaturated}g
                     </p>
                     <p class="mb-1 ml-3">
-                      mättat ${this.recipe.nutrientsPerPortion.fat.saturated.toFixed()}g
+                      mättat ${this.recipe.nutrientsPerPortion.fat.saturated}g
                     </p>
                     <p class="mb-1 ml-3">
-                      fleromättat ${this.recipe.nutrientsPerPortion.fat.polyunsaturated.toFixed()}g
+                      fleromättat ${this.recipe.nutrientsPerPortion.fat.polyunsaturated}g
                     </p>
                   </div>
                 </div>
