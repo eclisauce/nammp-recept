@@ -97,12 +97,9 @@ export default class Base {
   saveAllRecipes(newRecipe){
     $.getJSON("/json/recipes.json", (recipes) => {
       this.recipes = recipes;
-      console.log(this.recipes);
       this.recipes.push(newRecipe)
-      console.log(this.recipes);
     }).then( () => {
       JSON._save('recipes.json', this.recipes).then(function () {
-        console.log('Saved!');
       })
     });
 

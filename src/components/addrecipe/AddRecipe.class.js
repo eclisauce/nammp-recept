@@ -370,8 +370,6 @@ export default class AddRecipe extends Base {
       modifiedRecipe.nutrientsPerPortion.fat.total = allNutritionsArray.map(val => val.fat.total).reduce(reducer);
 
       this.saveAllRecipes(modifiedRecipe);
-
-      console.log(modifiedRecipe, "modified recipe obj")
     }
   }
 
@@ -379,7 +377,12 @@ export default class AddRecipe extends Base {
 
 
 
-
+  /**
+   * Does all the checks and gives an error on each check if it doesnt apply
+   * Checks in the order of the if-statement
+   * If everything is ok it returns true and submitForm() saves the recipe.
+   * @author Andy
+   */
   doAllChecks(allFormData){
     if(
       this.checkIfEverythingHasValue(allFormData)

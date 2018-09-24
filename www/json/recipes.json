@@ -512,54 +512,5 @@
       "Festmåltider",
       "Endast Kött"
     ]
-  },
-  {
-    "title": "dsa",
-    "description": "dsa",
-    "time": 22,
-    "instruction-1": "dsa",
-    "imgLink": "https://images.pexels.com/photos/5317/food-salad-restaurant-person.jpg",
-    "ingredientsPerPortion": [
-      {
-        "name": "dsa",
-        "quantity": 11,
-        "unitOfMeasurement": "st",
-        "lmTitle": "Potatis rå",
-        "grams": 11
-      },
-      {
-        "name": "dsa",
-        "quantity": 11,
-        "unitOfMeasurement": "st",
-        "lmTitle": "Potatis kokt o stekt",
-        "grams": 11
-      },
-      {
-        "name": "dsa",
-        "quantity": 11,
-        "unitOfMeasurement": "st",
-        "lmTitle": "Frukostflingor fullkorn Special K",
-        "grams": 11
-      }
-    ],
-    "portions": 1,
-    "instructions": [],
-    "filters": [
-      "Huvudrätter"
-    ],
-    "imgAlt": "dsa",
-    "url": "dsa-1537716004458",
-    "nutrientsPerPortion": {
-      "calories": 66.66,
-      "carbohydrates": 12.8865,
-      "protein": 1.4365999999999999,
-      "salt": 0.25079999999999997,
-      "fat": {
-        "monounsaturated": 0.31899999999999995,
-        "saturated": 0.09459999999999999,
-        "polyunsaturated": 0.2277,
-        "total": 0.7545999999999999
-      }
-    }
   }
 ]
