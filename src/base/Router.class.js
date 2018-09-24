@@ -9,7 +9,8 @@ import Searchresult from '../components/searchresult/Searchresult.class';
  */
 export default class Router {
 
-  constructor() {
+  constructor(app) {
+    this.app = app;
     // Add event handlers for a.pop-links once
     this.addEventHandler();
     // Call changePage on initial page load
@@ -46,19 +47,25 @@ export default class Router {
     $('header ul li a').removeClass('active');
     $(`header ul li a[href="${url}"]`).addClass('active');
 
+
+
     // A small "dictionary" of what method to call on which url
     let urls = {
       '/': 'startpage',
       '/footer': 'footer',
       '/add-recipe': 'addrecipe',
-      '/recipe': 'tikkaMasala',
       '/searchresult': 'searchResult'
     };
 
-    // Call the right method
-    let methodName = urls[url];
+    setTimeout(() => {
+      for(let recipe of this.app.recipes) {
+        urls[`/recept/${recipe.url}`] = 'recipePage';
+      }
+      let methodName = urls[url];
 
-    this[methodName]();
+      // Call the right method
+      this[methodName]();
+    }, 0);
 
     window.scrollTo(0, 0);
 
@@ -80,8 +87,8 @@ export default class Router {
 
   }
 
-  tikkaMasala() {
-    this.recipe = new Recipepage();
+  recipePage() {
+    this.recipepage = new Recipepage();
   }
 
   searchResult() {

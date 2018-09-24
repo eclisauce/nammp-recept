@@ -1,14 +1,14 @@
 [
   {
     "title": "Tikka Masala",
-
+    "url": "mackans-tikka-masala",
     "description": "Chicken tikka masala är en gryta inspirerad av det indiska köket, där chicken tikka kombinerats med masalasås, ett uttryck av fusion cuisine, anpassat för västerländska smakpreferenser. Rätten är även populär på indiska restauranger i Sverige och andra länder.",
     "instructions": ["Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med kryddröran.", "Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min.", "Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihop.", "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."],
 
     "time": 120,
 
     "imgLink": "/img/recept-bild1.jpg",
-    "imgAlt": "Detta är en fin bild på Tikka Masala",    
+    "imgAlt": "Detta är en fin bild på Tikka Masala",
 
     "ingredientsPerPortion": [{
         "name": "Kycklingbröst",
@@ -123,14 +123,14 @@
   },
   {
     "title": "Matvetesallad med varmrökt lax",
-
+    "url": "matvetesallad-lax",
     "description": "Chicken tikka masala är en gryta inspirerad av det indiska köket, där chicken tikka kombinerats med masalasås, ett uttryck av fusion cuisine, anpassat för västerländska smakpreferenser. Rätten är även populär på indiska restauranger i Sverige och andra länder.",
     "instructions": ["Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med kryddröran.", "Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min.", "Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihop.", "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."],
 
     "time": 120,
 
     "imgLink": "https://img.koket.se/recipelist/matvetesallad-med-varmrokt-lax.jpg",
-    "imgAlt": "Detta är en fin bild på Tikka Masala",    
+    "imgAlt": "Detta är en fin bild på Tikka Masala",
 
     "ingredientsPerPortion": [{
         "name": "Kycklingbröst",
@@ -245,14 +245,14 @@
   },
   {
     "title": "Raggmunk med svamp och lingon",
-
+    "url": "raggmunkar-e-najs",
     "description": "Chicken tikka masala är en gryta inspirerad av det indiska köket, där chicken tikka kombinerats med masalasås, ett uttryck av fusion cuisine, anpassat för västerländska smakpreferenser. Rätten är även populär på indiska restauranger i Sverige och andra länder.",
     "instructions": ["Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med kryddröran.", "Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min.", "Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihop.", "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."],
 
     "time": 120,
 
     "imgLink": "https://img.koket.se/recipelist/raggmunk-med-svamp-och-lingon.jpg",
-    "imgAlt": "Detta är en fin bild på Tikka Masala",    
+    "imgAlt": "Detta är en fin bild på Tikka Masala",
 
     "ingredientsPerPortion": [{
         "name": "Kycklingbröst",
@@ -367,14 +367,14 @@
   },
   {
     "title": "Halloumitacos med avokadokräm",
-
+    "url": "halloooooooummitacos",
     "description": "Chicken tikka masala är en gryta inspirerad av det indiska köket, där chicken tikka kombinerats med masalasås, ett uttryck av fusion cuisine, anpassat för västerländska smakpreferenser. Rätten är även populär på indiska restauranger i Sverige och andra länder.",
     "instructions": ["Blanda ihop kryddorna med oljan och skär kycklingen i stora bitar. Täck sedan kycklingen med kryddröran.", "Bryn kycklingen på högvärme i olja. När det är klart ta ur kycklingen och släng i löken och låt den svettas i 1-2 min.", "Häll i vitlöken och ingefäran stek sedan i 1 min. Efter det ska tomatpuren i och stekas av i 1-2 min, häll sedan i de passerade tomaterna och kokosmjölken samt buljong, låt denna blanding bubbla i 10-20 min för att komma ihop.", "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."],
 
     "time": 120,
 
     "imgLink": "https://img.koket.se/recipelist/halloumitacos-med-avokadokram-och-inlagd-lok.jpg",
-    "imgAlt": "Detta är en fin bild på Tikka Masala",    
+    "imgAlt": "Detta är en fin bild på Tikka Masala",
 
     "ingredientsPerPortion": [{
         "name": "Kycklingbröst",

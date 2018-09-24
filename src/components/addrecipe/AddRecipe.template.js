@@ -2,6 +2,18 @@ function template() {
 return `
   <article class="add-recipe container">
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
+    <article class="mt-3 mt-md-4">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Information om hur receptet skall fyllas i">
+          <i class="fas fa-info-circle"></i>
+        </button>
+        <div class="dropdown-menu info-box" aria-labelledby="dropdownMenuButton">
+          <i class="fas fa-info-circle p-2"></i>
+          <p class="p-2">För att underlätta fyll i alla fält.</p>
+          <p class="p-2">För att ta del av de automatiska uträkningarna på näringsinnehåll fyll i en ingrediens från vår databas</p>
+        </div>
+      </div>
+    </article>
     <form id="add-recipe-form">
       <div class="row">
         <div class="col-md-6">
@@ -225,9 +237,10 @@ return `
       </div>
     </div>
     <div class="form-row">
-      <div class="col-6 mb-0 mb-md-0 pt-2">
-        <input type="text" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter}" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
+      <div class="col-6 mb-0 mb-md-0 pt-2 bla">
+        <input type="text" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
+          <ul class="list-group result-dropdown"></ul>
       </div>
 
       <div class="col d-flex pt-2">

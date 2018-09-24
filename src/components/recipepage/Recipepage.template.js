@@ -46,13 +46,13 @@ export default function() {
                   <option>10</option>
                 </select>
                 <label for="portion-selector" class="p-0 m-0 text-muted align-self-center">Portioner</label>
-  
+
               </div>
-  
+
             </form>
-  
+
           </div>
-  
+
           <ul class="list-group ingredient-list mb-3 mb-lg-0">
 
           </ul>
@@ -74,12 +74,12 @@ export default function() {
             <h6 class="naringsvarde-h6">(per portion)</h6>
             <p class="d-inline"><span class="font-weight-bold">Energi:</span> ${this.recipe.nutrientsPerPortion.calories} kcal</p>
             <a class="ml-4 collapsed" data-toggle="collapse" href="#visaMer" role="button" aria-expanded="false" aria-controls="visaMer">
-              Visa detaljerad näringsinformation<i class="fas fa-chevron-down ml-2"></i>
+              Detaljerad näringsinformation<i class="fas fa-chevron-down ml-2"></i>
             </a>
             <div class="collapse" id="visaMer">
               <div class="row">
                 <div class="col-3 ml-auto text-right">
-                  <p class="mb-0 text-muted rdi-text" data-toggle="tooltip" data-placement="top" title="Livsmedelsverkets rekommenderade dagliga intag">% av RDI*</p>
+                  <p class="mb-0 text-muted rdi-text" data-toggle="tooltip" data-placement="top" title="Livsmedelsverkets rekommenderade dagliga intag">% av RDI <i class="fas fa-info-circle"></i></p>
                 </div>
               </div>
               <div class="row">
@@ -152,8 +152,8 @@ export default function() {
         <!-- end instructions -->
       </article>
       <!-- End Main content on the page ingredient and instructions -->
-  
+
     </div>
-  
+
   `;
 }
