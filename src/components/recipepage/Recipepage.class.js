@@ -26,11 +26,11 @@ export default class Recipepage extends Base {
       $('main').empty();
       this.render('main');
       this.renderIngredients();
+      this.renderRecipeFilters();
+      this.goToFilter();
       this.pictureRandomizer();
       this.initializeBootstrapTooltips();
     }, 100);
-    this.renderRecipeFilters();
-    this.goToFilter();
   }
 
 
