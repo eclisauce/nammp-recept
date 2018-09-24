@@ -117,6 +117,20 @@ return `
 
             </div>
           </div>
+
+          <div class="form-group m-0 w-100 pr-md-5">
+            <h5 for="hrefLink">Länk till bild</h5>
+            <input type="text" class="form-control" name="imgLink" id="imgLink" aria-describedby="textHelp" placeholder="https://www.exempel.com/bild.jpg">
+            <small id="" class="form-text text-muted">Kom ihåg att ha med hela länken utan några förändringar
+              på länken.</small>
+          </div>
+
+          <div class="row pr-md-5 mt-2">
+            <div class="col-12 picture-upload">
+              <img src="/img/placeholder-image.jpg" class="picture-upload__img"  alt="Uppladdat recept foto"/>
+            </div>
+          </div>
+
         </div><!-- Closses left col-6 -->
 
         <div class="col-md-6 pl-md-5">
@@ -182,26 +196,18 @@ return `
       <div class="row mt-3 mt-md-4 mb-5 p-0">
 
         <div class="col-md-6">
-          <div class="form-group m-0 w-100 pr-md-5">
-            <h5 for="hrefLink">Länk till bild</h5>
-            <input type="text" class="form-control" name="imageLink" id="imageLink" aria-describedby="textHelp" placeholder="https://www.exempel.com/bild.jpg">
-            <small id="" class="form-text text-muted">Kom ihåg att ha med hela länken utan några förändringar
-              på länken.</small>
-          </div>
         </div>
 
-        <div class="col-md-6">
-          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg d-block float-md-right float-left mt-5 mt-md-0 font-weight-bold">
+        <div class="col-md-6 pl-md-5 d-flex justify-content-between align-items-center">
+          <h5 class="something-went-wrong text-danger m-0"></h5>
+          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-5 mt-md-0 font-weight-bold">
             Spara recept
           </button>
         </div>
 
-      </div>
-      <div class="row my-4">
-        <div class="col-12 col-md-auto picture-upload mx-auto">
 
-        </div>
       </div>
+
 
     </form>
   </article>
@@ -249,7 +255,6 @@ return `
 
       <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
-
     </div>
   </div>`;
 }

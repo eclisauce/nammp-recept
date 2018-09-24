@@ -34,6 +34,7 @@
 
   .picture-upload {
     .picture-upload__img {
+      border-radius: 5px;
       max-width: 100%;
     }
   }
@@ -97,5 +98,8 @@
       background-color: rgb(16, 79, 242);
       color: #fff;
     }
+  }
+  .red-border{
+    border: 1px solid red;
   }
 }

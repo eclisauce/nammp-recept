@@ -14,10 +14,9 @@ app.use(express.static('www'));
  * Serves index.html on all routes
  * @author Martin
  */
-app.use('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
+app.get(/^[^\.]*$/, (req, res) => {
+  res.sendFile(__dirname + '/www/index.html');
 });
-
 
 // Start the web server on port 3000
 app.listen(3000, () => console.log('Listening on port 3000'));
