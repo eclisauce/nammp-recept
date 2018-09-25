@@ -88,6 +88,7 @@ export default class Navbar extends Base {
 
     $(document).on('click', 'main', () => {
       $(".result-dropdown").html('');
+      $(".search-input").val('');
     });
     $(document).on('click', '.list-item', () => {
       $(".result-dropdown").html('');
