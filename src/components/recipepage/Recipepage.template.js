@@ -9,7 +9,7 @@ export default function() {
               <div class="col-md-12 col-12 col-lg-4 text-center text-lg-left">
                 <img src="${this.recipe.imgLink}" alt="${this.recipe.imgAlt}" class="img-fluid">
               </div>
-              <div class="col-md-12 col-12 col-lg-8">
+              <div class="col-md-12 col-12 col-lg-8 d-flex flex-column">
                 <h2 class="text-center mt-3 mt-lg-1 recipe-header">${this.recipe.title}</h2>
                 <article>
                   <p>${this.recipe.description}</p>
@@ -21,6 +21,8 @@ export default function() {
                   <div class="d-flex">
                     <p><i class="far fa-clock mr-1"></i> Tid: ${this.calcTime(this.recipe)}</p>
                   </div>
+                </div>
+                <div class="d-flex flex-row flex-wrap mt-auto recipe-categories">
                 </div>
               </div>
             </div>
