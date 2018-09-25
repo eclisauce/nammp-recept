@@ -58,7 +58,7 @@ export default class Router {
     };
 
     function translateCharacters(str) {
-      return str.replace(/%C3%A5/g, "å").replace(/%C3%A4/g, "ä").replace(/%C3%B6/g, "ö").replace(/%C3%A9/g, "é");
+      return str.replace(/%C3%A5/g, "å").replace(/%C3%A4/g, "ä").replace(/%C3%B6/g, "ö").replace(/%C3%A9/g, "é").replace(/%20/g, " ");
     }
 
     /**
@@ -76,6 +76,7 @@ export default class Router {
       if (indexOfFilters > -1) {
         searchStr = url.substring(14, indexOfFilters);
         filters = url.substring(indexOfFilters + 8).replace(/-/g, ' ').split(' ');
+        console.log(filters);
       }
       let methodName = urls[newUrl];
       // Call the right method
