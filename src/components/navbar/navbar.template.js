@@ -27,7 +27,7 @@ export default `
       <i class="fas fa-search"></i>
       <input class="form-control form-control-lg pl-5 border-0 search-input" id="search-field" type="text" placeholder="Sök på recept..."></input>
       <a class="searchtest d-none pop" href="searchresult">search!</a>
-      <ul class="list-group result-dropdown col-12"></ul>
+      <ul class="list-group result-dropdown"></ul>
     </div>
   </div>
 `;

@@ -65,12 +65,10 @@ header {
       box-sizing: border-box;
       z-index: 1001;
 
-      @media (max-width: 768px) {
-        margin-left: -10px;
-      }
-
       img{
         width: 50px;
+        border-radius: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.50);
       }
       li{
         .fa-angle-right {
