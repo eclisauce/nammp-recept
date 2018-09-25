@@ -26,6 +26,7 @@ export default class Recipepage extends Base {
       $('main').empty();
       this.render('main');
       this.renderIngredients();
+      this.renderRecipeFilters();
       this.pictureRandomizer();
       this.initializeBootstrapTooltips();
     }, 50);
@@ -88,16 +89,14 @@ export default class Recipepage extends Base {
    * of the background-image property
    */
   pictureRandomizer() {
-    $(document).ready(function() {
-      // An array of strings of background-image pictures to select from
-      let backgroundPictureArray = ["url(/img/start-picture.jpg)", "url(/img/recept-cover.jpeg)", "url(/img/recept-cover-2.jpg)", "url(/img/recept-cover-3.jpg)"];
-      // Get a random number 0 - 3 (inclusive)
-      let randomNumber = Math.floor(Math.random() * 4);
-      // Select background-image from array using randomNumber as index
-      let recipeBackgroundPicture = backgroundPictureArray[randomNumber];
-      // Insert chosen background-image as value to the background-image property
-      $('.recipe-top-part-2').css('background-image', recipeBackgroundPicture);
-    })
+    // An array of strings of background-image pictures to select from
+    let backgroundPictureArray = ["url(/img/start-picture.jpg)", "url(/img/recept-cover.jpeg)", "url(/img/recept-cover-2.jpg)", "url(/img/recept-cover-3.jpg)"];
+    // Get a random number 0 - 3 (inclusive)
+    let randomNumber = Math.floor(Math.random() * 4);
+    // Select background-image from array using randomNumber as index
+    let recipeBackgroundPicture = backgroundPictureArray[randomNumber];
+    // Insert chosen background-image as value to the background-image property
+    $('.recipe-top-part-2').css('background-image', recipeBackgroundPicture);
   }
 
   /**
@@ -109,6 +108,18 @@ export default class Recipepage extends Base {
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
     });
+  }
+
+  /**
+   * Method to get filters/categories for specific recipe
+   * and render those out to the page as button links
+   */
+  renderRecipeFilters() {
+    let recipeFilters = this.recipe.filters;
+    let recipeFilterButtons = recipeFilters.map(filter => {
+      return `<a class="btn filter-btn mt-2 pop" href="/searchresult/mat/filters${filter}" name="${filter}">${filter}</a>`
+    });
+    $('.recipe-categories').empty().append(recipeFilterButtons.join(''));
   }
 
 }
