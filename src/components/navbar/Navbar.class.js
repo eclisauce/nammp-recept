@@ -34,10 +34,10 @@ export default class Navbar extends Base {
    * @author Andreas
    */
   keydown() {
-    if ($(event.target).attr('id') === 'search-field' && $(event.target).val() !== '' && (event.keyCode == 13 || event.which == 13)) {
+    if ($(event.target).attr('id') === 'search-field' && (event.keyCode == 13 || event.which == 13)) {
       this.setFilters();
       $('.searchtest').trigger('click');
-    }
+    } 
   }
 
   /**

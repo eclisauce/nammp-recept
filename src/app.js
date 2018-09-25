@@ -26,8 +26,8 @@ class App extends Base {
     this.footer.render('footer');
 
     setTimeout(() => {
-      new Router(this);
-    }, 0) 
+      this.router = new Router();
+    }, 0)
   }
 
 
