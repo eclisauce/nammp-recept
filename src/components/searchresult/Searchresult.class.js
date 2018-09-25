@@ -21,6 +21,9 @@ export default class Searchresult extends Base {
       this.filterAndRender();
       this.markFilters();
       this.filterCollapseController();
+      $('.pagination-holder').append(this.paginationTemplate());
+      this.disableNextOrPrev();
+      this.setActiveLink();
     }, 50);
   }
 
@@ -52,7 +55,7 @@ export default class Searchresult extends Base {
       if ($(event.target).hasClass(`pagination-${i+1}`)) {
         this.lastRenderedIndex = i;
         this.renderAPage(this.lastRenderedIndex);
-        $('.search-recipe-result').append(this.paginationTemplate());
+        this.setActiveLink();
       }
     }
 
@@ -60,8 +63,6 @@ export default class Searchresult extends Base {
       if (this.lastRenderedIndex > 0){
         this.lastRenderedIndex--;
         this.renderAPage(this.lastRenderedIndex);
-        $('.search-recipe-result').append(this.paginationTemplate());
-
       }     
 
     }
@@ -70,7 +71,6 @@ export default class Searchresult extends Base {
       if (this.lastRenderedIndex+1 < this.pages.length) {
         this.lastRenderedIndex++;
         this.renderAPage(this.lastRenderedIndex);
-        $('.search-recipe-result').append(this.paginationTemplate());
       } 
     }
 
@@ -87,10 +87,8 @@ export default class Searchresult extends Base {
     $('.search-recipe-result').empty()
     this.filteredRecipes = this.filterRecipe(this.filterArray);
     this.getPageCounter(this.filteredRecipes.length/5);
-
     if (this.filteredRecipes.length > 0) {
       this.renderAPage(0);
-      $('.search-recipe-result').append(this.paginationTemplate());
 
 
     } else {
@@ -103,6 +101,7 @@ export default class Searchresult extends Base {
     $('.search-recipe-result').append(this.pages[pageNumber]);
     console.log(this.pages.length, this.lastRenderedIndex);
     this.disableNextOrPrev();
+
   }
 
   getPageCounter(numberOfPages){
@@ -142,18 +141,26 @@ export default class Searchresult extends Base {
     })
   }
 
-  showSelected(){
-    
+  setActiveLink(){
+    $('a.page-link').removeClass('active');
+    $(`.pagination-${this.lastRenderedIndex+1}`).addClass('active');
   }
 
   disableNextOrPrev(){
     if(this.pages.length === this.lastRenderedIndex+1){
-      $('.next-li').attr('disabled', 'disabled');
+      $('.next-li').addClass('disabled');
+      $('.next').attr('tabindex', '-1');
       console.log('disable next');
+    } else {
+      $('.next-li').removeClass('disabled');
+      $('.next').removeAttr('tabindex');
     }
     if(this.lastRenderedIndex === 0){
-      $('.previous-li').attr('disabled', 'disabled');
-      console.log('disable prev');
+      $('.previous-li').addClass('disabled');
+      $('.previous').attr('tabindex', '-1');
+    } else {
+      $('.previous-li').removeClass('disabled');
+      $('.previous').removeAttr('tabindex');
     }
   }
 

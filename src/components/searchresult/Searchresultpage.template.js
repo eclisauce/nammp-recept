@@ -114,10 +114,11 @@ export default function() {
       </aside>
 
 
-      <section class="col-12 col-md-8 col-lg-9 p-0 pl-md-3 pt-3 pt-md-0 search-recipe-result">
+      <section class="col-12 col-md-8 col-lg-9 p-0 pl-md-3 pt-3 pt-md-0">
         <!-- Media object component -->
+        <section class="col-12 m-0 p-0 search-recipe-result"></section>
 
-
+        <section class="col-12 m-0 p-0 pagination-holder"></section>
       </section>
 
     </article>

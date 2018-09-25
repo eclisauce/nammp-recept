@@ -64,8 +64,12 @@
     background: $bg-darken;
     color: $primary !important;
   }
-  .selected {
-    background: gray !important;
+  .disabled a {
+    color: gray !important;
+  }
+  li .active {
+    background: $primary;
+    color: white !important;
   }
 }
 
