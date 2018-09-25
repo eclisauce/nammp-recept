@@ -272,10 +272,6 @@
     "description": "Falafel är ljuvligt goda bollar av kikärtor kryddade med spiskummin och vitlök. Falafel brukar friteras, men det går lika bra att steka dem. Servera dem med sallad i pitabröd.",
     "imgLink": "https://static01.nyt.com/images/2013/10/23/dining/23JPFLEX2/23JPFLEX2-articleLarge.jpg",
     "time": 20,
-    "instruction-1": "Skölj kikärterna och låt dem rinna av. Skala och hacka löken.",
-    "instruction-2": "Mixa kikärter, lök, vitlök, spiskummin, salt, persilja, sambal olek, majsstärkelse och 15g smör.",
-    "instruction-3": "Forma smeten till små ovala, platta bullar. Stek dem på medelvärme i smör-&rapsolja i en stekpanna ca 2 min på varje sida.",
-    "instruction-4": "Servera gärna med citronklyftor och machésallad.",
     "ingredientsPerPortion": [
       {
         "name": "Kikärtor, kokta",
@@ -342,7 +338,12 @@
       }
     ],
     "portions": 1,
-    "instructions": [],
+    "instructions": [
+      "Skölj kikärterna och låt dem rinna av. Skala och hacka löken.",
+      "Mixa kikärter, lök, vitlök, spiskummin, salt, persilja, sambal olek, majsstärkelse och 15g smör.",
+      "Forma smeten till små ovala, platta bullar. Stek dem på medelvärme i smör-&rapsolja i en stekpanna ca 2 min på varje sida.",
+      "Servera gärna med citronklyftor och machésallad."
+    ],
     "filters": [
       "Huvudrätter",
       "Fika",
@@ -370,13 +371,6 @@
     "description": "Köttbullar med rårörda lingon är en klassisk svensk rätt som här serveras med hemgjort potatismos.",
     "imgLink": "https://img.koket.se/media/kottbullar-med-rarorda-lingon-och-potatismos.jpg",
     "time": 75,
-    "instruction-1": "Blanda lingon och socker och låt stå i rumstemperatur tills sockret löst sig. Rör om då och då.",
-    "instruction-2": "Blanda ströbröd och mjölk och låt svälla 5 minuter. Blanda sedan med färs, ägg, lök, hälften av salt och peppar. Gör ett stekprov och smaka ev. av med mer salt och peppar.",
-    "instruction-3": "Rulla sedan till köttbullar och stek i smör/rapsolja.",
-    "instruction-4": "Häll i lite vatten i stekpannan efter stekning och koka ur till en sky.",
-    "instruction-5": "Koka potatis i saltat vatten. Häll av och låt ånga av lite.",
-    "instruction-6": "Pressa potatisen och blanda med smör och gräddfil. Späd ev. med lite mjölk. Smaka av med salt och peppar. ",
-    "instruction-7": "Servera köttbullarna med potatismoset, steksky och lingon.",
     "ingredientsPerPortion": [
       {
         "name": "Blandfärs",
@@ -408,10 +402,10 @@
       },
       {
         "name": "Salt",
-        "quantity": 1,
+        "quantity": 0.5,
         "unitOfMeasurement": "tsk",
         "lmTitle": "Joderat salt",
-        "grams": 3
+        "grams": 1.5
       },
       {
         "name": "Lingon",
@@ -457,7 +451,15 @@
       }
     ],
     "portions": 1,
-    "instructions": [],
+    "instructions": [
+      "Blanda lingon och socker och låt stå i rumstemperatur tills sockret löst sig. Rör om då och då.",
+      "Blanda ströbröd och mjölk och låt svälla 5 minuter. Blanda sedan med färs, ägg, lök, hälften av salt och peppar. Gör ett stekprov och smaka ev. av med mer salt och peppar.",
+      "Rulla sedan till köttbullar och stek i smör/rapsolja.",
+      "Häll i lite vatten i stekpannan efter stekning och koka ur till en sky.",
+      "Koka potatis i saltat vatten. Häll av och låt ånga av lite.",
+      "Pressa potatisen och blanda med smör och gräddfil. Späd ev. med lite mjölk. Smaka av med salt och peppar.",
+      "Servera köttbullarna med potatismos, steksky och lingon."
+    ],
     "filters": [
       "Huvudrätter",
       "Husmanskost"
@@ -468,7 +470,7 @@
       "calories": 537.425,
       "carbohydrates": 48.253750000000004,
       "protein": 28.583750000000002,
-      "salt": 3.6475,
+      "salt": 2.6475,
       "fat": {
         "monounsaturated": 8.796249999999999,
         "saturated": 12.441750000000003,
