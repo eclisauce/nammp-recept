@@ -24,7 +24,7 @@ export default class Router {
   addEventHandler() {
     let that = this;
 
-    $(document).on('click', 'a.pop', function(e) {
+    $(document).on('click', 'a.pop', function (e) {
       // Create a push state event
       let href = $(this).attr('href');
       history.pushState(null, null, href);
@@ -33,6 +33,16 @@ export default class Router {
 
       // Stop the browser from starting a page reload
       e.preventDefault();
+    });
+  }
+
+  urlMaker() {
+    $.getJSON("/json/recipes.json", (recipes) => {
+      this.recipes = recipes;
+    }).then(() => {
+      for (let recipe of this.recipes) {
+        this.urls[`/recept/${recipe.url}`] = 'recipePage';
+      }
     });
   }
 
@@ -46,19 +56,49 @@ export default class Router {
     $('header ul li a').removeClass('active');
     $(`header ul li a[href="${url}"]`).addClass('active');
 
+
+
     // A small "dictionary" of what method to call on which url
-    let urls = {
+    this.urls = {
       '/': 'startpage',
       '/footer': 'footer',
       '/add-recipe': 'addrecipe',
-      '/recipe': 'tikkaMasala',
       '/searchresult': 'searchResult'
     };
 
-    // Call the right method
-    let methodName = urls[url];
+    function translateCharacters(str) {
+      return str.replace(/%C3%A5/g, "å").replace(/%C3%A4/g, "ä").replace(/%C3%B6/g, "ö").replace(/%C3%A9/g, "é");
+    }
 
-    this[methodName]();
+    /**
+     * Checks if url is searchresult.
+     * If it is it checks for search-word/s and filters
+     * Then sends it to searchresult with in-parameters to the class.     *
+     * @author Andreas
+     */
+    if (url.includes('searchresult')) {
+      url = translateCharacters(url);
+      let newUrl = url.substring(0, 13);
+      let indexOfFilters = url.indexOf('/filters');
+      let searchStr = url.substring(14);
+      let filters = [];
+      if (indexOfFilters > -1) {
+        searchStr = url.substring(14, indexOfFilters);
+        filters = url.substring(indexOfFilters + 8).replace(/-/g, ' ').split(' ').map(x => x.replace(/%20/g, ' '));
+      }
+      let methodName = this.urls[newUrl];
+      // Call the right method
+      this[methodName](searchStr, filters);
+    } else {
+
+      this.urlMaker();
+
+      setTimeout(() => {
+        let methodName = this.urls[location.pathname];
+        this[methodName]();
+      }, 50);
+    }
+
 
     window.scrollTo(0, 0);
 
@@ -71,21 +111,22 @@ export default class Router {
   }
 
   addrecipe() {
-    this.addRecipe = new AddRecipe();
+    this.addRecipe = new AddRecipe(this);
     $('main').empty();
     this.addRecipe.render('main');
     this.addRecipe.renderNewForm();
     this.addRecipe.renderNewForm();
     this.addRecipe.renderNewForm();
+    this.addRecipe.checkSizeWindowAndAppend();
 
   }
 
-  tikkaMasala() {
-    this.recipe = new Recipepage();
+  recipePage() {
+    this.recipepage = new Recipepage();
   }
 
-  searchResult() {
-    this.searchresult = new Searchresult();
+  searchResult(searchStr, filters) {
+    this.searchresult = new Searchresult(searchStr, filters);
   }
 
 

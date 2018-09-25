@@ -9,7 +9,6 @@ import '../scss/main.scss';
 class App extends Base {
   constructor() {
     super();
-    new Router();
     this.start();
   }
 
@@ -17,7 +16,7 @@ class App extends Base {
    * Runs in the constructor and runs everthing
    *
    */
-  start() {
+  async start() {
     // Navbar in header
     this.navbar = new Navbar();
     this.navbar.render('header');
@@ -25,10 +24,15 @@ class App extends Base {
     // Footer renderin
     this.footer = new Footer();
     this.footer.render('footer');
+
+    setTimeout(() => {
+      this.router = new Router();
+    }, 0)
   }
+
 
 }
 
 
 
-new App();
+const app = new App();
