@@ -17,11 +17,12 @@ import {
  */
 export default class AddRecipe extends Base {
 
-  constructor() {
+  constructor(router) {
     super();
     this.eventHandler();
     this.str;
     this.ingredientCounter = 0;
+    this.router = router;
     window.onresize = () => {
       this.checkSizeWindowAndAppend();
     };
@@ -88,10 +89,8 @@ export default class AddRecipe extends Base {
 
       if (url.match(regex)) {
         emptyAndUpload(url)
-
       }
     }
-
   }
 
   keydown() {
@@ -184,6 +183,12 @@ export default class AddRecipe extends Base {
   }
 
   click() {
+
+    if ($(event.target).hasClass('fill')) {
+      $('input, textarea').val(22);
+      $('.ingredient-input').val('Salladskål');
+    }
+
     /**
     * Click on #add-instr to add more instructionfields
     * @author Martin
@@ -294,7 +299,7 @@ export default class AddRecipe extends Base {
 
 
   // Submit form and build object to send to JSON.
-  submitForm(e, formHtml) {
+  async submitForm(e, formHtml) {
     e.preventDefault();
     let allFormData = $(formHtml).serializeArray();
     if (this.doAllChecks(allFormData)) {
@@ -365,9 +370,6 @@ export default class AddRecipe extends Base {
       // Set url
       modifiedRecipe.url = this.createRecipeUrl(modifiedRecipe.title);
 
-      console.log(modifiedRecipe);
-
-
       // Get full nutrition mother fuckkcccaass
       let allNutritionsArray = modifiedRecipe.ingredientsPerPortion.map(val => {
         if (val.lmTitle) {
@@ -390,6 +392,10 @@ export default class AddRecipe extends Base {
       modifiedRecipe.nutrientsPerPortion.fat.total = allNutritionsArray.map(val => val.fat.total).reduce(reducer);
 
       this.saveAllRecipes(modifiedRecipe);
+      this.router.urlMaker();
+
+      $('button[type="submit"]').attr('disabled', true).html('Recept sparat');
+
     }
   }
 
@@ -410,7 +416,7 @@ export default class AddRecipe extends Base {
       this.checkIfExistsInDatabase(allFormData)
       &&
       this.checkIfNumbers(allFormData)
-      && 
+      &&
       this.checkIfFilterSelected(allFormData)
     ) {
       return true;
@@ -475,7 +481,7 @@ export default class AddRecipe extends Base {
 
     ingredientsLm = tempArr;
 
-    // If all is found then ingredientsLm will be 0. 
+    // If all is found then ingredientsLm will be 0.
     if (ingredientsLm.length === 0) {
       $('.something-went-wrong').empty();
       return true;
@@ -594,7 +600,7 @@ export default class AddRecipe extends Base {
   }
 
   /**
-  * Listen to change on window-size and appending where it should be. 
+  * Listen to change on window-size and appending where it should be.
   *
   */
   checkSizeWindowAndAppend(){
