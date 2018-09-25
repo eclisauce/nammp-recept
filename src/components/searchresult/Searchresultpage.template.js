@@ -8,13 +8,13 @@ export default function() {
 
         <section class="row categories flex-column p-0">
 
-          <div class="filter-heading categories border-bottom p-3 d-flex justify-content-between" data-toggle="collapse"
-            data-target="#collapseCategory" aria-expanded="false" aria-controls="collapseCategory">
+          <div id="categories" class="filter-heading categories border-bottom p-3 d-flex justify-content-between collapsed" data-toggle="collapse"
+            data-target="#collapseCategory" aria-expanded="true" aria-controls="collapseCategory">
             <p class="my-0 mx-auto m-md-0">Kategorier</p> <i class="fas fa-chevron-circle-down align-self-center"></i>
           </div>
 
           <!-- This is the body of cathegories -->
-          <div class="collapse show mt-2 ml-3" id="collapseCategory">
+          <div class="collapse mt-2 ml-3" id="collapseCategory">
 
             <label class="checkboxContainer border-checkbox">
               <p>Huvudrätt</p>
@@ -70,13 +70,13 @@ export default function() {
 
 
         <section class="row categories flex-column p-0 border-bottom">
-          <div class="filter-heading filters border-bottom border-top p-3 d-flex justify-content-between" data-toggle="collapse"
-            data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+          <div id="filters" class="filter-heading filters border-bottom border-top p-3 d-flex justify-content-between collapsed" data-toggle="collapse"
+            data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
             <p class="my-0 mx-auto m-md-0">Filter</p> <i class="fas fa-chevron-circle-down align-self-center"></i>
           </div>
 
           <!-- This is the body of cathegories -->
-          <div class="collapse show mt-2 ml-3" id="collapseFilter">
+          <div class="collapse mt-2 ml-3" id="collapseFilter">
             <label class="checkboxContainer border-checkbox">
               <p>Vegetariskt</p>
               <input type="checkbox" name="Vegetariskt">
