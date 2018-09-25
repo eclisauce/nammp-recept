@@ -75,7 +75,7 @@ export default class Router {
       let filters = [];
       if (indexOfFilters > -1) {
         searchStr = url.substring(14, indexOfFilters);
-        filters = url.substring(indexOfFilters + 8).replace(/-/g, ' ').split(' ');
+        filters = url.substring(indexOfFilters + 8).replace(/-/g, ' ').split(' ').map(x => x.replace(/%20/g, ' '));
       }
       let methodName = urls[newUrl];
       // Call the right method
