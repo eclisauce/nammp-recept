@@ -45,6 +45,23 @@
    background-position: 70% 70%;
    background-size: cover;
    border-radius: 3px;
+   position: relative;
+   .heart {
+     position: absolute;
+     top: 2.8rem;
+     right:3rem;
+     z-index:1000;
+     cursor: pointer;
+     color: $primary;
+     border: 0;
+     border-radius: 50%;
+     font-size: 150%;
+     outline: 0;
+     background: white;
+     height: 40px;
+     width: 40px;
+     padding-top: 3px;
+   }
  }
 
 .ingredient-h4,

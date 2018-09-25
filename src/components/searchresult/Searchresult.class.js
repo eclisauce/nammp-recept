@@ -5,12 +5,13 @@ import template from './Searchresultpage.template';
  *
  */
 export default class Searchresult extends Base {
-  constructor(searchStr, filters) {
+  constructor(searchStr, filters, favorites) {
     super();
+    this.myFavorites = favorites;
     this.start();
     this.searchStr = searchStr;
     this.filterArray = filters;
-  }
+    }
 
   start() {
     setTimeout(() => {
@@ -20,9 +21,9 @@ export default class Searchresult extends Base {
       this.filterAndRender();
       this.markFilters();
       this.filterCollapseController();
+      this.eventHandlers();
     }, 50);
   }
-
 
   /**
    * Eventhandler
@@ -44,8 +45,20 @@ export default class Searchresult extends Base {
       }
       this.filterAndRender();
     }
+  }
 
+  eventHandlers() {
+    let ze = this;
+    $(document).on('click', '.heart',function() {
 
+      if ($(this).find('i').hasClass('far') ) {
+        ze.myFavorites.addToFavorites( $(this).attr('data-id') );
+        $(this).find('i').removeClass('far').addClass('fas')
+      } else {
+        ze.myFavorites.removeFromFavorites( $(this).attr('data-id') );
+        $(this).find('i').removeClass('fas').addClass('far')
+      }
+    });
   }
 
   /**
@@ -87,7 +100,7 @@ export default class Searchresult extends Base {
         if ($(this).attr('name') == x) {
           $(this).prop('checked', true)
         }
-      });  
+      });
     })
   }
 
@@ -98,21 +111,25 @@ export default class Searchresult extends Base {
    */
   renderRecipeBoxes() {
     let newarr = this.filteredRecipes.map(recipe => {
-      return `<a href="/recept/${recipe.url}" class="no-decoration-a-tag pop">
-      <div class="media p-1 p-sm-3 mt-0 border">
-        <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
-          alt="${recipe.imgAlt}">
-        <div class="media-body">
-          <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
-          <i class="fas fa-angle-right fa-lg"></i>
-          <p class="mt-2">${recipe.description}</p>
-          <div class="row recipe-info-wrapper">
-            <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories} kalorier</p>
-            <p class="col-6 mb-0 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
+      return `
+      <div class="search-item">
+        <button class="heart" data-id="${recipe.url}" title="Lägg detta till favoriter"><i class="${this.myFavorites.favorites.includes(recipe.url) ? 'fas' : 'far'} fa-heart"></i></button>
+        <a href="/recept/${recipe.url}" class="no-decoration-a-tag pop">
+          <div class="media p-1 p-sm-3 mt-0 border">
+            <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
+              alt="${recipe.imgAlt}">
+            <div class="media-body ">
+              <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
+              <i class="fas fa-angle-right fa-lg"></i>
+              <p class="mt-2">${recipe.description}</p>
+              <div class="row recipe-info-wrapper">
+                <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories} kalorier</p>
+                <p class="col-6 mb-0 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </a>`
+        </a>
+      </div>`;
     })
 
     $('.search-recipe-result').append(newarr.join(''));

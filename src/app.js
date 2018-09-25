@@ -4,6 +4,7 @@ import JsonFlex from './base/jsonflex';
 import Navbar from './components/navbar/Navbar.class';
 import Footer from './components/footer/Footer.class';
 import Router from './base/Router.class';
+import Favorites from './base/Favorites.class';
 import '../scss/main.scss';
 
 class App extends Base {
@@ -25,8 +26,10 @@ class App extends Base {
     this.footer = new Footer();
     this.footer.render('footer');
 
+    this.myFavorites = new Favorites();
+
     setTimeout(() => {
-      this.router = new Router();
+      this.router = new Router(this.myFavorites);
     }, 0)
   }
 
