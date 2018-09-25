@@ -55,7 +55,7 @@ header {
 
   .search-holder {
     background: #fff !important;
-    font-size: 20px;
+    font-size: 18px;
     .result-dropdown {
       position: absolute;
       width: 100%;
@@ -64,6 +64,10 @@ header {
       max-height: 300px;
       box-sizing: border-box;
       z-index: 1001;
+
+      @media (max-width: 768px) {
+        margin-left: -10px;
+      }
 
       img{
         width: 50px;
