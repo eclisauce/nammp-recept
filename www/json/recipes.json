@@ -860,5 +860,1276 @@
         "total": 3.6812500000000004
       }
     }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
+  },
+  {
+    "title": "dsa",
+    "description": "dsa",
+    "imgLink": "https://images.pexels.com/photos/5317/food-salad-restaurant-person.jpg",
+    "time": 22,
+    "ingredientsPerPortion": [
+      {
+        "name": "dsa",
+        "quantity": 22,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Potatis rå",
+        "grams": 22
+      },
+      {
+        "name": "dsa",
+        "quantity": 22,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Potatis rå",
+        "grams": 22
+      },
+      {
+        "name": "dsa",
+        "quantity": 22,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Potatis rå",
+        "grams": 22
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "saas"
+    ],
+    "filters": [
+      "Huvudrätter"
+    ],
+    "imgAlt": "dsa",
+    "url": "dsa-1537888823482",
+    "nutrientsPerPortion": {
+      "calories": 52.14,
+      "carbohydrates": 10.823999999999998,
+      "protein": 1.1484,
+      "salt": 0.0066,
+      "fat": {
+        "monounsaturated": 0,
+        "saturated": 0,
+        "polyunsaturated": 0,
+        "total": 0.066
+      }
+    }
   }
 ]

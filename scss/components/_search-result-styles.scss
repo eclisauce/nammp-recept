@@ -59,6 +59,16 @@
   }
 }
 
+.pagination {
+  a:hover {
+    background: $bg-darken;
+    color: $primary !important;
+  }
+  .selected {
+    background: gray !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .media {
     .media-body {

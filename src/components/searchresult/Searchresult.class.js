@@ -16,11 +16,11 @@ export default class Searchresult extends Base {
     setTimeout(() => {
       $('main').empty();
       this.render('main');
+      this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
       this.filterAndRender();
       this.markFilters();
       this.filterCollapseController();
-      this.lastRenderedIndex = 0;
     }, 50);
   }
 
@@ -51,7 +51,6 @@ export default class Searchresult extends Base {
     for (let i = 0; i < this.pages.length; i++){
       if ($(event.target).hasClass(`pagination-${i+1}`)) {
         this.lastRenderedIndex = i;
-        console.log(this.lastRenderedIndex);
         this.renderAPage(this.lastRenderedIndex);
         $('.search-recipe-result').append(this.paginationTemplate());
       }
@@ -60,7 +59,6 @@ export default class Searchresult extends Base {
     if ($(event.target).hasClass('previous')) { 
       if (this.lastRenderedIndex > 0){
         this.lastRenderedIndex--;
-        console.log(this.lastRenderedIndex);
         this.renderAPage(this.lastRenderedIndex);
         $('.search-recipe-result').append(this.paginationTemplate());
 
@@ -70,7 +68,6 @@ export default class Searchresult extends Base {
 
     if ($(event.target).hasClass('next')) {
       if (this.lastRenderedIndex+1 < this.pages.length) {
-        console.log(this.lastRenderedIndex, this.pages.length);
         this.lastRenderedIndex++;
         this.renderAPage(this.lastRenderedIndex);
         $('.search-recipe-result').append(this.paginationTemplate());
@@ -104,6 +101,8 @@ export default class Searchresult extends Base {
   renderAPage(pageNumber){
     $('.search-recipe-result').empty();
     $('.search-recipe-result').append(this.pages[pageNumber]);
+    console.log(this.pages.length, this.lastRenderedIndex);
+    this.disableNextOrPrev();
   }
 
   getPageCounter(numberOfPages){
@@ -143,6 +142,21 @@ export default class Searchresult extends Base {
     })
   }
 
+  showSelected(){
+    
+  }
+
+  disableNextOrPrev(){
+    if(this.pages.length === this.lastRenderedIndex+1){
+      $('.next-li').attr('disabled', 'disabled');
+      console.log('disable next');
+    }
+    if(this.lastRenderedIndex === 0){
+      $('.previous-li').attr('disabled', 'disabled');
+      console.log('disable prev');
+    }
+  }
+
   paginationLiTemplate(){
     let fullhtml = '';
     for (let i = 0; i < this.pages.length; i++){
@@ -155,19 +169,19 @@ export default class Searchresult extends Base {
 
   paginationTemplate() {
     return `
-    <div class="row col-12 justify-content-center m-0">
-    <nav aria-label="Page navigation example">
+    <div class="row col-12 justify-content-center m-0 pagination">
+    <nav aria-label="Pagination for recipes">
       <ul class="pagination">
-        <li class="page-item">
+        <li class="page-item previous-li">
           <a class="page-link text-primary previous" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
+            &laquo;
             <span class="sr-only">Previous</span>
           </a>
         </li>
           ${this.paginationLiTemplate()}
-        <li class="page-item">
+        <li class="page-item next-li">
           <a class="page-link text-primary next" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
+            &raquo;
             <span class="sr-only">Next</span>
           </a>
         </li>
