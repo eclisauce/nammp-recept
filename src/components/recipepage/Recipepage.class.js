@@ -27,7 +27,6 @@ export default class Recipepage extends Base {
       this.render('main');
       this.renderIngredients();
       this.renderRecipeFilters();
-      this.goToFilter();
       this.pictureRandomizer();
       this.initializeBootstrapTooltips();
     }, 50);
