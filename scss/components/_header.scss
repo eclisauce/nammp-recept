@@ -1,7 +1,6 @@
 header {
   background: $bg-color;
 
-
   nav {
     font-weight: bold;
     background: $bg-color;
@@ -19,7 +18,6 @@ header {
       &:hover {
         color: darken($primary, 10%) !important;
       }
-
       @media (min-width: 768px) {
         transform: scale(1);
         transform-origin: 0 0;
@@ -50,13 +48,12 @@ header {
     .active {
       border-bottom: 3px solid #f05f40;
     }
-
-
   }
 
   .search-holder {
     background: #fff !important;
     font-size: 18px;
+
     .result-dropdown {
       position: absolute;
       width: 100%;
@@ -65,49 +62,50 @@ header {
       max-height: 300px;
       box-sizing: border-box;
       z-index: 1001;
-
       @media (max-width: 768px) {
         transform: scale(1);
         transform-origin: 0 0;
         margin-left: -15px;
       }
 
-      li{
+      li {
         display: block;
       }
 
-      img{
+      img {
         width: 50px;
+        height: 40px;
         border-radius: 2px;
         border: 1px solid rgba(0, 0, 0, 0.50);
       }
-      a{
+
+      a {
         display: block;
+
         .fa-angle-right {
           color: transparent;
         }
       }
-        .list-item:hover{
-          .fa-angle-right {
-            color: rgba(240, 95, 64, 1);
-            transform: translateX(1rem);
-            position: relative;
-          }
-          background-color: $bg-darken;
+
+      .list-item:hover {
+        .fa-angle-right {
+          color: rgba(240, 95, 64, 1);
+          transform: translateX(1rem);
+          position: relative;
         }
+        background-color: $bg-darken;
+      }
 
-        a:focus{
-          background-color: $bg-darken !important;
-          outline: none;
-          .fa-angle-right {
-            color: rgba(240, 95, 64, 1);
-            transform: translateX(1rem);
-            position: relative;
-          }
+      a:focus {
+        background-color: $bg-darken !important;
+        outline: none;
+
+        .fa-angle-right {
+          color: rgba(240, 95, 64, 1);
+          transform: translateX(1rem);
+          position: relative;
         }
-
-
-
+      }
     }
   }
 
@@ -125,8 +123,9 @@ header {
       border-radius: 0;
       border-right: 0;
       border-left: 0;
-      margin:1px;
+      margin: 1px;
       background: white;
+
       &:focus {
         border-color: darken(#ced4da, 20%);
         outline: 0;
