@@ -63,6 +63,7 @@ export default class Searchresult extends Base {
       if (this.lastRenderedIndex > 0){
         this.lastRenderedIndex--;
         this.renderAPage(this.lastRenderedIndex);
+        this.setActiveLink();
       }     
 
     }
@@ -71,6 +72,7 @@ export default class Searchresult extends Base {
       if (this.lastRenderedIndex+1 < this.pages.length) {
         this.lastRenderedIndex++;
         this.renderAPage(this.lastRenderedIndex);
+        this.setActiveLink();
       } 
     }
 
