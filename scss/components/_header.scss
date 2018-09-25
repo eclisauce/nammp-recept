@@ -1,6 +1,7 @@
 header {
   background: $bg-color;
 
+
   nav {
     font-weight: bold;
     background: $bg-color;
@@ -76,19 +77,24 @@ header {
         border-radius: 2px;
         border: 1px solid rgba(0, 0, 0, 0.50);
       }
-      li{
+      a{
         .fa-angle-right {
           color: transparent;
         }
-      }
-      li:hover{
-        .fa-angle-right {
-          color: rgba(240, 95, 64, 1);
-          transform: translateX(1rem);
-          position: relative;
+        li:focus{
+          border-color: yellow !important;
+          background-color: red !important;
         }
-        background-color: $bg-darken;
+        li:hover{
+          .fa-angle-right {
+            color: rgba(240, 95, 64, 1);
+            transform: translateX(1rem);
+            position: relative;
+          }
+          background-color: $bg-darken;
+        }
       }
+
 
     }
   }
