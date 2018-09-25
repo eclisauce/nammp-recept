@@ -69,7 +69,7 @@ export default class Navbar extends Base {
       let str = $(this).val();
       let ul = $(this).parent().find('.result-dropdown');
       ul.empty();
-      let recipes = that.autoCompleteSearch(str).splice(0, 15);
+      let recipes = that.autoCompleteSearch(str).splice(0, 6);
       for (let recipe of recipes) {
         let recipeObj = that.recipes.filter(x => x.title == recipe)[0];
         let recipeImg = that.recipes.filter(x => x.title == recipe)[0];
