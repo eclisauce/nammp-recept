@@ -44,13 +44,13 @@ export default class Navbar extends Base {
    * Checks and sets filters if there is any.
    * @author Andreas
    */
-  setFilters(){
+  setFilters() {
     let checkedFilters = $('input[type=checkbox]:checked');
     let filters = 'filters';
     checkedFilters.each((i, x) => {
       filters += `${x.name}-`;
     })
-    if(filters.length > 7){
+    if (filters.length > 7) {
       filters = filters.slice(0, -1);
       $('.searchtest').attr('href', `/searchresult/${$('#search-field').val()}/${filters}`)
     } else {
@@ -59,7 +59,7 @@ export default class Navbar extends Base {
   }
 
 
-  eventHandler(){
+  eventHandler() {
     let that = this;
     /**
      * jQuery code for handeling the input from user displaying the list from json and autocompletes
@@ -94,7 +94,6 @@ export default class Navbar extends Base {
     $(document).on('click', '.list-item', () => {
       $(".result-dropdown").html('');
     });
-
   }
 
   /**
@@ -138,8 +137,5 @@ export default class Navbar extends Base {
         : 1;
     });
   }
-
-
-
 
 }
