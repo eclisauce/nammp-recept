@@ -43,9 +43,9 @@ export default class Startpage extends Base {
 
     return firstFour.map(recipe => {
       return `
-      <a href="/recept/${recipe.url}" class="no-decoration-a-tag col-lg-6 p-0 d-flex px-2">
-        <div class="media pl-3 p-1 p-sm-3 border">
-          <img class="mr-2 ml-3 mt-1 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
+      <a href="/recept/${recipe.url}" class="no-decoration-a-tag col-12 col-lg-6 p-0 d-flex px-2">
+        <div class="media pl-2 p-1 p-sm-3 border">
+          <img class="mr-2 mt-1 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
             alt="${recipe.imgAlt}">
           <div class="media-body">
             <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
