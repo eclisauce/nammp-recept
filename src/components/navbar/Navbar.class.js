@@ -72,8 +72,11 @@ export default class Navbar extends Base {
       let recipes = that.autoCompleteSearch(str).splice(0, 15);
       for (let recipe of recipes) {
         let recipeObj = that.recipes.filter(x => x.title == recipe)[0];
-        console.log(recipeObj);
-        ul.append(`<a href="recept/${recipeObj.url}" class="pop"><li class="list-group-item list-item">${recipe}</li></a>`);
+        let recipeImg = that.recipes.filter(x => x.title == recipe)[0];
+        ul.append(`
+          <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag">
+            <li class="list-group-item list-item"><img src="${recipeImg.imgLink}" class"img-fluid p-2" alt=""><span class="p-left-2"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></li>
+          </a>`);
       }
     });
 
@@ -85,16 +88,6 @@ export default class Navbar extends Base {
 
     $(document).on('click', 'main', () => {
       $(".result-dropdown").html('');
-    })
-    /**
-     * function to pick  an item from the list and put it in the input field
-     *
-     *@author Markus
-     */
-
-    $(document).on('click', '.list-item', function() {
-
-
     });
   }
 

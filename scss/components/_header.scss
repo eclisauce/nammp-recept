@@ -65,10 +65,23 @@ header {
       box-sizing: border-box;
       z-index: 1001;
 
-      .list-item:hover{
-        background-color: rgb(16, 79, 242);
-        color: #fff;
+      img{
+        width: 50px;
       }
+      li{
+        .fa-angle-right {
+          color: transparent;
+        }
+      }
+      li:hover{
+        .fa-angle-right {
+          color: rgba(240, 95, 64, 1);
+          transform: translateX(1rem);
+          position: relative;
+        }
+        background-color: $bg-darken;
+      }
+
     }
   }
 

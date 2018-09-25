@@ -21,7 +21,6 @@ export default `
     </div>
     <!-- // Collapsing Navigation End -->
   </nav>
-
   <!-- Search field -->
   <div class="border search-holder ">
     <div class="container header__search ">
