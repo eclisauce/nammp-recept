@@ -72,11 +72,21 @@ export default class Navbar extends Base {
         let recipes = that.autoCompleteSearch(str).splice(0, 6);
         for (let recipe of recipes) {
           let recipeObj = that.recipes.filter(x => x.title == recipe)[0];
+          if (!(location.pathname.includes('/recept'))) {
           ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
               <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
+          }
+        else {
+          ul.append(`
+            <li class="list-group-item list-item focusedInput p-0">
+              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+            </li>`);
         }
+
+      }
+
       }
     });
 
