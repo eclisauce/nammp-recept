@@ -126,7 +126,7 @@ export default class AddRecipe extends Base {
       ul.empty();
       let foodItems = that.autoComplete(str).splice(0, 15);
       for (let foodItem of foodItems) {
-        ul.append(`<li class="list-group-item list-item">${foodItem}</li>`);
+        ul.append(`<li class="list-group-item list-items" tabindex="0">${foodItem}</li>`);
       }
 
     });
@@ -145,10 +145,18 @@ export default class AddRecipe extends Base {
      *
      *@author Markus
      */
-    $(document).on('click', '.list-item', function() {
+    $(document).on('click', '.list-items', function() {
       let inputField = $(this);
       $(this).parent().siblings('.ingredient-input').val($(event.target).text());
 
+    });
+
+    $(document).on('keyup', '.list-items', function(e) {
+      if (e.keyCode == 13) {
+        let inputField = $(this);
+        $(this).parent().siblings('.ingredient-input').val($(event.target).text());
+        $(".result-dropdown").html('');
+      }
     });
 
     /**

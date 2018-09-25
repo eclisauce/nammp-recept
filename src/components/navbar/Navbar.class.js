@@ -64,7 +64,7 @@ export default class Navbar extends Base {
      * jQuery code for handeling the input from user displaying the list from json and autocompletes
      * @author Markus
      */
-    $(document).on('keyup', '.search-input', function() {
+    $(document).on('keyup', '.search-input-nav', function() {
       let str = $(this).val();
       let ul = $(this).parent().find('.result-dropdown');
       ul.empty();
@@ -89,13 +89,13 @@ export default class Navbar extends Base {
     $(document).keyup(function(e) {
       if (e.keyCode == 27) { // escape key maps to keycode `27`
         $('.result-dropdown').html('');
-        $(".search-input").val('');
+        $(".search-input-nav").val('');
       }
     });
 
     $(document).on('click', 'body', () => {
       $(".result-dropdown").html('');
-      $(".search-input").val('');
+      $(".search-input-nav").val('');
     });
     $(document).on('click', '.list-item', () => {
       $(".result-dropdown").html('');

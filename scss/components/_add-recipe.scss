@@ -76,7 +76,7 @@
     border: 1px solid #f05f40;
     background-color: #fafafa;
     i{
-      color:#f05f40; 
+      color:#f05f40;
     }
     p{
       text-decoration: underline;
@@ -94,7 +94,12 @@
     box-sizing: border-box;
     z-index: 1001;
 
-    .list-item:hover{
+    .list-items:hover{
+      background-color: rgb(16, 79, 242);
+      color: #fff;
+    }
+
+    .list-items:focus{
       background-color: rgb(16, 79, 242);
       color: #fff;
     }

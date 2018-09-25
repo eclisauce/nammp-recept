@@ -151,13 +151,13 @@ return `
     </div>
     <div class="form-row">
       <div class="col-6 mb-0 mb-md-0 pt-2 bla">
-        <input type="text" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
+        <input tabindex="0" type="text" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
-          <ul class="list-group result-dropdown"></ul>
+          <ul class="list-group result-dropdown" tabindex="-1"></ul>
       </div>
 
       <div class="col d-flex pt-2">
-        <input type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
+        <input tabindex="0" type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
 
       <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
