@@ -106,7 +106,7 @@ export default function() {
         </section>
 
         <section class="row categories flex-column p-0">
-          <a class="btn btn-primary rounded-0 p-3 pop" href="add-recipe.html">Nytt recept</a>
+          <a class="btn btn-primary rounded-0 p-3 pop" href="/add-recipe">Nytt recept</a>
         </section>
 
 
