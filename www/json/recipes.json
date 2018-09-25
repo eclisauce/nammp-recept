@@ -478,5 +478,387 @@
         "total": 24.424999999999997
       }
     }
+  },
+  {
+    "title": "Korv Stroganoff",
+    "description": "Korv Stroganoff på falukorv är en klassiker i det svenska vardagsköket - smakar lika bra i matlådan dagen efter.\r\n\r\nProva även att göra grytan på frukostkorv eller grillkorv för variation.",
+    "imgLink": "https://img.koket.se/media/snabbt-och-enkelt-till-vardags.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Falukorv",
+        "quantity": 125,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Korv kött 58% typ falukorv låg fetthalt",
+        "grams": 125
+      },
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Smör",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Smör fett 80 %",
+        "grams": 3.75
+      },
+      {
+        "name": "Tomatpuré",
+        "quantity": 0.75,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Tomatpuré konc konserv",
+        "grams": 10.125
+      },
+      {
+        "name": "Diljonsenap",
+        "quantity": 0.5,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Senap fransk",
+        "grams": 2.75
+      },
+      {
+        "name": "Grädde",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Mellangrädde fett 27% ",
+        "grams": 50
+      },
+      {
+        "name": "Bladpersilja, hackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Persilja blad",
+        "grams": 0.5
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Dra av skinnet på falukorven och skär den 1/2 cm tjocka bitar. Skala och hacka löken. Låt fettet bli ljusbrunt i en panna. bryn korv och lök. Tillsätt tomatpurén, dijonsenap och rör om. Späd med grädde.",
+      "Smaksätt med salt och peppar. Koka ett par minuter. Rör i hackad persilja.",
+      "Servera med kokt potatis, råris, quinoa eller pasta och en grönsallad."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Grytor",
+      "Husmanskost"
+    ],
+    "imgAlt": "Korv Stroganoff",
+    "url": "korvstroganoff-1537863785063",
+    "nutrientsPerPortion": {
+      "calories": 493.775,
+      "carbohydrates": 14.466125,
+      "protein": 17.845625,
+      "salt": 4.0818625,
+      "fat": {
+        "monounsaturated": 15.1028125,
+        "saturated": 19.852899999999998,
+        "polyunsaturated": 3.4171875,
+        "total": 40.874125
+      }
+    }
+  },
+  {
+    "title": "Pannkakor",
+    "description": "Gör traditionella tunna pannkakor genom att blanda mjöl, mjölk och ägg och lite salt till en jämn smet. Stek smeten till tunna och smarriga pannkakor.",
+    "imgLink": "https://img.koket.se/media/pannkakor-recept-recept-nu.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Vetemjöl",
+        "quantity": 2.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Vetemjöl",
+        "grams": 150
+      },
+      {
+        "name": "bakpulver (valfritt, för något fluffigare pannkakor)",
+        "quantity": 2.5,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Bakpulver",
+        "grams": 12.5
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.5,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 3
+      },
+      {
+        "name": "Mjölk",
+        "quantity": 6,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Mjölk fett 3%",
+        "grams": 600
+      },
+      {
+        "name": "Ägg",
+        "quantity": 3,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ägg ekologiskt rått",
+        "grams": 180
+      },
+      {
+        "name": "Vaniljsocker",
+        "quantity": 2,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.5
+      },
+      {
+        "name": "Smör, smält",
+        "quantity": 2,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Smör fett 80 %",
+        "grams": 30
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Blanda mjöl, bakpulver och salt i en bunke.",
+      "Vispa i hälften av mjölken och vispa till en jämn smet.",
+      "Tillsätt ägg, vaniljsocker, smält smör och resten av mjölken till pannkakssmeten.",
+      "Smält en klick smör i en varm stekpanna.",
+      "Häll 1/2-1 deciliter pannkakssmet i stekpannan, beroende på hur tjocka pannkakor du vill ha.",
+      "Servera dina pannkakor med t.ex. vispad grädde, färska jordgubbar och en klick jordgubbssylt."
+    ],
+    "filters": [
+      "Fika",
+      "Buffé",
+      "Vegetariskt"
+    ],
+    "imgAlt": "Pannkakor",
+    "url": "pannkakor-1537864699943",
+    "nutrientsPerPortion": {
+      "calories": 1382.25,
+      "carbohydrates": 142.97,
+      "protein": 56.18149999999999,
+      "salt": 7.02625,
+      "fat": {
+        "monounsaturated": 17.598,
+        "saturated": 33.591,
+        "polyunsaturated": 5.2379999999999995,
+        "total": 63.636
+      }
+    }
+  },
+  {
+    "title": "Raggmunk med fläsk",
+    "description": "Raggmunk är en klassisk svensk maträtt som räknas till den svenska husmanskosten. Den är en sorts pannkaka med råriven potatis i smeten. Klassiska tillbehör är stekt rimmat fläsk och rårörda lingon.",
+    "imgLink": "https://img.koket.se/media/raggmunk-med-flask-och-rarorda-lingon.jpg",
+    "time": 30,
+    "ingredientsPerPortion": [
+      {
+        "name": "Vetemjöl",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Vetemjöl",
+        "grams": 30
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Mjölk",
+        "quantity": 1.25,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Mjölk fett 3%",
+        "grams": 125
+      },
+      {
+        "name": "Ägg",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ägg ekologiskt rått",
+        "grams": 30
+      },
+      {
+        "name": "Potatis",
+        "quantity": 150,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Potatis rå",
+        "grams": 150
+      },
+      {
+        "name": "Smör",
+        "quantity": 0.5,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Smör fett 80 %",
+        "grams": 7.5
+      },
+      {
+        "name": "Stekfläsk",
+        "quantity": 60,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Gris stekfläsk sida m svål skivor rå",
+        "grams": 60
+      },
+      {
+        "name": "Lingon, rårörda",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Lingon",
+        "grams": 30
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Mät upp mjöl och salt. Tillsätt hälften av mjölken och vispa ihop till en jämn smet. Vispa i resten av mjölken och ägg.",
+      "Skala potatisen och riv den grovt. Blanda genast ner den i smeten så att den inte mörknar.",
+      "Smält lite smör i en stekpanna. Klicka ut 0,5 dl smet, bred ut den något och grädda några minuter på varje sida. Fortsätt med resten av smeten.",
+      "Stek fläsket 3–4 min. Servera med lingon."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Fika",
+      "Husmanskost"
+    ],
+    "imgAlt": "Raggmunk med fläsk",
+    "url": "raggmunkmedflsk-1537866434936",
+    "nutrientsPerPortion": {
+      "calories": 564.375,
+      "carbohydrates": 55.652499999999996,
+      "protein": 23.7525,
+      "salt": 1.9100000000000001,
+      "fat": {
+        "monounsaturated": 8.652000000000001,
+        "saturated": 12.75825,
+        "polyunsaturated": 2.45675,
+        "total": 26.22
+      }
+    }
+  },
+  {
+    "title": "Röd linssoppa",
+    "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
+    "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
+    "time": 20,
+    "ingredientsPerPortion": [
+      {
+        "name": "Gul lök, finhackad",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Lök gul",
+        "grams": 25
+      },
+      {
+        "name": "Vitlöksklyfta",
+        "quantity": 0.25,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Vitlök",
+        "grams": 1.25
+      },
+      {
+        "name": "Rapsolja",
+        "quantity": 0.25,
+        "unitOfMeasurement": "msk",
+        "lmTitle": "Rapsolja",
+        "grams": 3.25
+      },
+      {
+        "name": "Röda linser, torkade",
+        "quantity": 0.5,
+        "unitOfMeasurement": "dl",
+        "lmTitle": "Röda linser konserv",
+        "grams": 40
+      },
+      {
+        "name": "Paprikapulver",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Basilika",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Krossade tomater",
+        "quantity": 100,
+        "unitOfMeasurement": "g",
+        "lmTitle": "Tomater krossade konserv m lag",
+        "grams": 100
+      },
+      {
+        "name": "Vatten",
+        "quantity": 0.25,
+        "unitOfMeasurement": "liter",
+        "lmTitle": "Kranvatten",
+        "grams": 250
+      },
+      {
+        "name": "Grönsaksbuljongtärningar",
+        "quantity": 0.5,
+        "unitOfMeasurement": "st",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      },
+      {
+        "name": "Salt",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Joderat salt",
+        "grams": 1.5
+      },
+      {
+        "name": "Peppar",
+        "quantity": 0.25,
+        "unitOfMeasurement": "tsk",
+        "lmTitle": "Ange inget näringsvärde",
+        "grams": 0.125
+      }
+    ],
+    "portions": 1,
+    "instructions": [
+      "Skala och hacka lök och vitlök, fräs i olja.",
+      "Tillsätt linser, paprikapulver och basilika. Häll på krossade tomater, vatten och buljongtärningar. Låt koka 15 minuter.",
+      "Smaka av med salt, peppar och ev mer paprikapulver och basilika."
+    ],
+    "filters": [
+      "Huvudrätter",
+      "Vegetariskt",
+      "Veganskt",
+      "Laktosfritt"
+    ],
+    "imgAlt": "Röd linssoppa",
+    "url": "rdlinssoppa-1537867373882",
+    "nutrientsPerPortion": {
+      "calories": 98.08000000000001,
+      "carbohydrates": 10.67375,
+      "protein": 3.9395,
+      "salt": 1.7850000000000001,
+      "fat": {
+        "monounsaturated": 2.054225,
+        "saturated": 0.30639999999999995,
+        "polyunsaturated": 1.091625,
+        "total": 3.6812500000000004
+      }
+    }
   }
 ]
