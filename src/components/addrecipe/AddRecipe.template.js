@@ -1,5 +1,6 @@
 function template() {
 return `
+<button class="fill">Fill</button>
   <article class="add-recipe container">
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
     <article class="mt-3 mt-md-4">
@@ -50,7 +51,7 @@ return `
                     <option selected>1</option>
                     <option>2</option>
                     <option>3</option>
-                    <option >4</option>
+                    <option>4</option>
                     <option>5</option>
                     <option>6</option>
                     <option>7</option>
@@ -98,7 +99,7 @@ return `
 
       </div> <!-- Closses top div-row -->
 
-      <div class="row mt-3 mt-md-4 mb-5 p-0"> 
+      <div class="row mt-3 mt-md-4 mb-5 p-0">
 
         <div class="col-12 pl-md-5 d-flex justify-content-md-end justify-content-center">
           <h5 class="something-went-wrong text-danger m-0"></h5>
@@ -276,7 +277,7 @@ function pictureHolderTemplate() {
     <small id="" class="form-text text-muted">Kom ihåg att ha med hela länken utan några förändringar
       på länken.</small>
   </div>
-  
+
   <div class="row pr-md-5 mt-2">
       <div class="col-12 picture-upload">
         <img src="/img/placeholder-image.jpg" class="picture-upload__img"  alt="Uppladdat recept foto"/>

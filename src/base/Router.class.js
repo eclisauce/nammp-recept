@@ -9,8 +9,7 @@ import Searchresult from '../components/searchresult/Searchresult.class';
  */
 export default class Router {
 
-  constructor(app) {
-    this.app = app;
+  constructor() {
     // Add event handlers for a.pop-links once
     this.addEventHandler();
     // Call changePage on initial page load
@@ -37,6 +36,16 @@ export default class Router {
     });
   }
 
+  urlMaker() {
+    $.getJSON("/json/recipes.json", (recipes) => {
+      this.recipes = recipes;
+    }).then(() => {
+      for (let recipe of this.recipes) {
+        this.urls[`/recept/${recipe.url}`] = 'recipePage';
+      }
+    });
+  }
+
   changePage() {
     // React on page changed
     // (replace part of the DOM etc.)
@@ -50,7 +59,7 @@ export default class Router {
 
 
     // A small "dictionary" of what method to call on which url
-    let urls = {
+    this.urls = {
       '/': 'startpage',
       '/footer': 'footer',
       '/add-recipe': 'addrecipe',
@@ -64,7 +73,7 @@ export default class Router {
     /**
      * Checks if url is searchresult.
      * If it is it checks for search-word/s and filters
-     * Then sends it to searchresult with in-parameters to the class.     * 
+     * Then sends it to searchresult with in-parameters to the class.     *
      * @author Andreas
      */
     if (url.includes('searchresult')) {
@@ -77,20 +86,17 @@ export default class Router {
         searchStr = url.substring(14, indexOfFilters);
         filters = url.substring(indexOfFilters + 8).replace(/-/g, ' ').split(' ').map(x => x.replace(/%20/g, ' '));
       }
-      let methodName = urls[newUrl];
+      let methodName = this.urls[newUrl];
       // Call the right method
       this[methodName](searchStr, filters);
     } else {
 
-      setTimeout(() => {
-        for (let recipe of this.app.recipes) {
-          urls[`/recept/${recipe.url}`] = 'recipePage';
-        }
-        let methodName = urls[url];
+      this.urlMaker();
 
-        // Call the right method
+      setTimeout(() => {
+        let methodName = this.urls[location.pathname];
         this[methodName]();
-      }, 0);
+      }, 50);
     }
 
 
@@ -105,7 +111,7 @@ export default class Router {
   }
 
   addrecipe() {
-    this.addRecipe = new AddRecipe();
+    this.addRecipe = new AddRecipe(this);
     $('main').empty();
     this.addRecipe.render('main');
     this.addRecipe.renderNewForm();
