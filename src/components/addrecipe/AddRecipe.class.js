@@ -308,8 +308,7 @@ export default class AddRecipe extends Base {
       let filters = allFormData.filter(data => data.value === 'on').map(filter => filter.name);
 
       // Filter instructions, get the values in the instructions, remove undefined or empty string
-      let instructions = allFormData.filter(data => data.name === 'instruction').map(ins => ins.value).filter(ins => ins !== "" || undefined);
-
+      let instructions = allFormData.filter(data => data.name.includes('instruction')).map(ins => ins.value).filter(ins => ins !== "" || undefined);
 
       for (let i = 0; i < allFormData.length; i++) {
         if (allFormData[i].name == 'Ingrediens') {
@@ -329,7 +328,10 @@ export default class AddRecipe extends Base {
       }, {});
 
 
-
+      let allInstructions = allFormData.filter(data => data.name.includes('instruction')).map(ins => ins.name);
+      allInstructions.forEach(x => {
+        delete modifiedRecipe[x];
+      })
       delete modifiedRecipe.Ingrediens;
       delete modifiedRecipe.Antal;
       delete modifiedRecipe.Enhetsmått;
@@ -363,7 +365,7 @@ export default class AddRecipe extends Base {
       // Set url
       modifiedRecipe.url = this.createRecipeUrl(modifiedRecipe.title);
 
-
+      console.log(modifiedRecipe);
 
 
       // Get full nutrition mother fuckkcccaass
