@@ -8,7 +8,7 @@ import navbarTemplate from './navbar.template';
 export default class Navbar extends Base {
   constructor() {
     super();
-    this.eventHandler();
+    this.searchListRender();
     this.str;
   }
   template() {
@@ -59,7 +59,7 @@ export default class Navbar extends Base {
   }
 
 
-  eventHandler() {
+  searchListRender() {
     let that = this;
     /**
      * jQuery code for handeling the input from user displaying the list from json and autocompletes
@@ -82,8 +82,9 @@ export default class Navbar extends Base {
       }
     }
     });
+    
     /**
-     * Allows us to defocus the input field if clicked outside of interval
+     * Allows us to defocus the input field if clicked outside of input
      *
      *@author Markus
      */
@@ -99,13 +100,10 @@ export default class Navbar extends Base {
 
   /**
    * autocomplete method and sorting
-   * needs more added to it?
+   *
    *@author Markus
    */
   autoCompleteSearch(str) {
-    //   if(str.length < 3){
-    //   return new Error('You must send a str with >= 3 letters');
-    // }
     str = str.toLowerCase();
     return this.recipes.filter(x => x.title.toLowerCase().includes(str)).map(x => x.title).sort((a, b) => {
 
