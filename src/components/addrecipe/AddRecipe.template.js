@@ -1,5 +1,5 @@
 function template() {
-return `
+  return `
 <button class="fill">Fill</button>
   <article class="add-recipe container">
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
@@ -122,7 +122,7 @@ return `
 }
 
 function ingredientTemplate() {
-return `
+  return `
   <div class="mb-md-4 mb-1 mb-lg-1 my-2 ingredient-form" id="ingredientInput-${this.ingredientCounter}">
     <div class="form-row">
       <div class="col-6 mb-0 mb-md-0 pt-2">
@@ -167,10 +167,10 @@ return `
 }
 
 function pictureUploadTemplate() {
-    return `
+  return `
       <img src="" class="picture-upload__img"  alt="Uppladdat recept foto"/>
     `;
-  }
+}
 
 function instructionTemplate() {
   return `

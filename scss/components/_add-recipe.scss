@@ -72,13 +72,15 @@
     }
   }
 
-  .info-box{
+  .info-box {
     border: 1px solid #f05f40;
     background-color: #fafafa;
-    i{
-      color:#f05f40;
+
+    i {
+      color: #f05f40;
     }
-    p{
+
+    p {
       text-decoration: underline;
       text-decoration-color: #f05f40;
     }
@@ -94,17 +96,18 @@
     box-sizing: border-box;
     z-index: 1001;
 
-    .list-items:hover{
+    .list-items:hover {
       background-color: rgb(16, 79, 242);
       color: #fff;
     }
 
-    .list-items:focus{
+    .list-items:focus {
       background-color: rgb(16, 79, 242);
       color: #fff;
     }
   }
-  .red-border{
+
+  .red-border {
     border: 1px solid red;
   }
 }

@@ -7,9 +7,7 @@ import {
   categoriesTemplate,
   pictureHolderTemplate
 } from './AddRecipe.template';
-import {
-  doesNotThrow
-} from 'assert';
+import {doesNotThrow} from 'assert';
 
 /**
  * Startpage in main for route '/'
@@ -83,7 +81,6 @@ export default class AddRecipe extends Base {
       }
       emptyAndUpload('/img/placeholder-image.jpg');
 
-
       const url = $(event.target).val();
       const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/g;
 
@@ -112,7 +109,7 @@ export default class AddRecipe extends Base {
       this.getSelectedPortions();
     });
     let that = this;
-    $(document).on('submit', 'form', function (e) {
+    $(document).on('submit', 'form', function(e) {
       that.submitForm(e, this)
     });
 
@@ -171,7 +168,6 @@ export default class AddRecipe extends Base {
     });
   }
 
-
   keyup() {
     if ($(event.target).is('input, textarea')) {
       $(event.target).removeClass('red-border');
@@ -184,8 +180,10 @@ export default class AddRecipe extends Base {
   */
   recalculateInstructionIndex() {
     const $labels = $('.label-instr');
-    $labels.each(function(i)  {
-      i = i === 0 ? 1 : i + 1;
+    $labels.each(function(i) {
+      i = i === 0
+        ? 1
+        : i + 1;
       $(this).text(i).parent().attr('for', `ìnstruction-${i}`).attr('title', `Textfält för instruktion ${i}.`).find('.instruction').attr('placeholder', `${i}.`).attr('name', `instruction-${i}`);
     });
   }
@@ -209,7 +207,7 @@ export default class AddRecipe extends Base {
     * Click on remove-instr to delete current instructionfield
     * @author Martin
     */
-    if ($(event.target).hasClass('remove-instr') && $('.instruction').length > 1 || $(event.target).parent().hasClass('remove-instr') && $('.instruction').length > 1 ) {
+    if ($(event.target).hasClass('remove-instr') && $('.instruction').length > 1 || $(event.target).parent().hasClass('remove-instr') && $('.instruction').length > 1) {
       let instance = this;
       if (event.toElement.nodeName === 'I') {
         $(event.target).parent().parent().fadeOut('slow', function() {
@@ -217,7 +215,7 @@ export default class AddRecipe extends Base {
           instance.recalculateInstructionIndex();
         });
       } else {
-        $(event.target).parent().fadeOut('slow', function () {
+        $(event.target).parent().fadeOut('slow', function() {
           $(this).remove();
           instance.recalculateInstructionIndex();
         });
@@ -242,7 +240,7 @@ export default class AddRecipe extends Base {
           $(this).remove();
         });
       } else {
-        $(event.target).parent().parent().fadeOut('slow', function () {
+        $(event.target).parent().parent().fadeOut('slow', function() {
           $(this).remove();
         });
       }
@@ -297,14 +295,9 @@ export default class AddRecipe extends Base {
    * @author Martin
    */
   createRecipeUrl(str) {
-    str = str.toLowerCase()
-      .replace(/[^a-zA-Z ]/g, '')
-      .replace(/å|ä/g, 'a')
-      .replace(/ö/g, 'o')
-      .replace(/\s/g, '');
-    return `${str.slice(0,15)}-${Date.now()}`;
+    str = str.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/å|ä/g, 'a').replace(/ö/g, 'o').replace(/\s/g, '');
+    return `${str.slice(0, 15)}-${Date.now()}`;
   }
-
 
   // Submit form and build object to send to JSON.
   async submitForm(e, formHtml) {
@@ -339,7 +332,6 @@ export default class AddRecipe extends Base {
         obj[current.name] = current.value;
         return obj;
       }, {});
-
 
       let allInstructions = allFormData.filter(data => data.name.includes('instruction')).map(ins => ins.name);
       allInstructions.forEach(x => {
@@ -407,30 +399,17 @@ export default class AddRecipe extends Base {
     }
   }
 
-
-
-
-
   /**
    * Does all the checks and gives an error on each check if it doesnt apply
    * Checks in the order of the if-statement
    * If everything is ok it returns true and submitForm() saves the recipe.
    * @author Andy
    */
-  doAllChecks(allFormData){
-    if(
-      this.checkIfEverythingHasValue(allFormData)
-      &&
-      this.checkIfExistsInDatabase(allFormData)
-      &&
-      this.checkIfNumbers(allFormData)
-      &&
-      this.checkIfFilterSelected(allFormData)
-    ) {
+  doAllChecks(allFormData) {
+    if (this.checkIfEverythingHasValue(allFormData) && this.checkIfExistsInDatabase(allFormData) && this.checkIfNumbers(allFormData) && this.checkIfFilterSelected(allFormData)) {
       return true;
     }
   }
-
 
   /**
    * Receives all form data and checks if everything is filled out.
@@ -444,7 +423,7 @@ export default class AddRecipe extends Base {
       $('.something-went-wrong').empty();
       return true;
     } else {
-      $('form input, textarea').each(function () {
+      $('form input, textarea').each(function() {
         if ($(this).val() == "") {
           $(this).addClass('red-border');
 
@@ -478,7 +457,6 @@ export default class AddRecipe extends Base {
       }
     });
 
-
     // Trying to loop out and compare ingredients lm to fooddata
     let tempArr = []
     ingredientsLm.forEach(x => {
@@ -507,7 +485,6 @@ export default class AddRecipe extends Base {
       return false;
     }
   }
-
 
   /**
    * Receives all form data and checks if some inputs are numbers.
@@ -562,8 +539,6 @@ export default class AddRecipe extends Base {
     }
   }
 
-
-
   /**
    * Receives all the nutritions needed for the recipe and adds it to an object that is returned
    * @author Andy
@@ -596,7 +571,6 @@ export default class AddRecipe extends Base {
     return nutrientsPerPortion;
   }
 
-
   /**
    * Finds the one nutrition we pass to the function and returns it
    *
@@ -611,10 +585,10 @@ export default class AddRecipe extends Base {
   * Listen to change on window-size and appending where it should be.
   *
   */
-  checkSizeWindowAndAppend(){
+  checkSizeWindowAndAppend() {
     $('.width-768').empty();
     $('.width-768-plus').empty();
-    if($(document).width() < 768) {
+    if ($(document).width() < 768) {
       $('.width-768-plus').empty();
       this.render('.width-768', 'pictureHolderTemplate');
       this.render('.width-768', 'categoriesTemplate');
