@@ -19,6 +19,7 @@ export default class Searchresult extends Base {
       this.searchRecipes = this.searchResults();
       this.filterAndRender();
       this.markFilters();
+      this.filterCollapseController();
     }, 50);
   }
 
@@ -73,14 +74,14 @@ export default class Searchresult extends Base {
     return arr;
   }
 
-  markFilters() {
+  markFilters(){
     let getAll = $('input[type=checkbox]');
     this.filterArray.forEach(x => {
       getAll.each(function () {
         if ($(this).attr('name') == x) {
           $(this).prop('checked', true)
         }
-      });
+      });  
     })
   }
 
@@ -126,6 +127,13 @@ export default class Searchresult extends Base {
     }
     return arr;
   }
+
+  filterCollapseController(){
+    if ($(window).width() < 768) {
+      $('.filter-heading').trigger('click');
+    }
+  }
+
 }
 
 Searchresult.prototype.template = template;
