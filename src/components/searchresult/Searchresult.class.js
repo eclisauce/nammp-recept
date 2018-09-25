@@ -44,6 +44,31 @@ export default class Searchresult extends Base {
       }
       this.filterAndRender();
     }
+  }
+
+  click() {
+    for (let i = 0; i < this.pages.length; i++){
+      if ($(event.target).hasClass(`pagination-${i+1}`)) {
+        this.lastRenderedIndex = i;
+        this.renderAPage(this.lastRenderedIndex);
+        $('.search-recipe-result').append(this.paginationTemplate());
+      }
+    }
+
+    if ($(event.target).hasClass('previous')) {      
+      this.lastRenderedIndex - 1;
+      console.log(this.lastRenderedIndex);
+      this.renderAPage(this.lastRenderedIndex);
+      $('.search-recipe-result').append(this.paginationTemplate());
+    }
+
+    if ($(event.target).hasClass('next')) {
+      this.lastRenderedIndex + 1;
+      console.log(this.lastRenderedIndex);
+      this.renderAPage(this.lastRenderedIndex);
+      $('.search-recipe-result').append(this.paginationTemplate());
+    }
+
 
 
   }
@@ -56,12 +81,31 @@ export default class Searchresult extends Base {
   filterAndRender() {
     $('.search-recipe-result').empty()
     this.filteredRecipes = this.filterRecipe(this.filterArray);
-    if(this.filteredRecipes.length > 0){
-      this.renderRecipeBoxes();
+    this.getPageCounter(this.filteredRecipes.length/5);
+
+    if (this.filteredRecipes.length > 0) {
+      this.renderAPage(0);
+      $('.search-recipe-result').append(this.paginationTemplate());
+
+
     } else {
       $('.search-recipe-result').append('<h3 class="danger px-4 px-md-0">Tyvärr hittar vi inget recept på din sökning. Var god försök igen.</h3>')
     }
+  }
 
+  renderAPage(pageNumber){
+    $('.search-recipe-result').empty();
+    $('.search-recipe-result').append(this.pages[pageNumber]);
+  }
+
+  getPageCounter(numberOfPages){
+    numberOfPages = Math.ceil(numberOfPages);
+    let fullArr = this.getRecipeBoxes();
+    this.pages = [];
+    for (let i = 0; i < numberOfPages; i++){
+      let fiveArr = fullArr.slice(i*5, 5*(i+1));
+      this.pages.push(fiveArr);
+    }
   }
 
   /**
@@ -80,15 +124,49 @@ export default class Searchresult extends Base {
     return arr;
   }
 
-  markFilters(){
+  markFilters() {
     let getAll = $('input[type=checkbox]');
     this.filterArray.forEach(x => {
       getAll.each(function () {
         if ($(this).attr('name') == x) {
           $(this).prop('checked', true)
         }
-      });  
+      });
     })
+  }
+
+  paginationLiTemplate(){
+    let fullhtml = '';
+    for (let i = 0; i < this.pages.length; i++){
+      fullhtml += `
+      <li class="page-item"><a class="page-link text-primary pagination-${i+1}">${i+1}</a></li>
+      `
+    }
+    return fullhtml
+  }
+
+  paginationTemplate() {
+    return `
+    <div class="row col-12 justify-content-center m-0">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link text-primary previous" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+          ${this.paginationLiTemplate()}
+        <li class="page-item">
+          <a class="page-link text-primary next" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+    `
   }
 
   /**
@@ -96,8 +174,8 @@ export default class Searchresult extends Base {
    *
    *
    */
-  renderRecipeBoxes() {
-    let newarr = this.filteredRecipes.map(recipe => {
+  getRecipeBoxes() {
+    return this.filteredRecipes.map(recipe => {
       return `<a href="/recept/${recipe.url}" class="no-decoration-a-tag pop">
       <div class="media p-1 p-sm-3 mt-0 border">
         <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
@@ -107,15 +185,13 @@ export default class Searchresult extends Base {
           <i class="fas fa-angle-right fa-lg"></i>
           <p class="mt-2">${recipe.description}</p>
           <div class="row recipe-info-wrapper">
-            <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kalorier</p>
+            <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()  } kalorier</p>
             <p class="col-6 mb-0 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
           </div>
         </div>
       </div>
     </a>`
     })
-
-    $('.search-recipe-result').append(newarr.join(''));
   }
 
   searchResults() {
@@ -134,7 +210,7 @@ export default class Searchresult extends Base {
     return arr;
   }
 
-  filterCollapseController(){
+  filterCollapseController() {
     if ($(window).width() < 768) {
       $('.filter-heading').trigger('click');
     }
