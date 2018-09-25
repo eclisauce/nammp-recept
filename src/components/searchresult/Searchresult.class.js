@@ -20,6 +20,7 @@ export default class Searchresult extends Base {
       this.filterAndRender();
       this.markFilters();
       this.filterCollapseController();
+      this.lastRenderedIndex = 0;
     }, 50);
   }
 
@@ -50,23 +51,30 @@ export default class Searchresult extends Base {
     for (let i = 0; i < this.pages.length; i++){
       if ($(event.target).hasClass(`pagination-${i+1}`)) {
         this.lastRenderedIndex = i;
+        console.log(this.lastRenderedIndex);
         this.renderAPage(this.lastRenderedIndex);
         $('.search-recipe-result').append(this.paginationTemplate());
       }
     }
 
-    if ($(event.target).hasClass('previous')) {      
-      this.lastRenderedIndex - 1;
-      console.log(this.lastRenderedIndex);
-      this.renderAPage(this.lastRenderedIndex);
-      $('.search-recipe-result').append(this.paginationTemplate());
+    if ($(event.target).hasClass('previous')) { 
+      if (this.lastRenderedIndex > 0){
+        this.lastRenderedIndex--;
+        console.log(this.lastRenderedIndex);
+        this.renderAPage(this.lastRenderedIndex);
+        $('.search-recipe-result').append(this.paginationTemplate());
+
+      }     
+
     }
 
     if ($(event.target).hasClass('next')) {
-      this.lastRenderedIndex + 1;
-      console.log(this.lastRenderedIndex);
-      this.renderAPage(this.lastRenderedIndex);
-      $('.search-recipe-result').append(this.paginationTemplate());
+      if (this.lastRenderedIndex+1 < this.pages.length) {
+        console.log(this.lastRenderedIndex, this.pages.length);
+        this.lastRenderedIndex++;
+        this.renderAPage(this.lastRenderedIndex);
+        $('.search-recipe-result').append(this.paginationTemplate());
+      } 
     }
 
 
