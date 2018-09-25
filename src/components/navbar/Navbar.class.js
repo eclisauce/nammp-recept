@@ -71,8 +71,9 @@ export default class Navbar extends Base {
       ul.empty();
       let recipes = that.autoCompleteSearch(str).splice(0, 15);
       for (let recipe of recipes) {
-        ul.append(`<li class="list-group-item list-item">${recipe}</li>`);
-        console.log(recipe);
+        let recipeObj = that.recipes.filter(x => x.title == recipe)[0];
+        console.log(recipeObj);
+        ul.append(`<a href="recept/${recipeObj.url}" class="pop"><li class="list-group-item list-item">${recipe}</li></a>`);
       }
     });
 
@@ -92,7 +93,7 @@ export default class Navbar extends Base {
      */
 
     $(document).on('click', '.list-item', function() {
-      location.href = '/searchresult';
+
 
     });
   }
