@@ -65,6 +65,12 @@ header {
       box-sizing: border-box;
       z-index: 1001;
 
+      @media (max-width: 768px) {
+        transform: scale(1);
+        transform-origin: 0 0;
+        margin-left: -15px;
+      }
+
       img{
         width: 50px;
         border-radius: 2px;

@@ -76,7 +76,7 @@ export default class Navbar extends Base {
         let recipeImgAlt = that.recipes.filter(x => x.title == recipe)[0];
         ul.append(`
           <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag">
-            <li class="list-group-item list-item"><img src="${recipeImg.imgLink}" class"img-fluid p-4" alt="${recipeImgAlt.imgAlt}"><span class="p-2"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></li>
+            <li class="list-group-item list-item"><img src="${recipeImg.imgLink}" class"img-fluid p-4" alt="${recipeImgAlt.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></li>
           </a>`);
       }
     });
