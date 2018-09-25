@@ -73,14 +73,14 @@ export default class Searchresult extends Base {
     return arr;
   }
 
-  markFilters(){
+  markFilters() {
     let getAll = $('input[type=checkbox]');
     this.filterArray.forEach(x => {
       getAll.each(function () {
         if ($(this).attr('name') == x) {
           $(this).prop('checked', true)
         }
-      });  
+      });
     })
   }
 
@@ -126,7 +126,6 @@ export default class Searchresult extends Base {
     }
     return arr;
   }
-
 }
 
 Searchresult.prototype.template = template;
