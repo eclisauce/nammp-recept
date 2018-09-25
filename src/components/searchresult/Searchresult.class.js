@@ -19,6 +19,7 @@ export default class Searchresult extends Base {
       this.searchRecipes = this.searchResults();
       this.filterAndRender();
       this.markFilters();
+      this.filterCollapseController();
     }, 50);
   }
 
@@ -53,8 +54,14 @@ export default class Searchresult extends Base {
    *
    */
   filterAndRender() {
+    $('.search-recipe-result').empty()
     this.filteredRecipes = this.filterRecipe(this.filterArray);
-    this.renderRecipeBoxes();
+    if(this.filteredRecipes.length > 0){
+      this.renderRecipeBoxes();
+    } else {
+      $('.search-recipe-result').append('<h3 class="danger px-4 px-md-0">Tyvärr hittar vi inget recept på din sökning. Var god försök igen.</h3>')
+    }
+
   }
 
   /**
@@ -108,7 +115,7 @@ export default class Searchresult extends Base {
     </a>`
     })
 
-    $('.search-recipe-result').empty().append(newarr.join(''));
+    $('.search-recipe-result').append(newarr.join(''));
   }
 
   searchResults() {
@@ -125,6 +132,12 @@ export default class Searchresult extends Base {
       arr = this.recipes;
     }
     return arr;
+  }
+
+  filterCollapseController(){
+    if ($(window).width() < 768) {
+      $('.filter-heading').trigger('click');
+    }
   }
 
 }
