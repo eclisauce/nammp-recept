@@ -46,11 +46,11 @@ function template() {
                   <h6 class="d-inline text-dark vertical-align-middle">Antal portioner</h6>
                 </div>
                 <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange hur många portioner receptet avser">
-                  <select class="form-control m-0" name="portions">
+                  <select class="form-control m-0" name="portions" id="number-of-portions">
                     <option selected>1</option>
                     <option>2</option>
                     <option>3</option>
-                    <option>4</option>
+                    <option selected>4</option>
                     <option>5</option>
                     <option>6</option>
                     <option>7</option>
