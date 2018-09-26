@@ -26,6 +26,15 @@ export default `
           Lägg till recept
         </a>
       </li>
+      <li class="nav-item px-4">
+        <button class="nav-link pop text-center" href="/favs">
+          <i class="far fa-heart d-block text-center m-2 navbar-icons"></i>
+          Favoritrecept
+        </button>
+        <ul class="favorite-recept">
+
+        </ul>
+      </li>
     </ul>
   </div>
   <!-- // Collapsing Navigation End -->
