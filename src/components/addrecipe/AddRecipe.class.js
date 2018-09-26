@@ -32,6 +32,9 @@ export default class AddRecipe extends Base {
    *@author Markus
    */
   autoComplete(str) {
+    if (str.length == 0) {
+      return $(".result-dropdown").html('');
+    }
     //   if(str.length < 3){
     //   return new Error('You must send a str with >= 3 letters');
     // }

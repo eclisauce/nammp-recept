@@ -28,8 +28,6 @@ export default class Searchresult extends Base {
   }
 
   start() {
-    console.log(this.recipes);
-
       $('main').empty();
       this.render('main');
       this.lastRenderedIndex = 0;
