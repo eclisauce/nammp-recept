@@ -11,6 +11,15 @@ export default function() {
               </div>
               <div class="col-md-12 col-12 col-lg-8 d-flex flex-column">
                 <h2 class="text-center mt-3 mt-lg-1 recipe-header">${this.recipe.title}</h2>
+                <p class="m-0 p-0 mb-2 text-center text-white">Svårighetsgrad:
+                  <span class="ml-2 stars rounded p-1">
+                    <i class="fas fa-star ${this.recipe.difficulty < 1 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 2 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 3 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 4 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 5 ? 'text-muted' : ''}"></i>
+                  </span>
+                </p>
                 <article>
                   <p>${this.recipe.description}</p>
                 </article>
@@ -20,16 +29,6 @@ export default function() {
                   </div>
                   <div class="d-flex">
                     <p><i class="far fa-clock mr-1"></i> Tid: ${this.calcTime(this.recipe)}</p>
-                  </div>
-                  <div class="d-flex">
-                    <p class="m-0 p-0 text-muted text-center">Såvrighetsgrad</p>
-                    <p class="m-0 text-muted text-center stars">
-                      <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''} mr-1"></i>
-                      <i class="fas fa-star ${recipe.difficulty < 2 ? 'text-muted' : ''} mr-1"></i>
-                      <i class="fas fa-star ${recipe.difficulty < 3 ? 'text-muted' : ''} mr-1"></i>
-                      <i class="fas fa-star ${recipe.difficulty < 4 ? 'text-muted' : ''} mr-1"></i>
-                      <i class="fas fa-star ${recipe.difficulty < 5 ? 'text-muted' : ''} mr-1"></i>
-                    </p>
                   </div>
                 </div>
                 <div class="d-flex flex-row flex-wrap mt-auto recipe-categories">
