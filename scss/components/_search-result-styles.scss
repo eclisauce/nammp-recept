@@ -1,4 +1,20 @@
 // Media object styles
+.search-item {
+  position: relative;
+  .heart {
+    position: absolute;
+    top: 1rem;
+    right:1.5rem;
+    z-index:1000;
+    cursor: pointer;
+    color: $primary;
+    border: 0;
+    background: none;
+    border-radius: 50%;
+    font-size: 150%;
+    outline: 0;
+  }
+}
 .media {
   background-color: $bg-color;
   transition: all .3s ease;
@@ -33,6 +49,7 @@
   }
 
   .media-body {
+    position: relative;
     .media-heading {
       font-family: $font-family;
       font-weight: 700;

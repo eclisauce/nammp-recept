@@ -112,11 +112,20 @@ header {
   .header__search {
     position: relative;
 
+
     i {
       position: absolute;
-      top: calc(50% - 10px);
-      font-size: 20px;
+      top: calc(50% - 8px);
+      font-size: 14px;
       left: 1rem;
+      color: rgba(#444444, 0.67);
+    }
+
+    #searchBtn {
+      position: absolute;
+      top: calc(50% - 16px);
+      font-size: 14px;
+      right: 1rem;
     }
 
     .form-control {
