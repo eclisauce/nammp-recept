@@ -22,7 +22,7 @@ export default class Searchresult extends Base {
         this.start()
       } else {
         this.checkIfExist();
-      }  
+      }
     }, 50);
 
   }
@@ -33,7 +33,7 @@ export default class Searchresult extends Base {
       this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
       this.renderAll();
-    
+
   }
 
   /**
@@ -99,7 +99,7 @@ export default class Searchresult extends Base {
     this.renderAPage(this.lastRenderedIndex);
     this.setActiveLink();
     setTimeout(() => {
-      $(window).scrollTop($(document).height()); 
+      $(window).scrollTop($(document).height());
     }, 0);
 
   }
@@ -206,7 +206,7 @@ export default class Searchresult extends Base {
     })
   }
 
-  
+
 
 
   /**
@@ -302,7 +302,7 @@ export default class Searchresult extends Base {
     if ($(window).width() < 768) {
       $('#collapseCategory').collapse();
       $('#collapseFilter').collapse();
-      
+
     }
   }
 }
