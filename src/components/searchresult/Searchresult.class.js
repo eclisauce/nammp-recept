@@ -185,7 +185,7 @@ export default class Searchresult extends Base {
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
               alt="${recipe.imgAlt}">
             <div class="media-body ">
-              <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
+              <h5 class="mt-0 media-heading">${recipe.title}</h5>
               <i class="fas fa-angle-right fa-lg"></i>
               <p class="mt-2">${recipe.description}</p>
               <div class="row recipe-info-wrapper">
