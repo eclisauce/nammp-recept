@@ -2,7 +2,7 @@ export default function() {
 return `
 <article>
   <a href="searchresult" class="no-decoration-a-tag pop">
-    <div class="main-picture d-flex justify-content-center align-items-center">
+    <div class="main-picture d-flex justify-content-center align-items-center" title="Hitta inspiration till din matlagning">
       <h1 class="p-3">Hitta inspiration till din matlagning</h1>
     </div>
   </a>
