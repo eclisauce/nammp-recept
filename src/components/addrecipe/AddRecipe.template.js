@@ -1,5 +1,5 @@
 function template() {
-return `
+  return `
 <button class="fill">Fill</button>
   <article class="add-recipe container">
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
@@ -21,7 +21,7 @@ return `
           <div class="mt-3 mt-md-4 pr-md-5">
             <h5 class="text-dark">Namn på recept</h5>
             <div class="form-group m-0 w-100">
-              <input type="text" class="form-control" id="recipeNameForm" name="title" placeholder="Fyll i vad ditt recept heter.">
+              <input autocomplete="off" type="text" class="form-control" id="recipeNameForm" name="title" placeholder="Fyll i vad ditt recept heter.">
             </div>
           </div>
 
@@ -136,7 +136,7 @@ return `
 }
 
 function ingredientTemplate() {
-return `
+  return `
   <div class="mb-md-4 mb-1 mb-lg-1 my-2 ingredient-form" id="ingredientInput-${this.ingredientCounter}">
     <div class="form-row">
       <div class="col-6 mb-0 mb-md-0 pt-2">
@@ -165,13 +165,13 @@ return `
     </div>
     <div class="form-row">
       <div class="col-6 mb-0 mb-md-0 pt-2 bla">
-        <input type="text" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
+        <input tabindex="0" type="text" autocomplete="off" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
-          <ul class="list-group result-dropdown"></ul>
+          <ul class="list-group result-dropdown" tabindex="-1"></ul>
       </div>
 
       <div class="col d-flex pt-2">
-        <input type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
+        <input tabindex="0" type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
 
       <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
@@ -181,10 +181,10 @@ return `
 }
 
 function pictureUploadTemplate() {
-    return `
+  return `
       <img src="" class="picture-upload__img"  alt="Uppladdat recept foto"/>
     `;
-  }
+}
 
 function instructionTemplate() {
   return `

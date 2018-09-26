@@ -43,7 +43,7 @@ export default class Startpage extends Base {
 
     return firstFour.map(recipe => {
       return `
-      <a href="/recept/${recipe.url}" class="no-decoration-a-tag col-12 col-lg-6 p-0 d-flex px-2">
+      <a href="/recept/${recipe.url}" class="no-decoration-a-tag col-12 col-lg-6 p-0 d-flex px-2 pop">
         <div class="media pl-2 p-1 p-sm-3 border">
           <img class="mr-2 mt-1 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
             alt="${recipe.imgAlt}">
@@ -61,7 +61,7 @@ export default class Startpage extends Base {
               </p>
             <p class="my-1 my-sm-2">${recipe.description}</p>
             <div class="row recipe-info-wrapper">
-              <p class="col-6 my-0 mt-sm-2 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories} kalorier</p>
+              <p class="col-6 my-0 mt-sm-2 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kalorier</p>
               <p class="col-6 my-0 mt-sm-2 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
               
               </div>
