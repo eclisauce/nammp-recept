@@ -91,7 +91,7 @@ export default function() {
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-kolhydrater" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100).toFixed()}%</div>
+                    <div class="progress-bar progress-kolhydrater" role="progressbar" style="width: ${(this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100).toFixed()}%" aria-valuenow="${(this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100).toFixed()}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.carbohydrates / 300 * 100).toFixed()}%</div>
                   </div>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function() {
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-protein" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.protein / 70 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.protein / 70 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.protein / 70 * 100).toFixed()}%</div>
+                    <div class="progress-bar progress-protein" role="progressbar" style="width: ${(this.recipe.nutrientsPerPortion.protein / 70 * 100).toFixed()}%" aria-valuenow="${(this.recipe.nutrientsPerPortion.protein / 70 * 100).toFixed()}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.protein / 70 * 100).toFixed()}%</div>
                   </div>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function() {
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-salt" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.salt / 6 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.salt / 6 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.salt / 6 * 100).toFixed()}%</div>
+                    <div class="progress-bar progress-salt" role="progressbar" style="width: ${(this.recipe.nutrientsPerPortion.salt / 6 * 100).toFixed()}%" aria-valuenow="${(this.recipe.nutrientsPerPortion.salt / 6 * 100).toFixed()}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.salt / 6 * 100).toFixed()}%</div>
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function() {
                 </div>
                 <div class="col-12 col-sm-8">
                   <div class="progress flex-grow-1 ml-0 ml-sm-3 mt-1">
-                    <div class="progress-bar progress-fett" role="progressbar" style="width: ${this.recipe.nutrientsPerPortion.fat.total / 90 * 100}%" aria-valuenow="${this.recipe.nutrientsPerPortion.fat.total / 90 * 100}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.fat.total / 90 * 100).toFixed()}%</div>
+                    <div class="progress-bar progress-fett" role="progressbar" style="width: ${(this.recipe.nutrientsPerPortion.fat.total / 90 * 100).toFixed()}%" aria-valuenow="${(this.recipe.nutrientsPerPortion.fat.total / 90 * 100).toFixed()}" aria-valuemin="0" aria-valuemax="100">${(this.recipe.nutrientsPerPortion.fat.total / 90 * 100).toFixed()}%</div>
                   </div>
                 </div>
               </div>

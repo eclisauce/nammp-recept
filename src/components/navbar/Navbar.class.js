@@ -115,6 +115,9 @@ export default class Navbar extends Base {
    *@author Markus
    */
   autoCompleteSearch(str) {
+    if (str.length == 0) {
+      return $(".result-dropdown").html('');
+    }
     str = str.toLowerCase();
     return this.recipes.filter(x => x.title.toLowerCase().includes(str)).map(x => x.title).sort((a, b) => {
 
