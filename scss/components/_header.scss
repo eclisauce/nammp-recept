@@ -4,6 +4,9 @@ header {
   nav {
     font-weight: bold;
     background: $bg-color;
+    .navbar-icons {
+      font-size: 1.7rem;
+    }
 
     .navbar-brand {
       font-family: 'Lobster', serif;
