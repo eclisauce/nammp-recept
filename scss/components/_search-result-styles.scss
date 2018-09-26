@@ -2,6 +2,7 @@
 .media {
   background-color: $bg-color;
   transition: all .3s ease;
+  border-radius: 3px;
 
   &:hover {
     background-color: $bg-darken;
@@ -49,7 +50,7 @@
       width: 100%;
       p {
         font-size: 0.9rem;
-        margin-top: 1.5rem; 
+        margin-top: 1.5rem;
       }
     }
   }

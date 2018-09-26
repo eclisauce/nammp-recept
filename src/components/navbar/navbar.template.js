@@ -9,13 +9,13 @@ export default `
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item px-4 mt-md-3 mt-lg-0">
-        <a class="nav-link pop" href="/">Hem</a>
+        <a class="nav-link pop" href="/"><i class="fas fa-home"></i> Hem</a>
       </li>
       <li class="nav-item px-4">
-        <a class="nav-link pop" href="/searchresult">Recept</a>
+        <a class="nav-link pop" href="/searchresult"><i class="far fa-list-alt"></i> Recept</a>
       </li>
       <li class="nav-item px-4">
-        <a class="nav-link pop" href="/add-recipe">Lägg till recept</a>
+        <a class="nav-link pop" href="/add-recipe"><i class="far fa-plus-square"></i> Lägg till recept</a>
       </li>
     </ul>
   </div>
