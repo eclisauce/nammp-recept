@@ -21,7 +21,7 @@ function template() {
           <div class="mt-3 mt-md-4 pr-md-5">
             <h5 class="text-dark">Namn på recept</h5>
             <div class="form-group m-0 w-100">
-              <input type="text" class="form-control" id="recipeNameForm" name="title" placeholder="Fyll i vad ditt recept heter.">
+              <input autocomplete="off" type="text" class="form-control" id="recipeNameForm" name="title" placeholder="Fyll i vad ditt recept heter.">
             </div>
           </div>
 
@@ -151,7 +151,7 @@ function ingredientTemplate() {
     </div>
     <div class="form-row">
       <div class="col-6 mb-0 mb-md-0 pt-2 bla">
-        <input tabindex="0" type="text" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
+        <input tabindex="0" type="text" autocomplete="off" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
           <ul class="list-group result-dropdown" tabindex="-1"></ul>
       </div>
