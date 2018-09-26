@@ -18,6 +18,7 @@
 .media {
   background-color: $bg-color;
   transition: all .3s ease;
+  border-radius: 3px;
 
   &:hover {
     background-color: $bg-darken;
