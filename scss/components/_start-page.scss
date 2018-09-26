@@ -38,30 +38,36 @@
 
 }
 
+.start-page { 
+  .media-img {
+    height: auto;
+  }
+}
 
-@media screen and (max-width: 768px) {
+
+@media (max-width: 768px) {
   .main-picture {
     height: 400px;
     h1 {
-      font-size: 3.8rem;
+      font-size: 2.5rem;
     }
   }
 
   .heading-holder {
     margin-bottom: 50px;
     .week-special {
-      bottom: -80px;
-      font-size: 2.5rem;
+      bottom: -75px;
+      font-size: 1.5rem;
     }
   }
 }
 
-@media screen and (max-width: 321px) {
+@media (max-width: 321px) {
 
   .main-picture {
     height: 300px;
     h1 {
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
 
   }
@@ -69,8 +75,8 @@
   .heading-holder {
     margin: 30px 0px;
     .week-special {
-      bottom: -60px;
-      font-size: 2rem;
+      bottom: -75px;
+      font-size: 1.5rem;
     }
   }
 }

@@ -26,48 +26,6 @@ export default class AddRecipe extends Base {
     };
   }
 
-  /**
-   * autocomplete method and sorting
-   * needs more added to it?
-   *@author Markus
-   */
-  autoComplete(str) {
-    //   if(str.length < 3){
-    //   return new Error('You must send a str with >= 3 letters');
-    // }
-    str = str.toLowerCase();
-    return this.foodData.filter(x => x.Namn.toLowerCase().includes(str)).map(x => x.Namn).sort((a, b) => {
-
-      // advanced
-      // prioritize when finding the str
-      // as a separate word
-      let aIsSeparateWord = (' ' + a + ' ').toLowerCase().includes(' ' + str + ' ');
-      let bIsSeparateWord = (' ' + b + ' ').toLowerCase().includes(' ' + str + ' ');
-
-      // prioritize str early in name
-      let aPos = a.toLowerCase().indexOf(str) - (
-        aIsSeparateWord
-        ? 1000
-        : 0);
-      let bPos = b.toLowerCase().indexOf(str) - (
-        bIsSeparateWord
-        ? 1000
-        : 0);
-
-      if (aPos === bPos) {
-        // if same position
-        // sort alphabetically by name
-        return a < b
-          ? -1
-          : 1;
-      }
-
-      return aPos < bPos
-        ? -1
-        : 1;
-    });
-  }
-
   change() {
     /**
      * Eventhandler to check if picture url is valid and displays preview
@@ -119,7 +77,7 @@ export default class AddRecipe extends Base {
      */
     $(document).on('keyup', '.ingredient-input', function() {
       let str = $(this).val();
-      let ul = $(this).parent().find('.result-dropdown');
+      let ul = $(this).parent().find('.result-dropdowns');
       ul.empty();
       let foodItems = that.autoComplete(str).splice(0, 15);
       for (let foodItem of foodItems) {
@@ -134,7 +92,7 @@ export default class AddRecipe extends Base {
      *@author Markus
      */
     $(document).on('click', 'main', () => {
-      $(".result-dropdown").html('');
+      $(".result-dropdowns").html('');
     })
 
     /**
@@ -152,7 +110,7 @@ export default class AddRecipe extends Base {
       if (e.keyCode == 13) {
         let inputField = $(this);
         $(this).parent().siblings('.ingredient-input').val($(event.target).text());
-        $(".result-dropdown").html('');
+        $(".result-dropdowns").html('');
       }
     });
 
@@ -165,6 +123,48 @@ export default class AddRecipe extends Base {
     });
     $(document).on('blur', 'input[type="checkbox"]', function(e) {
       $(event.target).siblings('span').removeClass('border-checkbox-hover');
+    });
+  }
+
+  /**
+   * autocomplete method and sorting
+   * needs more added to it?
+   *@author Markus
+   */
+  autoComplete(str) {
+      if(str.length == 0){
+      return [];
+    }
+    str = str.toLowerCase();
+    return this.foodData.filter(x => x.Namn.toLowerCase().includes(str)).map(x => x.Namn).sort((a, b) => {
+
+      // advanced
+      // prioritize when finding the str
+      // as a separate word
+      let aIsSeparateWord = (' ' + a + ' ').toLowerCase().includes(' ' + str + ' ');
+      let bIsSeparateWord = (' ' + b + ' ').toLowerCase().includes(' ' + str + ' ');
+
+      // prioritize str early in name
+      let aPos = a.toLowerCase().indexOf(str) - (
+        aIsSeparateWord
+        ? 1000
+        : 0);
+      let bPos = b.toLowerCase().indexOf(str) - (
+        bIsSeparateWord
+        ? 1000
+        : 0);
+
+      if (aPos === bPos) {
+        // if same position
+        // sort alphabetically by name
+        return a < b
+          ? -1
+          : 1;
+      }
+
+      return aPos < bPos
+        ? -1
+        : 1;
     });
   }
 

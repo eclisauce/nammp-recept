@@ -1,6 +1,5 @@
 function template() {
   return `
-<button class="fill">Fill</button>
   <article class="add-recipe container">
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
     <article class="mt-3 mt-md-4">
@@ -69,8 +68,8 @@ function template() {
                 </div>
                 <div class="col-6 pr-0">
                   <div class="form-group m-0">
-                    <input type="text" class="form-control" name="time" id="time" aria-describedby="time" placeholder="">
-                    <small id="" class="form-text text-muted text-nowrap">Ange tid i minuter.</small>
+                    <input autocomplete="off" type="text" class="form-control" name="time" id="time" aria-describedby="time" placeholder="">
+                    <small class="form-text text-muted text-nowrap">Ange tid i minuter.</small>
                   </div>
                 </div>
               </div>
@@ -137,16 +136,16 @@ function template() {
 
 function ingredientTemplate() {
   return `
-  <div class="mb-md-4 mb-1 mb-lg-1 my-2 ingredient-form" id="ingredientInput-${this.ingredientCounter}">
+  <div class="ingredient-form my-3">
     <div class="form-row">
-      <div class="col-6 mb-0 mb-md-0 pt-2">
-        <input type="text" name="Ingrediens" class="form-control name-ingredient-${this.ingredientCounter}" placeholder="Namn på ingrediens" data-toggle="tooltip" data-placement="bottom" title="Ange namn på ingrediens som visas i receptet">
+      <div class="col-6">
+        <input autocomplete="off" type="text" name="Ingrediens" class="form-control name-ingredient-${this.ingredientCounter}" placeholder="Namn på ingrediens" data-toggle="tooltip" data-placement="bottom" title="Ange namn på ingrediens som visas i receptet">
       </div>
 
-      <div class="col-3 pt-2">
-        <input type="text" name="Antal" id="quantity" class="form-control quantity-ingredient-${this.ingredientCounter}" placeholder="antal" data-toggle="tooltip" data-placement="bottom" title="Ange antal">
+      <div class="col-3">
+        <input autocomplete="off" type="text" name="Antal" class="form-control" placeholder="antal" data-toggle="tooltip" data-placement="bottom" title="Ange antal">
       </div>
-      <div class="form-group col m-0 pt-2" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
+      <div class="form-group col m-0" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
         <select class="form-control measurement-ingredient-${this.ingredientCounter}" name="Enhetsmått">
           <option>st</option>
           <option>krm</option>
@@ -167,14 +166,14 @@ function ingredientTemplate() {
       <div class="col-6 mb-0 mb-md-0 pt-2 bla">
         <input tabindex="0" type="text" autocomplete="off" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
-          <ul class="list-group result-dropdown" tabindex="-1"></ul>
+          <ul class="list-group result-dropdowns" tabindex="-1"></ul>
       </div>
 
       <div class="col d-flex pt-2">
-        <input tabindex="0" type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
+        <input autocomplete="off" tabindex="0" type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
 
-      <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
+      <button type="button" class="remove-instr btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
     </div>
   </div>`;
