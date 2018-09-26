@@ -11,19 +11,31 @@ export default class Searchresult extends Base {
   constructor(searchStr, filters, favorites) {
     super();
     this.myFavorites = favorites;
-    this.start();
     this.searchStr = searchStr;
     this.filterArray = filters;
+    this.checkIfExist();
     }
 
-  start() {
+  checkIfExist(){
     setTimeout(() => {
+      if(this.recipes) {
+        this.start()
+      } else {
+        this.checkIfExist();
+      }  
+    }, 50);
+
+  }
+
+  start() {
+    console.log(this.recipes);
+
       $('main').empty();
       this.render('main');
       this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
       this.renderAll();
-    }, 50);
+    
   }
 
   /**
@@ -33,9 +45,9 @@ export default class Searchresult extends Base {
   renderAll() {
     this.renderAllRecipes();
     this.markFilters();
-    this.filterCollapseController();
     this.disableNextOrPrev();
     this.setActiveLink();
+    this.filterCollapseController();
   }
 
 
@@ -62,7 +74,6 @@ export default class Searchresult extends Base {
   }
 
   click() {
-    
     for (let i = 0; i < this.pages.length; i++) {
       if ($(event.target).hasClass(`pagination-${i+1}`)) {
         this.lastRenderedIndex = i;
@@ -284,7 +295,9 @@ export default class Searchresult extends Base {
    */
   filterCollapseController() {
     if ($(window).width() < 768) {
-      $('.filter-heading').trigger('click');
+      $('#collapseCategory').collapse();
+      $('#collapseFilter').collapse();
+      
     }
   }
 }
