@@ -399,8 +399,29 @@ export default class AddRecipe extends Base {
       this.saveAllRecipes(modifiedRecipe);
       this.router.urlMaker();
 
-      $('button[type="submit"]').attr('disabled', true).html('Recept sparat');
+      $('button[type="submit"]').attr('disabled', true).addClass('d-none');
 
+
+      $('.end-of-add').append(`
+      <a class="btn btn-primary btn-lg mt-md-0 mt-3 font-weight-bold go-to-recipe" href="/${modifiedRecipe.url}">
+      Gå till recept
+      </a>
+      `)
+
+
+      let counter = 5;
+
+      $('.something-went-wrong').removeClass('text-danger').addClass('text-success').append(`Ditt recept är sparat! Du blir skickad till ditt recept om: <span class="count-down">${counter}</span>`);
+      countDown();
+      function countDown(){
+        $('.count-down').fadeOut(1000, () => {
+          counter--
+          $('.count-down').empty().append(counter).fadeIn(1000);
+          if (counter === 0){
+            location.pathname = `/recept/${modifiedRecipe.url}`
+          } else {countDown()}
+        });
+      }
     }
   }
 

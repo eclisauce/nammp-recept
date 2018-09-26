@@ -100,7 +100,7 @@ function template() {
 
       <div class="row mt-3 mt-md-4 mb-5 p-0">
 
-        <div class="col-12 pl-md-5 d-flex justify-content-md-end justify-content-center align-items-center flex-wrap">
+        <div class="col-12 pl-md-5 d-flex justify-content-md-end justify-content-center align-items-center flex-wrap end-of-add">
           <h5 class="something-went-wrong text-danger m-0 mr-2 d-md-block col-12 col-md text-center text-md-right"></h5>
           <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-md-0 mt-3 font-weight-bold">
             Spara recept

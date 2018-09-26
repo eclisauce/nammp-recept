@@ -90,16 +90,17 @@ export default class Navbar extends Base {
           if (!(location.pathname.includes('/recept'))) {
             ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
-              <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+              <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2 test2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
           } else {
             ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
-              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2 test2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
           }
         }
       }
+      $('.test2')[0].focus();
     });
 
     /**
@@ -122,6 +123,17 @@ export default class Navbar extends Base {
     $(document).on('click', '.list-item', () => {
       $(".result-dropdown").html('');
     });
+
+    $(document).on('keydown', '.header__search', function(e) {
+      if (e.keyCode == 40) {      
+        e.preventDefault();
+        $('.test2:focus').closest('li').next().find('a.test2').focus();
+      }
+      if (e.keyCode == 38) {    
+        e.preventDefault();
+        $('.test2:focus').closest('li').prev().find('a.test2').focus();
+      }
+    })
   }
 
   /**

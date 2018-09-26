@@ -293,7 +293,6 @@ export default class Searchresult extends Base {
     if ($(window).width() < 768) {
       $('#collapseCategory').collapse();
       $('#collapseFilter').collapse();
-
     }
   }
 }
