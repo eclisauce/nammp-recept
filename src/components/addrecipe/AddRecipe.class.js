@@ -71,6 +71,11 @@ export default class AddRecipe extends Base {
       that.submitForm(e, this)
     });
 
+    $(document).on('focus', '.red-border', () => {
+      $('.something-went-wrong').empty();
+    });
+
+
     /**
      * jQuery code for handeling the input from user displaying the list from json and autocompletes
      * @author Markus
