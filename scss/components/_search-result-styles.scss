@@ -31,12 +31,12 @@
 
     .media-body {
       .media-heading {
-
+        width:80%
       }
 
       .fa-angle-right {
         color: rgba(240, 95, 64, 1);
-        transform: translateX(1rem);
+        transform: translateX(2rem);
       }
     }
   }
@@ -58,6 +58,7 @@
       line-height: 1.2;
       color: #333;
       transition: all .3s ease;
+      width: 85%;
     }
 
     .fa-angle-right {
