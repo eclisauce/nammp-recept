@@ -113,10 +113,12 @@ export default class Base {
     let hours = (time - minutes) / 60;
     if(hours === 0){
       return `${minutes} minuter`
-    } else if (minutes === 0) {
+    } else if (minutes === 0 && hours > 1) {
       return `${hours} timmar`
+    } else if (hours > 1) {
+      return `${hours} timmmar ${minutes} minuter`;
     } else {
-      return `${hours} timmar ${minutes} minuter`;
+      return `${hours} timme ${minutes} minuter`;
     }
   }
 
