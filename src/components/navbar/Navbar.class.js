@@ -29,6 +29,17 @@ export default class Navbar extends Base {
     }
   }
 
+
+  click() {
+    if ($(event.target).attr('id') === 'searchBtn') {
+      if (!(location.pathname.includes('/searchresult'))) {
+        $('.searchtest').attr('href', `/searchresult/${$('#search-field').val()}`)
+      } else {
+        this.setFilters();
+      }
+    }
+  }
+
   /**
    * Keydown on enter to search. Sends filters if there are any.
    * @author Andreas
