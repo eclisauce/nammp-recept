@@ -148,7 +148,7 @@ function ingredientTemplate() {
       <div class="col-6 mb-0 mb-md-0 pt-2 bla">
         <input tabindex="0" type="text" autocomplete="off" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
-          <ul class="list-group result-dropdown" tabindex="-1"></ul>
+          <ul class="list-group result-dropdowns" tabindex="-1"></ul>
       </div>
 
       <div class="col d-flex pt-2">
