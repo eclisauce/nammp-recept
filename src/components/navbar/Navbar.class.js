@@ -66,21 +66,25 @@ export default class Navbar extends Base {
      */
     $(document).on('keyup', '.search-input-nav', function() {
       let str = $(this).val();
+      let strRegex = new RegExp (`${str}`, 'i');
       let ul = $(this).parent().find('.result-dropdown');
       ul.empty();
       if (!(location.pathname.includes('/searchresult'))) {
         let recipes = that.autoCompleteSearch(str).splice(0, 6);
         for (let recipe of recipes) {
           let recipeObj = that.recipes.filter(x => x.title == recipe)[0];
+          let titleIndex = recipeObj.title.search(strRegex);
+          let strToReplace = recipeObj.title.substr(titleIndex, str.length);
+          let title = recipeObj.title.replace(strToReplace, `<strong>${strToReplace}</strong>`);
           if (!(location.pathname.includes('/recept'))) {
             ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
-              <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+              <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
           } else {
             ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
-              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
           }
         }
@@ -116,7 +120,7 @@ export default class Navbar extends Base {
    */
   autoCompleteSearch(str) {
     if (str.length == 0) {
-      return $(".result-dropdown").html('');
+      return [];
     }
     str = str.toLowerCase();
     return this.recipes.filter(x => x.title.toLowerCase().includes(str)).map(x => x.title).sort((a, b) => {
