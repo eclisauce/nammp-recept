@@ -21,13 +21,21 @@ export default class Searchresult extends Base {
       this.render('main');
       this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
-      this.filterAndRender();
-      this.markFilters();
-      this.filterCollapseController();
-      this.render('.pagination-holder', 'paginationTemplate');
-      this.disableNextOrPrev();
-      this.setActiveLink();
+      this.renderAll();
     }, 50);
+  }
+
+
+  /**
+   * Does all the checks and rendering in order to display the right recipes.
+   * @author Andreas
+   */
+  renderAll() {
+    this.renderAllRecipes();
+    this.markFilters();
+    this.filterCollapseController();
+    this.disableNextOrPrev();
+    this.setActiveLink();
   }
 
 
@@ -35,8 +43,8 @@ export default class Searchresult extends Base {
    * Eventhandler
    * Checks if there is a change to checkboxes.
    * Then either add the name of it to an array or remove it
-   * Call filterAndRender
-   *
+   * Call renderAllRecipes
+   * @author Andreas
    */
   change() {
     if ($(event.target).is('input[type=checkbox]')) {
@@ -49,78 +57,69 @@ export default class Searchresult extends Base {
           this.filterArray.splice(index, 1)
         }
       }
-      this.filterAndRender();
+      this.renderAll();
     }
   }
 
   click() {
-    for (let i = 0; i < this.pages.length; i++){
+    
+    for (let i = 0; i < this.pages.length; i++) {
       if ($(event.target).hasClass(`pagination-${i+1}`)) {
         this.lastRenderedIndex = i;
-        this.renderAPage(this.lastRenderedIndex);
-        this.setActiveLink();
+        this.renderActiveAndScroll();
       }
     }
 
-    if ($(event.target).hasClass('previous')) { 
-      if (this.lastRenderedIndex > 0){
+    if ($(event.target).hasClass('previous')) {
+      if (this.lastRenderedIndex > 0) {
         this.lastRenderedIndex--;
-        this.renderAPage(this.lastRenderedIndex);
-        this.setActiveLink();
-      }     
+        this.renderActiveAndScroll();
+      }
 
     }
 
     if ($(event.target).hasClass('next')) {
-      if (this.lastRenderedIndex+1 < this.pages.length) {
+      if (this.lastRenderedIndex + 1 < this.pages.length) {
         this.lastRenderedIndex++;
-        this.renderAPage(this.lastRenderedIndex);
-        this.setActiveLink();
-      } 
+        this.renderActiveAndScroll();
+      }
     }
+  }
 
-
+  renderActiveAndScroll(){
+    this.renderAPage(this.lastRenderedIndex);
+    this.setActiveLink();
+    setTimeout(() => {
+      $(window).scrollTop($(document).height()); 
+    }, 0);
 
   }
 
   /**
-   * Rewrites the filtered recipes then calls the render method.
-   *
-   *
+   * Empties both holders & filters the recipes by the selected boxes
+   * Gets how many pages that is needed to render
+   * Checks if there is any recipes. If there is then renders the recipes else it renders an error msg.
+   * @author Andreas
    */
-  filterAndRender() {
-    $('.search-recipe-result').empty()
+  renderAllRecipes() {
+    $('.search-recipe-result').empty();
+    $('.pagination-holder').empty();
     this.filteredRecipes = this.filterRecipe(this.filterArray);
-    this.getPageCounter(this.filteredRecipes.length/5);
+    this.getPageCounter(this.filteredRecipes.length / 5);
+
+
     if (this.filteredRecipes.length > 0) {
       this.renderAPage(0);
+      this.render('.pagination-holder', 'paginationTemplate');
     } else {
       $('.search-recipe-result').append('<h3 class="danger px-4 px-md-0">Tyvärr hittar vi inget recept på din sökning. Var god försök igen.</h3>')
     }
   }
 
-  renderAPage(pageNumber){
-    $('.search-recipe-result').empty();
-    $('.search-recipe-result').append(this.pages[pageNumber]);
-    console.log(this.pages.length, this.lastRenderedIndex);
-    this.disableNextOrPrev();
-
-  }
-
-  getPageCounter(numberOfPages){
-    numberOfPages = Math.ceil(numberOfPages);
-    let fullArr = this.getRecipeBoxes();
-    this.pages = [];
-    for (let i = 0; i < numberOfPages; i++){
-      let fiveArr = fullArr.slice(i*5, 5*(i+1));
-      this.pages.push(fiveArr);
-    }
-  }
-
   /**
-   * Filtering recipes after an array with filter-words
-   *
-   *
+   * Filtering recipes after an array with filter-words.
+   * Then returns the filtered array.
+   * @author Andreas
    */
   filterRecipe(filterArray) {
     let arr = this.searchRecipes.filter(recipe => {
@@ -133,55 +132,39 @@ export default class Searchresult extends Base {
     return arr;
   }
 
-  markFilters() {
-    let getAll = $('input[type=checkbox]');
-    this.filterArray.forEach(x => {
-      getAll.each(function () {
-        if ($(this).attr('name') == x) {
-          $(this).prop('checked', true)
-        }
-      });
-    })
-  }
-
-  setActiveLink(){
-    $('a.page-link').removeClass('active');
-    $(`.pagination-${this.lastRenderedIndex+1}`).addClass('active');
-  }
-
-  disableNextOrPrev(){
-    if(this.pages.length === this.lastRenderedIndex+1){
-      $('.next-li').addClass('disabled');
-      $('.next').attr('tabindex', '-1');
-      console.log('disable next');
-    } else {
-      $('.next-li').removeClass('disabled');
-      $('.next').removeAttr('tabindex');
-    }
-    if(this.lastRenderedIndex === 0){
-      $('.previous-li').addClass('disabled');
-      $('.previous').attr('tabindex', '-1');
-    } else {
-      $('.previous-li').removeClass('disabled');
-      $('.previous').removeAttr('tabindex');
-    }
-  }
-
-  paginationLiTemplate(){
-    let fullhtml = '';
-    for (let i = 0; i < this.pages.length; i++){
-      fullhtml += `
-      <li class="page-item"><a class="page-link text-primary pagination-${i+1}">${i+1}</a></li>
-      `
-    }
-    return fullhtml
+  /**
+   * Empty + renders the specified page
+   * Then runs disableNextorPrev
+   * @author Andreas
+   */
+  renderAPage(pageNumber) {
+    $('.search-recipe-result').empty();
+    $('.search-recipe-result').append(this.pages[pageNumber]);
+    this.disableNextOrPrev();
   }
 
 
   /**
-   * Render all filtered boxes.
-   *
-   *
+   * Recieves a number of pages which is (number of recipes / 5)
+   * As each page should display 5 recipes.
+   * Then pushes arrays with 5 recipes in it to a bigger array (this.pages)
+   * @author Andreas
+   */
+  getPageCounter(numberOfPages) {
+    numberOfPages = Math.ceil(numberOfPages);
+    let fullArr = this.getRecipeBoxes();
+    this.pages = [];
+    for (let i = 0; i < numberOfPages; i++) {
+      let fiveArr = fullArr.slice(i * 5, 5 * (i + 1));
+      this.pages.push(fiveArr);
+    }
+  }
+
+
+  /**
+   * Returns an array with html for recipeboxes.
+   * The array is produced by checking all the filtered recipes.
+   * @author Andreas
    */
   getRecipeBoxes() {
     return this.filteredRecipes.map(recipe => {
@@ -202,6 +185,70 @@ export default class Searchresult extends Base {
     </a>`
     })
   }
+
+
+  /**
+   * Marks filters that is sent to search-result as a string
+   * @author Andreas
+   */
+  markFilters() {
+    let getAll = $('input[type=checkbox]');
+    this.filterArray.forEach(x => {
+      getAll.each(function () {
+        if ($(this).attr('name') == x) {
+          $(this).prop('checked', true)
+        }
+      });
+    })
+  }
+
+
+  /**
+   * Set active link on the page that is showing in the pagination-bar
+   * @author Andreas
+   */
+  setActiveLink() {
+    $('a.page-link').removeClass('active');
+    $(`.pagination-${this.lastRenderedIndex+1}`).addClass('active');
+  }
+
+  /**
+   * A check if it should disable next or previous.
+   * @author Andreas
+   */
+  disableNextOrPrev() {
+    if (this.pages.length === this.lastRenderedIndex + 1) {
+      $('.next-li').addClass('disabled');
+      $('.next').attr('tabindex', '-1');
+    } else {
+      $('.next-li').removeClass('disabled');
+      $('.next').removeAttr('tabindex');
+    }
+    if (this.lastRenderedIndex === 0) {
+      $('.previous-li').addClass('disabled');
+      $('.previous').attr('tabindex', '-1');
+    } else {
+      $('.previous-li').removeClass('disabled');
+      $('.previous').removeAttr('tabindex');
+    }
+  }
+
+  /**
+   * Returns html with li elements
+   * Each li element is produced by how many pages that is in this.page
+   * @author Andreas
+   */
+  paginationLiTemplate() {
+    let fullhtml = '';
+    for (let i = 0; i < this.pages.length; i++) {
+      fullhtml += `
+      <li class="page-item"><a class="page-link text-primary pagination-${i+1}">${i+1}</a></li>
+      `
+    }
+    return fullhtml
+  }
+
+
 
   /**
    * Takes the search-string that is provided to the constructor.
@@ -224,12 +271,16 @@ export default class Searchresult extends Base {
     return arr;
   }
 
+  /**
+   * If less that 768 (mobile and such) then trigger a click on the categorie/filter-collapse.
+   * This displays it as not collapsed.
+   * @author Andreas
+   */
   filterCollapseController() {
     if ($(window).width() < 768) {
       $('.filter-heading').trigger('click');
     }
   }
-
 }
 
 Searchresult.prototype.template = template;
