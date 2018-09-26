@@ -1,9 +1,13 @@
 export default class Favorites {
 
   constructor() {
-    const favorites = JSON.parse(localStorage.favorites);
-    if (Array.isArray(favorites)) {
-      this.favorites = favorites;
+    try {
+      const favorites = JSON.parse(localStorage.favorites);
+      if (Array.isArray(favorites)) {
+        this.favorites = favorites;
+      }
+    } catch (e) {
+      this.favorites = [];
     }
   }
 
