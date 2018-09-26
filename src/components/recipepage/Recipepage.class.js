@@ -30,22 +30,7 @@ export default class Recipepage extends Base {
       this.renderRecipeFilters();
       this.pictureRandomizer();
       this.initializeBootstrapTooltips();
-      this.eventHandlers();
     }, 50);
-  }
-
-  eventHandlers() {
-    let ze = this;
-    $(document).on('click', '.heart', function() {
-      console.log('click')
-      if ($(this).find('i').hasClass('far') ) {
-        ze.myFavorites.addToFavorites( $(this).attr('data-id') );
-        $(this).find('i').removeClass('far').addClass('fas')
-      } else {
-        ze.myFavorites.removeFromFavorites( $(this).attr('data-id') );
-        $(this).find('i').removeClass('fas').addClass('far')
-      }
-    });
   }
 
   /**

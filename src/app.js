@@ -11,6 +11,7 @@ class App extends Base {
   constructor() {
     super();
     this.start();
+    this.eventHandlers();
   }
 
   /**
@@ -31,6 +32,20 @@ class App extends Base {
     setTimeout(() => {
       this.router = new Router(this.myFavorites);
     }, 0)
+  }
+
+  eventHandlers() {
+    let ze = this;
+    $(document).on('click', '.heart',function() {
+
+      if ($(this).find('i').hasClass('far') ) {
+        ze.myFavorites.addToFavorites( $(this).attr('data-id') );
+        $(this).find('i').removeClass('far').addClass('fas')
+      } else {
+        ze.myFavorites.removeFromFavorites( $(this).attr('data-id') );
+        $(this).find('i').removeClass('fas').addClass('far')
+      }
+    });
   }
 
 

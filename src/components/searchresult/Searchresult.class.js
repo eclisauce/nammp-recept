@@ -21,7 +21,6 @@ export default class Searchresult extends Base {
       this.filterAndRender();
       this.markFilters();
       this.filterCollapseController();
-      this.eventHandlers();
     }, 50);
   }
 
@@ -45,20 +44,6 @@ export default class Searchresult extends Base {
       }
       this.filterAndRender();
     }
-  }
-
-  eventHandlers() {
-    let ze = this;
-    $(document).on('click', '.heart',function() {
-
-      if ($(this).find('i').hasClass('far') ) {
-        ze.myFavorites.addToFavorites( $(this).attr('data-id') );
-        $(this).find('i').removeClass('far').addClass('fas')
-      } else {
-        ze.myFavorites.removeFromFavorites( $(this).attr('data-id') );
-        $(this).find('i').removeClass('fas').addClass('far')
-      }
-    });
   }
 
   /**
