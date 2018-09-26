@@ -22,7 +22,7 @@ export default class Searchresult extends Base {
         this.start()
       } else {
         this.checkIfExist();
-      }  
+      }
     }, 50);
 
   }
@@ -33,7 +33,7 @@ export default class Searchresult extends Base {
       this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
       this.renderAll();
-    
+
   }
 
   /**
@@ -99,7 +99,7 @@ export default class Searchresult extends Base {
     this.renderAPage(this.lastRenderedIndex);
     this.setActiveLink();
     setTimeout(() => {
-      $(window).scrollTop($(document).height()); 
+      $(window).scrollTop($(document).height());
     }, 0);
 
   }
@@ -185,7 +185,7 @@ export default class Searchresult extends Base {
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
               alt="${recipe.imgAlt}">
             <div class="media-body ">
-              <h5 class="mt-0 media-heading">${recipe.title}</h5>
+              <h5 class="mt-0 media-heading d-inline-block">${recipe.title} <i style="font-size:2rem;" class="fas fa-angle-right fa-lg"></i></h5>
               <i class="fas fa-angle-right fa-lg"></i>
               <p class="w-100 m-0 mt-1 text-muted">Såvrighetsgrad: 
                 <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''} mr-1"></i>
@@ -206,7 +206,7 @@ export default class Searchresult extends Base {
     })
   }
 
-  
+
 
 
   /**
@@ -302,7 +302,7 @@ export default class Searchresult extends Base {
     if ($(window).width() < 768) {
       $('#collapseCategory').collapse();
       $('#collapseFilter').collapse();
-      
+
     }
   }
 }
