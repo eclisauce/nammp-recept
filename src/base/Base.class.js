@@ -104,8 +104,6 @@ export default class Base {
     }).then(() => {
       this.loadRecipeJSON();
     });
-
-
   }
 
 
@@ -121,4 +119,11 @@ export default class Base {
       return `${hours} timmar ${minutes} minuter`;
     }
   }
+
+  showDifficulty(recipe){
+    console.log(recipe)
+    let difficulty = recipe.difficulty;
+    return difficulty;
+  }
+
 }
