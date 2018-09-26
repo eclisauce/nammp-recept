@@ -50,7 +50,7 @@ export default class Startpage extends Base {
           <div class="media-body">
             <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
             <i class="fas fa-angle-right fa-lg"></i>
-            <p class="w-100 mb-0 mt-2 mr-2 text-muted">Såvrighetsgrad: 
+            <p class="w-100 mb-0 mt-2 mr-2 text-muted">Svårighetsgrad: 
                 <span>
                   <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''} mr-1"></i>
                   <i class="fas fa-star ${recipe.difficulty < 2 ? 'text-muted' : ''} mr-1"></i>
