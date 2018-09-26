@@ -1,6 +1,5 @@
 function template() {
   return `
-<button class="fill">Fill</button>
   <article class="add-recipe container">
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
     <article class="mt-3 mt-md-4">
@@ -102,7 +101,6 @@ function template() {
       <div class="row mt-3 mt-md-4 mb-5 p-0">
 
         <div class="col-md-6">
-          <button class="bajsbajs">testa mig</button>
         </div>
 
         <div class="col-md-6 pl-md-5 d-flex justify-content-between align-items-center">
