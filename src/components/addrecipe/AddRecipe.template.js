@@ -40,14 +40,14 @@ function template() {
 
 
           <div class="row mt-3 mt-md-4">
-            <div class="col-6">
+            <div class="col-4">
               <div class="row">
                 <div class="col-12 mb-lg-0 mb-2">
                   <h6 class="d-inline text-dark vertical-align-middle">Antal portioner</h6>
                 </div>
                 <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange hur många portioner receptet avser">
-                  <select class="form-control m-0" name="portions" id="number-of-portions">
-                    <option selected>1</option>
+                  <select class="form-control m-0" id="number-of-portions" name="portions">
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option selected>4</option>
@@ -61,7 +61,7 @@ function template() {
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <div class="row">
                 <div class="col-12 mb-lg-0 mb-2 pr-0">
                   <h6 class="d-inline text-dark vertical-align-middle">Tidsåtgång</h6>
@@ -71,6 +71,24 @@ function template() {
                     <input autocomplete="off" type="text" class="form-control" name="time" id="time" aria-describedby="time" placeholder="">
                     <small class="form-text text-muted text-nowrap">Ange tid i minuter.</small>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row">
+                <div class="col-12 mb-lg-0 mb-2">
+                  <h6 class="d-inline text-dark vertical-align-middle">Svårighetsgrad</h6>
+                </div>
+                <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange svårighetsgrad">
+                  <select class="form-control m-0" id="difficulty" name="difficulty">
+                    <option selected></option>
+                    <option >1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <small class="form-text text-muted text-nowrap">1 lättast och 5 svårast</small>
                 </div>
               </div>
             </div>
