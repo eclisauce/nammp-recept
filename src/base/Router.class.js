@@ -9,7 +9,8 @@ import Searchresult from '../components/searchresult/Searchresult.class';
  */
 export default class Router {
 
-  constructor() {
+  constructor(favorites) {
+    this.myFavorites = favorites;
     // Add event handlers for a.pop-links once
     this.addEventHandler();
     // Call changePage on initial page load
@@ -96,7 +97,7 @@ export default class Router {
       setTimeout(() => {
         let methodName = this.urls[location.pathname];
         this[methodName]();
-      }, 50);
+      }, 100);
     }
 
 
@@ -122,11 +123,11 @@ export default class Router {
   }
 
   recipePage() {
-    this.recipepage = new Recipepage();
+    this.recipepage = new Recipepage(this.myFavorites);
   }
 
   searchResult(searchStr, filters) {
-    this.searchresult = new Searchresult(searchStr, filters);
+    this.searchresult = new Searchresult(searchStr, filters, this.myFavorites);
   }
 
 

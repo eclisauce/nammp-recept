@@ -7,8 +7,9 @@ import template from './Recipepage.template';
  *
  */
 export default class Recipepage extends Base {
-  constructor() {
+  constructor(favorites) {
     super();
+    this.myFavorites = favorites;
     this.start();
   }
 
@@ -31,7 +32,6 @@ export default class Recipepage extends Base {
       this.initializeBootstrapTooltips();
     }, 50);
   }
-
 
   /**
   * Eventhandlers

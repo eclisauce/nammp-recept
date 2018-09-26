@@ -64,7 +64,7 @@ export default class Navbar extends Base {
      * jQuery code for handeling the input from user displaying the list from json and autocompletes
      * @author Markus
      */
-    $(document).on('keyup', '.search-input', function() {
+    $(document).on('keyup', '.search-input-nav', function() {
       let str = $(this).val();
       let ul = $(this).parent().find('.result-dropdown');
       ul.empty();
@@ -72,10 +72,17 @@ export default class Navbar extends Base {
         let recipes = that.autoCompleteSearch(str).splice(0, 6);
         for (let recipe of recipes) {
           let recipeObj = that.recipes.filter(x => x.title == recipe)[0];
-          ul.append(`
+          if (!(location.pathname.includes('/recept'))) {
+            ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
               <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
+          } else {
+            ul.append(`
+            <li class="list-group-item list-item focusedInput p-0">
+              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+            </li>`);
+          }
         }
       }
     });
@@ -89,13 +96,13 @@ export default class Navbar extends Base {
     $(document).keyup(function(e) {
       if (e.keyCode == 27) { // escape key maps to keycode `27`
         $('.result-dropdown').html('');
-        $(".search-input").val('');
+        $(".search-input-nav").val('');
       }
     });
 
     $(document).on('click', 'body', () => {
       $(".result-dropdown").html('');
-      $(".search-input").val('');
+      $(".search-input-nav").val('');
     });
     $(document).on('click', '.list-item', () => {
       $(".result-dropdown").html('');

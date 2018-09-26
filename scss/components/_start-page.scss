@@ -33,13 +33,14 @@
     color: #333;
     text-align: center;
     width: 100%;
+    border-radius: 15px;
   }
 
 }
 
 
 @media screen and (max-width: 768px) {
-  .main-picture { 
+  .main-picture {
     height: 400px;
     h1 {
       font-size: 3.8rem;
@@ -57,12 +58,12 @@
 
 @media screen and (max-width: 321px) {
 
-  .main-picture { 
+  .main-picture {
     height: 300px;
     h1 {
       font-size: 3rem;
     }
-  
+
   }
 
   .heading-holder {
@@ -73,4 +74,3 @@
     }
   }
 }
-

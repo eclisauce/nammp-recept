@@ -8,12 +8,13 @@ import {
  *
  */
 export default class Searchresult extends Base {
-  constructor(searchStr, filters) {
+  constructor(searchStr, filters, favorites) {
     super();
+    this.myFavorites = favorites;
     this.start();
     this.searchStr = searchStr;
     this.filterArray = filters;
-  }
+    }
 
   start() {
     setTimeout(() => {
@@ -24,7 +25,6 @@ export default class Searchresult extends Base {
       this.renderAll();
     }, 50);
   }
-
 
   /**
    * Does all the checks and rendering in order to display the right recipes.
