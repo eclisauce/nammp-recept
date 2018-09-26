@@ -1,4 +1,4 @@
-export default function() {
+function template() {
   return `
 
   <div class="container mt-0 mt-md-3">
@@ -127,3 +127,33 @@ export default function() {
 
   `;
 }
+
+function paginationTemplate(){
+  return `
+  <div class="row col-12 justify-content-center m-0 pagination">
+  <nav aria-label="Pagination for recipes">
+    <ul class="pagination">
+      <li class="page-item previous-li">
+        <a class="page-link text-primary previous" aria-label="Previous">
+          &laquo;
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+        ${this.paginationLiTemplate()}
+      <li class="page-item next-li">
+        <a class="page-link text-primary next" aria-label="Next">
+          &raquo;
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  </div>
+  `
+}
+
+export {
+  template,
+  paginationTemplate
+}
+

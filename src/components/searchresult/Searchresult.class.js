@@ -1,5 +1,8 @@
 import Base from '../../base/Base.class';
-import template from './Searchresultpage.template';
+import {
+  template,
+  paginationTemplate
+} from './Searchresultpage.template';
 /**
  * Searchresultpage in main for route '/'
  *
@@ -21,7 +24,7 @@ export default class Searchresult extends Base {
       this.filterAndRender();
       this.markFilters();
       this.filterCollapseController();
-      $('.pagination-holder').append(this.paginationTemplate());
+      this.render('.pagination-holder', 'paginationTemplate');
       this.disableNextOrPrev();
       this.setActiveLink();
     }, 50);
@@ -91,8 +94,6 @@ export default class Searchresult extends Base {
     this.getPageCounter(this.filteredRecipes.length/5);
     if (this.filteredRecipes.length > 0) {
       this.renderAPage(0);
-
-
     } else {
       $('.search-recipe-result').append('<h3 class="danger px-4 px-md-0">Tyvärr hittar vi inget recept på din sökning. Var god försök igen.</h3>')
     }
@@ -176,29 +177,6 @@ export default class Searchresult extends Base {
     return fullhtml
   }
 
-  paginationTemplate() {
-    return `
-    <div class="row col-12 justify-content-center m-0 pagination">
-    <nav aria-label="Pagination for recipes">
-      <ul class="pagination">
-        <li class="page-item previous-li">
-          <a class="page-link text-primary previous" aria-label="Previous">
-            &laquo;
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-          ${this.paginationLiTemplate()}
-        <li class="page-item next-li">
-          <a class="page-link text-primary next" aria-label="Next">
-            &raquo;
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    </div>
-    `
-  }
 
   /**
    * Render all filtered boxes.
@@ -225,6 +203,11 @@ export default class Searchresult extends Base {
     })
   }
 
+  /**
+   * Takes the search-string that is provided to the constructor.
+   * Then search filters out all recipes with the searchstr and returns an array with the recipes.
+   * @author Andreas
+   */
   searchResults() {
     let arr;
     if (this.searchStr) {
@@ -250,3 +233,4 @@ export default class Searchresult extends Base {
 }
 
 Searchresult.prototype.template = template;
+Searchresult.prototype.paginationTemplate = paginationTemplate;
