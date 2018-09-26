@@ -50,10 +50,21 @@ export default class Startpage extends Base {
           <div class="media-body">
             <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
             <i class="fas fa-angle-right fa-lg"></i>
+            <p class="w-100 mb-0 mt-2 mr-2 text-muted">Svårighetsgrad: 
+                <span>
+                  <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''} mr-1"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 2 ? 'text-muted' : ''} mr-1"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 3 ? 'text-muted' : ''} mr-1"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 4 ? 'text-muted' : ''} mr-1"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 5 ? 'text-muted' : ''} mr-1"></i>
+                </span>
+              </p>
             <p class="my-1 my-sm-2">${recipe.description}</p>
             <div class="row recipe-info-wrapper">
               <p class="col-6 my-0 mt-sm-2 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kalorier</p>
               <p class="col-6 my-0 mt-sm-2 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
+              
+              </div>
             </div>
           </div>
         </div>
