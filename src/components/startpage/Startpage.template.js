@@ -16,12 +16,12 @@ return `
       <h2 class="py-0 py-md-4 week-special">Veckans utvalda recept</h2>
     </section>
 
-    <section class="row col-12 m-0 p-0 mt-5">
-    ${this.fourRecipes[0]}
-    ${this.fourRecipes[1]}
+    <section class="row col-12 m-0 p-0 mt-5 start-page">
+      ${this.fourRecipes[0]}
+      ${this.fourRecipes[1]}
 
     </section>
-    <section class="row col-12 m-0 p-0">
+    <section class="row col-12 m-0 p-0 start-page">
       ${this.fourRecipes[2]}
       ${this.fourRecipes[3]}
 
