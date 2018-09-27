@@ -35,13 +35,13 @@ function template() {
           <div class="mt-3 mt-md-4 pr-md-5">
             <h5 class="text-dark">Namn på recept</h5>
             <div class="form-group m-0 w-100">
-              <input autocomplete="off" type="text" class="form-control" id="recipeNameForm" name="title" placeholder="Fyll i vad ditt recept heter.">
+              <input autocomplete="off" type="text" role="textbox" class="form-control" id="recipeNameForm" name="title" placeholder="Fyll i vad ditt recept heter.">
             </div>
           </div>
 
           <div class="mt-3 mt-md-4 pr-md-5">
             <h5 class="text-dark">Beskrivning</h5>
-            <textarea class="form-control rounded w-100" name="description" rows="3" placeholder="En kort beskrivning av ditt recept."></textarea>
+            <textarea class="form-control rounded w-100" role="textbox" name="description" rows="3" placeholder="En kort beskrivning av ditt recept."></textarea>
           </div>
           <div class="width-768-plus">
           </div>
