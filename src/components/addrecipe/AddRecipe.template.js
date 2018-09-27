@@ -114,7 +114,7 @@ function template() {
             <div class="add-ingredients-holder__list my-2">
 
             </div>
-            <button type="button" id="add-form" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
+            <button type="button" id="add-form" role="button" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
           </div>
 
           <div class="row">
@@ -122,7 +122,7 @@ function template() {
               <h5 class="text-dark">Instruktioner</h5>
               ${this.render('.instruction-container', 'instructionTemplate')}
             </div>
-            <button type="button" id="add-instr" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för ingrediens</button>
+            <button type="button" id="add-instr" role="button" class="my-4 btn btn-sm d-block mx-auto btn-info">Lägg till en ny rad för instruktioner</button>
           </div>
           <div class="width-768">
           </div>
@@ -188,7 +188,7 @@ function ingredientTemplate() {
         <input autocomplete="off" tabindex="0" type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
 
-      <button type="button" class="remove-instr btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
+      <button type="button" class="remove-instr btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1" role="button"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
     </div>
   </div>`;
@@ -205,7 +205,7 @@ function instructionTemplate() {
     <div class="position-relative my-3">
       <label for="instruction-1" class="label-instr" title="Textfält för instruktion 1."><span>1</span></label>
       <textarea name="instruction-1" class="instruction form-control my-2 rounded w-100" rows="2" placeholder="1."></textarea>
-      <button type="button" class="remove-instr btn btn-danger" title="Tabort denna instruktion"><i class="fas fa-times"></i></button>
+      <button type="button" role="button" class="remove-instr btn btn-danger" title="Tabort denna instruktion"><i class="fas fa-times"></i></button>
     </div>
   `;
 }
