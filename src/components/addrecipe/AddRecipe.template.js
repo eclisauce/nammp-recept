@@ -7,10 +7,25 @@ function template() {
         <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Information om hur receptet skall fyllas i">
           <i class="fas fa-info-circle"></i>
         </button>
-        <div class="dropdown-menu info-box" aria-labelledby="dropdownMenuButton">
-          <i class="fas fa-info-circle p-2"></i>
-          <p class="p-2">För att underlätta fyll i alla fält.</p>
-          <p class="p-2">För att ta del av de automatiska uträkningarna på näringsinnehåll fyll i en ingrediens från vår databas</p>
+        <div class="dropdown-menu info-box p-3" aria-labelledby="dropdownMenuButton">
+          <h4>Information om hur du skapar ett nytt recept</h4>
+          <ul>
+            <li>Fyll i alla fält eller ta bort de som inte används.</li>
+            <li>Välj minst en kategori eller övrigt.</li>
+            <li>Fyll i korrekta ingredienser från vår livsmedelsdatabas för att underlätta uträkning av näringsvärden.</li>
+            <li>Fyll i siffror vid angivelse av tid, gram och antal.</li>
+            <li>Välj antal portioner som hela ditt recept avser.</li>
+            <li>Ladda upp en bild genom att skicka in en länk till en bild. Om länken är korrekt, ser du en förhandsvisning av bilden.</li>
+            <li>Välj svårighetsgrad för att visa hur svårt ditt recept är att tillaga.</li>
+          </ul>
+          <h5>Andra tips</h5>
+          <ul>          
+            <li>Skriv inga volym-angivelser i dina instruktioner. Exempelvis:</li>
+            <ul>
+                <li>Skriv inte: <s>häll i 2dl av de 4dl pressade tomaterna.</s></li>
+                <li>Skriv istället: <em>häll i hälften av de pressade tomaterna.</em></li>
+            </ul>
+          </ul>
         </div>
       </div>
     </article>
@@ -118,9 +133,9 @@ function template() {
 
       <div class="row mt-3 mt-md-4 mb-5 p-0">
 
-        <div class="col-12 pl-md-5 d-flex justify-content-md-end justify-content-center">
-          <h5 class="something-went-wrong text-danger m-0"></h5>
-          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-5 mt-md-0 font-weight-bold">
+        <div class="col-12 pl-md-5 d-flex justify-content-md-end justify-content-center align-items-center flex-wrap end-of-add">
+          <h5 class="something-went-wrong text-danger m-0 mr-2 d-md-block col-12 col-md text-center text-md-right"></h5>
+          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-md-0 mt-3 font-weight-bold">
             Spara recept
           </button>
         </div>

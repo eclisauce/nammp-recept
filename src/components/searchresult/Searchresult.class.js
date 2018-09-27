@@ -33,7 +33,6 @@ export default class Searchresult extends Base {
       this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
       this.renderAll();
-
   }
 
   /**
@@ -302,7 +301,6 @@ export default class Searchresult extends Base {
     if ($(window).width() < 768) {
       $('#collapseCategory').collapse();
       $('#collapseFilter').collapse();
-
     }
   }
 }
