@@ -10,6 +10,7 @@
       "Lägg sedan i kycklingen och låt det puttra tills kycklingen är “fork tender”. Smaka av under tiden tilsätt mer garm masala efter smak."
     ],
     "time": 120,
+    "difficulty": "3",
     "imgLink": "/img/recept-bild1.jpg",
     "imgAlt": "Detta är en fin bild på Tikka Masala",
     "ingredientsPerPortion": [
@@ -133,6 +134,7 @@
     "description": "Så här lagar du en klassisk förrätt från Bologna. I en riktig Bolognesesås ingår alltid buljong, morot och rotselleri. Det är dessa ingredienser som ger den alldeles speciella smaken till såsen. Servera med spaghetti och riven parmesanost.",
     "imgLink": "https://img.koket.se/media/pasta-bolognese-med-riven-parmesanost.jpg",
     "time": 80,
+    "difficulty": "3",
     "ingredientsPerPortion": [
       {
         "name": "Spaghetti",
@@ -272,6 +274,7 @@
     "description": "Falafel är ljuvligt goda bollar av kikärtor kryddade med spiskummin och vitlök. Falafel brukar friteras, men det går lika bra att steka dem. Servera dem med sallad i pitabröd.",
     "imgLink": "https://static01.nyt.com/images/2013/10/23/dining/23JPFLEX2/23JPFLEX2-articleLarge.jpg",
     "time": 20,
+    "difficulty": "3",
     "ingredientsPerPortion": [
       {
         "name": "Kikärtor, kokta",
@@ -371,6 +374,7 @@
     "description": "Köttbullar med rårörda lingon är en klassisk svensk rätt som här serveras med hemgjort potatismos.",
     "imgLink": "https://img.koket.se/media/kottbullar-med-rarorda-lingon-och-potatismos.jpg",
     "time": 75,
+    "difficulty": "3",
     "ingredientsPerPortion": [
       {
         "name": "Blandfärs",
@@ -484,6 +488,7 @@
     "description": "Korv Stroganoff på falukorv är en klassiker i det svenska vardagsköket - smakar lika bra i matlådan dagen efter.\r\n\r\nProva även att göra grytan på frukostkorv eller grillkorv för variation.",
     "imgLink": "https://img.koket.se/media/snabbt-och-enkelt-till-vardags.jpg",
     "time": 20,
+    "difficulty": "2",
     "ingredientsPerPortion": [
       {
         "name": "Falukorv",
@@ -580,6 +585,7 @@
     "description": "Gör traditionella tunna pannkakor genom att blanda mjöl, mjölk och ägg och lite salt till en jämn smet. Stek smeten till tunna och smarriga pannkakor.",
     "imgLink": "https://img.koket.se/media/pannkakor-recept-recept-nu.jpg",
     "time": 20,
+    "difficulty": "4",
     "ingredientsPerPortion": [
       {
         "name": "Vetemjöl",
@@ -665,6 +671,7 @@
     "description": "Raggmunk är en klassisk svensk maträtt som räknas till den svenska husmanskosten. Den är en sorts pannkaka med råriven potatis i smeten. Klassiska tillbehör är stekt rimmat fläsk och rårörda lingon.",
     "imgLink": "https://img.koket.se/media/raggmunk-med-flask-och-rarorda-lingon.jpg",
     "time": 30,
+    "difficulty": "3",
     "ingredientsPerPortion": [
       {
         "name": "Vetemjöl",
@@ -755,6 +762,7 @@
     "description": "Enkel och smakrik linssoppa som mättar bra. Vill du ha lite extra sting kan du tillsätta lite sambal oelek eller chili.",
     "imgLink": "https://cdn1.tasteline.com/rod_linssoppa_med_sval_citronyoghurt-360x360.jpg",
     "time": 20,
+    "difficulty": "2",
     "ingredientsPerPortion": [
       {
         "name": "Gul lök, finhackad",

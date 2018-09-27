@@ -11,7 +11,16 @@ export default function() {
                 <img src="${this.recipe.imgLink}" alt="${this.recipe.imgAlt}" class="img-fluid">
               </div>
               <div class="col-md-12 col-12 col-lg-8 d-flex flex-column">
-                <h2 class="text-center mt-3 mt-lg-1 recipe-header">${this.recipe.title}</h2>
+                <h2 class="text-center mt-3 mt-lg-1 recipe-header align-self-center align-self-lg-start">${this.recipe.title}</h2>
+                <p class="m-0 p-0 mb-2 text-white mt-2">Svårighetsgrad:
+                  <span class="ml-2 stars rounded p-1">
+                    <i class="fas fa-star ${this.recipe.difficulty < 1 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 2 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 3 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 4 ? 'text-muted' : ''}"></i>
+                    <i class="fas fa-star ${this.recipe.difficulty < 5 ? 'text-muted' : ''}"></i>
+                  </span>
+                </p>
                 <article>
                   <p>${this.recipe.description}</p>
                 </article>

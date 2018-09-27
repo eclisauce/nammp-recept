@@ -68,7 +68,7 @@ function template() {
         </section>
 
 
-        <section class="row categories flex-column p-0 border-bottom">
+        <section class="row categories flex-column p-0">
           <div id="filters" class="filter-heading filters border-bottom border-top p-3 d-flex justify-content-between" data-toggle="collapse"
             data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
             <p class="my-0 mx-auto m-md-0">Filter</p> <i class="fas fa-chevron-circle-down align-self-center"></i>
@@ -110,13 +110,6 @@ function template() {
 
 
         </section>
-
-        <section class="row categories flex-column p-0">
-          <a class="btn btn-primary rounded-0 p-3 pop" href="/add-recipe">Nytt recept</a>
-        </section>
-
-
-
       </aside>
 
 
