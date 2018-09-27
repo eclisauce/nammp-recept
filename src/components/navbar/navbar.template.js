@@ -34,8 +34,8 @@ export default `
 <div class="border search-holder ">
   <div class="container header__search">
       <i class="fas fa-search"></i>
-      <input class="form-control form-control-lg pl-5 border-0 search-input-nav" id="search-field" type="text" placeholder="Sök på recept..." role="search"></input>
-      <a class="searchtest btn btn-primary pop" id="searchBtn" href="searchresult">Sök recept</a>
+      <input class="form-control form-control-lg pl-5 border-0 search-input-nav" id="search-field" type="text" placeholder="Sök på recept..."></input>
+      <a class="searchtest btn btn-primary pop" id="searchBtn" href="/searchresult">Sök recept</a>
       <ul class="list-group result-dropdown" tabindex="-1"></ul>
   </div>
 </div>

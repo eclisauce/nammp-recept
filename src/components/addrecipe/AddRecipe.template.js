@@ -1,6 +1,5 @@
 function template() {
   return `
-<button class="fill">Fill</button>
   <article class="add-recipe container">
     <h2 class="text-primary mt-3 mt-md-4 mb-3 text-center text-md-left">Lägg till nytt recept</h2>
     <article class="mt-3 mt-md-4">
@@ -8,10 +7,25 @@ function template() {
         <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="tooltip" data-placement="bottom" title="Information om hur receptet skall fyllas i">
           <i class="fas fa-info-circle"></i>
         </button>
-        <div class="dropdown-menu info-box" aria-labelledby="dropdownMenuButton">
-          <i class="fas fa-info-circle p-2"></i>
-          <p class="p-2">För att underlätta fyll i alla fält.</p>
-          <p class="p-2">För att ta del av de automatiska uträkningarna på näringsinnehåll fyll i en ingrediens från vår databas</p>
+        <div class="dropdown-menu info-box p-3" aria-labelledby="dropdownMenuButton">
+          <h4>Information om hur du skapar ett nytt recept</h4>
+          <ul>
+            <li>Fyll i alla fält eller ta bort de som inte används.</li>
+            <li>Välj minst en kategori eller övrigt.</li>
+            <li>Fyll i korrekta ingredienser från vår livsmedelsdatabas för att underlätta uträkning av näringsvärden.</li>
+            <li>Fyll i siffror vid angivelse av tid, gram och antal.</li>
+            <li>Välj antal portioner som hela ditt recept avser.</li>
+            <li>Ladda upp en bild genom att skicka in en länk till en bild. Om länken är korrekt, ser du en förhandsvisning av bilden.</li>
+            <li>Välj svårighetsgrad för att visa hur svårt ditt recept är att tillaga.</li>
+          </ul>
+          <h5>Andra tips</h5>
+          <ul>          
+            <li>Skriv inga volym-angivelser i dina instruktioner. Exempelvis:</li>
+            <ul>
+                <li>Skriv inte: <s>häll i 2dl av de 4dl pressade tomaterna.</s></li>
+                <li>Skriv istället: <em>häll i hälften av de pressade tomaterna.</em></li>
+            </ul>
+          </ul>
         </div>
       </div>
     </article>
@@ -41,17 +55,17 @@ function template() {
 
 
           <div class="row mt-3 mt-md-4">
-            <div class="col-6">
+            <div class="col-4">
               <div class="row">
                 <div class="col-12 mb-lg-0 mb-2">
                   <h6 class="d-inline text-dark vertical-align-middle">Antal portioner</h6>
                 </div>
                 <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange hur många portioner receptet avser">
                   <select class="form-control m-0" id="number-of-portions" name="portions">
-                    <option selected>1</option>
+                    <option>1</option>
                     <option>2</option>
                     <option>3</option>
-                    <option>4</option>
+                    <option selected>4</option>
                     <option>5</option>
                     <option>6</option>
                     <option>7</option>
@@ -62,16 +76,34 @@ function template() {
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <div class="row">
                 <div class="col-12 mb-lg-0 mb-2 pr-0">
                   <h6 class="d-inline text-dark vertical-align-middle">Tidsåtgång</h6>
                 </div>
                 <div class="col-6 pr-0">
                   <div class="form-group m-0">
-                    <input type="text" class="form-control" name="time" id="time" aria-describedby="time" placeholder="">
-                    <small id="" class="form-text text-muted text-nowrap">Ange tid i minuter.</small>
+                    <input autocomplete="off" type="text" class="form-control" name="time" id="time" aria-describedby="time" placeholder="">
+                    <small class="form-text text-muted text-nowrap">Ange tid i minuter.</small>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="row">
+                <div class="col-12 mb-lg-0 mb-2">
+                  <h6 class="d-inline text-dark vertical-align-middle">Svårighetsgrad</h6>
+                </div>
+                <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange svårighetsgrad">
+                  <select class="form-control m-0" id="difficulty" name="difficulty">
+                    <option selected></option>
+                    <option >1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <small class="form-text text-muted text-nowrap">1 lättast och 5 svårast</small>
                 </div>
               </div>
             </div>
@@ -101,9 +133,9 @@ function template() {
 
       <div class="row mt-3 mt-md-4 mb-5 p-0">
 
-        <div class="col-12 pl-md-5 d-flex justify-content-md-end justify-content-center">
-          <h5 class="something-went-wrong text-danger m-0"></h5>
-          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-5 mt-md-0 font-weight-bold">
+        <div class="col-12 pl-md-5 d-flex justify-content-md-end justify-content-center align-items-center flex-wrap end-of-add">
+          <h5 class="something-went-wrong text-danger m-0 mr-2 d-md-block col-12 col-md text-center text-md-right"></h5>
+          <button type="submit" form="add-recipe-form" value="Submit" class="btn btn-primary btn-lg mt-md-0 mt-3 font-weight-bold">
             Spara recept
           </button>
         </div>
@@ -119,16 +151,16 @@ function template() {
 
 function ingredientTemplate() {
   return `
-  <div class="mb-md-4 mb-1 mb-lg-1 my-2 ingredient-form" id="ingredientInput-${this.ingredientCounter}">
+  <div class="ingredient-form my-3">
     <div class="form-row">
-      <div class="col-6 mb-0 mb-md-0 pt-2">
-        <input type="text" name="Ingrediens" class="form-control name-ingredient-${this.ingredientCounter}" placeholder="Namn på ingrediens" data-toggle="tooltip" data-placement="bottom" title="Ange namn på ingrediens som visas i receptet">
+      <div class="col-6">
+        <input autocomplete="off" type="text" name="Ingrediens" class="form-control name-ingredient-${this.ingredientCounter}" placeholder="Namn på ingrediens" data-toggle="tooltip" data-placement="bottom" title="Ange namn på ingrediens som visas i receptet">
       </div>
 
-      <div class="col-3 pt-2">
-        <input type="text" name="Antal" id="quantity" class="form-control quantity-ingredient-${this.ingredientCounter}" placeholder="antal" data-toggle="tooltip" data-placement="bottom" title="Ange antal">
+      <div class="col-3">
+        <input autocomplete="off" type="text" name="Antal" class="form-control" placeholder="antal" data-toggle="tooltip" data-placement="bottom" title="Ange antal">
       </div>
-      <div class="form-group col m-0 pt-2" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
+      <div class="form-group col m-0" data-toggle="tooltip" data-placement="bottom" title="Ange vilket mått">
         <select class="form-control measurement-ingredient-${this.ingredientCounter}" name="Enhetsmått">
           <option>st</option>
           <option>krm</option>
@@ -149,14 +181,14 @@ function ingredientTemplate() {
       <div class="col-6 mb-0 mb-md-0 pt-2 bla">
         <input tabindex="0" type="text" autocomplete="off" name="IngrediensnamnLivsmedelsverket" class="form-control dataname-ingredient-${this.ingredientCounter} ingredient-input" placeholder="Ingrediens i livsmedelsverket" data-toggle="tooltip" data-placement="bottom"
           title="Ange ingrediens från livsmedelsverket för att räkna ut näringsvärden">
-          <ul class="list-group result-dropdown" tabindex="-1"></ul>
+          <ul class="list-group result-dropdowns" tabindex="-1"></ul>
       </div>
 
       <div class="col d-flex pt-2">
-        <input tabindex="0" type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
+        <input autocomplete="off" tabindex="0" type="text" name="IngrediensPerGram" class="form-control grams-ingredient-${this.ingredientCounter}" placeholder="gram" data-toggle="tooltip" data-placement="bottom" title="Ange totalvikt i gram för uträkning av näringsvärde">
       </div>
 
-      <button type="button" class="btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
+      <button type="button" class="remove-instr btn btn-danger delete-button align-self-center mt-2 mr-1 ml-1"
         data-toggle="tooltip" data-placement="bottom" title="Ta bort denna ingrediens"><i class="fas fa-times"></i></button>
     </div>
   </div>`;

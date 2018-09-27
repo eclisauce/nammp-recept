@@ -59,8 +59,16 @@ export default class Recipepage extends Base {
   getIngredients(){
     let portions = $('#portion-selector').val() * 1;
     return this.recipe.ingredientsPerPortion.map(ingredient => {
-      return `<li class="list-group-item border-0">${ingredient.quantity * portions}${ingredient.unitOfMeasurement} ${ingredient.name}</li>`
+      return `<li class="list-group-item border-0">${this.decimalFix(ingredient.quantity * portions)}${ingredient.unitOfMeasurement} ${ingredient.name}</li>`
     })
+  }
+
+  decimalFix(quantity){
+    if(quantity % 1 != 0){
+      return quantity.toFixed(2).toString() * 1;;
+    } else {
+      return quantity;
+    }
   }
 
   /**

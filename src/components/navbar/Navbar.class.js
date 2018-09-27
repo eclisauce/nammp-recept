@@ -29,6 +29,17 @@ export default class Navbar extends Base {
     }
   }
 
+
+  click() {
+    if ($(event.target).attr('id') === 'searchBtn') {
+      if (!(location.pathname.includes('/searchresult'))) {
+        $('.searchtest').attr('href', `/searchresult/${$('#search-field').val()}`)
+      } else {
+        this.setFilters();
+      }
+    }
+  }
+
   /**
    * Keydown on enter to search. Sends filters if there are any.
    * @author Andreas
@@ -66,21 +77,25 @@ export default class Navbar extends Base {
      */
     $(document).on('keyup', '.search-input-nav', function() {
       let str = $(this).val();
+      let strRegex = new RegExp (`${str}`, 'i');
       let ul = $(this).parent().find('.result-dropdown');
       ul.empty();
       if (!(location.pathname.includes('/searchresult'))) {
         let recipes = that.autoCompleteSearch(str).splice(0, 6);
         for (let recipe of recipes) {
           let recipeObj = that.recipes.filter(x => x.title == recipe)[0];
+          let titleIndex = recipeObj.title.search(strRegex);
+          let strToReplace = recipeObj.title.substr(titleIndex, str.length);
+          let title = recipeObj.title.replace(strToReplace, `<strong>${strToReplace}</strong>`);
           if (!(location.pathname.includes('/recept'))) {
             ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
-              <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+              <a href="recept/${recipeObj.url}" class="pop no-decoration-a-tag p-2 recipe-autocomplete-li"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
           } else {
             ul.append(`
             <li class="list-group-item list-item focusedInput p-0">
-              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${recipe}</span> <i class="fas fa-angle-right fa-lg"></i></a>
+              <a href="${recipeObj.url}" class="pop no-decoration-a-tag p-2 recipe-autocomplete-li"><img src="${recipeObj.imgLink}" class"img-fluid p-4" alt="${recipeObj.imgAlt}"><span class="p-1"> ${title}</span> <i class="fas fa-angle-right fa-lg"></i></a>
             </li>`);
           }
         }
@@ -107,6 +122,26 @@ export default class Navbar extends Base {
     $(document).on('click', '.list-item', () => {
       $(".result-dropdown").html('');
     });
+
+
+    $(document).on('keydown', '.header__search', function(e) {
+      if (e.keyCode == 40) {      
+        e.preventDefault();
+        if ($('#search-field').is(':focus')){
+          $('.recipe-autocomplete-li')[0].focus();
+        } else {
+          $('.recipe-autocomplete-li:focus').closest('li').next().find('a.recipe-autocomplete-li').focus();
+        }
+      }
+      if (e.keyCode == 38) {    
+        e.preventDefault();
+        if($('.recipe-autocomplete-li').eq(0).is(':focus')){
+          $('#search-field').focus();
+        } else {
+          $('.recipe-autocomplete-li:focus').closest('li').prev().find('a.recipe-autocomplete-li').focus();
+        }
+      }
+    })
   }
 
   /**
@@ -116,7 +151,7 @@ export default class Navbar extends Base {
    */
   autoCompleteSearch(str) {
     if (str.length == 0) {
-      return $(".result-dropdown").html('');
+      return [];
     }
     str = str.toLowerCase();
     return this.recipes.filter(x => x.title.toLowerCase().includes(str)).map(x => x.title).sort((a, b) => {

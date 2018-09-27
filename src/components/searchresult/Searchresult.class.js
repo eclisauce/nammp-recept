@@ -22,7 +22,7 @@ export default class Searchresult extends Base {
         this.start()
       } else {
         this.checkIfExist();
-      }  
+      }
     }, 50);
 
   }
@@ -33,7 +33,7 @@ export default class Searchresult extends Base {
       this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
       this.renderAll();
-    
+
   }
 
   /**
@@ -54,10 +54,22 @@ export default class Searchresult extends Base {
    * Checks if there is a change to checkboxes.
    * Then either add the name of it to an array or remove it
    * Call renderAllRecipes
-   * @author Andreas
+   * @author Andreas & Martin
    */
   change() {
-    if ($(event.target).is('input[type=checkbox]')) {
+    if ($(event.target).is('input[type=checkbox]') && $(event.target).attr('name') === 'Favoriter') {
+      if ($(event.target).is(':checked')) {
+        this.searchRecipes = this.searchRecipes.filter((recipe) => {
+          return this.myFavorites.favorites.includes(recipe.url);
+        });
+        this.renderAll();
+      } else {
+        this.searchRecipes = this.searchResults();
+        this.renderAll();
+      }
+    };
+
+    if ($(event.target).is('input[type=checkbox]') && $(event.target).attr('name') !== 'Favoriter') {
       let name = $(event.target).attr('name');
       if ($(event.target).is(':checked')) {
         this.filterArray.push(name);
@@ -99,7 +111,7 @@ export default class Searchresult extends Base {
     this.renderAPage(this.lastRenderedIndex);
     this.setActiveLink();
     setTimeout(() => {
-      $(window).scrollTop($(document).height()); 
+      $(window).scrollTop($(document).height());
     }, 0);
 
   }
@@ -185,8 +197,17 @@ export default class Searchresult extends Base {
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
               alt="${recipe.imgAlt}">
             <div class="media-body ">
-              <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
+              <h5 class="mt-0 media-heading width-heading d-inline-block">${recipe.title}</i></h5>
               <i class="fas fa-angle-right fa-lg"></i>
+              <p class="w-100 m-0 mt-1 text-muted"><strong>Svårighetsgrad:</strong>
+                <span class="stars px-2">
+                  <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 2 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 3 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 4 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 5 ? 'text-muted' : ''}"></i>
+                </span>
+              </p>
               <p class="mt-2">${recipe.description}</p>
               <div class="row recipe-info-wrapper">
                 <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kalorier</p>
@@ -199,7 +220,7 @@ export default class Searchresult extends Base {
     })
   }
 
-  
+
 
 
   /**
@@ -209,11 +230,13 @@ export default class Searchresult extends Base {
   markFilters() {
     let getAll = $('input[type=checkbox]');
     this.filterArray.forEach(x => {
-      getAll.each(function () {
-        if ($(this).attr('name') == x) {
-          $(this).prop('checked', true)
-        }
-      });
+      if(x !== 'Favoriter') {
+        getAll.each(function () {
+          if ($(this).attr('name') == x) {
+            $(this).prop('checked', true)
+          }
+        });
+      }
     })
   }
 
@@ -295,7 +318,7 @@ export default class Searchresult extends Base {
     if ($(window).width() < 768) {
       $('#collapseCategory').collapse();
       $('#collapseFilter').collapse();
-      
+
     }
   }
 }
