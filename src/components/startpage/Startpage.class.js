@@ -48,7 +48,7 @@ export default class Startpage extends Base {
           <img class="mr-2 mt-1 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
             alt="${recipe.imgAlt}">
           <div class="media-body">
-            <h5 class="mt-0 media-heading d-inline">${recipe.title}</h5>
+            <h5 class="mt-0 media-heading d-inline-block">${recipe.title}</h5>
             <i class="fas fa-angle-right fa-lg"></i>
             <p class="w-100 mb-0 mt-2 mr-2 text-muted">Svårighetsgrad: 
                 <span>
