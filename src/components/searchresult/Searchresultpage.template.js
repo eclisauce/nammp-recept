@@ -63,7 +63,6 @@ function template() {
               <input type="checkbox" name="Italienskt">
               <span class="checkmark border"></span>
             </label>
-
           </div>
 
         </section>
@@ -100,6 +99,13 @@ function template() {
               <input type="checkbox" name="Endast Kött">
               <span class="checkmark border"></span>
             </label>
+
+            <label class="checkboxContainer border-checkbox">
+              <p><i class="far fa-heart"></i> Mina favoriter</p>
+              <input type="checkbox" name="Favoriter" id="favs">
+              <span class="checkmark border"></span>
+            </label>
+
           </div>
 
 
@@ -156,4 +162,3 @@ export {
   template,
   paginationTemplate
 }
-

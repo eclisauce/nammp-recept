@@ -22,7 +22,7 @@ export default class Searchresult extends Base {
         this.start()
       } else {
         this.checkIfExist();
-      }  
+      }
     }, 50);
 
   }
@@ -33,7 +33,7 @@ export default class Searchresult extends Base {
       this.lastRenderedIndex = 0;
       this.searchRecipes = this.searchResults();
       this.renderAll();
-    
+
   }
 
   /**
@@ -54,10 +54,22 @@ export default class Searchresult extends Base {
    * Checks if there is a change to checkboxes.
    * Then either add the name of it to an array or remove it
    * Call renderAllRecipes
-   * @author Andreas
+   * @author Andreas & Martin
    */
   change() {
-    if ($(event.target).is('input[type=checkbox]')) {
+    if ($(event.target).is('input[type=checkbox]') && $(event.target).attr('name') === 'Favoriter') {
+      if ($(event.target).is(':checked')) {
+        this.searchRecipes = this.searchRecipes.filter((recipe) => {
+          return this.myFavorites.favorites.includes(recipe.url);
+        });
+        this.renderAll();
+      } else {
+        this.searchRecipes = this.searchResults();
+        this.renderAll();
+      }
+    };
+
+    if ($(event.target).is('input[type=checkbox]') && $(event.target).attr('name') !== 'Favoriter') {
       let name = $(event.target).attr('name');
       if ($(event.target).is(':checked')) {
         this.filterArray.push(name);
@@ -99,7 +111,7 @@ export default class Searchresult extends Base {
     this.renderAPage(this.lastRenderedIndex);
     this.setActiveLink();
     setTimeout(() => {
-      $(window).scrollTop($(document).height()); 
+      $(window).scrollTop($(document).height());
     }, 0);
 
   }
@@ -199,7 +211,7 @@ export default class Searchresult extends Base {
     })
   }
 
-  
+
 
 
   /**
@@ -209,11 +221,13 @@ export default class Searchresult extends Base {
   markFilters() {
     let getAll = $('input[type=checkbox]');
     this.filterArray.forEach(x => {
-      getAll.each(function () {
-        if ($(this).attr('name') == x) {
-          $(this).prop('checked', true)
-        }
-      });
+      if(x !== 'Favoriter') {
+        getAll.each(function () {
+          if ($(this).attr('name') == x) {
+            $(this).prop('checked', true)
+          }
+        });
+      }
     })
   }
 
@@ -295,7 +309,7 @@ export default class Searchresult extends Base {
     if ($(window).width() < 768) {
       $('#collapseCategory').collapse();
       $('#collapseFilter').collapse();
-      
+
     }
   }
 }
