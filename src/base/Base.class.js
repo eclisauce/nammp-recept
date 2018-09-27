@@ -111,15 +111,25 @@ export default class Base {
     let time = recipe.time
     let minutes = time % 60;
     let hours = (time - minutes) / 60;
-    if(hours === 0){
-      return `${minutes} minuter`
-    } else if (minutes === 0 && hours > 1) {
-      return `${hours} timmar`
-    } else if (hours > 1) {
-      return `${hours} timmmar ${minutes} minuter`;
-    } else {
-      return `${hours} timme ${minutes} minuter`;
+    let hourStr;
+    let minuteStr;
+    if (hours === 1){
+      hourStr = `${hours} timme`;
     }
+    else if (hours > 1) {
+      hourStr = `${hours} timmar`;
+    } else {
+      hourStr = '';
+    }
+    if (minutes === 1){
+      minuteStr = `${minutes} minut`;
+    } else if (minutes > 1){
+      minuteStr = `${minutes} minuter`;
+    } else {
+      minuteStr = '';
+    }
+
+    return `${hourStr} ${minuteStr}`
   }
 
   showDifficulty(recipe){

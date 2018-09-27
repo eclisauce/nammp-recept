@@ -71,6 +71,31 @@ export default class AddRecipe extends Base {
       that.submitForm(e, this)
     });
 
+    $(document).on('focus', '.red-border', () => {
+      $('.something-went-wrong').empty();
+    });
+
+     $(document).on('keydown', '.bla', function(e) {
+      if (e.keyCode == 40) {      
+        e.preventDefault();
+        if($('.ingredient-input:focus').is(':focus')){
+          $('.food-item').eq(0).focus();
+        } else {
+          $('.food-item:focus').next().focus();
+        }
+      }
+      if (e.keyCode == 38) {    
+        e.preventDefault();
+        if($('.food-item').eq(0).is(':focus')){
+          $('.food-item:focus').closest('ul').prev().focus();
+        } else {
+          $('.food-item:focus').prev().focus();
+        }
+
+      }
+    })
+
+
     /**
      * jQuery code for handeling the input from user displaying the list from json and autocompletes
      * @author Markus
@@ -81,9 +106,8 @@ export default class AddRecipe extends Base {
       ul.empty();
       let foodItems = that.autoComplete(str).splice(0, 15);
       for (let foodItem of foodItems) {
-        ul.append(`<li class="list-group-item list-items" tabindex="0">${foodItem}</li>`);
+        ul.append(`<li class="list-group-item list-items food-item" tabindex="0">${foodItem}</li>`);
       }
-
     });
 
     /**
@@ -101,14 +125,12 @@ export default class AddRecipe extends Base {
      *@author Markus
      */
     $(document).on('click', '.list-items', function() {
-      let inputField = $(this);
       $(this).parent().siblings('.ingredient-input').val($(event.target).text());
 
     });
 
     $(document).on('keyup', '.list-items', function(e) {
       if (e.keyCode == 13) {
-        let inputField = $(this);
         $(this).parent().siblings('.ingredient-input').val($(event.target).text());
         $(".result-dropdowns").html('');
       }
@@ -234,7 +256,7 @@ export default class AddRecipe extends Base {
     * Delete button - Deletes ingredient row when clicked
     * @author Martin
     */
-    if ($(event.target).hasClass('delete-button') || $(event.target).parent().hasClass('delete-button')) {
+    if ($(event.target).hasClass('delete-button') && $('.ingredient-form').length > 1 || $(event.target).parent().hasClass('delete-button') && $('.ingredient-form').length > 1) {
       if (event.toElement.nodeName === 'I') {
         $(event.target).parent().parent().parent().fadeOut('slow', function() {
           $(this).remove();
@@ -394,8 +416,29 @@ export default class AddRecipe extends Base {
       this.saveAllRecipes(modifiedRecipe);
       this.router.urlMaker();
 
-      $('button[type="submit"]').attr('disabled', true).html('Recept sparat');
+      $('button[type="submit"]').attr('disabled', true).addClass('d-none');
 
+
+      $('.end-of-add').append(`
+      <a class="btn btn-primary btn-lg mt-md-0 mt-3 font-weight-bold go-to-recipe" href="/${modifiedRecipe.url}">
+      Gå till recept
+      </a>
+      `)
+
+
+      let counter = 5;
+
+      $('.something-went-wrong').removeClass('text-danger').addClass('text-success').append(`Ditt recept är sparat! Du blir skickad till ditt recept om: <span class="count-down">${counter}</span>`);
+      countDown();
+      function countDown(){
+        $('.count-down').fadeOut(1000, () => {
+          counter--
+          $('.count-down').empty().append(counter).fadeIn(1000);
+          if (counter === 0){
+            location.pathname = `/recept/${modifiedRecipe.url}`
+          } else {countDown()}
+        });
+      }
     }
   }
 
