@@ -199,12 +199,14 @@ export default class Searchresult extends Base {
             <div class="media-body ">
               <h5 class="mt-0 media-heading width-heading d-inline-block">${recipe.title}</i></h5>
               <i class="fas fa-angle-right fa-lg"></i>
-              <p class="w-100 m-0 mt-1 text-muted">Svårighetsgrad: 
-                <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''} mr-1"></i>
-                <i class="fas fa-star ${recipe.difficulty < 2 ? 'text-muted' : ''} mr-1"></i>
-                <i class="fas fa-star ${recipe.difficulty < 3 ? 'text-muted' : ''} mr-1"></i>
-                <i class="fas fa-star ${recipe.difficulty < 4 ? 'text-muted' : ''} mr-1"></i>
-                <i class="fas fa-star ${recipe.difficulty < 5 ? 'text-muted' : ''} mr-1"></i>
+              <p class="w-100 m-0 mt-1 text-muted"><strong>Svårighetsgrad:</strong>
+                <span class="stars px-2">
+                  <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 2 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 3 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 4 ? 'text-muted' : ''}"></i>
+                  <i class="fas fa-star ${recipe.difficulty < 5 ? 'text-muted' : ''}"></i>
+                </span>
               </p>
               <p class="mt-2">${recipe.description}</p>
               <div class="row recipe-info-wrapper">
