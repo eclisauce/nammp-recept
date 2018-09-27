@@ -96,10 +96,9 @@ function template() {
                 </div>
                 <div class="form-group col-6 m-0 pr-0" data-toggle="tooltip" data-placement="bottom" title="Ange svårighetsgrad">
                   <select class="form-control m-0" id="difficulty" name="difficulty">
-                    <option selected></option>
-                    <option >1</option>
+                    <option>1</option>
                     <option>2</option>
-                    <option>3</option>
+                    <option selected>3</option>
                     <option>4</option>
                     <option>5</option>
                   </select>

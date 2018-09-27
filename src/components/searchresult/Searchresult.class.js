@@ -197,8 +197,7 @@ export default class Searchresult extends Base {
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
               alt="${recipe.imgAlt}">
             <div class="media-body ">
-              <h5 class="mt-0 media-heading width-heading d-inline-block">${recipe.title}</i></h5>
-              <i class="fas fa-angle-right fa-lg"></i>
+              <h5 class="mt-0 media-heading width-heading d-inline-block">${recipe.title}<i class="fas fa-angle-right fa-lg"></i></h5>
               <p class="w-100 m-0 mt-1 text-muted"><strong>Svårighetsgrad:</strong>
                 <span class="stars px-2">
                   <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''}"></i>

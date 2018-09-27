@@ -40,10 +40,6 @@
     }
 
     .media-body {
-      .width-heading {
-        width:80%
-      }
-
       .fa-angle-right {
         color: rgba(240, 95, 64, 1);
         transform: translateX(2rem);
@@ -68,7 +64,7 @@
       line-height: 1.2;
       color: #333;
       transition: all .3s ease;
-      width: 85%;
+      width: 80%;
     }
 
     .fa-angle-right {
@@ -109,9 +105,6 @@
     .media-body {
       .media-heading {
         font-size: 1.8rem;
-      }
-      .fa-angle-right {
-        font-size: 2em;
       }
     }
   }
