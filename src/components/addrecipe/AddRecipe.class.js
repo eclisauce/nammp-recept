@@ -75,14 +75,23 @@ export default class AddRecipe extends Base {
       $('.something-went-wrong').empty();
     });
 
-    $(document).on('keydown', '.bla', function(e) {
+     $(document).on('keydown', '.bla', function(e) {
       if (e.keyCode == 40) {      
         e.preventDefault();
-        $('.food-item:focus').next().focus();
+        if($('.ingredient-input:focus').is(':focus')){
+          $('.food-item').eq(0).focus();
+        } else {
+          $('.food-item:focus').next().focus();
+        }
       }
       if (e.keyCode == 38) {    
         e.preventDefault();
-        $('.food-item:focus').prev().focus();
+        if($('.food-item').eq(0).is(':focus')){
+          $('.food-item:focus').closest('ul').prev().focus();
+        } else {
+          $('.food-item:focus').prev().focus();
+        }
+
       }
     })
 
@@ -99,8 +108,6 @@ export default class AddRecipe extends Base {
       for (let foodItem of foodItems) {
         ul.append(`<li class="list-group-item list-items food-item" tabindex="0">${foodItem}</li>`);
       }
-
-      $('.food-item')[0].focus();
     });
 
     /**

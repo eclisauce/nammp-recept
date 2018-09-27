@@ -100,7 +100,6 @@ export default class Navbar extends Base {
           }
         }
       }
-      $('.test2')[0].focus();
     });
 
     /**
@@ -124,14 +123,23 @@ export default class Navbar extends Base {
       $(".result-dropdown").html('');
     });
 
+
     $(document).on('keydown', '.header__search', function(e) {
       if (e.keyCode == 40) {      
         e.preventDefault();
-        $('.test2:focus').closest('li').next().find('a.test2').focus();
+        if ($('#search-field').is(':focus')){
+          $('.test2')[0].focus();
+        } else {
+          $('.test2:focus').closest('li').next().find('a.test2').focus();
+        }
       }
       if (e.keyCode == 38) {    
         e.preventDefault();
-        $('.test2:focus').closest('li').prev().find('a.test2').focus();
+        if($('.test2').eq(0).is(':focus')){
+          $('#search-field').focus();
+        } else {
+          $('.test2:focus').closest('li').prev().find('a.test2').focus();
+        }
       }
     })
   }
