@@ -256,7 +256,7 @@ export default class AddRecipe extends Base {
     * Delete button - Deletes ingredient row when clicked
     * @author Martin
     */
-    if ($(event.target).hasClass('delete-button') || $(event.target).parent().hasClass('delete-button')) {
+    if ($(event.target).hasClass('delete-button') && $('.ingredient-form').length > 1 || $(event.target).parent().hasClass('delete-button') && $('.ingredient-form').length > 1) {
       if (event.toElement.nodeName === 'I') {
         $(event.target).parent().parent().parent().fadeOut('slow', function() {
           $(this).remove();
