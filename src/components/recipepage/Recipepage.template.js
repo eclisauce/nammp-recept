@@ -4,7 +4,7 @@ export default function() {
       <!-- Recept "header" start -->
       <article class="row">
         <section class="col-12 d-flex flex-md-row flex-column recipe-top-part-2">
-        <button class="heart" data-id="${this.recipe.url}" title="Lägg detta till favoriter"><i class="${this.myFavorites.favorites.includes(this.recipe.url) ? 'fas' : 'far'} fa-heart"></i></button>
+        <button class="heart" data-id="${this.recipe.url}" role="button" title="Lägg detta till favoriter"><i class="${this.myFavorites.favorites.includes(this.recipe.url) ? 'fas' : 'far'} fa-heart"></i></button>
           <div class="col-12 d-flex flex-md-row flex-column recipe-top-part">
             <div class="row">
               <div class="col-md-12 col-12 col-lg-4 text-center text-lg-left">

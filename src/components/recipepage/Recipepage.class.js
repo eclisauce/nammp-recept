@@ -125,7 +125,7 @@ export default class Recipepage extends Base {
   renderRecipeFilters() {
     let recipeFilters = this.recipe.filters;
     let recipeFilterButtons = recipeFilters.map(filter => {
-      return `<a class="btn filter-btn mt-2 pop" href="/searchresult/mat/filters${filter}" name="${filter}">${filter}</a>`
+      return `<a class="btn filter-btn mt-2 pop" role="button" href="/searchresult/mat/filters${filter}" name="${filter}">${filter}</a>`
     });
     $('.recipe-categories').empty().append(recipeFilterButtons.join(''));
   }
