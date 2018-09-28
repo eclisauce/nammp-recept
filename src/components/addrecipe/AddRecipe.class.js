@@ -76,7 +76,7 @@ export default class AddRecipe extends Base {
     });
 
      $(document).on('keydown', '.bla', function(e) {
-      if (e.keyCode == 40) {      
+      if (e.keyCode == 40) {
         e.preventDefault();
         if($('.ingredient-input:focus').is(':focus')){
           $('.food-item').eq(0).focus();
@@ -84,7 +84,7 @@ export default class AddRecipe extends Base {
           $('.food-item:focus').next().focus();
         }
       }
-      if (e.keyCode == 38) {    
+      if (e.keyCode == 38) {
         e.preventDefault();
         if($('.food-item').eq(0).is(':focus')){
           $('.food-item:focus').closest('ul').prev().focus();
@@ -110,6 +110,13 @@ export default class AddRecipe extends Base {
       }
     });
 
+    $(document).keyup(function(e) {
+      if (e.keyCode == 27) { // escape key maps to keycode `27`
+        $('.result-dropdowns').html('');
+        $(".ingredient-input").val('');
+      }
+    });
+
     /**
      * Allows us to defocus the input field if clicked outside of interval
      *
@@ -117,7 +124,7 @@ export default class AddRecipe extends Base {
      */
     $(document).on('click', 'main', () => {
       $(".result-dropdowns").html('');
-    })
+    });
 
     /**
      * function to pick  an item from the list and put it in the input field
