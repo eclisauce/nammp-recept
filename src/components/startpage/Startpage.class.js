@@ -44,13 +44,12 @@ export default class Startpage extends Base {
     return firstFour.map(recipe => {
       return `
       <a href="/recept/${recipe.url}" class="no-decoration-a-tag col-12 col-lg-6 p-0 d-flex px-2 pop">
-        <div class="media pl-2 p-1 p-sm-3 border">
-          <img class="mr-2 mt-1 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
+        <div class="media mb-4 p-2 border d-flex flex-column flex-lg-row">
+          <img class="mb-2 media-img rounded" src="${recipe.imgLink}"
             alt="${recipe.imgAlt}">
           <div class="media-body">
-            <h5 class="mt-0 media-heading d-inline-block">${recipe.title}<i class="fas fa-angle-right fa-lg"></i></h5>
-            
-            <p class="w-100 mb-0 mt-2 text-muted">Svårighetsgrad: 
+            <h5 class="mt-0 media-heading width-heading d-inline-block">${recipe.title}<i class="fas fa-angle-right fa-lg d-none d-lg-inline-block"></i></h5>
+            <p class="w-100 m-0 mt-1 text-muted"><strong>Svårighetsgrad:</strong>
               <span class="stars px-2">
                 <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''} mr-1"></i>
                 <i class="fas fa-star ${recipe.difficulty < 2 ? 'text-muted' : ''} mr-1"></i>
@@ -63,7 +62,7 @@ export default class Startpage extends Base {
             <div class="d-flex recipe-info-wrapper justify-content-between">
               <p class="my-0 mt-sm-2 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kcal</p>
               <p class="my-0 mt-sm-2 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
-              
+
               </div>
             </div>
           </div>
