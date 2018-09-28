@@ -34,11 +34,6 @@
     background-color: $bg-darken;
     cursor: pointer;
 
-    .media-img {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-
     .media-body {
       .fa-angle-right {
         color: rgba(240, 95, 64, 1);
@@ -64,6 +59,7 @@
       color: #333;
       transition: all .3s ease;
       width: 80%;
+      font-size: 1.8rem;
     }
 
     .fa-angle-right {
@@ -99,15 +95,6 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .media {
-    .media-body {
-      .media-heading {
-        font-size: 1.8rem;
-      }
-    }
-  }
-}
 
 
 // @media screen and (max-width: 1200px) {
@@ -120,6 +107,17 @@
 //
 @media screen and (min-width: 992px) {
   .media {
+    
+  &:hover {
+    background-color: $bg-darken;
+    cursor: pointer;
+
+    .media-img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+
     .media-img {
       width: 35%;
       margin-right:2rem;
