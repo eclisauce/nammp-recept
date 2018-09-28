@@ -193,11 +193,11 @@ export default class Searchresult extends Base {
       <div class="search-item">
         <button class="heart" data-id="${recipe.url}" title="Lägg detta till favoriter"><i class="${this.myFavorites.favorites.includes(recipe.url) ? 'fas' : 'far'} fa-heart"></i></button>
         <a href="/recept/${recipe.url}" class="no-decoration-a-tag pop">
-          <div class="media p-1 p-sm-3 mt-0 border">
+          <div class="media p-1 pt-3 p-sm-3 mt-0 border">
             <img class="m-1 mr-3 m-sm-0 mr-sm-4 media-img rounded" src="${recipe.imgLink}"
               alt="${recipe.imgAlt}">
             <div class="media-body ">
-              <h5 class="mt-0 media-heading width-heading d-inline-block">${recipe.title}<i class="fas fa-angle-right fa-lg"></i></h5>
+              <h5 class="mt-0 media-heading width-heading d-inline-block">${recipe.title}<i class="fas fa-angle-right fa-lg d-none d-lg-inline-block"></i></h5>
               <p class="w-100 m-0 mt-1 text-muted"><strong>Svårighetsgrad:</strong>
                 <span class="stars px-2">
                   <i class="fas fa-star ${recipe.difficulty < 1 ? 'text-muted' : ''}"></i>
