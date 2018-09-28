@@ -26,7 +26,7 @@ export default function() {
                 </article>
                 <div class="d-flex flex-row justify-content-between">
                   <div class="d-flex">
-                    <p><i class="fas fa-utensils mr-1"></i> Kalorier: ${this.recipe.nutrientsPerPortion.calories.toFixed()}</p>
+                    <p><i class="fas fa-utensils mr-1"></i> Kcal: ${this.recipe.nutrientsPerPortion.calories.toFixed()}</p>
                   </div>
                   <div class="d-flex">
                     <p><i class="far fa-clock mr-1"></i> Tid: ${this.calcTime(this.recipe)}</p>
@@ -44,7 +44,7 @@ export default function() {
       <article class="row mt-4">
         <!-- Side ingredient start -->
         <aside class="col-lg-5 col-12 col-md-12 d-flex flex-column border ingredient-side p-2 p-md-4">
-          <div class="d-flex flex-wrap justify-content-between px-3 py-1 align-items-center">
+          <div class="d-flex flex-wrap justify-content-between py-1 align-items-center">
             <h4 class="ingredient-h4 p-0">Ingredienser</h4>
             <form class="recipe-selector">
               <div class="form-group d-flex p-0">

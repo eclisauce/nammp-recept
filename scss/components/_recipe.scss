@@ -3,7 +3,7 @@
     padding: 0.5rem 1rem;
     background:#fafafa;
   }
-  li:nth-child(2n) {
+  li:nth-child(2n +1) {
     background: #f1f1f1;
   }
 }
@@ -64,7 +64,6 @@
    }
  }
 
-.ingredient-h4,
 .instructions-h2,
 .naringsvarde-h4,
 .recipe-header {
@@ -74,6 +73,15 @@
   font-weight: 700;
   width:90%;
 }
+
+.ingredient-h4 {
+  text-decoration: underline;
+  text-decoration-color: #f05f40;
+  font-family: $font-family;
+  font-weight: 700;
+}
+
+
 
 .naringsvarde-h6 {
   font-family: $font-family;
