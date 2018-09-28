@@ -209,7 +209,7 @@ export default class Searchresult extends Base {
               </p>
               <p class="mt-2">${recipe.description}</p>
               <div class="row recipe-info-wrapper">
-                <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kalorier</p>
+                <p class="col-6 mb-0 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kcal</p>
                 <p class="col-6 mb-0 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
               </div>
             </div>

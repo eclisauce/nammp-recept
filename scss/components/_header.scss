@@ -39,9 +39,7 @@ header {
         position: absolute;
         top: 0;
         left: 0;
-        background: linear-gradient(to right, $primary 0%, $primary-lighten 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
       }
 
       span:nth-child(2) {
