@@ -60,9 +60,9 @@ export default class Startpage extends Base {
               </span>
             </p>
             <p class="my-1 my-sm-2">${recipe.description}</p>
-            <div class="row recipe-info-wrapper">
-              <p class="col-6 my-0 mt-sm-2 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kcal</p>
-              <p class="col-6 my-0 mt-sm-2 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
+            <div class="d-flex recipe-info-wrapper justify-content-between">
+              <p class="my-0 mt-sm-2 text-muted"><i class="fas fa-utensils mr-2"></i>${recipe.nutrientsPerPortion.calories.toFixed()} kcal</p>
+              <p class="my-0 mt-sm-2 text-muted text-right"><i class="far fa-clock mr-2"></i>${this.calcTime(recipe)}</p>
               
               </div>
             </div>
