@@ -1,18 +1,18 @@
-.ingredient-list{
-  li{
+.ingredient-list {
+  li {
     padding: 0.5rem 1rem;
     background:#fafafa;
   }
-  li:nth-child(2n){
+  li:nth-child(2n) {
     background: #f1f1f1;
   }
 }
 
-.ingredient-side{
+.ingredient-side {
   background: #fafafa;
 }
 
-.recipe-top-part{
+.recipe-top-part {
   background: rgba(0, 0, 0, 0.42);
   color: #fff;
   background-size: cover;
@@ -21,42 +21,116 @@
   img{
     border-radius: 2px;
   }
+
+  .filter-btn {
+    font-family: $font-family;
+    background-color: #52935f;
+    color: #fff;
+    border-radius: 8px;
+    transition: all .3s ease;
+
+    &:hover {
+      background-color: darken(#52935f, 8%);
+    }
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
 }
  .recipe-top-part-2{
-   background-image: url(/img/recept-cover.jpeg);
    background-repeat: no-repeat;
    padding: 20px;
    background-position: 70% 70%;
    background-size: cover;
    border-radius: 3px;
+   position: relative;
+   .heart {
+     position: absolute;
+     top: 2.8rem;
+     right:3rem;
+     z-index:1000;
+     cursor: pointer;
+     color: $primary;
+     border: 0;
+     border-radius: 50%;
+     font-size: 150%;
+     outline: 0;
+     background: white;
+     height: 40px;
+     width: 40px;
+     padding-top: 3px;
+   }
  }
-.ingredient-h4{
+
+.ingredient-h4,
+.instructions-h2,
+.naringsvarde-h4,
+.recipe-header {
   text-decoration: underline;
   text-decoration-color: #f05f40;
   font-family: $font-family;
   font-weight: 700;
+  width:90%;
 }
 
-.instructions-h2{
-  text-decoration: underline;
-  text-decoration-color: #f05f40;
+.naringsvarde-h6 {
   font-family: $font-family;
-  font-weight: 700;
 }
 
-.recipe-header{
-  text-decoration: underline;
-  text-decoration-color: #f05f40;
-  font-family: $font-family;
-  font-weight: 700;
+.naringsvarde {
+  background: #f1f1f1;
 }
 
-#sel1{
+#visaMer {
+  .progress {
+    box-shadow: 0 0 2px #777;
+  }
+
+  .progress-bar {
+    text-shadow: 0 0 5px rgba(255,255,255,0.8);
+    color: #333;
+  }
+}
+
+.rdi-text {
+  font-size: 0.8rem;
+}
+
+.stars {
+  background-color: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  border-radius: 20px;
+  .fa-star {
+    color: #ffc107;
+    text-shadow: 1px 0 1px rgba(0,0,0,0.3);
+  }
+
+}
+
+.progress-kolhydrater {
+  background-color: #f7e491;
+}
+
+.progress-protein {
+  background-color: #f79491;
+}
+
+.progress-fett {
+  background-color: #efe1c4;
+}
+
+.progress-salt {
+  background-color: #c1c0bd;
+}
+
+#sel1 {
   width:auto;
   border: 1px solid #f05f40;
-
 }
-#sel1:focus{
+
+#sel1:focus {
   outline: none !important;
     border-color: #f05f40;
     box-shadow: 0 0 1px #f05f40;
@@ -66,30 +140,31 @@
     box-shadow: 0 0 10px 100px #f05f40 inset;
 }
 
-
 .recipe-instruction{
-padding: 0 20px 20px 20px;
-ol{
-  list-style: none;
-  counter-reset: item;
-}
+  padding: 0 20px 20px 20px;
 
- li{
+  ol {
+    list-style: none;
+    counter-reset: item;
+  }
+
+ li {
     counter-increment: item;
     margin:10px 0 10px 0;
  }
+
  li:before {
-  margin-top: 5px;
-  content: counter(item);
-  background: #f05f40;
-  border-radius: 50%;
-  color: white;
-  width: 1.5rem;
-  text-align: center;
-  display: block;
-  align-self: flex-start;
-  flex-shrink: 0;
-}
+    margin-top: 5px;
+    content: counter(item);
+    background: #f05f40;
+    border-radius: 50%;
+    color: white;
+    width: 1.5rem;
+    text-align: center;
+    display: block;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
 }
 
 .recept-page{
