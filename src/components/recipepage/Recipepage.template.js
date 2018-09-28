@@ -26,7 +26,7 @@ export default function() {
                 </article>
                 <div class="d-flex flex-row justify-content-between">
                   <div class="d-flex">
-                    <p><i class="fas fa-utensils mr-1"></i> Kalorier: ${this.recipe.nutrientsPerPortion.calories.toFixed()}</p>
+                    <p><i class="fas fa-utensils mr-1"></i> Kcal: ${this.recipe.nutrientsPerPortion.calories.toFixed()}</p>
                   </div>
                   <div class="d-flex">
                     <p><i class="far fa-clock mr-1"></i> Tid: ${this.calcTime(this.recipe)}</p>
