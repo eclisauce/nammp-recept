@@ -38,9 +38,6 @@ export default class Navbar extends Base {
         this.setFilters();
       }
     }
-    if($(event.target).hasClass('nav-link')){
-      $('.navbar-collapse').removeClass('show');
-    }
   }
 
   /**
