@@ -1,14 +1,15 @@
 {
   "name": "rep-html",
   "version": "1.0.0",
-  "description": "",
+  "description": "School project at Lernia Malmö 2018. Recipe app which calculates nutrients from ingredients.",
   "main": "app.js",
   "scripts": {
     "watch": "webpack --development --watch",
     "build": "webpack --development",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "start": "webpack --production && node app"
   },
-  "author": "",
+  "author": "Nammp Team @ Lernia",
   "license": "ISC",
   "dependencies": {
     "compression": "^1.7.3",

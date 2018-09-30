@@ -2,6 +2,12 @@ const _ = require('lodash');
 const fs = require('fs');
 
 
+/**
+* Runs naring.json Original file and transforms it to a smaller file and removes unnecessary properties
+*
+* @author Martin
+*/
+
 /*
  * Calls Jsonfile
  *
@@ -55,7 +61,7 @@ getjson()
     return await resizedArray;
   })
   .then((resizedArray) => {
-    fs.writeFile("./new-food.json", JSON.stringify(resizedArray, null, 2), (err) => {
+    fs.writeFile("./new-food.json", JSON.stringify(resizedArray), (err) => {
       if (err) {
         console.error(err);
         return;

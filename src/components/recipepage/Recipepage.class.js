@@ -44,6 +44,12 @@ export default class Recipepage extends Base {
     }
   }
 
+  click() {
+    if($(event.target).hasClass('print-me')) {
+      window.print();
+    }
+  }
+
   /**
    * Finding a recipe by its title
    * Should be provided from the contructor later on.

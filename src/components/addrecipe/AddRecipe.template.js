@@ -19,7 +19,7 @@ function template() {
             <li>Välj svårighetsgrad för att visa hur svårt ditt recept är att tillaga.</li>
           </ul>
           <h5>Andra tips</h5>
-          <ul>          
+          <ul>
             <li>Skriv inga volym-angivelser i dina instruktioner. Exempelvis:</li>
             <ul>
                 <li>Skriv inte: <s>häll i 2dl av de 4dl pressade tomaterna.</s></li>
@@ -55,7 +55,7 @@ function template() {
 
 
           <div class="row mt-3 mt-md-4">
-            <div class="col-4">
+            <div class="col-6 col-lg-4">
               <div class="row">
                 <div class="col-12 mb-lg-0 mb-2">
                   <h6 class="d-inline text-dark vertical-align-middle">Antal portioner</h6>
@@ -76,7 +76,7 @@ function template() {
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-6 col-lg-4">
               <div class="row">
                 <div class="col-12 mb-lg-0 mb-2 pr-0">
                   <h6 class="d-inline text-dark vertical-align-middle">Tidsåtgång</h6>
@@ -89,7 +89,7 @@ function template() {
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-6 col-lg-4">
               <div class="row">
                 <div class="col-12 mb-lg-0 mb-2">
                   <h6 class="d-inline text-dark vertical-align-middle">Svårighetsgrad</h6>

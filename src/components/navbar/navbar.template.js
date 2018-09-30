@@ -9,19 +9,19 @@ export default `
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item px-4 mt-md-3 mt-lg-0">
-        <a class="nav-link pop text-center" href="/">
+        <a class="nav-link pop text-center" data-toggle="collapse" data-target=".navbar-collapse.show" href="/">
           <i class="fas fa-home d-block text-center m-2 navbar-icons"></i>
           Hem
         </a>
       </li>
       <li class="nav-item px-4">
-        <a class="nav-link pop text-center" href="/searchresult">
+        <a class="nav-link pop text-center" data-toggle="collapse" data-target=".navbar-collapse.show" href="/searchresult">
           <i class="far fa-list-alt d-block text-center m-2 navbar-icons"></i>
           Recept
         </a>
       </li>
       <li class="nav-item px-4">
-        <a class="nav-link pop text-center" href="/add-recipe">
+        <a class="nav-link pop text-center" data-toggle="collapse" data-target=".navbar-collapse.show" href="/add-recipe">
           <i class="far fa-plus-square d-block text-center m-2 navbar-icons"></i>
           Lägg till recept
         </a>

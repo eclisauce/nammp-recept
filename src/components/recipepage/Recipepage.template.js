@@ -157,6 +157,9 @@ export default function() {
             </div>
           </section>
           <!-- end näringsvärde -->
+          <button class="print-me btn btn-primary my-4">
+            <i class="fas fa-print"></i> Skriv ut
+          </button>
 
         </article>
         <!-- end instructions -->
